@@ -4,16 +4,16 @@ module.exports = {
 	description: "A software developer.",
 	social: [
 		{
+			name: "linkedin",
+			url: "https://www.linkedin.com/in/guilhermebkel"
+		},
+		{
 			name: "github",
 			url: "https://github.com/guilhermebkel"
 		},
 		{
 			name: "gitlab",
 			url: "https://gitlab.com/guilhermebkel"
-		},
-		{
-			name: "linkedin",
-			url: "https://www.linkedin.com/in/guilhermebkel"
 		},
 		{
 			name: "npm",
