@@ -42,6 +42,14 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        }
+      }
+    },
+    {
       resolve: "gatsby-plugin-styled-components",
       options: {
         displayName: process.env.NODE_ENV !== "production"

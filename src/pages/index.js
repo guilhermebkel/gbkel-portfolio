@@ -1,3 +1,15 @@
 import React from "react"
 
-export default () => <div>Hello world!</div>
+import Header from "../components/Header"
+
+import { Container } from "./styles"
+
+const App = () => {
+	return (
+		<Container>
+			<Header />
+		</Container>
+	)
+}
+
+export default App
