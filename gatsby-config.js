@@ -56,12 +56,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-page-creator`,
+      resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/src/pages`,
         ignore: ["**/styles.js"]
       },
     },
-    "gatsby-plugin-offline",
+    // "gatsby-plugin-offline",
   ]
 }
