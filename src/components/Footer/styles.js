@@ -27,4 +27,9 @@ export const SocialMedias = styled.div`
 
 export const SocialLink = styled.a`
 	padding: 8px;
+	transition: transform 0.05s ease-in-out;
+
+	&:hover {
+		transform: scale(1.25);
+	}
 `;
