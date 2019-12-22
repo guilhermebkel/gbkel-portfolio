@@ -35,6 +35,7 @@ export const Title = styled.h1`
 
 	b {
 		color: ${(props) => props.theme.primary};
+		filter: saturate(350%);
 		opacity: 0.9;
 	}
 `
