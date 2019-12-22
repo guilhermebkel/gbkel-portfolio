@@ -1,7 +1,7 @@
 import React from "react"
 import Particles from "react-particles-js"
 
-import { Container, Title, Content } from "./styles"
+import { Container, Title, Content, Description } from "./styles"
 
 const Introduction = () => {
 	return (
@@ -10,19 +10,15 @@ const Introduction = () => {
 				params={{
 					"particles": {
 							"number": {
-									"value": 500,
+									"value": 200,
 									"density": {
 											"enable": true,
-											"value_area": 2000
+											"value_area": 1000
 									}
 							},
 							"line_linked": {
 									"enable": true,
 									"opacity": 0.05
-							},
-							"move": {
-									"direction": "right",
-									"speed": 0.1
 							},
 							"size": {
 									"value": 1
@@ -53,8 +49,11 @@ const Introduction = () => {
 			/>
 			<Content>
 				<Title>
-					A <b>software developer</b> passionate about programming, software architecture, complex systems and technologies in general. 
+					Hello, I'm <b>Guilherme Bromonschenkel</b>.
 				</Title>
+				<Description>
+					A <b>software developer</b> passionate about programming, software architecture, complex systems and technologies in general. 
+				</Description>
 			</Content>
 		</Container>
 	)

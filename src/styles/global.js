@@ -8,11 +8,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #root {
-    height: 100%;
-    display: flex;
     font-family: "Lato", sans-serif;
     background: ${props => props.theme.background};
-    flex: 4;
+    height: 100vh;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
   }
 
   body {

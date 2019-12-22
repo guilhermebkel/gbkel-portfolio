@@ -1,12 +1,14 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
+export const Container = styled.section`
 	position: relative;
 
 	height: 100vh;
 	width: 100vw;
 
 	background-color: #333;
+	
+	user-select: none;
 `
 
 export const Content = styled.div`
@@ -24,15 +26,22 @@ export const Title = styled.h1`
 
 	font-weight: bold;
 	font-size: 70px;
-	text-align: center;
-	line-height: 90px;
+	text-align: left;
+	line-height: 120px;
 
 	width: 70%;
 
-	text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+	text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
 
 	b {
 		color: ${(props) => props.theme.primary};
 		opacity: 0.9;
 	}
+`
+
+export const Description = styled(Title)`
+	font-size: 50px;
+	line-height: 60px;
+
+	font-weight: normal;
 `

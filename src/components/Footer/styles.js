@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
+export const Container = styled.footer`
 	position: fixed;
 	bottom: 0;
 
@@ -13,6 +13,8 @@ export const Container = styled.div`
 	align-items: center;
 
 	padding: 0 50px;
+	
+	z-index: 150;
 `
 
 export const Languages = styled.div`
