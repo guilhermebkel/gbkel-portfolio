@@ -1,10 +1,14 @@
 import React from "react"
 import { ThemeProvider } from "styled-components"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBars, faClock } from '@fortawesome/free-solid-svg-icons'
+import { fab } from "@fortawesome/free-brands-svg-icons"
 
 // import light from "../src/styles/themes/light"
 import dark from "../src/styles/themes/dark"
-
 import GlobalStyles from "../src/styles/global"
+
+library.add(faBars, faClock, fab)
 
 const wrapRootElement = ({ element }) => {
   return (

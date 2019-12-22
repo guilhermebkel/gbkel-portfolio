@@ -1,7 +1,9 @@
 import styled from "styled-components"
-import MenuIcon from '@material-ui/icons/Menu'
 
 export const Container = styled.div`
+	position: fixed;
+	top: 0;
+
 	width: 100vw;
 	height: 70px;
 
@@ -12,16 +14,9 @@ export const Container = styled.div`
 
 	margin-top: 40px;
 	padding: 0 50px;
-
-	float: right;
 `
 
 export const Logo = styled.img`
 	width: 25px;
 	height: auto;
-`
-
-export const Menu = styled(MenuIcon)`
-	color: #fff;
-	font-size: 30px;
 `

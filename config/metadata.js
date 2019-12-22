@@ -8,6 +8,10 @@ module.exports = {
 			url: "https://github.com/guilhermebkel"
 		},
 		{
+			name: "gitlab",
+			url: "https://gitlab.com/guilhermebkel"
+		},
+		{
 			name: "linkedin",
 			url: "https://www.linkedin.com/in/guilhermebkel"
 		},
@@ -22,6 +26,10 @@ module.exports = {
 		{
 			name: "whatsapp",
 			url: "https://api.whatsapp.com/send?phone=5527996334936"
+		},
+		{
+			name: "stackoverflow",
+			url: "https://stackoverflow.com/users/12550949/guilherme-bromonschenkel"
 		}
 	]
 }
