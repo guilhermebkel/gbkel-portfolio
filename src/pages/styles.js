@@ -5,5 +5,30 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 
-	transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+
+	.ant-carousel-vertical .slick-dots-right {
+		right: 55px;
+	}
+
+	.ant-carousel .slick-vertical .slick-slide {
+		border: 0;
+	}
+
+	.slick-active {
+		animation: pulse 2s infinite;
+
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+			}
+
+			70% {
+				box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+			}
+
+			100% {
+				box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+			}
+		}
+	}
 `

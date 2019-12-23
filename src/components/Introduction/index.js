@@ -6,7 +6,10 @@ import { Container, Title, Content, Description } from "./styles"
 const Introduction = () => {
 	return (
 		<Container>
-			<Particles />
+			<Particles 
+				width="100vw"
+				height="100vh"
+			/>
 			<Content>
 				<Title>
 					Hello, I'm <b>Guilherme Bromonschenkel</b>.
