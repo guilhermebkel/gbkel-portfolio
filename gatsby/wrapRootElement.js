@@ -1,7 +1,7 @@
 import React from "react"
 import { ThemeProvider } from "styled-components"
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faClock } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faClock, faLongArrowAltLeft, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 import { fab } from "@fortawesome/free-brands-svg-icons"
 
 import 'antd/dist/antd.css'
@@ -11,7 +11,7 @@ import dark from "../src/styles/themes/dark"
 import GlobalStyles from "../src/styles/global"
 
 
-library.add(faBars, faClock, fab)
+library.add(faBars, faClock, fab, faLongArrowAltLeft, faLongArrowAltRight)
 
 const wrapRootElement = ({ element }) => {
   return (
