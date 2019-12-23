@@ -6,7 +6,7 @@ export const Container = styled.section`
 	height: 100vh;
 	width: 100vw;
 
-	background-color: #444;
+	background-color: #222;
 	
 	user-select: none;
 `
@@ -31,7 +31,7 @@ export const Title = styled.h1`
 
 	width: 70%;
 
-	text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+	text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.05);
 
 	b {
 		color: ${(props) => props.theme.primary};
