@@ -31,8 +31,6 @@ export const Project = styled.div`
 	
 	display: flex;
 	flex-direction: row;
-
-	user-select: none;
 `
 
 export const Column = styled.div`
