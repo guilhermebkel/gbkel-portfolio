@@ -62,7 +62,21 @@ const Projects = () => {
 							<div key={index}>
 								<Content>					
 									<Project>
-										<Column width="50%">
+										<Column width="50%" order="2">
+											<Mockup image={project.image_url} loading="lazy" />
+
+											<SelectorGroup>
+												<Selector onClick={() => previous()}>
+													<FontAwesomeIcon icon="long-arrow-alt-left" /> <span>previous</span>
+												</Selector>
+
+												<Selector onClick={() => next()}>
+													<span>next</span> <FontAwesomeIcon icon="long-arrow-alt-right" />
+												</Selector>
+											</SelectorGroup>
+										</Column>
+
+										<Column width="50%" order="1">
 											<TitleGroup>
 												<ProjectIndex>
 													0{index + 1}
@@ -90,20 +104,6 @@ const Projects = () => {
 											<ExternalLink href={project.live_url} target="_blank">
 												<FontAwesomeIcon icon={["fab", "chrome"]} size="sm" /> view project on live
 											</ExternalLink>
-										</Column>
-
-										<Column width="50%">
-											<Mockup image={project.image_url} />
-
-											<SelectorGroup>
-												<Selector onClick={() => previous()}>
-													<FontAwesomeIcon icon="long-arrow-alt-left" /> <span>previous</span>
-												</Selector>
-
-												<Selector onClick={() => next()}>
-													<span>next</span> <FontAwesomeIcon icon="long-arrow-alt-right" />
-												</Selector>
-											</SelectorGroup>
 										</Column>
 									</Project>
 								</Content>

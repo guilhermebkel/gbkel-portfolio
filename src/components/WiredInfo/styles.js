@@ -15,7 +15,7 @@ export const Container = styled.div`
 	align-items: center;
 
 	@media only screen and (max-width: 576px) {
-		left: -70px;
+		left: ${({ position }) => position === "bottom" && "-70px"};
 	}
 `
 
@@ -29,6 +29,10 @@ export const LineHolder = styled.div`
 export const Info = styled.span`
 	color: #FFF;
 	font-size: 18px;
+
+	@media only screen and (max-width: 576px) {
+		font-size: 16px;
+	}
 `
 
 export const LightningBall = styled.div`

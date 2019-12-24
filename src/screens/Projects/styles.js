@@ -25,16 +25,37 @@ export const Project = styled.div`
 	
 	display: flex;
 	flex-direction: row;
+
+	@media only screen and (max-width: 1200px) {
+		max-width: 850px;
+		min-width: 800px;
+	}
+
+	@media only screen and (max-width: 992px) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@media only screen and (max-width: 576px) {
+		max-width: 650px;
+		min-width: 600px;
+	}
 `
 
 export const Column = styled.div`
 	width: ${({ width }) => width};
+	order: ${({ order }) => order};
 	height: auto;
 
 	display: flex;
 	flex-direction: column;
 	align-content: center;
 	justify-content: center;
+
+	@media only screen and (max-width: 992px) {
+		order: ${({ order }) => order === 1 ? 2 : 1};
+	}
 `
 
 export const TitleGroup = styled.div`
@@ -42,6 +63,13 @@ export const TitleGroup = styled.div`
 
 	align-content: center;
 	align-items: center;
+
+	@media only screen and (max-width: 992px) {
+		flex-direction: column;
+		margin-top: 25px;
+
+		text-align: center;
+	}
 `
 
 export const ProjectIndex = styled.span`
@@ -59,11 +87,22 @@ export const Title = styled.h1`
 	font-size: 70px;
 	margin-bottom: 0;
 	line-height: 65px;
+
+	@media only screen and (max-width: 992px) {
+		font-size: 40px;
+		line-height: 50px;
+	}
 `
 
 export const Description = styled.span`
 	font-size: 18px;
 	color: #FFF;
+
+	@media only screen and (max-width: 992px) {
+		font-size: 16px;
+
+		text-align: center;
+	}
 `
 
 export const Mockup = styled.div`
@@ -93,6 +132,10 @@ export const ExternalLink = styled.a`
 		color: #FFF;
 		text-decoration: underline;
 	}
+
+	@media only screen and (max-width: 992px) {
+		margin: auto;
+	}
 `
 
 export const SelectorGroup = styled.div`
@@ -103,6 +146,10 @@ export const SelectorGroup = styled.div`
 	justify-content: space-between;
 
 	padding: 0 50px;
+
+	@media only screen and (max-width: 992px) {
+		display: none;
+	}
 `
 
 export const Selector = styled.button`

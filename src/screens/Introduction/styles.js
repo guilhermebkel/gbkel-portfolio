@@ -9,7 +9,7 @@ export const Content = styled.div`
 	flex-direction: column;
 	align-items: center;
 
-	@media only screen and (min-width: 1200px) {
+	@media only screen and (min-width: 992px) {
 		top: 30vh;
 	}
 `
@@ -41,10 +41,6 @@ export const Title = styled.h1`
 		font-size: 45px;
 		line-height: 55px;
 		text-align: center;
-	}
-
-	@media only screen and (max-width: 992px) {
-		
 	}
 
 	@media only screen and (max-width: 768px) {
