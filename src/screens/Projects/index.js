@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { 
-	Container, 
+	Screen, 
 	Project, 
 	Column, 
 	Title, 
@@ -18,8 +18,8 @@ import {
 	Content
 } from "./styles"
 
-import Divider from "../Divider"
-import WiredInfo from "../WiredInfo"
+import Divider from "../../components/Divider"
+import WiredInfo from "../../components/WiredInfo"
 
 const Projects = () => {
 	let next
@@ -49,7 +49,11 @@ const Projects = () => {
 	`)
 
 	return (
-		<Container>
+		<Screen color="primary">
+			<WiredInfo 
+				info="projects"
+				position="top"
+			/>
 			<Carousel autoplay ref={getCarouselRef} dots={false}>
 				{
 					data.gbkel.projects
@@ -108,14 +112,10 @@ const Projects = () => {
 				}
 			</Carousel>
 			<WiredInfo 
-				info="projects"
-				position="top"
-			/>
-			<WiredInfo 
 				info=""
 				position="bottom"
 			/>
-		</Container>
+		</Screen>
 	)
 }
 

@@ -1,16 +1,5 @@
 import styled from "styled-components"
 
-export const Container = styled.section`
-	position: relative;
-
-	height: 100vh;
-	width: 100vw;
-
-	background-color: #222;
-	
-	user-select: none;
-`
-
 export const Content = styled.div`
 	position: absolute;
 	top: 300px;

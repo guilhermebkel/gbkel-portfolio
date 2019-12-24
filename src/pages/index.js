@@ -3,8 +3,10 @@ import { Carousel } from "antd"
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import Introduction from "../components/Introduction"
-import Projects from "../components/Projects"
+
+import Introduction from "../screens/Introduction"
+import Projects from "../screens/Projects"
+import Skills from "../screens/Skills"
 
 import { Container } from "./styles"
 
@@ -39,7 +41,8 @@ const App = () => {
 
 			<Carousel dotPosition="right" ref={getCarouselRef}>
 				<Introduction />
-				<Projects />		
+				<Projects />
+				<Skills />	
 			</Carousel>
 
 			<Footer />

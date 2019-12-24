@@ -1,13 +1,14 @@
 import React from "react"
 import Particles from "react-particles-js"
 
-import { Container, Title, Content, Description } from "./styles"
+import { Title, Content, Description } from "./styles"
 
 import WiredInfo from "../../components/WiredInfo"
+import Screen from "../../components/Screen"
 
 const Introduction = () => {
 	return (
-		<Container>
+		<Screen color="secondary">
 			<Particles 
 				width="100vw"
 				height="100vh"
@@ -24,7 +25,7 @@ const Introduction = () => {
 				info="scroll down to discover more"
 				position="bottom"
 			/>
-		</Container>
+		</Screen>
 	)
 }
 

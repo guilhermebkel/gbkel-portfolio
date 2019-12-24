@@ -1,13 +1,8 @@
 import styled from "styled-components"
 
-export const Container = styled.section`
-	position: relative;
+import ScreenComponent from "../../components/Screen"
 
-	width: 100vw;
-	height: 100vh;
-
-	background-color: ${(props) => props.theme.primary};
-
+export const Screen = styled(ScreenComponent)`
 	.ant-carousel .slick-slider {
 		height: 100vh;
 		width: 100vw;
@@ -21,9 +16,6 @@ export const Content = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	user-select: none;
-	outline: none;
 `
 
 export const Project = styled.div`
