@@ -31,15 +31,33 @@ const App = () => {
 		}
 	}
 
+	const onKeyPress = ({ key }) => {
+		if (key === "ArrowDown") {
+			next()
+		} else if (key === "ArrowUp") {
+			previous()
+		} else {
+			return
+		}
+	}
+
 	useEffect(() => {
 		window.addEventListener("wheel", onWheel)
+		window.addEventListener("keydown", onKeyPress)
 	})
 
 	return (
 		<Container>
 			<Header />
 
-			<Carousel dotPosition="right" ref={getCarouselRef}>
+			<Carousel 
+				dotPosition="right" 
+				ref={getCarouselRef} 
+				accessibility={false} 
+				draggable={true}
+				verticalSwiping={true}
+
+			>
 				<Introduction />
 				<Projects />
 				<Skills />	
