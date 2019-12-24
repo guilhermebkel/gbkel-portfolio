@@ -13,6 +13,10 @@ export const Container = styled.div`
 	justify-content: center;
 	align-content: center;
 	align-items: center;
+
+	@media only screen and (max-width: 576px) {
+		left: -70px;
+	}
 `
 
 export const LineHolder = styled.div`
