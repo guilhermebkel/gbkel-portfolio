@@ -1,5 +1,5 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { Container, Logo } from "./styles"
 
@@ -13,7 +13,7 @@ const Header = () => {
 	return (
 		<Container>
 			<Logo src={logoWhite} onClick={() => reloadPage()} />
-			<FontAwesomeIcon icon="bars" color="#FFF" size="lg" />
+			{/* <FontAwesomeIcon icon="bars" color="#FFF" size="lg" /> */}
 		</Container>
 	)
 }

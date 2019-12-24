@@ -19,6 +19,7 @@ import {
 } from "./styles"
 
 import Divider from "../Divider"
+import WiredInfo from "../WiredInfo"
 
 const Projects = () => {
 	let next
@@ -54,9 +55,9 @@ const Projects = () => {
 					data.gbkel.projects
 						.filter(project => project.active)
 						.map((project, index) => (
-							<div>
+							<div key={index}>
 								<Content>					
-									<Project key={index}>
+									<Project>
 										<Column width="50%">
 											<TitleGroup>
 												<ProjectIndex>
@@ -106,6 +107,14 @@ const Projects = () => {
 						))
 				}
 			</Carousel>
+			<WiredInfo 
+				info="projects"
+				position="top"
+			/>
+			<WiredInfo 
+				info=""
+				position="bottom"
+			/>
 		</Container>
 	)
 }

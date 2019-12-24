@@ -22,8 +22,10 @@ const App = () => {
 	const onWheel = ({ deltaY }) => {
 		if (deltaY > 0) {
 			next()
-		} else {
+		} else if (deltaY < 0) {
 			previous()
+		} else {
+			return
 		}
 	}
 

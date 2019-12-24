@@ -3,6 +3,8 @@ import Particles from "react-particles-js"
 
 import { Container, Title, Content, Description } from "./styles"
 
+import WiredInfo from "../../components/WiredInfo"
+
 const Introduction = () => {
 	return (
 		<Container>
@@ -18,6 +20,10 @@ const Introduction = () => {
 					A <b>software developer</b> passionate about programming, software architecture, complex systems and technologies in general. 
 				</Description>
 			</Content>
+			<WiredInfo 
+				info="scroll down to discover more"
+				position="bottom"
+			/>
 		</Container>
 	)
 }
