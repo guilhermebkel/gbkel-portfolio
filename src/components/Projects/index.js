@@ -14,7 +14,8 @@ import {
 	SelectorGroup,
 	Selector,
 	TitleGroup,
-	ProjectIndex
+	ProjectIndex,
+	Content
 } from "./styles"
 
 import Divider from "../Divider"
@@ -48,58 +49,59 @@ const Projects = () => {
 
 	return (
 		<Container>
-			<Carousel autoplay ref={getCarouselRef}>
+			<Carousel autoplay ref={getCarouselRef} dots={false}>
 				{
 					data.gbkel.projects
 						.filter(project => project.active)
-						.slice(0, 1)
 						.map((project, index) => (
-							<div key={index}>							
-								<Project>
-									<Column width="50%">
-										<TitleGroup>
-											<ProjectIndex>
-												0{index + 1}
-											</ProjectIndex>
+							<div>
+								<Content>					
+									<Project key={index}>
+										<Column width="50%">
+											<TitleGroup>
+												<ProjectIndex>
+													0{index + 1}
+												</ProjectIndex>
 
-											<Title>
-												{project.title}
-											</Title>
-										</TitleGroup>
-										
-										<Divider size="large" />
+												<Title>
+													{project.title}
+												</Title>
+											</TitleGroup>
+											
+											<Divider size="large" />
 
-										<Description>
-											{project.description}
-										</Description>
+											<Description>
+												{project.description}
+											</Description>
 
-										<Divider size="large" />
+											<Divider size="large" />
 
-										<ExternalLink href={project.github_url} target="_blank">
-											<FontAwesomeIcon icon={["fab", "github"]} size="sm" /> view code on github
-										</ExternalLink>
+											<ExternalLink href={project.github_url} target="_blank">
+												<FontAwesomeIcon icon={["fab", "github"]} size="sm" /> view code on github
+											</ExternalLink>
 
-										<Divider size="small" />
+											<Divider size="small" />
 
-										<ExternalLink href={project.live_url} target="_blank">
-											<FontAwesomeIcon icon={["fab", "chrome"]} size="sm" /> view project on live
-										</ExternalLink>
-									</Column>
+											<ExternalLink href={project.live_url} target="_blank">
+												<FontAwesomeIcon icon={["fab", "chrome"]} size="sm" /> view project on live
+											</ExternalLink>
+										</Column>
 
-									<Column width="50%">
-										<Mockup image={project.image_url} />
+										<Column width="50%">
+											<Mockup image={project.image_url} />
 
-										<SelectorGroup>
-											<Selector onClick={() => previous()}>
-												<FontAwesomeIcon icon="long-arrow-alt-left" /> <span>previous</span>
-											</Selector>
+											<SelectorGroup>
+												<Selector onClick={() => previous()}>
+													<FontAwesomeIcon icon="long-arrow-alt-left" /> <span>previous</span>
+												</Selector>
 
-											<Selector onClick={() => next()}>
-												<span>next</span> <FontAwesomeIcon icon="long-arrow-alt-right" />
-											</Selector>
-										</SelectorGroup>
-									</Column>
-								</Project>
+												<Selector onClick={() => next()}>
+													<span>next</span> <FontAwesomeIcon icon="long-arrow-alt-right" />
+												</Selector>
+											</SelectorGroup>
+										</Column>
+									</Project>
+								</Content>
 							</div>
 						))
 				}

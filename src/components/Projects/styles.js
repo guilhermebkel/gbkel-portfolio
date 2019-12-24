@@ -6,24 +6,29 @@ export const Container = styled.section`
 
 	background-color: ${(props) => props.theme.primary};
 
+	.ant-carousel .slick-slider {
+		height: 100vh;
+		width: 100vw;
+	}
+`
+
+export const Content = styled.div`
+	height: 100vh;
+	width: 100vw;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	.ant-carousel .slick-slide {
-		height: 100vh;
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+	user-select: none;
+	outline: none;
 `
 
 export const Project = styled.div`
 	max-width: 1100px;
 	min-width: 900px;
 	min-height: 300px;
-
+	
 	display: flex;
 	flex-direction: row;
 
