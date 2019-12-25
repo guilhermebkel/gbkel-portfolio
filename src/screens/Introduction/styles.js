@@ -12,10 +12,6 @@ export const Content = styled.div`
 	@media only screen and (min-width: 992px) {
 		top: 30vh;
 	}
-
-	@media only screen and (max-width: 576px) {
-		top: 22vh;
-	}
 `
 
 export const Title = styled.h1`
@@ -53,7 +49,7 @@ export const Title = styled.h1`
 	@media only screen and (max-width: 576px) {
 		font-size: 25px;
 		line-height: 30px;
-		width: 60%;
+		width: 80%;
 	}
 `
 
