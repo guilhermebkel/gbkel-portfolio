@@ -2,6 +2,7 @@ module.exports = {
 	title: "Guilherme Bromonschenkel",
 	siteUrl: "https://guilherr.me",
 	description: "A software developer.",
+	keywords: "web, development, full-stack, javascript, problem-solver, nodejs, reactjs, angular, api, restful, portfolio, linkedin, github, programmer, programming",
 	social: [
 		{
 			name: "linkedin",
