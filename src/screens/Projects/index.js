@@ -70,7 +70,7 @@ const Projects = () => {
 								<Content>					
 									<Project>
 										<Column width="50%" order="2">
-											<Mockup image={project.image_url} loading="lazy" />
+											<Mockup image={project.image_url} />
 
 											<SelectorGroup>
 												<Selector onClick={() => previous()}>
