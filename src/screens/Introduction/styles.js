@@ -1,33 +1,38 @@
 import styled from "styled-components"
 
 export const Content = styled.div`
-	position: absolute;
-	top: 25vh;
-	width: 100%;
+	margin: auto;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+`
 
-	@media only screen and (min-width: 992px) {
-		top: 30vh;
-	}
+export const Background = styled.div`
+ 	display: flex;
+
+  width: 100vw;
+  height: 100vh;
+
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${({ image }) => image});
+  background-position: center; 
+  background-size: cover;
+  background-attachment: fixed;
+	filter: grayscale(100%);
 `
 
 export const Title = styled.h1`
 	color: #FFF;
 
-	font-weight: bold;
 	font-size: 60px;
 	text-align: center;
-	line-height: 120px;
+	line-height: 80px;
 
 	width: 70%;
 
-	text-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1);
+	text-shadow: 2px 5px 20px rgba(0, 0, 0, 0.05);
 
 	b {
-		color: ${(props) => props.theme.primary};
 		opacity: 0.9;
 	}
 
