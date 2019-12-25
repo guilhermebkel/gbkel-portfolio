@@ -54,9 +54,9 @@ const App = () => {
 				dotPosition="right" 
 				ref={getCarouselRef} 
 				accessibility={false} 
-				draggable={true}
 				verticalSwiping={true}
-
+				speed={400}
+				infinite={false}
 			>
 				<Introduction />
 				<Projects />

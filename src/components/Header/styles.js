@@ -16,6 +16,10 @@ export const Container = styled.nav`
 	padding: 0 50px;
 
 	z-index: 150;
+
+	@media only screen and (max-width: 576px) {
+		height: 40px;
+	}
 `
 
 export const Logo = styled.img`

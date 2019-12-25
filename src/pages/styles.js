@@ -14,7 +14,7 @@ export const Container = styled.div`
 		border: 0;
 	}
 
-	.slick-active {
+	.slick-dots .slick-active {
 		animation: pulse 2s infinite;
 
 		@keyframes pulse {

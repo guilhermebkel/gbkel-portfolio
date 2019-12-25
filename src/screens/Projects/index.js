@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Carousel } from "antd"
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -48,20 +48,6 @@ const Projects = () => {
 		}
 	`)
 
-	const onKeyPress = ({ key }) => {
-		if (key === "ArrowRight") {
-			next()
-		} else if (key === "ArrowLeft") {
-			previous()
-		} else {
-			return
-		}
-	}
-
-	useEffect(() => {
-		window.addEventListener("keydown", onKeyPress)
-	})
-
 	return (
 		<Screen color="primary">
 			<WiredInfo 
@@ -72,10 +58,9 @@ const Projects = () => {
 				autoplay 
 				ref={getCarouselRef} 
 				dots={false} 
-				dotPosition="bottom" 
 				accessibility={false} 
-				draggable={true}
-				lazyLoad="ondemand"
+				lazyLoad="progressive"
+				speed={400}
 			>
 				{
 					data.gbkel.projects

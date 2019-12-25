@@ -16,6 +16,7 @@ export const Container = styled.div`
 
 	@media only screen and (max-width: 576px) {
 		left: ${({ position }) => position === "bottom" && "-70px"};
+		display: ${({ position }) => position === "bottom" && "none"};
 	}
 `
 
@@ -24,6 +25,10 @@ export const LineHolder = styled.div`
 	height: 60px;
 	background-color: #FFF;
 	opacity: 0.7;
+
+	@media only screen and (max-width: 576px) {
+		height: 40px;
+	}
 `
 
 export const Info = styled.span`

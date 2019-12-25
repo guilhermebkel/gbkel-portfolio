@@ -27,8 +27,8 @@ export const Project = styled.div`
 	flex-direction: row;
 
 	@media only screen and (max-width: 1200px) {
-		max-width: 850px;
-		min-width: 800px;
+		max-width: 800px;
+		min-width: 750px;
 	}
 
 	@media only screen and (max-width: 992px) {
@@ -88,9 +88,19 @@ export const Title = styled.h1`
 	margin-bottom: 0;
 	line-height: 65px;
 
+	@media only screen and (max-width: 1600px) {
+		font-size: 55px;
+		line-height: 65px;
+	}
+
+	@media only screen and (max-width: 1200px) {
+		font-size: 45px;
+		line-height: 55px;
+	}
+
 	@media only screen and (max-width: 992px) {
-		font-size: 40px;
-		line-height: 50px;
+		font-size: 30px;
+		line-height: 40px;
 	}
 `
 
@@ -100,7 +110,6 @@ export const Description = styled.span`
 
 	@media only screen and (max-width: 992px) {
 		font-size: 16px;
-
 		text-align: center;
 	}
 `
@@ -117,6 +126,10 @@ export const Mockup = styled.div`
   background-size: cover;
 
 	margin: 0 auto;
+
+	@media only screen and (max-width: 576px) {
+		height: 150px;
+	}
 `
 
 export const ExternalLink = styled.a`
