@@ -20,11 +20,19 @@ export const Container = styled.footer`
 export const Languages = styled.div`
 	color: #FFF;
 	font-size: 15px;
+
+	@media only screen and (max-width: 576px) {
+		display: none;
+	}
 `
 
 export const SocialMedias = styled.div`
 	display: flex;
 	justify-content: space-between;
+
+	@media only screen and (max-width: 576px) {
+		width: 100%;
+	}
 `
 
 export const SocialLink = styled.a`
