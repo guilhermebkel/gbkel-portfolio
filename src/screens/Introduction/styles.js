@@ -30,7 +30,7 @@ export const Title = styled.h1`
 
 	width: 70%;
 
-	text-shadow: 2px 5px 20px rgba(0, 0, 0, 0.05);
+	text-shadow: 2px 5px 20px rgba(0, 0, 0, 0.01);
 
 	b {
 		opacity: 0.9;
