@@ -15,8 +15,7 @@ export const Container = styled.div`
 	align-items: center;
 
 	@media only screen and (max-width: 576px) {
-		left: ${({ position }) => position === "bottom" && "-70px"};
-		display: ${({ position }) => position === "bottom" && "none"};
+		bottom: ${({ position }) => position === "bottom" && "60px"};
 	}
 `
 
@@ -28,6 +27,7 @@ export const LineHolder = styled.div`
 
 	@media only screen and (max-width: 576px) {
 		height: 40px;
+		display: ${({ position }) => position === "bottom" && "none"};
 	}
 `
 
@@ -66,5 +66,9 @@ export const LightningBall = styled.div`
 			transform: scale(0.95);
 			box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
 		}
+	}
+
+	@media only screen and (max-width: 576px) {
+		display: ${({ position }) => position === "bottom" && "none"};
 	}
 `

@@ -18,7 +18,7 @@ export const Container = styled.nav`
 	z-index: 150;
 
 	@media only screen and (max-width: 576px) {
-		height: 35px;
+		height: 30px;
 	}
 `
 

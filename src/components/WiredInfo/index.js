@@ -13,11 +13,11 @@ const WiredInfo = (props) => {
 					? (<>
 						<Info>{info}</Info>
 						<LightningBall position={position} />
-						<LineHolder />
+						<LineHolder position={position} />
 					</>)
 					: position === "top"
 						? (<>
-							<LineHolder />
+							<LineHolder position={position} />
 							<LightningBall position={position} />
 							<Info>{info}</Info>	
 						</>)

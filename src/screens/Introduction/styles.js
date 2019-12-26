@@ -19,6 +19,12 @@ export const Background = styled.div`
   background-size: cover;
   background-attachment: fixed;
 	filter: grayscale(100%);
+
+	@media only screen and (max-width: 576px) {
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${({ image }) => image});
+		background-size: cover;
+		background-attachment: fixed;
+	}
 `
 
 export const Title = styled.h1`
