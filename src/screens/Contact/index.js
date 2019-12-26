@@ -134,10 +134,6 @@ const Contact = (props) => {
 						/>
 				)}
 			</ContactForm>
-			<WiredInfo 
-				info=""
-				position="bottom"
-			/>
 		</Screen>
 	)
 }
