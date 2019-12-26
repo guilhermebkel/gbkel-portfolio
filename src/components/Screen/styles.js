@@ -9,5 +9,9 @@ export const Container = styled.div`
 	background-color: ${(props) => props.color === "primary" && props.theme.primary};
 	background-color: ${(props) => props.color === "secondary" && props.theme.secondary};
 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 	user-select: none;
 `

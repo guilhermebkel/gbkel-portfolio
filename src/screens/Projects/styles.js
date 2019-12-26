@@ -10,10 +10,9 @@ export const Screen = styled(ScreenComponent)`
 `
 
 export const Content = styled.div`
-	height: 100vh;
 	width: 100vw;
 
-	display: flex;
+	display: flex !important;
 	justify-content: center;
 	align-items: center;
 `

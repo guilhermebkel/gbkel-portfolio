@@ -55,18 +55,18 @@ const Projects = () => {
 				position="top"
 			/>
 			<Carousel 
-				autoplay 
+				autoplay={true}
 				ref={getCarouselRef} 
 				dots={false} 
-				accessibility={false} 
+				accessibility={true} 
 				lazyLoad="progressive"
 				speed={400}
+				pauseOnFocus={true}
 			>
 				{
 					data.gbkel.projects
 						.filter(project => project.active)
 						.map((project, index) => (
-							<div key={index}>
 								<Content>					
 									<Project>
 										<Column width="50%" order="2">
@@ -114,7 +114,6 @@ const Projects = () => {
 										</Column>
 									</Project>
 								</Content>
-							</div>
 						))
 				}
 			</Carousel>
