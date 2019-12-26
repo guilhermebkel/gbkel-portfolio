@@ -54,7 +54,7 @@ export const Column = styled.div`
 	justify-content: center;
 
 	@media only screen and (max-width: 992px) {
-		order: ${({ order }) => order === 1 ? 2 : 1};
+		order: 1;
 	}
 `
 

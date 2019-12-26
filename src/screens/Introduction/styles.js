@@ -14,7 +14,7 @@ export const Background = styled.div`
   width: 100vw;
   height: 100vh;
 
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${({ image }) => image});
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${({ image }) => image});
   background-position: center; 
   background-size: cover;
   background-attachment: fixed;
