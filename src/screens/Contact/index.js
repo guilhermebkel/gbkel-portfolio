@@ -59,7 +59,7 @@ const Contact = (props) => {
 				{
 					formStatus === "none" && (
 						<>
-							<Form.Item label="Name" >
+							<Form.Item label="Name" colon={false}>
 								{getFieldDecorator('name', {
 									initialValue: initialValues.name,
 									rules: [
@@ -70,7 +70,7 @@ const Contact = (props) => {
 									],
 								})(<Input placeholder="Please type your name" />)}
 							</Form.Item>
-							<Form.Item label="E-mail">
+							<Form.Item label="E-mail" colon={false}>
 								{getFieldDecorator('email', {
 									initialValue: initialValues.email,
 									rules: [
@@ -81,7 +81,7 @@ const Contact = (props) => {
 									],
 								})(<Input placeholder="Please type your email" />)}
 							</Form.Item>
-							<Form.Item label="Subject">
+							<Form.Item label="Subject" colon={false}>
 								{getFieldDecorator('subject', {
 									initialValue: initialValues.subject,
 									rules: [
@@ -92,7 +92,7 @@ const Contact = (props) => {
 									],
 								})(<Input placeholder="Please type the subject" />)}
 							</Form.Item>
-							<Form.Item label="Message">
+							<Form.Item label="Message" colon={false}>
 								{getFieldDecorator('message', {
 									initialValue: initialValues.message,
 									rules: [
