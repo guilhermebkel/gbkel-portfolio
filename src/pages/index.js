@@ -7,6 +7,7 @@ import Footer from "../components/Footer"
 import Introduction from "../screens/Introduction"
 import Projects from "../screens/Projects"
 import Skills from "../screens/Skills"
+import Contact from "../screens/Contact"
 
 import { Container } from "./styles"
 
@@ -60,7 +61,8 @@ const App = () => {
 			>
 				<Introduction />
 				<Projects />
-				<Skills />	
+				<Skills />
+				<Contact />
 			</Carousel>
 
 			<Footer />

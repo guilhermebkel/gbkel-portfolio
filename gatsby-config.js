@@ -62,6 +62,13 @@ module.exports = {
         ignore: ["**/styles.js"]
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`,
+      }
+    },
     "gatsby-plugin-netlify-cache"
     // "gatsby-plugin-offline",
   ]
