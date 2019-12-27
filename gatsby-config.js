@@ -62,7 +62,6 @@ module.exports = {
         path: `${__dirname}/src/`,
       }
     },
-    "gatsby-plugin-page-load-delay",
     "gatsby-plugin-netlify-cache"
     // "gatsby-plugin-offline",
   ]

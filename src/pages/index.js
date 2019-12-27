@@ -43,7 +43,6 @@ const App = () => {
 	}
 
 	useEffect(() => {
-		window.pageExitTime = 2000
 		window.addEventListener("wheel", onWheel)
 		window.addEventListener("keydown", onKeyPress)
 	})
