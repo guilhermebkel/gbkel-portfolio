@@ -26,9 +26,9 @@ const Contact = (props) => {
 		event.preventDefault()
 
 		validateFields(async (error, contactData) => {
-			send("SUBMIT")
-
       if (!error) {
+				send("SUBMIT")
+
         try {
 					await api.post("/mail/inquery", contactData)
 		
