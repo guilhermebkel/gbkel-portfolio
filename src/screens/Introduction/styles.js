@@ -34,7 +34,7 @@ export const Title = styled.h1`
 	text-align: center;
 	line-height: 80px;
 
-	width: 70%;
+	margin: auto auto 30px auto;
 
 	text-shadow: 2px 5px 20px rgba(0, 0, 0, 0.01);
 
@@ -69,4 +69,6 @@ export const Description = styled(Title)`
 	line-height: 50px;
 
 	font-weight: normal;
+
+	width: 70%;
 `

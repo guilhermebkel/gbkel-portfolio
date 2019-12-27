@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import SlideEffect from "react-reveal/Slide"
 
 import { Container, Info, LineHolder, LightningBall } from "./styles"
 
@@ -11,15 +12,17 @@ const WiredInfo = (props) => {
 			{
 				position === "bottom"
 					? (<>
-						<Info>{info}</Info>
-						<LightningBall position={position} />
-						<LineHolder position={position} />
+						<SlideEffect bottom>
+							<Info>{info}</Info>	
+							<LightningBall position={position} />
+							<LineHolder position={position} />
+						</SlideEffect>
 					</>)
 					: position === "top"
 						? (<>
 							<LineHolder position={position} />
 							<LightningBall position={position} />
-							<Info>{info}</Info>	
+							<Info>{info}</Info>
 						</>)
 						: null
 			}

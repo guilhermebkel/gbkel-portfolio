@@ -1,4 +1,5 @@
 import React from "react"
+import SlideEffect from "react-reveal/Slide"
 
 import { Title, Content, Description, Background } from "./styles"
 
@@ -12,12 +13,14 @@ const Introduction = () => {
 		<Screen color="primary">
 			<Background image={beachBlueBackground}>
 				<Content>
-					<Title>
-						Hello, I'm <b>Guilherme Bromonschenkel</b>.
-					</Title>
-					<Description>
-						A <b>software developer</b> passionate about programming, software architecture, complex systems and technologies in general. 
-					</Description>
+					<SlideEffect bottom cascade>
+						<Title>
+							Hello, I'm <b>Guilherme Bromonschenkel</b>.
+						</Title>
+						<Description>
+							A <b>software developer</b> passionate about programming, software architecture, complex systems and technologies in general. 
+						</Description>
+					</SlideEffect>
 				</Content>
 				<WiredInfo 
 					info="scroll down to discover more"

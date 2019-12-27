@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { Carousel } from "antd"
+import SlideEffect from "react-reveal/Slide"
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"

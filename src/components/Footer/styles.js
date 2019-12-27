@@ -9,12 +9,18 @@ export const Container = styled.footer`
 
 	display: flex;
 	align-content: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 
 	padding: 0 50px;
 	
 	z-index: 150;
+
+	@media only screen and (max-width: 576px) {
+		.react-reveal {
+			margin: auto;
+		}
+	}
 `
 
 export const Languages = styled.div`
