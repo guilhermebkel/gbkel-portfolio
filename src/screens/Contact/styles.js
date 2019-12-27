@@ -13,6 +13,18 @@ export const ContactForm = styled(Form)`
 	margin: auto;
 	border-radius: 5px;
 
+	label {
+		font-size: 16px;
+	}
+
+	input::placeholder, textarea::placeholder {
+		font-size: 14px;
+	}
+
+	button {
+		font-size: 15px;
+	}
+
 	@media only screen and (max-width: 576px) {
 		margin: auto;
 		max-width: 300px;

@@ -1,18 +1,20 @@
 import React, { useState } from "react"
 import { Input, Form, Button, Result } from "antd"
+import { useMachine } from "@xstate/react"
 
 import WiredInfo from "../../components/WiredInfo"
 import Screen from "../../components/Screen"
 
 import api from "../../services/api"
 
+import { contactFormMachine } from "./machines"
+
 import { ContactForm } from "./styles"
 
 const Contact = (props) => {
 	const { getFieldDecorator, validateFields } = props.form
 
-	const [formStatus, setFormStatus] = useState("none")
-	const [loading, setLoading] = useState(false)
+	const [current, send] = useMachine(contactFormMachine)
 	const [initialValues, setInitialValues] = useState({
 		name: '',
 		email: '',
@@ -24,13 +26,13 @@ const Contact = (props) => {
 		event.preventDefault()
 
 		validateFields(async (error, contactData) => {
-			setLoading(true)
+			send("SUBMIT")
 
       if (!error) {
         try {
 					await api.post("/mail/inquery", contactData)
 		
-					setFormStatus("success")
+					send("SUCCESS")
 
 					setInitialValues({
 						name: '',
@@ -39,12 +41,11 @@ const Contact = (props) => {
 						message: ''
 					})
 				} catch(error) {
-					setFormStatus("error")
+					send("FAIL")
+
 					setInitialValues(contactData)
 				}
 			}
-			
-			setLoading(false)
     });		
 	}
 
@@ -57,7 +58,7 @@ const Contact = (props) => {
 			
 			<ContactForm layout="horizontal" onSubmit={handleSubmitEmail}>
 				{
-					formStatus === "none" && (
+					(current.matches("idle") || current.matches("submitting")) && (
 						<>
 							<Form.Item label="Name" colon={false}>
 								{getFieldDecorator('name', {
@@ -103,33 +104,38 @@ const Contact = (props) => {
 									],
 								})(<Input.TextArea placeholder="Please type the message" />)}
 							</Form.Item>
-							<Button type="primary" htmlType="submit" loading={loading} block={true}>
-								Send email
+							<Button 
+								type="primary"
+								htmlType="submit"
+								loading={current.matches("submitting") ? true : false}
+								block={true}
+							>
+								Send mail
 							</Button>
 					</>
 				)}
 
 				{
-						formStatus === "success" && (
+						current.matches("succeded") && (
 						<Result
 							status="success"
 							title="Successfully sent the email!"
 							subTitle="I'll be in touch with you in the next 24 hours."
 							extra={[
-								<Button type="primary" onClick={() => setFormStatus("none")}>Send a new mail</Button>,
-								<Button onClick={() => setFormStatus("none")}>Close</Button>
+								<Button type="primary" onClick={() => send("CLOSE")}>Send a new mail</Button>,
+								<Button onClick={() => send("CLOSE")}>Close</Button>
 							]}
 						/>
 				)}
 
 				{
-						formStatus === "error" && (
+						current.matches("failed") && (
 						<Result
 							status="warning"
 							title="Something went wrong"
 							subTitle="It looks like my online service is down. Please wait some seconds and try again!"
 							extra={[
-								<Button type="primary" onClick={() => setFormStatus("none")}>Try Again</Button>,
+								<Button type="primary" onClick={() => send("RETRY")}>Try Again</Button>,
 							]}
 						/>
 				)}
