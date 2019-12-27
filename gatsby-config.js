@@ -18,13 +18,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-nprogress",
-      options: {
-        color: "#0598e3",
-        showSpinner: true
-      }
-    },
-    {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "UA-140879800-1",
@@ -69,6 +62,7 @@ module.exports = {
         path: `${__dirname}/src/`,
       }
     },
+    "gatsby-plugin-page-load-delay",
     "gatsby-plugin-netlify-cache"
     // "gatsby-plugin-offline",
   ]
