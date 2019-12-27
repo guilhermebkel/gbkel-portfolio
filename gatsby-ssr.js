@@ -4,7 +4,7 @@ import siteMetadata from "./config/metadata"
 
 export { wrapRootElement } from "./gatsby/wrapRootElement"
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
 	setHeadComponents([
     <meta name="theme-color" content="#FFF" key="theme-color" />,
     <meta property="og:title" content={siteMetadata.title} key="og:title" />,
@@ -15,5 +15,9 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <meta name="description" content={siteMetadata.description} key="description" />,
     <meta name="keywords" content={siteMetadata.keywords} key="keywords" />,
 		<title key="title">{siteMetadata.title}</title>
-	])
+  ])
+  
+  setPostBodyComponents([
+    <script src="js/three.min.js" key="threeJs"></script>
+  ])
 }
