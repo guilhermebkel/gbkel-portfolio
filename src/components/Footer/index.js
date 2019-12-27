@@ -2,7 +2,7 @@ import React from "react"
 import SlideEffect from "react-reveal/Slide"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import { Container, Languages, SocialMedias, SocialLink } from "./styles"
+import { Container, SocialMedias, SocialLink } from "./styles"
 
 import { social } from "../../../config/metadata"
 
@@ -13,9 +13,6 @@ const Footer = () => {
 	return (
 		<Container>
 			<SlideEffect bottom>
-				{/* <Languages>
-					<b>Pt.</b> En.
-				</Languages> */}
 				<SocialMedias>
 					<SocialLink href={socialMediasMap["linkedin"]} target="_blank">
 						<FontAwesomeIcon icon={["fab", "linkedin"]} color="#FFF" size="1x" />

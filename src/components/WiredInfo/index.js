@@ -10,21 +10,20 @@ const WiredInfo = (props) => {
 	return (
 		<Container position={position}>
 			{
-				position === "bottom"
-					? (<>
-						<SlideEffect bottom>
-							<Info>{info}</Info>	
-							<LightningBall position={position} />
-							<LineHolder position={position} />
-						</SlideEffect>
-					</>)
-					: position === "top"
-						? (<>
-							<LineHolder position={position} />
-							<LightningBall position={position} />
-							<Info>{info}</Info>
-						</>)
-						: null
+				position === "bottom" && (<>
+					<SlideEffect bottom>
+						<Info>{info}</Info>	
+						<LightningBall position={position} />
+						<LineHolder position={position} />
+					</SlideEffect>
+				</>)
+			}
+			{
+				position === "top" && (<>
+					<LineHolder position={position} />
+					<LightningBall position={position} />
+					<Info>{info}</Info>
+				</>)
 			}
 		</Container>
 	)
