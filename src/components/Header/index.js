@@ -1,5 +1,5 @@
 import React from "react"
-import RotateEffect from "react-reveal/Rotate"
+import SlideEffect from "react-reveal/Slide"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { Container, Logo } from "./styles"
@@ -13,9 +13,9 @@ const Header = () => {
 
 	return (
 		<Container>
-			<RotateEffect>
+			<SlideEffect bottom>
 				<Logo src={logoWhite} onClick={() => reloadPage()} />
-			</RotateEffect>
+			</SlideEffect>
 			{/* <FontAwesomeIcon icon="bars" color="#FFF" size="lg" /> */}
 		</Container>
 	)
