@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Input, Form, Button, Result } from "antd"
 import { useMachine } from "@xstate/react"
+import RubberBandEffect from "react-reveal/RubberBand"
 
 import WiredInfo from "../../components/WiredInfo"
 import Screen from "../../components/Screen"
@@ -116,28 +117,32 @@ const Contact = (props) => {
 				)}
 
 				{
-						current.matches("succeded") && (
-						<Result
-							status="success"
-							title="Successfully sent the email!"
-							subTitle="I'll be in touch with you in the next 24 hours."
-							extra={[
-								<Button type="primary" onClick={() => send("CLOSE")}>Send a new mail</Button>,
-								<Button onClick={() => send("CLOSE")}>Close</Button>
-							]}
-						/>
+					current.matches("succeded") && (
+						<RubberBandEffect>
+							<Result
+								status="success"
+								title="Successfully sent the email!"
+								subTitle="I'll be in touch with you in the next 24 hours."
+								extra={[
+									<Button type="primary" onClick={() => send("CLOSE")}>Send a new mail</Button>,
+									<Button onClick={() => send("CLOSE")}>Close</Button>
+								]}
+							/>
+						</RubberBandEffect>
 				)}
 
 				{
-						current.matches("failed") && (
-						<Result
-							status="warning"
-							title="Something went wrong"
-							subTitle="It looks like my online service is down. Please wait some seconds and try again!"
-							extra={[
-								<Button type="primary" onClick={() => send("RETRY")}>Try Again</Button>,
-							]}
-						/>
+					current.matches("failed") && (
+						<RubberBandEffect>
+							<Result
+								status="warning"
+								title="Something went wrong"
+								subTitle="It looks like my online service is down. Please wait some seconds and try again!"
+								extra={[
+									<Button type="primary" onClick={() => send("RETRY")}>Try Again</Button>,
+								]}
+							/>
+						</RubberBandEffect>
 				)}
 			</ContactForm>
 		</Screen>
