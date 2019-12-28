@@ -60,7 +60,7 @@ const Contact = (props) => {
 				{
 					(current.matches("idle") || current.matches("submitting")) && (
 						<>
-							<Form.Item label="Name" colon={false}>
+							<Form.Item>
 								{getFieldDecorator('name', {
 									initialValue: initialValues.name,
 									rules: [
@@ -69,9 +69,9 @@ const Contact = (props) => {
 											message: 'Please type your name',
 										},
 									],
-								})(<Input placeholder="Please type your name" />)}
+								})(<Input placeholder="Name" />)}
 							</Form.Item>
-							<Form.Item label="E-mail" colon={false}>
+							<Form.Item>
 								{getFieldDecorator('email', {
 									initialValue: initialValues.email,
 									rules: [
@@ -80,9 +80,9 @@ const Contact = (props) => {
 											message: 'Please type your email',
 										},
 									],
-								})(<Input placeholder="Please type your email" />)}
+								})(<Input placeholder="Email" />)}
 							</Form.Item>
-							<Form.Item label="Subject" colon={false}>
+							<Form.Item>
 								{getFieldDecorator('subject', {
 									initialValue: initialValues.subject,
 									rules: [
@@ -91,9 +91,9 @@ const Contact = (props) => {
 											message: 'Please type the subject',
 										},
 									],
-								})(<Input placeholder="Please type the subject" />)}
+								})(<Input placeholder="Subject" />)}
 							</Form.Item>
-							<Form.Item label="Message" colon={false}>
+							<Form.Item>
 								{getFieldDecorator('message', {
 									initialValue: initialValues.message,
 									rules: [
@@ -102,7 +102,7 @@ const Contact = (props) => {
 											message: 'Please type the message',
 										},
 									],
-								})(<Input.TextArea placeholder="Please type the message" />)}
+								})(<Input.TextArea placeholder="Message" />)}
 							</Form.Item>
 							<Button 
 								type="primary"

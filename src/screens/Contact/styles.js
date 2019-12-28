@@ -17,8 +17,13 @@ export const ContactForm = styled(Form)`
 		font-size: 16px;
 	}
 
+	input, textarea {
+		color: #111;
+	}
+
 	input::placeholder, textarea::placeholder {
-		font-size: 14px;
+		font-size: 15px;
+		color: #999;
 	}
 
 	button {
@@ -26,8 +31,6 @@ export const ContactForm = styled(Form)`
 	}
 
 	@media only screen and (max-width: 576px) {
-		margin: auto;
 		max-width: 300px;
-		padding: 10px 20px 15px 20px;
 	}
 `
