@@ -22,7 +22,7 @@ const Contact = (props) => {
 		message: ''
 	})
 
-	const handleSubmitEmail = (event) => {
+	const handleSubmitMail = (event) => {
 		event.preventDefault()
 
 		validateFields(async (error, contactData) => {
@@ -56,7 +56,7 @@ const Contact = (props) => {
 				position="top"
 			/>
 			
-			<ContactForm layout="horizontal" onSubmit={handleSubmitEmail}>
+			<ContactForm layout="horizontal" onSubmit={handleSubmitMail}>
 				{
 					(current.matches("idle") || current.matches("submitting")) && (
 						<>
