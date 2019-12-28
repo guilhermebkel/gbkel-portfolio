@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import window from "global"
 import { Button } from "antd"
 
 import WiredInfo from "../../components/WiredInfo"
@@ -60,7 +61,7 @@ const Skills = () => {
 
   useEffect(() => {
     window.addEventListener("resize", onResize)
-  }, [])
+  })
 
   return (
     <Screen color="secondary">
