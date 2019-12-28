@@ -18,6 +18,6 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   ])
   
   setPostBodyComponents([
-    <script src="js/three.min.js" key="threeJs"></script>
+    <script src="js/tagcanvas.min.js" type="text/javascript" key="tag-cloud-canvas"></script>,
   ])
 }

@@ -6,12 +6,24 @@ export const Screen = styled(ScreenComponent)`
 	flex-direction: row;
 `
 
+export const DescriptionContainer = styled.div`
+	margin: auto 50px auto auto;
+
+	button {
+		font-size: 15px;
+	}
+`
+
 export const Description = styled.span`
-	font-size: 15px;
+	font-size: 18px;
 	color: #FFF;
 
-	margin: auto 0 auto auto;
-	padding-right: 50px;
+	text-shadow: 2px 5px 20px rgba(0, 0, 0, 0.01);
+
+	strong {
+		font-size: 60px;
+		line-height: 65px;
+	}
 `
 
 export const Col = styled.div`
@@ -19,15 +31,5 @@ export const Col = styled.div`
 	height: 100%;
 
 	display: flex;
-
-	@media only screen and (max-width: 576px) {
-		display: ${({ disableOnMobile }) => disableOnMobile ? "none" : "flex"};
-		width: ${({ disableOnMobile }) => !disableOnMobile && "100%"};
-
-		span {
-			padding: 30px;
-			text-align: center;
-			margin: auto;
-		}
-	}
+	flex-direction: column;
 `

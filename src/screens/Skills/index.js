@@ -1,9 +1,11 @@
 import React from "react"
+import { Button } from "antd"
 
 import WiredInfo from "../../components/WiredInfo"
 import Screen from "../../components/Screen"
+import Divider from "../../components/Divider"
 
-import { Description, Col } from "./styles"
+import { Description, Col, DescriptionContainer } from "./styles"
 
 import SkillsGlobe from './SkillsGlobe'
 
@@ -14,6 +16,10 @@ const Skills = () => {
 		"kafka", "serverless", "docker", "travis", "socket"
 	]
 
+	const handleOpenSkillsPage = () => {
+		window.open("https://github.com/guilhermebkel/life-long-road/blob/master/skills.md", "_blank")
+	}
+
 	return (
 		<Screen color="secondary" flexDirection="row">
 			<WiredInfo 
@@ -21,9 +27,26 @@ const Skills = () => {
 				position="top"
 			/>
 			<Col width="30%">
-				<Description>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-				</Description>
+				<DescriptionContainer>
+					<Description>
+						<strong>"Keep moving, always improving."</strong>
+
+						<Divider size="large" />
+
+						I have worked with <b>full-stack projects</b>, building applications from the back-end to the front-end,
+						what helped me improving skills that revolve around <b>software architecture</b>, <b>cloud computing</b>,
+						<b> programming logic</b> and <b>interface design</b>.
+					</Description>
+
+					<Divider size="large" />
+
+					<Button
+						type="primary"
+						onClick={() => handleOpenSkillsPage()}
+					>
+						See more skills
+					</Button>
+				</DescriptionContainer>
 			</Col>
 
 			<Col width="30%" disableOnMobile={true}>

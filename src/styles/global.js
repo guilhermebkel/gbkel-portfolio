@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
-  }
+	}
 
   label {
     font-size: 18px;
