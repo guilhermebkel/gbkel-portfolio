@@ -4,13 +4,17 @@ import PropTypes from "prop-types"
 import { Container } from "./styles"
 
 const Screen = (props) => {
-	const { color, children } = props
+	const { color, children, flexDirection } = props
 
 	return (
-		<Container color={color}>
+		<Container color={color} flexDirection={flexDirection}>
 			{children}
 		</Container>
 	)
+}
+
+Screen.defaultProps = {
+	flexDirection: "column"
 }
 
 Screen.propTypes = {
@@ -18,7 +22,8 @@ Screen.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.node),
 		PropTypes.node
-	]).isRequired
+	]).isRequired,
+	flexDirection: PropTypes.string
 }
 
 export default Screen
