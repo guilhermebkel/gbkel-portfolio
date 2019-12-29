@@ -83,3 +83,22 @@ export const Text = styled.span`
 		}
 	}
 `
+
+export const ExternalLink = styled.a`
+	color: #FFF;
+	font-weight: bold;
+	font-size: 15px;
+
+	svg {
+		margin-right: 2px;
+	}
+
+	&:hover {
+		color: #FFF;
+		text-decoration: underline;
+	}
+
+	@media only screen and (max-width: 992px) {
+		margin: auto;
+	}
+`

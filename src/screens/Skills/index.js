@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
 import window from "global"
-import { Button } from "antd"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import WiredInfo from "../../components/WiredInfo"
 import Screen from "../../components/Screen"
 import Divider from "../../components/Divider"
 
-import { Text, GlobeContainer, DescriptionContainer, Container } from "./styles"
+import { Text, GlobeContainer, DescriptionContainer, Container, ExternalLink } from "./styles"
 
 import SkillsGlobe from "./SkillsGlobe"
 
@@ -52,13 +52,6 @@ const Skills = () => {
     setGlobeSize(getResponsiveSize(target.screen.width))
   }
 
-  const handleOpenSkillsPage = () => {
-    window.open(
-      "https://github.com/guilhermebkel/life-long-road/blob/master/skills.md",
-      "_blank"
-    )
-  }
-
   useEffect(() => {
     window.addEventListener("resize", onResize)
   })
@@ -75,17 +68,17 @@ const Skills = () => {
           <Text>
             <strong>"Keep moving, always improving."</strong>
             <Divider size="large" />I have worked with{" "}
-            <b>full-stack projects</b>, building applications from the back-end
+            full-stack projects, building applications from the back-end
             to the front-end, what helped me improving skills that revolve
-            around <b>software architecture</b>, <b>cloud computing</b>,
-            <b> programming logic</b> and <b>interface design</b>.
+            around software architecture, cloud computing,{" "}
+            programming logic and interface design.
           </Text>
 
           <Divider size="large" />
 
-          <Button type="primary" onClick={() => handleOpenSkillsPage()}>
-            See more skills
-          </Button>
+          <ExternalLink href="https://github.com/guilhermebkel/life-long-road/blob/master/skills.md" target="_blank">
+            <FontAwesomeIcon icon="code" size="sm" /> see more skills
+					</ExternalLink>
         </DescriptionContainer>
 
 				<GlobeContainer>

@@ -10,7 +10,7 @@ import beachBlackBackground from "../../assets/backgrounds/beach_black.jpg"
 
 const Introduction = () => {
 	return (
-		<Screen color="primary">
+		<Screen color="secondary">
 			<Background image={beachBlackBackground}>
 				<Content>
 					<SlideEffect bottom cascade>
