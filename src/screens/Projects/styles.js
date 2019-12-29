@@ -132,25 +132,6 @@ export const Mockup = styled.div`
 	}
 `
 
-export const ExternalLink = styled.a`
-	color: #FFF;
-	font-weight: bold;
-	font-size: 15px;
-
-	svg {
-		margin-right: 2px;
-	}
-
-	&:hover {
-		color: #FFF;
-		text-decoration: underline;
-	}
-
-	@media only screen and (max-width: 992px) {
-		margin: auto;
-	}
-`
-
 export const SelectorGroup = styled.div`
 	margin-top: 20px;
 
@@ -187,5 +168,11 @@ export const Selector = styled.button`
 	&:hover {
 		transition: opacity 0.15s ease-in-out;
 		opacity: 1;
+	}
+`
+
+export const ExternalLinkContainer = styled.div`
+	@media only screen and (max-width: 992px) {
+		margin: 0 auto;
 	}
 `

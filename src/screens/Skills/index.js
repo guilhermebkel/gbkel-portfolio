@@ -6,7 +6,9 @@ import WiredInfo from "../../components/WiredInfo"
 import Screen from "../../components/Screen"
 import Divider from "../../components/Divider"
 
-import { Text, GlobeContainer, DescriptionContainer, Container, ExternalLink } from "./styles"
+import { Text, GlobeContainer, DescriptionContainer, Container } from "./styles"
+
+import { ExternalLink } from "../../styles"
 
 import SkillsGlobe from "./SkillsGlobe"
 

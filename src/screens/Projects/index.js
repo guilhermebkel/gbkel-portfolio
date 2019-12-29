@@ -10,16 +10,18 @@ import {
 	Title, 
 	Description, 
 	Mockup, 
-	ExternalLink,
 	SelectorGroup,
 	Selector,
 	TitleGroup,
 	ProjectIndex,
-	Content
+	Content,
+	ExternalLinkContainer
 } from "./styles"
 
 import Divider from "../../components/Divider"
 import WiredInfo from "../../components/WiredInfo"
+
+import { ExternalLink } from "../../styles"
 
 const Projects = () => {
 	let next
@@ -102,15 +104,19 @@ const Projects = () => {
 
 											<Divider size="large" />
 
-											<ExternalLink href={project.github_url} target="_blank">
-												<FontAwesomeIcon icon={["fab", "github"]} size="sm" /> view code on github
-											</ExternalLink>
+											<ExternalLinkContainer>
+												<ExternalLink href={project.github_url} target="_blank">
+													<FontAwesomeIcon icon={["fab", "github"]} size="sm" /> view code on github
+												</ExternalLink>
+											</ExternalLinkContainer>
 
 											<Divider size="small" />
 
-											<ExternalLink href={project.live_url} target="_blank">
-												<FontAwesomeIcon icon={["fab", "chrome"]} size="sm" /> view project on live
-											</ExternalLink>
+											<ExternalLinkContainer>
+												<ExternalLink href={project.live_url} target="_blank">
+													<FontAwesomeIcon icon={["fab", "chrome"]} size="sm" /> view project on live
+												</ExternalLink>
+											</ExternalLinkContainer>
 										</Column>
 									</Project>
 								</Content>
