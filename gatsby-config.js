@@ -3,7 +3,6 @@ const siteMetadata = require("./config/metadata")
 module.exports = {
   siteMetadata,
   plugins: [
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",

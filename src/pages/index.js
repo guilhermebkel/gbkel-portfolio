@@ -11,7 +11,8 @@ import Contact from "../screens/Contact"
 
 import { Container } from "./styles"
 
-const App = () => {
+const App = (location) => {
+	console.log(location)
   let next
   let previous
 
