@@ -30,7 +30,7 @@ module.exports = {
 		},
 		{
 			name: "stackoverflow",
-			url: "https://stackoverflow.com/users/12550949/guilherme-bromonschenkel"
+			url: "https://stackoverflow.com/users/12550949/guilherme-bromonschenkel?tab=profile"
 		}
 	]
 }
