@@ -6,12 +6,12 @@ import { Title, Content, Description, Background } from "./styles"
 import WiredInfo from "../../components/WiredInfo"
 import Screen from "../../components/Screen"
 
-import beachBlueBackground from "../../assets/backgrounds/beach_blue.jpg"
+import beachBlackBackground from "../../assets/backgrounds/beach_black.jpg"
 
 const Introduction = () => {
 	return (
 		<Screen color="primary">
-			<Background image={beachBlueBackground}>
+			<Background image={beachBlackBackground}>
 				<Content>
 					<SlideEffect bottom cascade>
 						<Title>
