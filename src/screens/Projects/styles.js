@@ -127,6 +127,7 @@ export const Mockup = styled.div`
 	margin: 0 auto;
 
 	@media only screen and (max-width: 576px) {
+		width: 250px;
 		height: 150px;
 	}
 `

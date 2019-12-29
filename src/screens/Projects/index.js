@@ -69,7 +69,7 @@ const Projects = () => {
 						.map((project, index) => (
 								<Content>					
 									<Project>
-										<Column width="50%" order="2">
+										<Column width="500px" order="2">
 											<Mockup image={project.image_url} />
 
 											<SelectorGroup>

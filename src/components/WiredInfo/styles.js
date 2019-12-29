@@ -26,7 +26,7 @@ export const LineHolder = styled.div`
 	opacity: 0.7;
 
 	@media only screen and (max-width: 576px) {
-		height: 40px;
+		height: 30px;
 		display: ${({ position }) => position === "bottom" && "none"};
 	}
 `
