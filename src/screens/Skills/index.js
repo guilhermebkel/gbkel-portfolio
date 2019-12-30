@@ -48,12 +48,8 @@ const Skills = () => {
     }
   }
 
-  const [globeSize, setGlobeSize] = useState(
-    getResponsiveSize(window.innerWidth).globe
-  )
-  const [fontSize, setFontSize] = useState(
-    getResponsiveSize(window.innerWidth).font
-  )
+  const [globeSize, setGlobeSize] = useState(600)
+  const [fontSize, setFontSize] = useState(17)
 
   const onResize = ({ target }) => {
     setFontSize(getResponsiveSize(target.screen.width).font)
@@ -62,6 +58,8 @@ const Skills = () => {
 
   useEffect(() => {
     window.addEventListener("resize", onResize)
+    setFontSize(getResponsiveSize(window.innerWidth).font)
+    setGlobeSize(getResponsiveSize(window.innerWidth).globe)
   })
 
   return (
