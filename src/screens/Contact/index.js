@@ -106,6 +106,7 @@ const Contact = (props) => {
 								})(<Input.TextArea placeholder="Message" />)}
 							</Form.Item>
 							<Button 
+								icon="check"
 								type="primary"
 								htmlType="submit"
 								loading={current.matches("submitting") ? true : false}
@@ -124,8 +125,8 @@ const Contact = (props) => {
 								title="Successfully sent the email!"
 								subTitle="I'll be in touch with you in the next 24 hours."
 								extra={[
-									<Button type="primary" onClick={() => send("CLOSE")}>Send a new mail</Button>,
-									<Button onClick={() => send("CLOSE")}>Close</Button>
+									<Button type="primary" icon="reload" onClick={() => send("CLOSE")}>Send a new mail</Button>,
+									<Button icon="close" onClick={() => send("CLOSE")}>Close</Button>
 								]}
 							/>
 						</RubberBandEffect>
@@ -139,7 +140,7 @@ const Contact = (props) => {
 								title="Something went wrong"
 								subTitle="It looks like my online service is down. Please wait some seconds and try again!"
 								extra={[
-									<Button type="primary" onClick={() => send("RETRY")}>Try Again</Button>,
+									<Button type="danger" icon="reload" onClick={() => send("RETRY")}>Try Again</Button>,
 								]}
 							/>
 						</RubberBandEffect>
