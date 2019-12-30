@@ -8,6 +8,7 @@ import Introduction from "../screens/Introduction"
 import Projects from "../screens/Projects"
 import Skills from "../screens/Skills"
 import Contact from "../screens/Contact"
+import About from "../screens/About"
 
 import { Container } from "./styles"
 
@@ -62,6 +63,7 @@ const App = () => {
         <Introduction />
         <Projects />
         <Skills />
+        <About />
         <Contact />
       </Carousel>
 

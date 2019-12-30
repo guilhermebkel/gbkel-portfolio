@@ -124,7 +124,6 @@ const Projects = () => {
 				}
 			</Carousel>
 			<WiredInfo 
-				info=""
 				position="bottom"
 			/>
 		</Screen>

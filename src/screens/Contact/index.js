@@ -51,7 +51,7 @@ const Contact = (props) => {
 	}
 
 	return (
-		<Screen color="primary">
+		<Screen color="secondary">
 			<WiredInfo 
 				info="contact"
 				position="top"

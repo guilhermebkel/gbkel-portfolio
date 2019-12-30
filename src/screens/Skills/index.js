@@ -37,21 +37,27 @@ const Skills = () => {
   ]
 
   const getResponsiveSize = width => {
-		if (width <= 1200) {
-      return 400
+    if (width <= 768) {
+      return { globe: 200, font: 10 }
+		} else if (width <= 1200) {
+      return { globe: 400, font: 17 }
 		} else if (width <= 1366) {
-      return 500
+      return { globe: 500, font: 17 }
 		} else {
-      return 600
+      return { globe: 600, font: 17 }
     }
   }
 
   const [globeSize, setGlobeSize] = useState(
-    getResponsiveSize(window.innerWidth)
+    getResponsiveSize(window.innerWidth).globe
+  )
+  const [fontSize, setFontSize] = useState(
+    getResponsiveSize(window.innerWidth).font
   )
 
   const onResize = ({ target }) => {
-    setGlobeSize(getResponsiveSize(target.screen.width))
+    setFontSize(getResponsiveSize(target.screen.width).font)
+    setGlobeSize(getResponsiveSize(target.screen.width).globe)
   }
 
   useEffect(() => {
@@ -89,13 +95,12 @@ const Skills = () => {
 						height={globeSize}
 						width={globeSize}
 						textColour="#FFF"
-						textHeight={17}
+						textHeight={fontSize}
 					/>
 				</GlobeContainer>
       </Container>
 
 			<WiredInfo
-				info=""
 				position="bottom"
 			/>
     </Screen>

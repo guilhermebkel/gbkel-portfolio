@@ -1,9 +1,27 @@
 import styled from "styled-components"
 
-import ScreenComponent from "../../components/Screen"
+export const Architecture = styled.object`
+	width: 600px;
+	height: auto;
+	pointer-events: none;
 
-export const Screen = styled(ScreenComponent)`
-	flex-direction: row;
+	@media only screen and (max-width: 1200px) {
+		width: 500px;
+	}
+
+	@media only screen and (max-width: 992px) {
+		width: 400px;
+	}
+
+	@media only screen and (max-width: 768px) {
+		width: 500px;
+		margin-bottom: 20px;
+	}
+
+	@media only screen and (max-width: 500px) {
+		width: 350px;
+		margin-bottom: 20px;
+	}
 `
 
 export const Container = styled.div`
@@ -42,7 +60,7 @@ export const DescriptionContainer = styled.div`
 	}
 `
 
-export const GlobeContainer = styled.div`
+export const ArchitectureContainer = styled.div`
 	margin: auto auto auto 0;
 
 	@media only screen and (max-width: 768px) {

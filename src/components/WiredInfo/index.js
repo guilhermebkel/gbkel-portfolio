@@ -29,9 +29,13 @@ const WiredInfo = (props) => {
 	)
 }
 
+WiredInfo.defaultProps = {
+	info: ""
+}
+
 WiredInfo.propTypes = {
 	position: PropTypes.oneOf(["bottom", "top"]).isRequired,
-	info: PropTypes.string.isRequired
+	info: PropTypes.string
 }
 
 export default WiredInfo
