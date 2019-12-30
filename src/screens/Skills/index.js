@@ -60,7 +60,7 @@ const Skills = () => {
     window.addEventListener("resize", onResize)
     setFontSize(getResponsiveSize(window.innerWidth).font)
     setGlobeSize(getResponsiveSize(window.innerWidth).globe)
-  })
+  }, [])
 
   return (
     <Screen color="secondary">

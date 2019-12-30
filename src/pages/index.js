@@ -46,7 +46,7 @@ const App = () => {
   useEffect(() => {
     window.addEventListener("wheel", onWheel)
     window.addEventListener("keydown", onKeyPress)
-  })
+  }, [])
 
   return (
     <Container>
