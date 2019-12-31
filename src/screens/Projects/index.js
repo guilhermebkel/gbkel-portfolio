@@ -42,7 +42,7 @@ const Projects = () => {
 					technologies
 					description
 					live_url
-					image_url
+					mockup
 					github_url
 					active
 				}
@@ -72,7 +72,7 @@ const Projects = () => {
 								<Content>					
 									<Project>
 										<Column width="500px" order="2">
-											<Mockup image={project.image_url} />
+											<Mockup image={project.mockup} />
 
 											<SelectorGroup>
 												<Selector onClick={() => previous()}>

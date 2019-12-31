@@ -1,19 +1,21 @@
 const fetch = require(`node-fetch`)
+const axios = require("axios")
 
 exports.sourceNodes = async ({
   actions: { createNode },
   createContentDigest,
 }) => {
-  const result = await fetch(`https://old-api.guilherr.me/project`)
-  const resultData = await result.json()
+  const response = await axios.get("https://api.guilherr.me/projects")
+  const projects = response.data
+
   createNode({
-    projects: resultData.data,
+    projects,
     id: "gbkel-projects",
     parent: null,
     children: [],
     internal: {
       type: "Gbkel",
-      contentDigest: createContentDigest(resultData.data),
+      contentDigest: createContentDigest(projects),
     },
   })
 }
