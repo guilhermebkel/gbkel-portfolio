@@ -22,7 +22,6 @@ export const Container = styled.div`
 
 		100% {
 			opacity: 0;
-			display: none;
 			z-index: -999;
 		}
 	}
