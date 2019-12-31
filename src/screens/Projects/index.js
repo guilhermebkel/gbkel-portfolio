@@ -88,7 +88,11 @@ const Projects = () => {
 										<Column width="50%" order="1">
 											<TitleGroup>
 												<ProjectIndex>
-													0{index + 1}
+													{
+														index < 10
+														? `0${index + 1}`
+														: index + 1
+													}
 												</ProjectIndex>
 
 												<Title>
