@@ -12,6 +12,8 @@ import About from "../screens/About"
 
 import { Container } from "./styles"
 
+window.addEventListener("load", () => console.log("EAE"))
+
 const App = () => {
   let next
   let previous

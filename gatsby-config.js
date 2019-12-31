@@ -61,6 +61,13 @@ module.exports = {
         path: `${__dirname}/src/`,
       }
     },
+    {
+      resolve: "gatsby-plugin-nprogress",
+      options: {
+        color: "#0051ff",
+        showSpinner: false,
+      },
+    },
     "gatsby-plugin-netlify-cache"
     // "gatsby-plugin-offline",
   ]
