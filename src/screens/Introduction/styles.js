@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import BackgroundImg from "gatsby-background-image"
 
 export const Content = styled.div`
 	margin: auto;
@@ -8,19 +9,17 @@ export const Content = styled.div`
 	align-items: center;
 `
 
-export const Background = styled.div`
+export const Background = styled(BackgroundImg)`
  	display: flex;
 
   width: 100vw;
   height: 100vh;
 
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${({ image }) => image});
   background-position: center; 
   background-size: cover;
   background-attachment: fixed;
 
 	@media only screen and (max-width: 576px) {
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${({ image }) => image});
 		background-size: cover;
 		background-attachment: fixed;
 	}

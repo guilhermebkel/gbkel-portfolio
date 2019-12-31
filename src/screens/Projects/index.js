@@ -42,7 +42,13 @@ const Projects = () => {
 					technologies
 					description
 					live_url
-					mockup
+					mockup {
+						childImageSharp {
+							fluid(maxWidth: 600) {
+								...GatsbyImageSharpFluid
+							}
+						}
+					}
 					github_url
 					active
 				}
@@ -72,7 +78,7 @@ const Projects = () => {
 								<Content>					
 									<Project>
 										<Column width="500px" order="2">
-											<Mockup image={project.mockup} />
+											<Mockup fluid={project.mockup.childImageSharp.fluid} />
 
 											<SelectorGroup>
 												<Selector onClick={() => previous()}>

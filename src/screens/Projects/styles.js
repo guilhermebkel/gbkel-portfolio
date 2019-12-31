@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 import ScreenComponent from "../../components/Screen"
 
@@ -113,14 +114,13 @@ export const Description = styled.span`
 	}
 `
 
-export const Mockup = styled.div`
+export const Mockup = styled(Img)`
 	width: 90%;
 	height: 300px;
 
 	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 
-	background: url(${({ image }) => image});
 	background-position: center;
   background-size: cover;
 

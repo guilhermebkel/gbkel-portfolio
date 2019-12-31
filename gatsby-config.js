@@ -57,10 +57,12 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "src",
-        path: `${__dirname}/src/`,
-      }
+        name: "backgrounds",
+        path: `${__dirname}/src/assets/backgrounds`,
+      },
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     "gatsby-plugin-netlify-cache"
     // "gatsby-plugin-offline",
   ]
