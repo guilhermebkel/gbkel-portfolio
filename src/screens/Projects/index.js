@@ -89,7 +89,7 @@ const Projects = () => {
 											<TitleGroup>
 												<ProjectIndex>
 													{
-														index < 10
+														index <= 10
 														? `0${index + 1}`
 														: index + 1
 													}
