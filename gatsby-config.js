@@ -61,6 +61,14 @@ module.exports = {
         path: `${__dirname}/src/assets/backgrounds`,
       },
     },
+    {
+      resolve: "gatsby-plugin-sentry",
+      options: {
+        dsn: "https://8ad70df8377544539ca24878cecf0173@sentry.io/1869423",
+        environment: process.env.NODE_ENV,
+        enabled: true
+      }
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-netlify-cache",

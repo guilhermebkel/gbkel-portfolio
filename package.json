@@ -33,6 +33,7 @@
     "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-page-creator": "^2.1.36",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-sentry": "^1.0.1",
     "gatsby-plugin-sharp": "^2.3.10",
     "gatsby-plugin-sitemap": "^2.2.24",
     "gatsby-plugin-styled-components": "^3.1.16",
