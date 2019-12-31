@@ -11,6 +11,19 @@ export const Container = styled.div`
 	justify-content: center;
 	
 	display: flex;
+
+	animation: fadeOut 0.5s forwards;
+	animation-delay: 4.75s;
+
+	@keyframes fadeOut {
+		0% {
+			opacity: 1;
+		}
+
+		100% {
+			opacity: 0;
+		}
+	}
 `
 
 export const AnimatedLogo = styled.object`
