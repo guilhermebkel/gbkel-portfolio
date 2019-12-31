@@ -51,8 +51,6 @@ const App = () => {
 
   return (
     <Container>
-      <Loading />
-
       <Header />
       <Carousel
         dotPosition="right"
@@ -69,6 +67,8 @@ const App = () => {
         <Contact />
       </Carousel>
       <Footer />
+
+      <Loading />
     </Container>
   )
 }
