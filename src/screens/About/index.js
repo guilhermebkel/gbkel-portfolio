@@ -22,7 +22,7 @@ const About = () => {
         <DescriptionContainer>
           <Text>
             <strong>"Make it scalable."</strong>
-            <Divider size="large" />My portfolio is part of a ecosystem of personal services I've made{" "}
+            <Divider size="large" />My portfolio is part of an ecosystem of personal services I've made{" "}
 						in order to get my life easier with use of automation and cloud computing. 
           </Text>
 
