@@ -20,4 +20,4 @@ That's my personal portfolio built in **Javascript** with help of the framework 
 
 All the inspiration to make my portfolio's style came from [Novatics](https://www.novatics.com.br/en/).
 
-Click [here]("https://guilherr.me") to see my portfolio on live!
+Click [here](https://guilherr.me) to see my portfolio on live!
