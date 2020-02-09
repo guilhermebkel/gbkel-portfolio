@@ -16,7 +16,7 @@
 	</a>
 </p>
 
-That's my personal portfolio built in **Javascript** with help of the framework **Gatsby**. It uses some components made by **Ant Design** and the icons are provided by **Font Awesome**.
+That's my personal portfolio built in **ReactJS** with help of the framework **Gatsby**. It uses components made by **Ant Design**, icons provided by **Font Awesome** and **AWS Cloudfront** as CDN.
 
 All the inspiration to make my portfolio's style came from [Novatics](https://www.novatics.com.br/en/).
 
