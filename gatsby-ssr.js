@@ -18,6 +18,6 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   ])
   
   setPostBodyComponents([
-    <script src="%PUBLIC_URL%/js/tagcanvas.min.js" type="text/javascript" key="tag-cloud-canvas"></script>,
+    <script src="js/tagcanvas.min.js" type="text/javascript" key="tag-cloud-canvas"></script>,
   ])
 }
