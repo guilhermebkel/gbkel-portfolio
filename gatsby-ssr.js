@@ -8,7 +8,7 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
 	setHeadComponents([
     <meta name="theme-color" content="#FFF" key="theme-color" />,
     <meta property="og:title" content={siteMetadata.title} key="og:title" />,
-    <meta property="og:image" content="logo.png" key="og:image" />,
+    <meta property="og:image" content="%PUBLIC_URL%/logo.png" key="og:image" />,
     <meta property="og:url" content={siteMetadata.siteUrl} key="og:url"/>,
     <meta property="og:description" content={siteMetadata.description} key="og:description" />,
     <meta property="og:type" content="website" key="og:type" />,
@@ -18,6 +18,6 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   ])
   
   setPostBodyComponents([
-    <script src="js/tagcanvas.min.js" type="text/javascript" key="tag-cloud-canvas"></script>,
+    <script src="%PUBLIC_URL%/js/tagcanvas.min.js" type="text/javascript" key="tag-cloud-canvas"></script>,
   ])
 }
