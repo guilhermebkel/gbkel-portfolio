@@ -33,5 +33,5 @@ module.exports = {
 			url: "https://stackoverflow.com/users/12550949/guilherme-bromonschenkel?tab=profile"
 		}
 	],
-	cdnUrl: "https://cdn.guilherr.me"
+	// cdnUrl: "https://cdn.guilherr.me"
 }
