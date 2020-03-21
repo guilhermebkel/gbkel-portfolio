@@ -28,7 +28,7 @@ const About = () => {
 
           <Divider size="large" />
 
-          <ExternalLink href="https://github.com/guilhermebkel/life-long-road/blob/master/projects.md" target="_blank">
+          <ExternalLink href="https://about.guilherr.me/projects" target="_blank">
             <FontAwesomeIcon icon="info-circle" size="sm" /> read more about it
 					</ExternalLink>
         </DescriptionContainer>

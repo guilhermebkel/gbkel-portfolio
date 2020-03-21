@@ -82,7 +82,7 @@ const Skills = () => {
 
           <Divider size="large" />
 
-          <ExternalLink href="https://github.com/guilhermebkel/life-long-road/blob/master/skills.md" target="_blank">
+          <ExternalLink href="https://about.guilherr.me/skills" target="_blank">
             <FontAwesomeIcon icon="code" size="sm" /> see more skills
 					</ExternalLink>
         </DescriptionContainer>
