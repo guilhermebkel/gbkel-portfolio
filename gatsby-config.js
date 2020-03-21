@@ -2,6 +2,7 @@ const siteMetadata = require("./config/metadata")
 
 module.exports = {
   siteMetadata,
+  assetPrefix: siteMetadata.cdnUrl,
   plugins: [
     "gatsby-plugin-sitemap",
     {
