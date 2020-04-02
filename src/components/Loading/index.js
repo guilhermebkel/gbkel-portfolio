@@ -13,26 +13,22 @@ const Loading = () => {
 	}
 
 	const trackLoadingTime = () => {
-		const refreshInterval = 1000
-
 		const loadingTracker = setInterval(() => {
 			if (pageLoaded) {
-				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 0.8))
+				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 0.6))
 				clearInterval(loadingTracker)
 			} else if (currentLoadingDuration >= (EXPECTED_PAGE_LOADING_DURATION / 2)) {
 				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 1.2))
-			} else {
-				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 0.95))
 			}
 
-			setCurrentLoadingDuration(currentLoading => currentLoading + refreshInterval)
-		}, refreshInterval)
+			setCurrentLoadingDuration(currentLoading => currentLoading + 1000)
+		}, 1000)
 	}
 
 	useEffect(() => {
 		trackLoadingTime()
 		window.addEventListener("load", onLoad)
-	})
+	}, [])
 
 	return (
 		<Container animationDuration={loadingDuration}>
