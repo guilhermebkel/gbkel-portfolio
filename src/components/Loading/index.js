@@ -17,12 +17,12 @@ const Loading = () => {
 
 		const loadingTracker = setInterval(() => {
 			if (pageLoaded) {
-				setLoadingDuration(lastLoadingDuration => lastLoadingDuration * 0.7)
+				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 0.8))
 				clearInterval(loadingTracker)
 			} else if (currentLoadingDuration >= (EXPECTED_PAGE_LOADING_DURATION / 2)) {
-				setLoadingDuration(lastLoadingDuration => lastLoadingDuration + 1500)
+				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 1.2))
 			} else {
-				setLoadingDuration(lastLoadingDuration => lastLoadingDuration - refreshInterval)
+				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 0.95))
 			}
 
 			setCurrentLoadingDuration(currentLoading => currentLoading + refreshInterval)
