@@ -10,7 +10,7 @@ const Loading = () => {
 	const trackLoadingTime = () => {
 		const loadingTracker = setInterval(() => {
 			if (currentLoadingDuration >= (EXPECTED_PAGE_LOADING_DURATION / 2)) {
-				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 1.2))
+				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration + 1500))
 			}
 
 			setCurrentLoadingDuration(currentLoading => currentLoading + 1000)
