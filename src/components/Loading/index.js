@@ -15,7 +15,7 @@ const Loading = () => {
 	const trackLoadingTime = () => {
 		const loadingTracker = requestAnimationFrame(() => {
 			if (pageLoaded) {
-				setLoadingDuration(Math.abs((EXPECTED_PAGE_LOADING_DURATION/2) - currentLoadingDuration))
+				setLoadingDuration(lastLoadingDuration => lastLoadingDuration * 0.7)
 				cancelAnimationFrame(loadingTracker)
 			} else if (currentLoadingDuration >= (EXPECTED_PAGE_LOADING_DURATION / 2)) {
 				setLoadingDuration(lastLoadingDuration => lastLoadingDuration + 1500)
