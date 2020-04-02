@@ -6,28 +6,24 @@ const EXPECTED_PAGE_LOADING_DURATION = 10000
 const Loading = () => {
 	const [loadingDuration, setLoadingDuration] = useState(EXPECTED_PAGE_LOADING_DURATION)
 	const [currentLoadingDuration, setCurrentLoadingDuration] = useState(0)
-	const [pageLoaded, setPageLoaded] = useState(false)
-
-	const onLoad = () => {
-		setPageLoaded(true)
-	}
 
 	const trackLoadingTime = () => {
 		const loadingTracker = setInterval(() => {
-			if (pageLoaded) {
-				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 0.6))
-				clearInterval(loadingTracker)
-			} else if (currentLoadingDuration >= (EXPECTED_PAGE_LOADING_DURATION / 2)) {
+			if (currentLoadingDuration >= (EXPECTED_PAGE_LOADING_DURATION / 2)) {
 				setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 1.2))
 			}
 
 			setCurrentLoadingDuration(currentLoading => currentLoading + 1000)
 		}, 1000)
+
+		window.onload = () => {
+			setLoadingDuration(lastLoadingDuration => Math.round(lastLoadingDuration * 0.5))
+			clearInterval(loadingTracker)
+		}
 	}
 
 	useEffect(() => {
 		trackLoadingTime()
-		window.addEventListener("load", onLoad)
 	}, [])
 
 	return (
