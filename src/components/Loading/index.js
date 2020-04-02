@@ -13,16 +13,20 @@ const Loading = () => {
 	}
 
 	const trackLoadingTime = () => {
-		const loadingTracker = requestAnimationFrame(() => {
+		const refreshInterval = 1000
+
+		const loadingTracker = setInterval(() => {
 			if (pageLoaded) {
 				setLoadingDuration(lastLoadingDuration => lastLoadingDuration * 0.7)
-				cancelAnimationFrame(loadingTracker)
+				clearInterval(loadingTracker)
 			} else if (currentLoadingDuration >= (EXPECTED_PAGE_LOADING_DURATION / 2)) {
 				setLoadingDuration(lastLoadingDuration => lastLoadingDuration + 1500)
+			} else {
+				setLoadingDuration(lastLoadingDuration => lastLoadingDuration - refreshInterval)
 			}
 
-			setCurrentLoadingDuration(currentLoading => currentLoading + 1)
-		})
+			setCurrentLoadingDuration(currentLoading => currentLoading + refreshInterval)
+		}, refreshInterval)
 	}
 
 	useEffect(() => {
