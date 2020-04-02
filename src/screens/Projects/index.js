@@ -67,7 +67,7 @@ const Projects = () => {
 				ref={getCarouselRef} 
 				dots={false} 
 				accessibility={true} 
-				lazyLoad="progressive"
+				lazyLoad="ondemand"
 				speed={400}
 				pauseOnFocus={true}
 			>

@@ -13,7 +13,7 @@ export const Container = styled.div`
   display: flex;
 
   animation: fadeOut 2s forwards;
-  animation-delay: ${({ animationDuration }) => `${(animationDuration / 1000).toFixed(2)}s`};
+  animation-delay: ${({ animationDuration }) => `${((animationDuration + 500) / 1000).toFixed(2)}s`};
 
   @keyframes fadeOut {
     0% {
