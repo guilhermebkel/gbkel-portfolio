@@ -5,15 +5,16 @@ const EXPECTED_PAGE_LOADING_DURATION = 10000
 
 const Loading = () => {
 	const [loadingDuration, setLoadingDuration] = useState(EXPECTED_PAGE_LOADING_DURATION)
-	const [currentLoadingDuration, setCurrentLoadingDuration] = useState(0)
 
 	const trackLoadingTime = () => {
+		let currentLoadingDuration = 0
+
 		const loadingTracker = setInterval(() => {
 			if (currentLoadingDuration >= (EXPECTED_PAGE_LOADING_DURATION / 2)) {
 				setLoadingDuration(lastLoadingDuration => lastLoadingDuration + 3000)
 			}
 
-			setCurrentLoadingDuration(currentLoading => currentLoading + 1000)
+			currentLoadingDuration += 1000
 		}, 1000)
 
 		window.onload = () => {
