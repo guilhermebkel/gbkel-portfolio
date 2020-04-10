@@ -27,6 +27,26 @@ const Projects = () => {
 	let next
 	let previous
 
+	const getFormattedIndex = (index, increment = 0,fixedSize = 0) => {
+		index = +index + increment
+
+		const params = []
+
+		const currentIndexSize = index.toString().length
+
+		const zerosToAdd = (fixedSize - currentIndexSize) <= 0 ? 0 : (fixedSize - currentIndexSize)
+
+		for (let i=0; i<zerosToAdd; i++) {
+			params.push(0)
+		}
+
+		params.push(index)
+
+		const formattedIndex = params.join("")
+
+		return formattedIndex
+	}
+
 	const getCarouselRef = (ref) => {
 		if (ref) {
 			next = ref.slick.slickNext
@@ -94,11 +114,7 @@ const Projects = () => {
 										<Column width="50%" order="1">
 											<TitleGroup>
 												<ProjectIndex>
-													{
-														index <= 10
-														? `0${index + 1}`
-														: index + 1
-													}
+													{getFormattedIndex(index, 1, 2)}
 												</ProjectIndex>
 
 												<Title>
