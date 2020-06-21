@@ -9,7 +9,7 @@ import { ExternalLink } from "../../styles"
 
 import { Architecture, Container, DescriptionContainer, Text, ArchitectureContainer } from "./styles"
 
-import architecture from "../../assets/architecture.svg"
+import architecture from "../../assets/architecture.png"
 
 const About = () => {
 	return (
@@ -34,7 +34,7 @@ const About = () => {
         </DescriptionContainer>
 
 				<ArchitectureContainer>
-					<Architecture data={architecture} />
+					<Architecture src={architecture} />
 				</ArchitectureContainer>
       </Container>
 			<WiredInfo

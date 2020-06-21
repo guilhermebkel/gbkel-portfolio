@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Architecture = styled.object`
+export const Architecture = styled.img`
 	width: 600px;
 	height: auto;
 	pointer-events: none;
