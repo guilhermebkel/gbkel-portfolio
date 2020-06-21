@@ -34,7 +34,7 @@ const About = () => {
         </DescriptionContainer>
 
 				<ArchitectureContainer>
-					<Architecture type="image/svg+xml" data={architecture} />
+					<Architecture data={architecture} />
 				</ArchitectureContainer>
       </Container>
 			<WiredInfo

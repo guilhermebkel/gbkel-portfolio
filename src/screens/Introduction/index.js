@@ -6,8 +6,6 @@ import { Title, Content, Description, Background } from "./styles"
 import WiredInfo from "../../components/WiredInfo"
 import Screen from "../../components/Screen"
 
-import beachBlackBackground from "../../assets/backgrounds/beach_black.jpg"
-
 // const [ beachBlackBackground ] = data.filter()
 
 const Introduction = () => {
