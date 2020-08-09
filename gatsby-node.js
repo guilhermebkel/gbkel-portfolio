@@ -8,7 +8,7 @@ exports.sourceNodes = async ({
   actions: { createNode },
   createNodeId,
 }) => {
-  const response = await axios.get("https://api.guilherr.me/projects")
+  const response = await axios.get(`${process.env.GATSBY_API_URL}/projects`)
 
   const projects = []
 
