@@ -16,7 +16,7 @@ const Post: React.FC<PostProps> = (props) => {
 	return (
 		<DefaultLayout>
 			<Head>
-				<title>{post.title}</title>
+				<title>{post.title} | Guilherme Mota</title>
 
 				<meta name="description" content={post.description} />
 
