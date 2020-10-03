@@ -19,7 +19,7 @@ export const getThumbnailHtml = (props: GetHtmlProps): string => {
       body {
         margin: 0;
         font-family: Ubuntu, sans-serif;
-        color: #FFF;
+        color: #FFFFFF;
         background: #000000;
         background-image: 
           radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2%, transparent 0%), 
