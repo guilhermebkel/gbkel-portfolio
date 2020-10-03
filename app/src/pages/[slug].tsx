@@ -2,12 +2,9 @@ import React from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 
-import Layout from "@/components/layout"
-import Date from "@/components/date"
+import DefaultLayout from "@/layouts/Default"
 
 import { getAllPosts, getPostBySlug, PresentablePost } from "@/lib/posts"
-
-import utilStyles from "@/styles/utils.module.css"
 
 type PostProps = {
 	post: PresentablePost
@@ -17,7 +14,7 @@ const Post: React.FC<PostProps> = (props) => {
 	const { post } = props
 
 	return (
-		<Layout>
+		<DefaultLayout>
 			<Head>
 				<title>{post.title}</title>
 
@@ -40,14 +37,14 @@ const Post: React.FC<PostProps> = (props) => {
 				<meta name="twitter:image" content={post.thumbnailUrl} />
 			</Head>
 			<article>
-				<h1 className={utilStyles.headingXl}>{post.title}</h1>
+				<h1>{post.title}</h1>
 				<img src={post.thumbnailUrl} alt={post.title} />
-				<div className={utilStyles.lightText}>
-					<Date dateString={post.date} />
+				<div>
+					{post.date}
 				</div>
 				<div dangerouslySetInnerHTML={{ __html: post.content }} />
 			</article>
-		</Layout>
+		</DefaultLayout>
 	)
 }
 
