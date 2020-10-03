@@ -1,0 +1,17 @@
+# Libs
+node_modules
+
+# Built files
+dist
+
+# Coverage Report
+coverage
+
+# Index file
+index.ts
+
+# Old versions
+versions
+
+# Eslint Config
+.eslintrc.js
