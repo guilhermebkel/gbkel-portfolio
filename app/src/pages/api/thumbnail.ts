@@ -26,8 +26,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 		}
 
 		const thumbnailHtml = getThumbnailHtml({
-			title: post.title,
-			thumbnail_bg: "#000000"
+			title: post.title
 		})
 
 		const thumbnailPicture = await getScreenshot(thumbnailHtml)
