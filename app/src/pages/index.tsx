@@ -8,17 +8,13 @@ import Date from "@/components/date"
 
 import utilStyles from "@/styles/utils.module.css"
 
-import { getSortedPostsData } from "@/lib/posts"
+import { getAllPosts, PostPreview } from "@/lib/posts"
 
 type HomeProps = {
-	allPostsData: Array<{
-		date: string
-		title: string
-		id: string
-	}>
+	posts: PostPreview[]
 }
 
-const Home: React.FC<HomeProps> = ({ allPostsData }) => {
+const Home: React.FC<HomeProps> = ({ posts }) => {
 	return (
 		<Layout home>
 			<Head>
@@ -34,14 +30,14 @@ const Home: React.FC<HomeProps> = ({ allPostsData }) => {
 			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
 				<h2 className={utilStyles.headingLg}>Blog</h2>
 				<ul className={utilStyles.list}>
-					{allPostsData.map(({ id, date, title }) => (
-						<li className={utilStyles.listItem} key={id}>
-							<Link href={`/posts/${id}`}>
-								<span>{title}</span>
+					{posts.map((post) => (
+						<li className={utilStyles.listItem} key={post.slug}>
+							<Link href={post.url}>
+								<span>{post.title}</span>
 							</Link>
 							<br />
 							<small className={utilStyles.lightText}>
-								<Date dateString={date} />
+								<Date dateString={post.date} />
 							</small>
 						</li>
 					))}
@@ -54,10 +50,11 @@ const Home: React.FC<HomeProps> = ({ allPostsData }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-	const allPostsData = getSortedPostsData()
+	const posts = await getAllPosts()
+
 	return {
 		props: {
-			allPostsData,
-		},
+			posts
+		}
 	}
 }

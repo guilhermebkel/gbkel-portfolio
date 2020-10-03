@@ -1,0 +1,8 @@
+{
+	"redirects": [
+		{
+			"source": "/thumbnail/(.*.png)",
+			"destination": "/api/thumbnail?file=$1"
+		}
+	]
+}
