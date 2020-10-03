@@ -1,0 +1,40 @@
+@media only screen and (max-width:500px){
+    .home {
+        display: flex;
+        width: 100vw;
+        height: 87vh;
+        background-position: center; 
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    
+    .home-container{
+        margin: auto auto;
+        height: auto; 
+        width: 85vw; 
+        display: flex;
+    }
+    
+    .home-container-text{
+        margin: auto auto auto 0px;
+        height: auto;
+        display: inline-block;
+    }
+    
+    .presentation{
+        text-align: left;
+        color: white; 
+        font-size: 25px; 
+        line-height: 35px;
+        font-weight: lighter;
+        letter-spacing: 2px;
+    }
+    
+    .summary{
+        text-align: justify;
+        color: white;
+        font-size: 13px;
+        line-height: 20px;
+        width: auto;
+    }
+}

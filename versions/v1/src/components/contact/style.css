@@ -1,0 +1,130 @@
+.contact {
+    width: 100vw;
+    height: 100vh;
+    background-position: center; 
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.contact-container{
+    width: 80vw;
+    height: auto; 
+    margin: auto auto;
+}
+.contact-container-title{
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    color: #ffffff;
+    padding: 50px 0 50px 0;
+}
+
+.contact-form{
+    display: flex;
+}
+.form-input{
+    width: 38vw;
+    height: 50vh;
+    margin: 0 auto 90px 0;
+}
+.form-input input{
+    background-color: white;
+    font-size: 13px;
+    border-width: 0;
+    height: 32px; 
+    width: 80%; 
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding-left: 15px;
+    color: #24292E;
+}
+
+.form-textarea{
+    width: 38vw;
+    height: 50vh;
+    margin: 0 0 90px auto;
+}
+.form-textarea textarea{
+    background-color: white;
+    font-size: 13px;
+    border-width: 0;
+    height: 250px; 
+    width: 100%; 
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    color: #24292E;
+    resize: none;
+}
+.form-textarea button{
+    background-color: #24292E;
+    border-width: 2px !important;
+    border: solid #24292E;
+    color: white;
+    font-size: 15px;
+    padding: 8px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.form-textarea button:hover{
+    background-color: #ffffff;
+    color: #24292E;
+    font-size: 15px;
+    border-radius: 5px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+input::placeholder, textarea::placeholder{
+    opacity: 0.7;
+    font-weight: normal;
+    font-size: 13px;
+    letter-spacing: 0px;
+    font-family: 'Lato', sans-serif;
+}
+input:focus, textarea:focus{
+    outline: none;
+}
+
+.contact-footer{
+    display: flex;
+    margin-bottom: 30px;
+}
+.footer-description{
+    margin: auto auto 0 0;
+    text-align: justify;
+    color: white;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+.footer-social{
+    margin: auto 0 0 15px;
+    width: auto;
+    height: 22px;
+    opacity: 0.6;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.footer-social:hover{
+    opacity: 1;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}

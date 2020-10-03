@@ -1,0 +1,46 @@
+@media only screen and (max-width:500px){
+    .contact{
+        height: auto;
+    }
+    .contact-container{
+        display: 100vw;
+    }
+    .contact-form{
+        display: inline;
+    }
+    .form-input{
+        width: 95vw;
+        height: 43px;
+    }
+    .form-textarea{
+        width: 75vw;
+        display: inline-block;
+        margin: 0 0 150px 0;
+    }
+    .contact-footer{
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    .footer-description{
+        font-size: 13px;
+    }
+    .footer-social{
+        margin: 15px 15px 25px 0;
+        opacity: 1;
+        height: 20px;
+    }
+    .form-textarea button:hover{
+        background-color: #24292E;
+        border-width: 2px !important;
+        border: solid #24292E;
+        color: white;
+        font-size: 15px;
+        padding: 8px 13px;
+        border-radius: 5px;
+        cursor: not-allowed;
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+}

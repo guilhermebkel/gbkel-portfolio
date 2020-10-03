@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif !important;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased !important;
+  background-color: #FFF;
+}
+
+a{
+  text-decoration: none;
+}
+
+html.touch *:hover {
+  all:unset!important;
+  pointer-events: none !important;
+}

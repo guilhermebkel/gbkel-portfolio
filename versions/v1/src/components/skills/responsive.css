@@ -1,0 +1,18 @@
+@media only screen and (max-width:500px){
+    .skills{
+        height: auto;
+    }
+    .skills-container{
+        margin-bottom: 0;
+    }
+    .skills-box{
+        display: flex;
+        height: auto;
+        min-height: auto;
+        margin-bottom: 50px;
+        width: 100vw;
+    }
+    .box{
+        display: inline-block;
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dd5bb9e6.chunk.css",
+    "main.js": "/static/js/main.322c66b8.chunk.js",
+    "main.js.map": "/static/js/main.322c66b8.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.4182c1c7.chunk.js": "/static/js/2.4182c1c7.chunk.js",
+    "static/js/2.4182c1c7.chunk.js.map": "/static/js/2.4182c1c7.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.65fdc63e1e44c3fe8fcf1126704b27a8.js": "/precache-manifest.65fdc63e1e44c3fe8fcf1126704b27a8.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.dd5bb9e6.chunk.css.map": "/static/css/main.dd5bb9e6.chunk.css.map",
+    "static/media/backend.png": "/static/media/backend.f7faf74f.png",
+    "static/media/blue-logo.png": "/static/media/blue-logo.e243dacd.png",
+    "static/media/database.png": "/static/media/database.e25be37c.png",
+    "static/media/footer.jpg": "/static/media/footer.d9127ddb.jpg",
+    "static/media/frontend.png": "/static/media/frontend.6250a1d7.png",
+    "static/media/header.jpg": "/static/media/header.d3caa7c4.jpg",
+    "static/media/languages.png": "/static/media/languages.50561f37.png",
+    "static/media/linkedin.png": "/static/media/linkedin.c2a73273.png",
+    "static/media/prototyping.png": "/static/media/prototyping.64e1128c.png",
+    "static/media/whatsapp.png": "/static/media/whatsapp.668aeee4.png",
+    "static/media/white-logo.png": "/static/media/white-logo.0ce86e9c.png"
+  }
+}

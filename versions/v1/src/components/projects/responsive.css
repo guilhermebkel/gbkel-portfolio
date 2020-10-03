@@ -1,0 +1,47 @@
+@media only screen and (max-width:500px){
+    .mockup-grid{
+        grid-template-columns: auto;
+    }
+    .mockup-image{
+        height: 60vw;
+    }
+    .card{
+        margin: 40px 40px 20px 0 !important;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+        opacity: 1;
+        width: 80vw;
+    }
+    .card:hover{
+        transform: translate(0, 0);
+    }
+    .mockup-description h1 {
+        font-size: 18px;
+    }
+    .mockup-description h2 {
+        font-size: 12px;
+    }
+    .mockup-description p {
+        font-size: 15px;
+    }
+    .mockup-description a {
+        font-size: 14px;
+    }
+    .blue-button h2:hover{
+        background-color: #0598E3;
+        font-size: 15px;
+        color: #ffffff;
+        padding: 8px 25px;
+        border: solid #0598E3;
+        border-width: 2px;
+        border-radius: 5px;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        cursor: not-allowed;
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+}

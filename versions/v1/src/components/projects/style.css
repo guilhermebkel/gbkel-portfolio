@@ -1,0 +1,180 @@
+.projects{
+    width: 100vw;
+    height: auto;
+    margin: 0px;
+    position: relative;
+    overflow-x: hidden;
+}
+.projects-container{
+    width: 80vw;
+    height: auto; 
+    margin: auto auto;
+    margin-bottom: 50px
+}
+.projects-container-title{
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    color: #24292E;
+    padding: 50px 0 50px 0;
+}
+
+.mockup-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+}
+.mockup-image{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin: 0;
+}
+.mockup-description{
+    width: 100%;
+    height: auto;
+    background-color: white; 
+    margin: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.mockup-description h1 {
+    font-size: 22px;
+    margin-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    color: #555555;
+}
+.mockup-description h2 {
+    font-size: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    color: #AAAAAA;
+}
+.mockup-description p {
+    font-size: 17px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: lighter;
+    color: #555555;
+    text-align: justify;
+}
+.mockup-description a {
+    margin-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 25px;
+    width: 120px;
+    height: 26px;
+    font-weight: bold;
+    align-items: center;
+    display: flex; 
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    color: #555555;
+}
+.mockup-description a:hover{
+    color: black !important;
+    -webkit-transition: all 0.5s ease !important;
+    -moz-transition: all 0.5s ease !important;
+    -o-transition: all 0.5s ease !important;
+    transition: all 0.5s ease !important;
+}
+.mockup-description a span {
+    margin: auto 10px auto 0;
+}
+
+.right {
+    margin: 40px 0 40px 40px !important;
+}
+.left {
+    margin: 40px 40px 40px 0 !important;
+}
+
+.card{
+    width: 37vw;
+    margin-bottom: 50px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+.card:hover{
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    transform: translate(0, -15px);
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.blue-button {
+    height: auto;
+    display: flex;
+    border-radius: 5px;
+    margin: 15px auto 90px auto;
+    background-color: #ffffff25;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.blue-button:hover {
+    background-color: #ffffff25;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.blue-button h2{
+    background-color: #0598E3;
+    margin: auto auto;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 8px 25px;
+    border: solid #0598E3;
+    border-width: 2px;
+    border-radius: 5px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.blue-button h2:hover{
+    color: #0598E3;
+    border: solid #0598E3;
+    background-color: #ffffff;
+    border-width: 2px;
+    border-radius: 5px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}

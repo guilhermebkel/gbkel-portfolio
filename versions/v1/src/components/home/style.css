@@ -1,0 +1,43 @@
+.home {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-position: center; 
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    overflow-y: hidden;
+}
+
+.home-container{
+    margin: auto auto;
+    height: auto; 
+    width: 80vw; 
+    display: flex;
+}
+
+.home-container-text{
+    margin: auto auto auto 0px;
+    height: auto;
+    width: auto;
+    display: inline-block;
+}
+
+.presentation{
+    color: white; 
+    font-size: 30px; 
+    line-height: 45px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.presentation strong{
+    font-weight: 900;
+}
+
+.summary{
+    text-align: justify;
+    color: white;
+    font-size: 15px;
+    line-height: 20px;
+    width: 560px;
+}

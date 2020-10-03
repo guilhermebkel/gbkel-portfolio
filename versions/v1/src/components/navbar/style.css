@@ -1,0 +1,135 @@
+.navbar{
+    width: 100vw;
+    display: flex;
+    position: absolute;
+    overflow-y: hidden;
+    z-index: 5;
+}
+
+.navbar-container{
+    margin: auto auto;
+    width: 80vw;
+    height: 90px;
+    display: flex;
+}
+
+.navbar-collapse{
+    display: none;
+}
+
+.logo-desktop{
+    margin: auto 0;
+    width: 30px;
+    height: 35px;
+}
+.logo-desktop:hover{
+    animation: shake 0.5s; 
+}
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    33% { transform: rotate(-10deg); }
+    66% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.logo-mobile{
+    display: none;
+}
+
+.links-container{
+    margin: auto 0px auto auto;
+    width: auto;
+    height: auto;
+    display: flex;
+}
+.links-container h2{
+    padding: 20px;
+    cursor: pointer;
+    margin: auto auto;
+    font-size: 15px;
+    color: white;
+    font-weight: normal;
+    border: solid transparent;
+    border-width: 0 0 4px 0;
+    letter-spacing: 0.5px;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+}
+.links-container h2:hover{
+    border: solid white;
+    border-width: 0 0 4px 0;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.button {
+    margin: auto 0px auto 20px;
+    background-color: white;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    display: flex;  
+    border-radius: 5px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.button:hover {
+    background-color: #ffffff25;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.button h2{
+    margin: auto auto;
+    font-size: 15px;
+    color: #06B2DF;
+    padding: 10px 15px;
+    border: solid transparent;
+    border-width: 2px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.button h2:hover{
+    color: white;
+    border: solid white;
+    border-width: 2px;
+    border-radius: 5px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.menu{
+    display: none;
+}
+
+.home-button{
+    position: fixed;
+    z-index: 11;
+    width: 35px;
+    height: 35px;
+    background-color: #24292E;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    border-radius: 100%;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+.home-button .home-button-icon{
+    margin: auto;
+    font-size: 20px;    
+    color: white;   
+}
