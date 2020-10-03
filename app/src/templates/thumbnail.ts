@@ -13,7 +13,7 @@ export const getThumbnailHtml = (props: GetHtmlProps): string => {
     
     <title>Thumbnail</title>
   
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
   
     <style>
       body {
