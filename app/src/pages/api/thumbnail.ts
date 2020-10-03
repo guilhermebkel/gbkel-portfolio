@@ -16,13 +16,13 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 			.shift()
 
 		if (!slug) {
-			res.status(400).json({ error: "SlugNotFoundError" })
+			res.status(404).json({ error: "SlugNotFoundError" })
 		}
 
 		const post = await getPostBySlug(slug)
 
 		if (!post) {
-			res.status(400).json({ error: "PostNotFoundError" })
+			res.status(404).json({ error: "PostNotFoundError" })
 		}
 
 		const thumbnailHtml = getThumbnailHtml({
