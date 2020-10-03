@@ -39,7 +39,7 @@ export const getThumbnailHtml = (props: GetHtmlProps): string => {
       }
   
       svg {
-        height: 112px;
+        height: 96px;
         margin-top: 40px;
       }
   
