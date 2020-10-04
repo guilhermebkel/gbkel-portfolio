@@ -2,8 +2,6 @@ import React from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 
-import DefaultLayout from "@/layouts/Default"
-
 import { getAllPosts, getPostBySlug, PresentablePost } from "@/lib/posts"
 
 type PostProps = {
@@ -14,7 +12,7 @@ const Post: React.FC<PostProps> = (props) => {
 	const { post } = props
 
 	return (
-		<DefaultLayout>
+		<>
 			<Head>
 				<title>{post.title} | Guilherme Mota</title>
 
@@ -44,7 +42,7 @@ const Post: React.FC<PostProps> = (props) => {
 				</div>
 				<div dangerouslySetInnerHTML={{ __html: post.content }} />
 			</article>
-		</DefaultLayout>
+		</>
 	)
 }
 

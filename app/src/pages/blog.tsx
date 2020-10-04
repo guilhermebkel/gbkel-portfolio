@@ -5,15 +5,13 @@ import { GetStaticProps } from "next"
 
 import { getAllPosts, PostPreview } from "@/lib/posts"
 
-import DefaultLayout from "@/layouts/Default"
-
 type BlogProps = {
 	posts: PostPreview[]
 }
 
 const Blog: React.FC<BlogProps> = ({ posts }) => {
 	return (
-		<DefaultLayout>
+		<>
 			<Head>
 				<title>Blog | Guilherme Mota</title>
 			</Head>
@@ -38,7 +36,7 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 					))}
 				</ul>
 			</section>
-		</DefaultLayout>
+		</>
 	)
 }
 
