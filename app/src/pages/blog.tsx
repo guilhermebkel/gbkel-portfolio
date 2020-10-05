@@ -1,7 +1,7 @@
 import React from "react"
 import Head from "next/head"
 import Link from "next/link"
-import { GetStaticProps } from "next"
+import { GetStaticProps, NextPage } from "next"
 
 import { getAllPosts, PostPreview } from "@/lib/posts"
 
@@ -9,7 +9,7 @@ type BlogProps = {
 	posts: PostPreview[]
 }
 
-const Blog: React.FC<BlogProps> = ({ posts }) => {
+const Blog: NextPage<BlogProps> = ({ posts }) => {
 	return (
 		<>
 			<Head>

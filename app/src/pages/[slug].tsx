@@ -1,5 +1,5 @@
 import React from "react"
-import { GetStaticProps, GetStaticPaths } from "next"
+import { GetStaticProps, GetStaticPaths, NextPage } from "next"
 import Head from "next/head"
 
 import { getAllPosts, getPostBySlug, PresentablePost } from "@/lib/posts"
@@ -8,7 +8,7 @@ type PostProps = {
 	post: PresentablePost
 }
 
-const Post: React.FC<PostProps> = (props) => {
+const Post: NextPage<PostProps> = (props) => {
 	const { post } = props
 
 	return (
