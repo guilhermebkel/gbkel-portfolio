@@ -3,6 +3,14 @@
 		{
 			"source": "/thumbnail/(.*.png)",
 			"destination": "/api/thumbnail?file=$1"
+		},
+		{
+			"source": "/manifest/(.*.json)",
+			"destination": "/api/manifest?file=$1"
+		},
+		{
+			"source": "/service-worker/(.*.js)",
+			"destination": "/api/service-worker?file=$1"
 		}
 	]
 }
