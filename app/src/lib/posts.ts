@@ -46,7 +46,7 @@ export type PresentablePost = {
 
 export const getPostBySlug = async (slug: string): Promise<PresentablePost> => {
 	const postFilePath = path.join(POST_FOLDER_PATH, `${slug}.md`)
-	const postFileContent = fs.readFileSync(postFilePath, "utf8")
+	const postFileContent = await fs.promises.readFile(postFilePath, "utf8")
 
 	const meta = matter(postFileContent)
 	const content = marked(meta.content)
