@@ -18,7 +18,10 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 			cwd: filesPath
 		})
 
-		const baseURL = `${req.headers["x-forwarded-proto"]}://${req.headers["x-forwarded-host"]}`
+		const requestProto  = req.headers["x-forwarded-proto"]
+		const requestHost = req.headers["x-forwarded-host"]
+
+		const baseURL = `${requestProto}://${requestHost}`
 
 		const urls = pages.map(page => {
 			let path = page.split("/").pop().split(".").shift()
