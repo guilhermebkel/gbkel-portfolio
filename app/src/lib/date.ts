@@ -1,9 +1,9 @@
-export function getLatestDate<DateType extends string>(dates: DateType[]): DateType {
+export const getLatestDate = (dates: Date[]): Date => {
 	const latestDateInMilliseconds = Math.max(
 		...dates.map(date => +new Date(date))
 	)
 
-	let latestDate: DateType
+	let latestDate: Date
 
 	dates.forEach(date => {
 		const dateInMilliseconds = +new Date(date)
