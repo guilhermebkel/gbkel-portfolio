@@ -18,7 +18,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 
 		res.setHeader("Content-Type", "application/javascript")
 
-		res.end(serviceWorkerJSString)
+		res.status(200).end(serviceWorkerJSString)
 	} catch (error) {
 		res.status(500).json({ error: "ServerInternalError", details: error.message })
 	}

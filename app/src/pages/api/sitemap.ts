@@ -41,7 +41,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 
 		res.setHeader("Content-Type", "text/xml")
 
-		res.end(sitemapXML)
+		res.status(200).end(sitemapXML)
 	} catch (error) {
 		res.status(500).json({ error: "ServerInternalError", details: error.message })
 	}

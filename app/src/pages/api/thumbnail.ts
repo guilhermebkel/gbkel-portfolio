@@ -34,7 +34,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 		res.setHeader("Content-Type", "image/png")
 		// res.setHeader("Cache-Control", "public, immutable, no-transform, s-maxage=31536000, max-age=31536000")
 
-		res.end(thumbnailPicture)
+		res.status(200).end(thumbnailPicture)
 	} catch (error) {
 		res.status(500).json({ error: "ServerInternalError", details: error.message })
 	}
