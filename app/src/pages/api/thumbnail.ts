@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 import { getPostBySlug } from "@/lib/posts"
 import { getScreenshot } from "@/lib/browser"
 
-import { getThumbnailHtml } from "@/templates/thumbnail"
+import { getThumbnailHTML } from "@/templates/thumbnail"
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
 	try {
@@ -25,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 			res.status(404).json({ error: "PostNotFoundError" })
 		}
 
-		const thumbnailHtml = getThumbnailHtml({
+		const thumbnailHtml = getThumbnailHTML({
 			title: post.title
 		})
 

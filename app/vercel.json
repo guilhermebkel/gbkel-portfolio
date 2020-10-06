@@ -12,5 +12,11 @@
 			"source": "/service-worker/(.*.js)",
 			"destination": "/api/service-worker?file=$1"
 		}
+	],
+	"rewrites": [
+		{
+			"source": "/sitemap.xml",
+			"destination": "/api/sitemap"
+		}
 	]
 }
