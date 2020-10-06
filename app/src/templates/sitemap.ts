@@ -9,9 +9,7 @@ export const getSitemapXML = (props: GetSitemapXMLProps): string => {
 		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 			${urls.map(url => `
 				<url>
-					<loc>
-						${url}
-					</loc>
+					<loc>${url}</loc>
 				</url>
 			`).join("")}
 		</urlset>

@@ -32,13 +32,11 @@ export const getRssXML = (props: GetRssXMLProps): string => {
 				${posts.map(post => `
 					<item>
 						<title>${post.title}</title>
-						<link>
-							${post.link}
-						</link>
-						
+						<link>${post.link}</link>
+						<guid>${post.link}</guid>
 						<pubDate>${post.date}</pubDate>
 						<description>
-						<![CDATA[${post.content}]]>
+							<![CDATA[${post.content}]]>
 						</description>
 					</item>
 				`).join("")}
