@@ -24,14 +24,14 @@ export const getRssXML = (props: GetRssXMLProps): string => {
 		<rss version="2.0">
 			<channel>
 					<title>${title}</title>
-					<link>${link}</link>
+					<link rel="self">${link}</link>
 					<description>${description}</description>
 					<language>en</language>
 					<lastBuildDate>${latestPostDate}</lastBuildDate>
 					${posts.map(post => `
 						<item>
 							<title>${post.title}</title>
-							<link>
+							<link rel="self">
 								${post.link}
 							</link>
 							

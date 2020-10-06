@@ -25,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 					link: `${baseURL}/${slug}`,
 					description: post.description,
 					content: post.content,
-					date: post.date
+					date: new Date(post.date).toUTCString()
 				}
 			})
 		)
