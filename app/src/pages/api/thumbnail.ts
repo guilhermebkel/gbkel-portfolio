@@ -32,7 +32,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 		const thumbnailPicture = await getScreenshot(thumbnailHtml)
 
 		res.setHeader("Content-Type", "image/png")
-		res.setHeader("Cache-Control", "public, immutable, no-transform, s-maxage=31536000, max-age=31536000")
+		// res.setHeader("Cache-Control", "public, immutable, no-transform, s-maxage=31536000, max-age=31536000")
 
 		res.end(thumbnailPicture)
 	} catch (error) {
