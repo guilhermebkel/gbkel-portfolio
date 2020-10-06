@@ -19,7 +19,7 @@
 			"destination": "/api/sitemap"
 		},
 		{
-			"source": "/rss",
+			"source": "/rss.xml",
 			"destination": "/api/rss"
 		}
 	]

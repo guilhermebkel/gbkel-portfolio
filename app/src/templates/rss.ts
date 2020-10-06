@@ -21,17 +21,18 @@ export const getRssXML = (props: GetRssXMLProps): string => {
 	} = props
 
 	return `<?xml version="1.0" encoding="UTF-8"?>
-		<rss version="2.0">
+		<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+		<atom:link href="${link}" rel="self" type="application/rss+xml" />
 			<channel>
 					<title>${title}</title>
-					<link rel="self">${link}</link>
+					<link>${link}</link>
 					<description>${description}</description>
 					<language>en</language>
 					<lastBuildDate>${latestPostDate}</lastBuildDate>
 					${posts.map(post => `
 						<item>
 							<title>${post.title}</title>
-							<link rel="self">
+							<link>
 								${post.link}
 							</link>
 							
