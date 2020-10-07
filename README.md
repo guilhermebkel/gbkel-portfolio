@@ -1,7 +1,7 @@
 # gbkel-portfolio
 
 <p align="center">
-  <img width="200px" height="auto" src="src/assets/icon.png">
+  <img width="100px" height="auto" src="logo.png">
 </p>
 
 <p align="center">
@@ -16,8 +16,14 @@
 	</a>
 </p>
 
+## V2 (versions/v2)
+
 That's my personal portfolio built in **ReactJS** with help of the framework **Gatsby**. It uses components made by **Ant Design**, icons provided by **Font Awesome** and **AWS Cloudfront** as CDN.
 
 All the inspiration to make my portfolio's style came from [Novatics](https://www.novatics.com.br/en/).
 
 Click [here](https://guilherr.me) to see my portfolio on live!
+
+## V3 (app)
+
+Coming soon...
