@@ -5,9 +5,6 @@
 </p>
 
 <p align="center">
-	<a href="https://app.netlify.com/sites/gbkel-portfolio/deploys">
-		<img src="https://api.netlify.com/api/v1/badges/5983b0e9-df24-4ccc-83cd-aaf478bccde1/deploy-status" alt="netlify status"/>
-	</a>
 	<a href="https://github.com/guilhermebkel/gbkel-portfolio">
 		<img alt="mit license" src="https://img.shields.io/github/license/guilhermebkel/gbkel-portfolio?color=0051ff">
 	</a>
