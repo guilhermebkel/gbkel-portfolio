@@ -30,7 +30,7 @@ export type OptimizedPublicPictureUrlOptions = ResizePictureAssetOptions & {
 
 export const optimizedPublicPictureUrl = (
 	options: OptimizedPublicPictureUrlOptions
-) => {
+): string => {
 	const { baseURL, ...resizeOptions } = options
 
 	const params = []
