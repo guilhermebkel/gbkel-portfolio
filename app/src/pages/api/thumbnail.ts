@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
-import { getPostBySlug } from "@/lib/posts"
+import { getDetailedPostBySlug } from "@/lib/posts"
 import { getScreenshot } from "@/lib/browser"
 
 import { getThumbnailHTML } from "@/templates/thumbnail"
@@ -19,7 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 			res.status(404).json({ error: "SlugNotFoundError" })
 		}
 
-		const post = await getPostBySlug(slug)
+		const post = await getDetailedPostBySlug(slug)
 
 		if (!post) {
 			res.status(404).json({ error: "PostNotFoundError" })

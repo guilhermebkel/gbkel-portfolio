@@ -1,38 +1,56 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
+import { getSiteBaseURL } from "@/lib/url"
+import { optimizedPublicPictureUrl } from "@/lib/picture"
+
+type ManifestIcon = {
+	src: string
+	sizes: string
+	type: "image/png"
+}
+
+type Manifest = {
+	name: string
+	short_name: string
+	display: "standalone"
+	description: string
+	background_color: string
+	theme_color: string
+	start_url: string
+	orientation: "portrait"
+	icons: Array<ManifestIcon>
+}
+
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
 	try {
-		const file = req.query.file as string
+		const siteBaseURL = getSiteBaseURL(req)
 
-		const context = file
-			.split("/")
-			.pop()
-			.split(".json")
-			.shift()
-
-		if (!context) {
-			res.status(404).json({ error: "ContextNotFoundError" })
+		const manifest: Manifest = {
+			name: "Guilherme Mota",
+			short_name: "Mota",
+			display: "standalone",
+			description: "All info about Mota.",
+			background_color: "#FFFFFF",
+			theme_color: "#FFFFFF",
+			orientation: "portrait",
+			start_url: siteBaseURL,
+			icons: []
 		}
 
-		const iconUrl = "https://some-icon"
-
-		const icons = []
 		const sizes = ["192x192", "256x256", "512x512"]
 
 		sizes.forEach(size => {
-			icons.push({ src: iconUrl, sizes: size, type: "image/png" })
-		})
+			const [width, height] = size.split("x")
 
-		const manifest = {
-			name: "Guilherme Mota",
-			short_name: "Guilherme Mota",
-			display: "standalone",
-			description: "Guilherme Mota",
-			background_color: "#f2f2f2",
-			theme_color: "#f8f8f8",
-			start_url: req.url,
-			icons
-		}
+			const iconUrl = optimizedPublicPictureUrl({
+				baseURL: siteBaseURL,
+				assetKey: "logo.png",
+				width: +width,
+				height: +height
+			})
+
+			manifest.icons.push({ src: iconUrl, sizes: size, type: "image/png" })
+		})
 
 		res.status(200).json(manifest)
 	} catch (error) {

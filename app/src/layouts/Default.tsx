@@ -8,6 +8,7 @@ const DefaultLayout: React.FC = (props) => {
 		<>
 			<Head>
 				<link rel="icon" href="/favicon.png" />
+				<link id="app-manifest" rel="manifest" href="/manifest.json"></link>
 				<meta property="og:image" content="/favicon.png" />
 			</Head>
 			{children}

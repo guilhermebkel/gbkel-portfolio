@@ -2,10 +2,14 @@ import React from "react"
 import { GetStaticProps, GetStaticPaths, NextPage } from "next"
 import Head from "next/head"
 
-import { getAllPosts, getPostBySlug, PresentablePost } from "@/lib/posts"
+import {
+	getAllPostPreviews,
+	getDetailedPostBySlug,
+	DetailedPost
+} from "@/lib/posts"
 
 type PostProps = {
-	post: PresentablePost
+	post: DetailedPost
 }
 
 const Post: NextPage<PostProps> = (props) => {
@@ -49,7 +53,7 @@ const Post: NextPage<PostProps> = (props) => {
 export default Post
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const posts = await getAllPosts()
+	const posts = await getAllPostPreviews()
 
 	const paths = posts.map(post => ({ params: { slug: post.slug } }))
 
@@ -60,7 +64,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const post = await getPostBySlug(params.slug as string)
+	const post = await getDetailedPostBySlug(params.slug as string)
 
 	return {
 		props: {

@@ -3,7 +3,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { GetStaticProps, NextPage } from "next"
 
-import { getAllPosts, PostPreview } from "@/lib/posts"
+import { getAllPostPreviews, PostPreview } from "@/lib/posts"
 
 type BlogProps = {
 	posts: PostPreview[]
@@ -43,7 +43,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
 export default Blog
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = await getAllPosts()
+	const posts = await getAllPostPreviews()
 
 	return {
 		props: {

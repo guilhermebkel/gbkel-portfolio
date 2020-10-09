@@ -1,24 +1,22 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
-import { getAllPosts, getPostBySlug } from "@/lib/posts"
+import { getAllPostPreviews, getDetailedPostBySlug } from "@/lib/posts"
 import { getLatestDate } from "@/lib/date"
+import { getSiteBaseURL } from "@/lib/url"
 
 import { getRssXML, GetRssXMLProps } from "@/templates/rss"
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
 	try {
-		const previewPosts = await getAllPosts()
+		const previewPosts = await getAllPostPreviews()
 
-		const requestProto  = req.headers["x-forwarded-proto"]
-		const requestHost = req.headers["x-forwarded-host"]
-
-		const baseURL = `${requestProto}://${requestHost}`
+		const baseURL = getSiteBaseURL(req)
 
 		const posts: GetRssXMLProps["posts"] = await Promise.all(
 			previewPosts.map(async previewPost => {
 				const { slug } = previewPost
 
-				const post = await getPostBySlug(slug)
+				const post = await getDetailedPostBySlug(slug)
 
 				return {
 					title: post.title,

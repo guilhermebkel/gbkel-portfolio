@@ -2,6 +2,8 @@ import { NextApiRequest, NextApiResponse } from "next"
 import globby from "globby"
 import path from "path"
 
+import { getSiteBaseURL } from "@/lib/url"
+
 import { getSitemapXML } from "@/templates/sitemap"
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
@@ -18,10 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 			cwd: filesPath
 		})
 
-		const requestProto  = req.headers["x-forwarded-proto"]
-		const requestHost = req.headers["x-forwarded-host"]
-
-		const baseURL = `${requestProto}://${requestHost}`
+		const baseURL = getSiteBaseURL(req)
 
 		const urls = pages.map(page => {
 			let path = page.split("/").pop().split(".").shift()
