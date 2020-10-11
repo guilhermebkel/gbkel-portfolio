@@ -2,6 +2,7 @@
 	"short_name": "Mota",
 	"name": "Guilherme Mota",
 	"description": "A website about Guilherme Mota.",
+	"orientation": "portrait",
 	"icons": [
 		{
 			"src": "/images/logo-144.png",
