@@ -1,11 +1,11 @@
 const withPWA = require("next-pwa")
 
+const isDev = process.env.NODE_ENV === "development"
+
 module.exports = withPWA({
 	target: "serverless",
 	pwa: {
-		disable: process.env.NODE_ENV === "development",
-		register: true,
-		scope: "/",
-		sw: "service-worker.js"
+		disable: isDev,
+		dest: "public"
 	}
 })
