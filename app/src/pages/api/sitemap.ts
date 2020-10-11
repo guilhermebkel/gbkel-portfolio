@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import globby from "globby"
 import path from "path"
+import fs from "fs"
 
 import { getSiteBaseURL } from "@/lib/url"
 
@@ -10,26 +10,40 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 	try {
 		const filesPath = path.join(process.cwd(), "src")
 
-		const pages = await globby([
-			"pages/**/*.tsx",
-			"!pages/_*.tsx",
-			"!pages/**/[slug].tsx",
-			"!pages/api",
-			"posts/*.md"
-		], {
-			cwd: filesPath
+		const pagesPath = path.join(filesPath, "pages")
+		const postsPath = path.join(filesPath, "posts")
+
+		const [rawPages, rawPosts] = await Promise.all([
+			fs.promises.readdir(pagesPath),
+			fs.promises.readdir(postsPath)
+		])
+		
+		const pageSlugs = []
+
+		rawPages.forEach(rawPage => {
+			const isValidPage = !rawPage.startsWith("_") && !rawPage.startsWith("[") && rawPage.endsWith(".tsx")
+
+			if (isValidPage) {
+				const [pageSlug] = rawPage.split(".")
+
+				if (pageSlug === "index") {
+					pageSlugs.push("")
+				} else {
+					pageSlugs.push(pageSlug)
+				}
+			}
+		})
+
+		rawPosts.forEach(rawPost => {
+			const [pageSlug] = rawPost.split(".")
+
+			pageSlugs.push(pageSlug)
 		})
 
 		const baseURL = getSiteBaseURL(req)
 
-		const urls = pages.map(page => {
-			let path = page.split("/").pop().split(".").shift()
-
-			if (path === "index") {
-				path = ""
-			}
-
-			const url = `${baseURL}/${path}`
+		const urls = pageSlugs.map(pageSlug => {
+			const url = `${baseURL}/${pageSlug}`
 
 			return url
 		})
