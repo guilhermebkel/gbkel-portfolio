@@ -3,10 +3,6 @@
 		{
 			"source": "/thumbnail/(.*).png",
 			"destination": "/api/thumbnail?slug=$1"
-		},
-		{
-			"source": "/service-worker/(.*).js",
-			"destination": "/api/service-worker?slug=$1"
 		}
 	],
 	"rewrites": [
@@ -17,10 +13,6 @@
 		{
 			"source": "/rss.xml",
 			"destination": "/api/rss"
-		},
-		{
-			"source": "/manifest.json",
-			"destination": "/api/manifest"
 		}
 	]
 }
