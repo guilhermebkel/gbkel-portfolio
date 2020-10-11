@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
 import { getSiteBaseURL } from "@/lib/url"
-import { optimizedPublicPictureUrl } from "@/lib/picture"
 
 type ManifestIcon = {
 	src: string
@@ -40,16 +39,11 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 		const sizes = ["192x192", "256x256", "512x512"]
 
 		sizes.forEach(size => {
-			const [width, height] = size.split("x")
-
-			const iconUrl = optimizedPublicPictureUrl({
-				baseURL: siteBaseURL,
-				assetKey: "logo.png",
-				width: +width,
-				height: +height
+			manifest.icons.push({
+				src: `${siteBaseURL}/logo.png`,
+				sizes: size,
+				type: "image/png"
 			})
-
-			manifest.icons.push({ src: iconUrl, sizes: size, type: "image/png" })
 		})
 
 		res.status(200).json(manifest)

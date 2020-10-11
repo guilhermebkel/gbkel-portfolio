@@ -15,7 +15,6 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "reading-time": "^1.2.0",
-    "sharp": "^0.26.1",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
