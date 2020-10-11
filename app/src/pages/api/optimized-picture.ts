@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
 import { optimizePictureAsset } from "@/lib/picture"
-
+import { isValidNumber } from "@/lib/validation"
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
 	try {
 		const assetKey = req.query.assetKey as string
-		const height = req.query.height as string 
-		const width = req.query.width as string
+		const height = +req.query.height as number 
+		const width = +req.query.width as number
 
 		if (!assetKey) {
 			return res.status(404).json({ error: "PictureAssetNotFound" })
@@ -15,8 +15,8 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 
 		const optimizedPicture = await optimizePictureAsset({
 			assetKey,
-			height: isNaN(+height) ? null : +height,
-			width: isNaN(+width) ? null : +width
+			...(isValidNumber(height) ? { height } : {}),
+			...(isValidNumber(width) ? { width } : {})
 		})
 
 		res.setHeader("Content-Type", "image/png")
