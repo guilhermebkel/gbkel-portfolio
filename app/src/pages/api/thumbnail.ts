@@ -7,13 +7,7 @@ import { getThumbnailHTML } from "@/templates/thumbnail"
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
 	try {
-		const file = req.query.file as string
-
-		const slug = file
-			.split("/")
-			.pop()
-			.split(".png")
-			.shift()
+		const slug = req.query.slug as string
 
 		if (!slug) {
 			res.status(404).json({ error: "SlugNotFoundError" })

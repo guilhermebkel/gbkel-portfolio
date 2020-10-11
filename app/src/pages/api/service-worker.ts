@@ -2,13 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
 	try {
-		const file = req.query.file as string
-
-		const context = file
-			.split("/")
-			.pop()
-			.split(".js")
-			.shift()
+		const context = req.query.slug as string
 
 		if (!context) {
 			res.status(404).json({ error: "ContextNotFoundError" })

@@ -1,12 +1,12 @@
 {
 	"redirects": [
 		{
-			"source": "/thumbnail/(.*.png)",
-			"destination": "/api/thumbnail?file=$1"
+			"source": "/thumbnail/(.*).png",
+			"destination": "/api/thumbnail?slug=$1"
 		},
 		{
-			"source": "/service-worker/(.*.js)",
-			"destination": "/api/service-worker?file=$1"
+			"source": "/service-worker/(.*).js",
+			"destination": "/api/service-worker?slug=$1"
 		}
 	],
 	"rewrites": [
