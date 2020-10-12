@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 				<IntroductionContent>
 					<Avatar
 						src="/images/avatar.jpg"
-						loading="lazy"
+						alt="avatar"
 					/>
 				</IntroductionContent>
 			</IntroductionContainer>

@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+import { LazyLoadedImage } from "@/components" 
+
 export const IntroductionContainer = styled.section`
 	display: flex;
 	justify-content: center;
@@ -18,8 +20,8 @@ export const IntroductionContent = styled.section`
 	height: calc(100% - var(--navbar-height));
 `;
 
-export const Avatar = styled.img`
-	opacity: 0.7;
+export const Avatar = styled(LazyLoadedImage)`
+	opacity: 0.7 !important;
 
 	height: 100%;
 	width: auto;

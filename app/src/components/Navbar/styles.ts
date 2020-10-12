@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import Link from "next/link"
 
+import LazyLoadedImage from "@/components/LazyLoadedImage"
+
 export const NavbarContainer = styled.div`
 	width: 100%;
 	height: var(--navbar-height);
@@ -25,7 +27,7 @@ export const NavbarContent = styled.div`
 	justify-content: space-between;
 `
 
-export const Logo = styled.img`
+export const Logo = styled(LazyLoadedImage)`
 	width: auto;
 	height: 5rem;
 
