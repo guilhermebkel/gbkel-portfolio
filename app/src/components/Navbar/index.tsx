@@ -15,6 +15,7 @@ const Navbar: React.FC = () => {
 			<NavbarContent>
 				<Logo
 					src="/images/logo-white-transparent.png"
+					loading="lazy"
 				/>
 				
 				<Menu>

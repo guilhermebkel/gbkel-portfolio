@@ -14,7 +14,10 @@ const Home: NextPage = () => {
 		<HomeLayout>
 			<IntroductionContainer>
 				<IntroductionContent>
-					<Avatar src="/images/avatar.jpg" />
+					<Avatar
+						src="/images/avatar.jpg"
+						loading="lazy"
+					/>
 				</IntroductionContent>
 			</IntroductionContainer>
 		</HomeLayout>
