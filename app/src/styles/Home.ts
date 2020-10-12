@@ -1,28 +1,28 @@
 import styled from "styled-components"
 
-export const HomeContainer = styled.div`
-	position: relative;
+export const IntroductionContainer = styled.section`
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+
+	background-color: #282828;
 
 	width: 100%;
 	height: 100vh;
+`;
 
-	background-color: var(--gray-color-1);
-`
+export const IntroductionContent = styled.section`
+	max-width: var(--content-boxed-max-width);
 
-export const SiriWave = styled.div`
-	height: 100px;
 	width: 100%;
+	height: calc(100% - var(--navbar-height));
+`;
 
-	margin: auto;
+export const Avatar = styled.img`
+	opacity: 0.7;
 
-	opacity: .08;
+	height: 100%;
+	width: auto;
 
-	position: fixed;
-
-	top: 0;
-	bottom: 0;
-
-	transform: rotate(90deg);
-
-	z-index: 1;
-`
+	user-select: none;
+`;

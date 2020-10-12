@@ -10,7 +10,7 @@ export default createGlobalStyle`
   html, body, #root {
 		height: 100%;
 		
-		font-size: 16px;
+		font-size: 8px;
   }
 
   *, button, input {
@@ -20,7 +20,7 @@ export default createGlobalStyle`
     font-family: 'Ubuntu', sans-serif;
 	}
 
-  :root {
+	:root {
 		--gray-color-1: #151515;
 		--gray-color-2: #2C2C2C;
 		--gray-color-3: #3B3B3B;
@@ -44,48 +44,99 @@ export default createGlobalStyle`
 
 		--purple-color: #5328FE;
 		
-		--max-container-width: 1366px;
+		--content-boxed-max-width: 1366px;
+		--context-fluid-max-width: 90%;
+
+		--navbar-height: 8rem;
 	}
 	
 	h1 {
-		font-size: 3.125rem;
+		font-size: 6.25rem;
 		font-weight: 700;
 		color: var(--black-color-1);
 	}
 
 	h2 {
-		font-size: 1rem;
+		font-size: 2rem;
 		font-weight: 700;
 		color: var(--black-color-1);
 	}
 
 	h3 {
-		font-size: 1.625rem;
+		font-size: 3.25rem;
 		font-weight: 400;
 		color: var(--black-color-1);
 	}
 
 	h4 {
-		font-size: 1rem;
+		font-size: 2rem;
 		font-weight: 500;
 		color: var(--black-color-1);
 	}
 
 	p {
-		font-size: 1rem;
+		font-size: 2rem;
 		font-weight: 400;
 		color: var(--black-color-1);
 	}
 
 	small {
-		font-size: 0.875rem;
+		font-size: 1.75rem;
 		font-weight: 400;
 		color: var(--black-color-1);
 	}
 
 	button {
-		font-size: 1rem;
+		font-size: 2rem;
 		font-weight: 400;
 		color: var(--black-color-1);
+	}
+
+	a {
+		text-decoration: none;
+
+		font-weight: 400;
+		font-size: 2rem;
+
+		padding-right: 1rem;
+
+		line-height: 3rem;
+
+		color: var(--gray-color-15);
+
+		display: inline-block;
+		vertical-align: middle;
+		-webkit-transform: perspective(1px) translateZ(0);
+		transform: perspective(1px) translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+		position: relative;
+		overflow: hidden;
+
+		&:hover {
+			color: var(--gray-color-15);
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			right: 100%;
+			bottom: 0;
+			height: 1.4rem;
+
+			background: var(--purple-color);
+
+			-webkit-transition-property: right;
+			transition-property: right;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+
+		&:hover:before, &:focus:before, &:active:before {
+			right: 0;
+		}
 	}
 `;

@@ -3,12 +3,20 @@ import { NextPage } from "next"
 
 import HomeLayout from "@/layouts/Home"
 
+import {
+	IntroductionContainer,
+	IntroductionContent,
+	Avatar
+} from "@/styles/Home"
+
 const Home: NextPage = () => {
 	return (
 		<HomeLayout>
-			<h1>
-				Coming soon...
-			</h1>
+			<IntroductionContainer>
+				<IntroductionContent>
+					<Avatar src="/images/avatar.jpg" />
+				</IntroductionContent>
+			</IntroductionContainer>
 		</HomeLayout>
 	)
 }
