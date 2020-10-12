@@ -4,12 +4,13 @@ import { NextPage } from "next"
 
 import DefaultLayout from "@/layouts/Default"
 
-import GlobalStyles from "@/styles/GlobalStyles"
+import GlobalStyles from "@/styles/Global"
 
 const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 	return (
 		<DefaultLayout>
 			<GlobalStyles />
+
 			<Component {...pageProps} />
 		</DefaultLayout>
 	)

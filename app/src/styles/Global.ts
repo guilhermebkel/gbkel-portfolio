@@ -42,7 +42,9 @@ export default createGlobalStyle`
     --black-color-3: #D7D8DA;
     --black-color-4: #F3F3F3;
 
-    --purple-color: #5328FE;
+		--purple-color: #5328FE;
+		
+		--max-container-width: 1366px;
 	}
 	
 	h1 {
