@@ -10,12 +10,12 @@ export const HomeContainer = styled.div`
 
 	z-index: -2;
 
-	background-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) calc(50% - 0.8px), rgba(255,255,255,0.05) 50%, rgba(0,0,0,0) calc(50% + 0.8px), rgba(0,0,0,0) 100%);
-	background-size: 300px;
+	background-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) calc(50% - 0.1rem), rgba(255,255,255,0.05) 50%, rgba(0,0,0,0) calc(50% + 0.1rem), rgba(0,0,0,0) 100%);
+	background-size: 37.5rem;
 `
 
 export const SiriWave = styled.div`
-	height: 100px;
+	height: 12rem;
 	width: 100%;
 
 	margin: auto;

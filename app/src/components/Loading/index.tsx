@@ -7,7 +7,7 @@ import {
 
 import { environmentConfig } from "@/config/environment"
 
-const Navbar: React.FC = () => {
+const Loading: React.FC = () => {
 	const [isLoaded, setIsLoaded] = useState(environmentConfig.isDev)
 
 	setTimeout(() => {
@@ -24,4 +24,4 @@ const Navbar: React.FC = () => {
 	)
 }
 
-export default Navbar
+export default Loading
