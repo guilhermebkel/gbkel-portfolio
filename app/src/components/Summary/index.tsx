@@ -8,15 +8,19 @@ import {
 	SummaryDescription
 } from "@/components/Summary/styles"
 
+import {
+	Spotlight
+} from "@/components"
+
 type SummaryProps = {
 	type: string
 	title: string
 	description: string
-	spotlightSize?: string
+	spotlightWidth?: string
 }
 
 const Summary: React.FC<SummaryProps> = (props) => {
-	const { type, title, description, spotlightSize } = props
+	const { type, title, description, spotlightWidth } = props
 
 	return (
 		<SummaryContainer>
@@ -25,11 +29,17 @@ const Summary: React.FC<SummaryProps> = (props) => {
 					{type}
 				</SummaryType>
 
-				<SummaryTitle
-					spotlightSize={spotlightSize}
+
+				<Spotlight
+					width={spotlightWidth}
+					bottom="-0.5rem"
+					left="0"
+					height="3.5rem"
 				>
-					{title}
-				</SummaryTitle>
+					<SummaryTitle>
+						{title}
+					</SummaryTitle>
+				</Spotlight>
 
 				<SummaryDescription>
 					{description}

@@ -28,7 +28,7 @@ export const SummaryType = styled.p`
 	margin-bottom: 2rem;
 `
 
-export const SummaryTitle = styled.h1<{ spotlightSize?: string }>`
+export const SummaryTitle = styled.h1`
 	text-align: left;
 
 	color: var(--gray-color-15);
@@ -36,24 +36,6 @@ export const SummaryTitle = styled.h1<{ spotlightSize?: string }>`
 	max-width: 36rem;
 
 	margin-bottom: 3rem;
-
-	position: relative;
-
-	&::after {
-		content: "";
-
-		width: ${(props) => props.spotlightSize || "100%"};
-		height: 3.5rem;
-
-		background-color: var(--purple-color);
-
-		bottom: -0.5rem;
-		left: 0;
-
-		position: absolute;
-
-		z-index: -1;
-	}
 `
 
 export const SummaryDescription = styled.p`

@@ -20,6 +20,7 @@ export const IntroductionContent = styled.section`
 
 	width: 100%;
 	height: calc(100% - var(--navbar-height));
+	padding: 0 1rem;
 
 	position: relative;
 
@@ -41,5 +42,13 @@ export const Avatar = styled(LazyLoadedImage)`
 
 	user-select: none;
 
-	z-index: 1;
+	z-index: 0;
+`;
+
+export const CodingSymbol = styled.h1`
+	font-size: 36rem;
+
+	color: var(--gray-color-15);
+
+	margin-bottom: 6rem;
 `;
