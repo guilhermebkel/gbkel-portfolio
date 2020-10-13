@@ -11,6 +11,8 @@ export const IntroductionContainer = styled.section`
 
 	width: 100%;
 	height: 100vh;
+
+	box-shadow: 0 10px 25px var(--gray-color-1);
 `;
 
 export const IntroductionContent = styled.section`
