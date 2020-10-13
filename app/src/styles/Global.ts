@@ -46,6 +46,7 @@ export default createGlobalStyle`
 		
 		--content-boxed-max-width: 1366px;
 		--context-fluid-max-width: 90%;
+		--content-mobile-margin: 2rem;
 
 		--navbar-height: 8rem;
 	}

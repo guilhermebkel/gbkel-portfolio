@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 			<IntroductionContainer>
 				<IntroductionContent>
 					<Summary
-						spotlightWidth="164px"
+						spotlightWidth="170px"
 						type="Introduction"
 						title="Guilherme Mota."
 						description="A problem solver who knows that knows nothing, passionate about cloud computing and complex systems."
