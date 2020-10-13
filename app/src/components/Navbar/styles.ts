@@ -11,7 +11,7 @@ export const NavbarContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 
@@ -25,6 +25,8 @@ export const NavbarContent = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	z-index: 2;
 `
 
 export const Logo = styled(LazyLoadedImage)`
@@ -59,3 +61,19 @@ export const MenuItem = styled.li`
 `
 
 export const MenuItemLink = styled(Link)``
+
+export const NavbarBackground = styled.div<{ isScrolling: boolean }>`
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	background-color: var(--black-color-1);
+
+	width: 100%;
+	height: ${(props) => props.isScrolling ? "100%" : "0%"};
+
+	transition: all 0.5s;
+
+	z-index: 1;
+`

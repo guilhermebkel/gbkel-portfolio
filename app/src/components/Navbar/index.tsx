@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import {
 	NavbarContainer,
@@ -6,10 +6,23 @@ import {
 	Logo,
 	Menu,
 	MenuItem,
-	MenuItemLink
+	MenuItemLink,
+	NavbarBackground
 } from "@/components/Navbar/styles"
 
+import { addEventListener } from "@/lib/window"
+
 const Navbar: React.FC = () => {
+	const [isScrolling, setIsScrolling] = useState(false)
+
+	addEventListener("scroll", () => {
+		if (window.pageYOffset === 0) {
+			setIsScrolling(false)
+		} else {
+			setIsScrolling(true)
+		}
+	})
+
 	return (
 		<NavbarContainer>
 			<NavbarContent>
@@ -46,6 +59,8 @@ const Navbar: React.FC = () => {
 					</MenuItem>
 				</Menu>
 			</NavbarContent>
+
+			<NavbarBackground isScrolling={isScrolling} />
 		</NavbarContainer>
 	)
 }
