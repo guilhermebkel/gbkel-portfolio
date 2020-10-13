@@ -1,25 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html, body, #root {
-		height: 100%;
-		
-		font-size: 8px;
-  }
-
-  *, button, input {
-    border: 0;
-    outline: 0;
-
-    font-family: 'Ubuntu', sans-serif;
-	}
-
 	:root {
 		--gray-color-1: #151515;
 		--gray-color-2: #2C2C2C;
@@ -49,6 +30,25 @@ export default createGlobalStyle`
 		--content-mobile-margin: 2rem;
 
 		--navbar-height: 8rem;
+	}
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+		height: 100%;
+		
+		font-size: 8px;
+  }
+
+  *, button, input {
+    border: 0;
+    outline: 0;
+
+    font-family: 'Ubuntu', sans-serif;
 	}
 	
 	h1 {
