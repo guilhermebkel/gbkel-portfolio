@@ -1,14 +1,17 @@
 import React from "react"
 import Head from "next/head"
 
-import { Navbar, Loading } from "@/components"
+import {
+	Navbar,
+	// Loading
+} from "@/components"
 
 const DefaultLayout: React.FC = (props) => {
 	const { children } = props
 
 	return (
 		<>
-			<Loading />
+			{/* <Loading /> */}
 
 			<Head>
 				<link rel="icon" href="/favicon.png" />
