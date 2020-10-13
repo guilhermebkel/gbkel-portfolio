@@ -28,6 +28,8 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 			if (isImageVisible) {
 				imageRef.current.src = src
 				imageRef.current.alt = alt
+
+				observer.unobserve(imageElement)
 			}
 		})
 	
