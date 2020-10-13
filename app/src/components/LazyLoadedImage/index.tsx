@@ -38,7 +38,7 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 		<Image
 			ref={imageRef}
 			onLoad={onImageLoad}
-			{...({ loaded })}
+			loaded={loaded}
 			{...otherProps}
 		/>
 	)
