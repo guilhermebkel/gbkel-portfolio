@@ -6,19 +6,23 @@ import {
 	SiriWave
 } from "@/layouts/Home/styles"
 
-import { addEventListener, setupSiriWave } from "@/lib/window"
+import { setupSiriWave } from "@/lib/external"
+
+import useDidMount from "@/hooks/useDidMount"
 
 const HomeLayout: React.FC = (props) => {
 	const { children } = props
 
-	addEventListener("load", () => {
-		setupSiriWave({
-			container: document.getElementById("wave"),
-			speed: 0.02,
-			color: "#FFFFFF",
-			frequency: 4,
-			autostart: true,
-			amplitude: 1
+	useDidMount(() => {
+		window.addEventListener("load", () => {
+			setupSiriWave({
+				container: document.getElementById("wave"),
+				speed: 0.02,
+				color: "#FFFFFF",
+				frequency: 4,
+				autostart: true,
+				amplitude: 1
+			})
 		})
 	})
 

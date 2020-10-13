@@ -10,17 +10,19 @@ import {
 	NavbarBackground
 } from "@/components/Navbar/styles"
 
-import { addEventListener } from "@/lib/window"
+import useDidMount from "@/hooks/useDidMount"
 
 const Navbar: React.FC = () => {
 	const [isScrolling, setIsScrolling] = useState(false)
 
-	addEventListener("scroll", () => {
-		if (window.pageYOffset === 0) {
-			setIsScrolling(false)
-		} else {
-			setIsScrolling(true)
-		}
+	useDidMount(() => {
+		window.addEventListener("scroll", () => {
+			if (window.pageYOffset === 0) {
+				setIsScrolling(false)
+			} else {
+				setIsScrolling(true)
+			}
+		})
 	})
 
 	return (

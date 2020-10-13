@@ -4,7 +4,7 @@ import {
 	SpotlightContent
 } from "@/components/Spotlight/styles"
 
-import { addEventListener } from "@/lib/window"
+import useDidMount from "@/hooks/useDidMount"
 
 export type SpotlightProps = {
 	bottom?: string
@@ -29,15 +29,15 @@ const Spotlight: React.FC<SpotlightProps> = (props) => {
 	const [isVisible, setIsVisible] = useState(false)
 	const spotlightRef = useRef(null)
 
-	addEventListener("load", () => {
+	useDidMount(() => {
 		const spotlightElement = spotlightRef.current as Element
 
 		const observer = new IntersectionObserver(callback => {
 			const isSpotlightVisible = callback?.[0]?.isIntersecting
-
+	
 			if (isSpotlightVisible) {
 				setIsVisible(true)
-
+	
 				observer.unobserve(spotlightElement)
 			}
 		})

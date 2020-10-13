@@ -1,8 +1,3 @@
-// eslint-disable-next-line
-export function addEventListener<K extends keyof WindowEventMap>(type: K, listener: (this: Window, ev: WindowEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void {
-	globalThis?.addEventListener?.(type, listener, options)
-}
-
 type SetupSiriWave = {
 	Options: {
 		container: Element
@@ -17,7 +12,9 @@ type SetupSiriWave = {
 export const setupSiriWave = (options: SetupSiriWave["Options"]): void => {
 	const Siriwave = globalThis["SiriWave"]
 
-	new Siriwave(options)
+	if (Siriwave) {
+		new Siriwave(options)
+	}
 }
 
 type SetupTagCanvas = {
@@ -36,5 +33,7 @@ export const setupTagCanvas = (options: SetupTagCanvas["Options"]): void => {
 
 	const TagCanvas = globalThis["TagCanvas"]
 
-	TagCanvas.Start(elementId, "", otherOptions)
+	if (TagCanvas) {
+		TagCanvas.Start(elementId, "", otherOptions)
+	}
 }

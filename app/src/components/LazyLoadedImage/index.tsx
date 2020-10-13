@@ -4,7 +4,7 @@ import {
 	Image
 } from "@/components/LazyLoadedImage/styles"
 
-import { addEventListener } from "@/lib/window"
+import useDidMount from "@/hooks/useDidMount"
 
 type LazyLoadedImageProps = ImgHTMLAttributes<Element>
 
@@ -19,7 +19,7 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 		setLoaded(true)
 	}
 
-	addEventListener("load", () => {
+	useDidMount(() => {
 		const imageElement = imageRef.current as Element
 
 		const observer = new IntersectionObserver(callback => {
