@@ -13,6 +13,8 @@ export const IntroductionContainer = styled.section`
 	height: 100vh;
 
 	box-shadow: 0 10px 25px var(--gray-color-1);
+
+	position: relative;
 `;
 
 export const IntroductionContent = styled.section`
@@ -60,3 +62,36 @@ export const CodingSymbol = styled.h1`
 		display: none;
 	}
 `;
+
+export const AuxBarContainer = styled.div`
+	width: 100%;
+	height: var(--navbar-height);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+
+	bottom: 0;
+	left: 0;
+
+	z-index: 3;
+`
+
+export const AuxBarContent = styled.div`
+	width: var(--context-fluid-max-width);
+	height: 100%;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	& > * {
+		margin-right: 1.5rem;
+	}
+
+	& > *:last-child {
+		margin-right: 0;
+	}
+`
