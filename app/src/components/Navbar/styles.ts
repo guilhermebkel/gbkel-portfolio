@@ -15,7 +15,7 @@ export const NavbarContainer = styled.div`
 	top: 0;
 	left: 0;
 
-	z-index: 3;
+	z-index: 4;
 `
 
 export const NavbarContent = styled.div`
@@ -79,8 +79,8 @@ export const Menu = styled.ul<{ isMobileMenuOpened: boolean }>`
 
 		button {
 			position: ${(props) => props.isMobileMenuOpened && "absolute"};
-			top: ${(props) => props.isMobileMenuOpened && "2rem"};
-			right: ${(props) => props.isMobileMenuOpened && "2rem"};
+			top: ${(props) => props.isMobileMenuOpened && "2.4rem"};
+			right: ${(props) => props.isMobileMenuOpened && "2.2rem"};
 		}
 
 		img {
