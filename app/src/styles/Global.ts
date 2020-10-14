@@ -113,31 +113,33 @@ export default createGlobalStyle`
 		position: relative;
 		overflow: hidden;
 
-		&:hover {
-			color: var(--gray-color-15);
-		}
+		@media (min-width: 768px) {
+			&:hover {
+				color: var(--gray-color-15);
+			}
 
-		&:before {
-			content: "";
-			position: absolute;
-			z-index: -1;
-			left: 0;
-			right: 100%;
-			bottom: 0;
-			height: 1.4rem;
+			&:before {
+				content: "";
+				position: absolute;
+				z-index: -1;
+				left: 0;
+				right: 100%;
+				bottom: 0;
+				height: 1.4rem;
 
-			background: var(--purple-color);
+				background: var(--purple-color);
 
-			-webkit-transition-property: right;
-			transition-property: right;
-			-webkit-transition-duration: 0.3s;
-			transition-duration: 0.3s;
-			-webkit-transition-timing-function: ease-out;
-			transition-timing-function: ease-out;
-		}
+				-webkit-transition-property: right;
+				transition-property: right;
+				-webkit-transition-duration: 0.3s;
+				transition-duration: 0.3s;
+				-webkit-transition-timing-function: ease-out;
+				transition-timing-function: ease-out;
+			}
 
-		&:hover:before, &:focus:before, &:active:before {
-			right: 0;
+			&:hover:before, &:focus:before, &:active:before {
+				right: 0;
+			}
 		}
 	}
 `;

@@ -45,11 +45,50 @@ export const Logo = styled(LazyLoadedImage)`
 	}
 `
 
-export const Menu = styled.ul`
+export const Menu = styled.ul<{ isMobileMenuOpened: boolean }>`
 	list-style-type: none;
 
 	display: flex;
 	align-items: center;
+	flex-direction: ${(props) => props.isMobileMenuOpened ? "column" : "row"};
+	justify-content: ${(props) => props.isMobileMenuOpened && "center"};
+
+	position: ${(props) => props.isMobileMenuOpened && "fixed"};
+	height: ${(props) => props.isMobileMenuOpened && "100%"};
+	width: ${(props) => props.isMobileMenuOpened && "100%"};
+	background-color: ${(props) => props.isMobileMenuOpened && "var(--gray-color-15)"};
+	top: ${(props) => props.isMobileMenuOpened && 0};
+	left: ${(props) => props.isMobileMenuOpened && 0};
+
+	@media (min-width: 768px) {
+		button {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		li {
+			display: ${(props) => props.isMobileMenuOpened ? "flex" : "none"};
+			margin: ${(props) => props.isMobileMenuOpened && 0};
+			margin-bottom: ${(props) => props.isMobileMenuOpened && "2rem"};
+		}
+
+		a {
+			color: ${(props) => props.isMobileMenuOpened && "var(--gray-color-1)"};
+		}
+
+		button {
+			position: ${(props) => props.isMobileMenuOpened && "absolute"};
+			top: ${(props) => props.isMobileMenuOpened && "2rem"};
+			right: ${(props) => props.isMobileMenuOpened && "2rem"};
+		}
+
+		img {
+			filter: ${(props) => props.isMobileMenuOpened && "invert(0.9)"};
+		}
+	}
+
+	transition: all 0.1s ease-in-out;
 `
 
 export const MenuItem = styled.li`

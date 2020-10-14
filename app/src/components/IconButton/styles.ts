@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
-export const IconLink = styled.a`
+export const Button = styled.button`
+	background: none;
+`
+
+export const Link = styled.a`
 	line-height: 2rem;
 `
 

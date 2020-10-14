@@ -10,10 +10,20 @@ import {
 	NavbarBackground
 } from "@/components/Navbar/styles"
 
+import {
+	IconButton
+} from "@/components"
+
 import useDidMount from "@/hooks/useDidMount"
 
 const Navbar: React.FC = () => {
 	const [isScrolling, setIsScrolling] = useState(false)
+
+	const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false)
+
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpened(lastState => !lastState)
+	}
 
 	useDidMount(() => {
 		window.addEventListener("scroll", () => {
@@ -33,7 +43,14 @@ const Navbar: React.FC = () => {
 					alt="logo"
 				/>
 				
-				<Menu>
+				<Menu
+					isMobileMenuOpened={isMobileMenuOpened}
+				>
+					<IconButton
+						onClick={toggleMobileMenu}
+						src="/icons/menu.svg"
+					/>
+
 					<MenuItem>
 						<MenuItemLink href="/">
 							Home
