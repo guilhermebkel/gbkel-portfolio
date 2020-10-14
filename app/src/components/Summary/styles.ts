@@ -26,6 +26,10 @@ export const SummaryType = styled.p`
 	color: var(--gray-color-15);
 
 	margin-bottom: 2rem;
+
+	@media (max-width: 768px) {
+		font-size: 1.5rem;
+	}
 `
 
 export const SummaryTitle = styled.h1`
@@ -36,6 +40,10 @@ export const SummaryTitle = styled.h1`
 	max-width: 36rem;
 
 	margin-bottom: 3rem;
+
+	@media (max-width: 768px) {
+		font-size: 5rem;
+	}
 `
 
 export const SummaryDescription = styled.p`
@@ -44,4 +52,8 @@ export const SummaryDescription = styled.p`
 	color: var(--gray-color-15);
 
 	line-height: 3rem;
+
+	@media (max-width: 768px) {
+		font-size: 1.5rem;
+	}
 `
