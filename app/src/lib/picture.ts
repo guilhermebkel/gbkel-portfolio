@@ -22,19 +22,19 @@ export const getAllPublicPictureBlurHashes = async (): Promise<PublicPictureBlur
 
 	try {
 		const getAllFilePathsFromDirectory = async (dirPath: string) => {
-			const assets = await fs.promises.readdir(dirPath, { withFileTypes: true })
+			const files = await fs.promises.readdir(dirPath, { withFileTypes: true })
 		
 			await Promise.all(
-				assets.map(async asset => {
-					const isDir = asset.isDirectory()
+				files.map(async file => {
+					const isDirectory = file.isDirectory()
 	
-					const assetPath = path.join(dirPath, asset.name)
+					const filePath = path.join(dirPath, file.name)
 	
-					if (isDir) {
-						return await getAllFilePathsFromDirectory(assetPath)
+					if (isDirectory) {
+						return await getAllFilePathsFromDirectory(filePath)
 					}
 	
-					assetFilePaths.push(assetPath)
+					assetFilePaths.push(filePath)
 				})
 			)
 		}
