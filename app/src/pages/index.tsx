@@ -1,5 +1,7 @@
 import React from "react"
-import { NextPage } from "next"
+import { NextPage, GetStaticProps } from "next"
+
+import { getAllPublicPictureBlurHashes } from "@/lib/picture"
 
 import HomeLayout from "@/layouts/Home"
 
@@ -115,3 +117,13 @@ const Home: NextPage = () => (
 )
 
 export default Home
+
+export const getStaticProps: GetStaticProps = async () => {
+	const blurHashes = await getAllPublicPictureBlurHashes()
+
+	return {
+		props: {
+			blurHashes
+		}
+	}
+}
