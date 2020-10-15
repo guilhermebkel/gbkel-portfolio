@@ -10,7 +10,7 @@ type PicturePath = {
 	publicPath: string
 }
 
-type PublicPictureBlurHashes = {
+export type PublicPictureBlurHashes = {
 	[publicPath: string]: string
 }
 

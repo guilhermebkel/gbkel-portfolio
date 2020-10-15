@@ -9,7 +9,9 @@ type BlogProps = {
 	posts: PostPreview[]
 }
 
-const Blog: NextPage<BlogProps> = ({ posts }) => {
+const Blog: NextPage<BlogProps> = (props) => {
+	const { posts } = props
+
 	return (
 		<>
 			<Head>
