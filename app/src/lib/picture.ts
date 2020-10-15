@@ -51,10 +51,8 @@ export const getAllPublicPictureBlurHashes = async (): Promise<PublicPictureBlur
 		await Promise.all(
 			picturePaths.map(async picturePath => {
 				try {
-					const picture = await fs.promises.readFile(picturePath.fullPath)
-	
 					const blurHash = await new Promise<string>(callback => {
-						sharp(picture)
+						sharp(picturePath.fullPath)
 							.raw()
 							.ensureAlpha()
 							.resize(32, 32, { fit: "inside" })
