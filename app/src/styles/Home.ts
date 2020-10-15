@@ -114,6 +114,8 @@ export const SkillsContainer = styled.section`
 export const SkillsContent = styled.div`
 	max-width: var(--section-content-boxed-max-width);
 
+	margin: 0 var(--section-content-mobile-margin);
+
 	width: 100%;
 	height: 100%;
 
