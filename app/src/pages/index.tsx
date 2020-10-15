@@ -1,10 +1,5 @@
 import React from "react"
-import { NextPage, GetStaticProps } from "next"
-
-import {
-	getAllPublicPictureBlurHashes,
-	PublicPictureBlurHashes
-} from "@/lib/picture"
+import { NextPage } from "next"
 
 import HomeLayout from "@/layouts/Home"
 
@@ -35,11 +30,7 @@ const SKILLS = [
 	"Solution Modelling"
 ]
 
-type HomeProps = {
-	publicPictureBlurHashes: PublicPictureBlurHashes
-}
-
-const Home: NextPage<HomeProps> = () => (
+const Home: NextPage = () => (
 	<HomeLayout>
 		<IntroductionSectionContainer>
 			<IntroductionSectionContent>
@@ -124,13 +115,3 @@ const Home: NextPage<HomeProps> = () => (
 )
 
 export default Home
-
-export const getStaticProps: GetStaticProps = async () => {
-	const publicPictureBlurHashes = await getAllPublicPictureBlurHashes()
-
-	return {
-		props: {
-			publicPictureBlurHashes
-		}
-	}
-}
