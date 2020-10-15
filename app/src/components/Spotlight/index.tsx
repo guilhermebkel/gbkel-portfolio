@@ -41,7 +41,7 @@ const Spotlight: React.FC<SpotlightProps> = (props) => {
 				observer.unobserve(spotlightElement)
 			}
 		}, {
-			threshold: 0.5
+			threshold: 1
 		})
 	
 		observer.observe(spotlightElement)
