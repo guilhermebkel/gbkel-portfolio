@@ -5,14 +5,24 @@ import {
 	Logo
 } from "@/components/Loading/styles"
 
+import useDidMount from "@/hooks/useDidMount"
+
 import { environmentConfig } from "@/config/environment"
 
 const Loading: React.FC = () => {
 	const [isLoaded, setIsLoaded] = useState(environmentConfig.isDev)
 
-	setTimeout(() => {
-		setIsLoaded(true)
-	}, 2000)
+	useDidMount(() => {
+		const stateCheckInterval = setInterval(() => {
+			if (document.readyState === "complete") { 
+				clearInterval(stateCheckInterval);
+				
+				setTimeout(() => {
+					setIsLoaded(true)
+				}, 3000)
+			}
+		}, 100)
+	})
 
 	return (
 		<LoadingContainer isLoaded={isLoaded}>

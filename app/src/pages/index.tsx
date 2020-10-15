@@ -47,8 +47,6 @@ const Home: NextPage = () => {
 							alt="avatar"
 						/>
 					</IntroductionContent>
-
-					
 				</IntroductionContainer>
 			</HomeLayout>
 			<AuxBarContainer>
