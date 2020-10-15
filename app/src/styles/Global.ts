@@ -25,9 +25,10 @@ export default createGlobalStyle`
 
 		--purple-color: #5328FE;
 		
-		--content-boxed-max-width: 1366px;
-		--context-fluid-max-width: 90%;
-		--content-mobile-margin: 2rem;
+		--section-content-boxed-max-width: 1366px;
+		--section-context-fluid-max-width: 90%;
+		--section-content-mobile-margin: 2rem;
+		--section-container-margin-bottom: 20rem;
 
 		--navbar-height: 8rem;
 	}
@@ -38,7 +39,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html, body, #root {
+  html, body {
 		height: 100%;
 		
 		font-size: 8px;

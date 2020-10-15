@@ -6,7 +6,9 @@ import HomeLayout from "@/layouts/Home"
 import {
 	Summary,
 	Spotlight,
-	IconButton
+	IconButton,
+	Button,
+	TagsGlobe
 } from "@/components"
 
 import {
@@ -15,40 +17,47 @@ import {
 	Avatar,
 	CodingSymbol,
 	AuxBarContainer,
-	AuxBarContent
+	AuxBarContent,
+	SkillsContainer,
+	SkillsContent,
+	SkillsGlobeContainer,
+	SeeMoreContainer
 } from "@/styles/Home"
 
-const Home: NextPage = () => {
-	return (
-		<>
-			<HomeLayout>
-				<IntroductionContainer>
-					<IntroductionContent>
-						<Summary
-							spotlightWidth="170px"
-							type="Introduction"
-							title="Guilherme Mota."
-							description="A problem solver who knows that knows nothing, passionate about cloud computing and complex systems."
-						/>
+const SKILLS = [
+	"Next.js", "React.js", "Typescript", "Node.js", "AWS", "Software Architecture", "Fast Learning",
+	"Excellence", "Fast Delivery", "Commitment", "Quality Minded", "Javascript", "Software Patterns",
+	"Solution Modelling"
+]
 
-						<Spotlight
-							width="338px"
-							height="85px"
-							left="100px"
-							bottom="60px"
-						>
-							<CodingSymbol>
-								{"</>"}
-							</CodingSymbol>
-						</Spotlight>
-						
-						<Avatar
-							src="/images/avatar.jpg"
-							alt="avatar"
-						/>
-					</IntroductionContent>
-				</IntroductionContainer>
-			</HomeLayout>
+const Home: NextPage = () => (
+	<HomeLayout>
+		<IntroductionContainer>
+			<IntroductionContent>
+				<Summary
+					spotlightWidth="170px"
+					type="Introduction"
+					title="Guilherme Mota."
+					description="A problem solver who knows that knows nothing, passionate about cloud computing and complex systems."
+				/>
+
+				<Spotlight
+					width="338px"
+					height="85px"
+					left="100px"
+					bottom="60px"
+				>
+					<CodingSymbol>
+						{"</>"}
+					</CodingSymbol>
+				</Spotlight>
+				
+				<Avatar
+					src="/images/avatar.jpg"
+					alt="avatar"
+				/>
+			</IntroductionContent>
+
 			<AuxBarContainer>
 				<AuxBarContent>
 					<IconButton
@@ -76,8 +85,33 @@ const Home: NextPage = () => {
 					/>
 				</AuxBarContent>
 			</AuxBarContainer>
-		</>
-	)
-}
+		</IntroductionContainer>
+
+		<SkillsContainer>
+			<SkillsContent>
+				<Summary
+					spotlightWidth="170px"
+					type="About"
+					title="Skills."
+					description="A list of skills I have developed by practical and theoretical experiences."
+				/>
+
+				<SkillsGlobeContainer>
+					<TagsGlobe
+						width={700}
+						height={700}
+						tags={SKILLS}
+					/>
+				</SkillsGlobeContainer>
+
+				<SeeMoreContainer>
+					<Button href="https://about.guilherr.me/skills">
+						CLICK HERE TO SEE MORE
+					</Button>
+				</SeeMoreContainer>
+			</SkillsContent>
+		</SkillsContainer>
+	</HomeLayout>
+)
 
 export default Home

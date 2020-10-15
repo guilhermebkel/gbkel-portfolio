@@ -2,29 +2,13 @@ import React from "react"
 import Head from "next/head"
 
 import {
-	HomeContainer,
-	SiriWave
+	HomeContainer
 } from "@/layouts/Home/styles"
 
-import { setupSiriWave } from "@/lib/external"
-
-import useDidMount from "@/hooks/useDidMount"
+import { SiriWave } from "@/components"
 
 const HomeLayout: React.FC = (props) => {
 	const { children } = props
-
-	useDidMount(() => {
-		window.addEventListener("load", () => {
-			setupSiriWave({
-				container: document.getElementById("wave"),
-				speed: 0.02,
-				color: "#FFFFFF",
-				frequency: 4,
-				autostart: true,
-				amplitude: 1
-			})
-		})
-	})
 
 	return (
 		<HomeContainer>
@@ -34,9 +18,7 @@ const HomeLayout: React.FC = (props) => {
 
 			{children}
 
-			<SiriWave id="wave" />
-
-			<script src="/js/siriwave.js"></script>
+			<SiriWave />
 		</HomeContainer>
 	)
 }

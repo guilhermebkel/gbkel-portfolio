@@ -15,14 +15,18 @@ export const IntroductionContainer = styled.section`
 	box-shadow: 0 10px 25px var(--gray-color-1);
 
 	position: relative;
+
+	margin-bottom: var(--section-container-margin-bottom);
+
+	z-index: 2;
 `;
 
 export const IntroductionContent = styled.section`
-	max-width: var(--content-boxed-max-width);
+	max-width: var(--section-content-boxed-max-width);
 
 	width: 100%;
 	height: calc(100% - var(--navbar-height));
-	margin: 0 var(--content-mobile-margin);
+	margin: 0 var(--section-content-mobile-margin);
 
 	position: relative;
 
@@ -80,7 +84,7 @@ export const AuxBarContainer = styled.div`
 `
 
 export const AuxBarContent = styled.div`
-	width: var(--context-fluid-max-width);
+	width: var(--section-context-fluid-max-width);
 	height: 100%;
 
 	display: flex;
@@ -94,4 +98,43 @@ export const AuxBarContent = styled.div`
 	& > *:last-child {
 		margin-right: 0;
 	}
+`
+
+export const SkillsContainer = styled.section`
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding-bottom: var(--section-container-margin-bottom);
+`
+
+export const SkillsContent = styled.div`
+	max-width: var(--section-content-boxed-max-width);
+
+	width: 100%;
+	height: 100%;
+
+	z-index: 2;
+`
+
+export const SkillsGlobeContainer = styled.div`
+	width: 100%;
+	height: 100%;
+
+	margin: 5rem 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`
+
+export const SeeMoreContainer = styled.div`
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: flex-end;
 `
