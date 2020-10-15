@@ -1,32 +1,25 @@
 import styled from "styled-components"
 
+import { Section } from "@/components"
+
 import { LazyLoadedImage } from "@/components" 
 
-export const IntroductionContainer = styled.section`
-	display: flex;
-	justify-content: center;
+export const IntroductionSectionContainer = styled(Section.Container)`
 	align-items: flex-end;
 
 	background-color: #282828;
 
-	width: 100%;
-	height: 100vh;
+	height: 100vh !important;
 
 	box-shadow: 0 10px 25px var(--gray-color-1);
 
 	position: relative;
 
-	margin-bottom: var(--section-container-margin-bottom);
-
 	z-index: 2;
 `;
 
-export const IntroductionContent = styled.section`
-	max-width: var(--section-content-boxed-max-width);
-
-	width: 100%;
+export const IntroductionSectionContent = styled(Section.Content)`
 	height: calc(100% - var(--navbar-height));
-	margin: 0 var(--section-content-mobile-margin);
 
 	position: relative;
 
@@ -100,26 +93,13 @@ export const AuxBarContent = styled.div`
 	}
 `
 
-export const SkillsContainer = styled.section`
-	width: 100%;
-	height: 100%;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
+export const SkillsSectionContainer = styled(Section.Container)`
 	padding-bottom: var(--section-container-margin-bottom);
+
+	margin-bottom: 0 !important;
 `
 
-export const SkillsContent = styled.div`
-	max-width: var(--section-content-boxed-max-width);
-
-	margin: 0 var(--section-content-mobile-margin);
-
-	width: 100%;
-	height: 100%;
-
-	z-index: 2;
+export const SkillsSectionContent = styled(Section.Content)`
 `
 
 export const SkillsGlobeContainer = styled.div`

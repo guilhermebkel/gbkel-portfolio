@@ -12,14 +12,14 @@ import {
 } from "@/components"
 
 import {
-	IntroductionContainer,
-	IntroductionContent,
+	IntroductionSectionContainer,
+	IntroductionSectionContent,
 	Avatar,
 	CodingSymbol,
 	AuxBarContainer,
 	AuxBarContent,
-	SkillsContainer,
-	SkillsContent,
+	SkillsSectionContainer,
+	SkillsSectionContent,
 	SkillsGlobeContainer,
 	SeeMoreContainer
 } from "@/styles/Home"
@@ -32,8 +32,8 @@ const SKILLS = [
 
 const Home: NextPage = () => (
 	<HomeLayout>
-		<IntroductionContainer>
-			<IntroductionContent>
+		<IntroductionSectionContainer>
+			<IntroductionSectionContent>
 				<Summary
 					spotlightWidth="170px"
 					type="Introduction"
@@ -56,7 +56,7 @@ const Home: NextPage = () => (
 					src="/images/avatar.jpg"
 					alt="avatar"
 				/>
-			</IntroductionContent>
+			</IntroductionSectionContent>
 
 			<AuxBarContainer>
 				<AuxBarContent>
@@ -85,10 +85,10 @@ const Home: NextPage = () => (
 					/>
 				</AuxBarContent>
 			</AuxBarContainer>
-		</IntroductionContainer>
+		</IntroductionSectionContainer>
 
-		<SkillsContainer>
-			<SkillsContent>
+		<SkillsSectionContainer>
+			<SkillsSectionContent>
 				<Summary
 					spotlightWidth="170px"
 					type="About"
@@ -109,8 +109,8 @@ const Home: NextPage = () => (
 						CLICK HERE TO SEE MORE
 					</Button>
 				</SeeMoreContainer>
-			</SkillsContent>
-		</SkillsContainer>
+			</SkillsSectionContent>
+		</SkillsSectionContainer>
 	</HomeLayout>
 )
 
