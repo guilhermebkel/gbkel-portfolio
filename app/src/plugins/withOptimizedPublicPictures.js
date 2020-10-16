@@ -60,14 +60,7 @@ const optimizePicture = async (picturePath) => {
 	}
 }
 
-/**
- * Optimize all pictures on /public folder.
- *
- * @param {object} nextConfig - configuration, see the readme for possible values
- * @param {object} nextComposePlugins - additional information when loaded with next-compose-plugins
- * @returns {object}
- */
-const withOptimizedPublicPictures = async (nextConfig = {}, nextComposePlugins = {}) => {
+const withOptimizedPublicPictures = async (nextConfig = {}) => {
 	const config = nextConfig.optimizedPublicPictures
 
 	if (config.disable) {
