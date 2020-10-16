@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import { SpotlightProps } from "@/components/Spotlight"
 
-export const SpotlightContent = styled.span<SpotlightProps & { isVisible: boolean }>`
+export const SpotlightContent = styled.span<SpotlightProps & { visible: boolean }>`
 	& > :first-child {
 		position: relative;
 
@@ -12,7 +12,7 @@ export const SpotlightContent = styled.span<SpotlightProps & { isVisible: boolea
 	& > :first-child::after {
 		content: "";
 
-		width: ${(props) => props.isVisible ? (props.width ?? "100%") : 0};
+		width: ${(props) => props.visible ? (props.width ?? "100%") : 0};
 		height: ${(props) => props.height};
 
 		background-color: var(--purple-color);

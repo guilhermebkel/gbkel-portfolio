@@ -4,7 +4,9 @@ import {
 	SpotlightContent
 } from "@/components/Spotlight/styles"
 
-import useDidMount from "@/hooks/useDidMount"
+import {
+	LazyLoadedElement
+} from "@/components"
 
 export type SpotlightProps = {
 	bottom?: string
@@ -26,40 +28,31 @@ const Spotlight: React.FC<SpotlightProps> = (props) => {
 		width
 	} = props
 
-	const [isVisible, setIsVisible] = useState(false)
+	const [visible, setVisible] = useState(false)
 	const spotlightRef = useRef(null)
 
-	useDidMount(() => {
-		const spotlightElement = spotlightRef.current as Element
-
-		const observer = new IntersectionObserver(callback => {
-			const isSpotlightVisible = callback?.[0]?.isIntersecting
-	
-			if (isSpotlightVisible) {
-				setIsVisible(true)
-	
-				observer.unobserve(spotlightElement)
-			}
-		}, {
-			threshold: 1
-		})
-	
-		observer.observe(spotlightElement)
-	})
+	const onSpotlightVisible = () => {
+		setVisible(true)
+	}
 
 	return (
-		<SpotlightContent
-			bottom={bottom}
-			left={left}
-			right={right}
-			top={top}
-			height={height}
-			width={width}
-			isVisible={isVisible}
-			ref={spotlightRef}
+		<LazyLoadedElement
+			onVisible={onSpotlightVisible}
+			threshold={1}
 		>
-			{children}
-		</SpotlightContent>
+			<SpotlightContent
+				bottom={bottom}
+				left={left}
+				right={right}
+				top={top}
+				height={height}
+				width={width}
+				visible={visible}
+				ref={spotlightRef}
+			>
+				{children}
+			</SpotlightContent>
+		</LazyLoadedElement>
 	)
 }
 

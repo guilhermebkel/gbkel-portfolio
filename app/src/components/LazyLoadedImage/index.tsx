@@ -1,10 +1,12 @@
-import React, { ImgHTMLAttributes, useState, useRef } from "react"
+import React, { ImgHTMLAttributes, useState } from "react"
 
 import {
 	Image
 } from "@/components/LazyLoadedImage/styles"
 
-import useDidMount from "@/hooks/useDidMount"
+import {
+	LazyLoadedElement
+} from "@/components"
 
 type LazyLoadedImageProps = ImgHTMLAttributes<Element>
 
@@ -13,36 +15,23 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 
 	const [loaded, setLoaded] = useState(false)
 
-	const imageRef = useRef(null)
-
 	const onImageLoad = () => {
 		setLoaded(true)
 	}
 
-	useDidMount(() => {
-		const imageElement = imageRef.current as Element
-
-		const observer = new IntersectionObserver(callback => {
-			const isImageVisible = callback?.[0]?.isIntersecting
-
-			if (isImageVisible) {
-				imageRef.current.src = src
-				imageRef.current.alt = alt
-
-				observer.unobserve(imageElement)
-			}
-		})
-	
-		observer.observe(imageElement)
-	})
+	const onImageVisible = (imageRef: Element) => {
+		imageRef["src"] = src
+		imageRef["alt"] = alt
+	}
 
 	return (
-		<Image
-			ref={imageRef}
-			onLoad={onImageLoad}
-			loaded={loaded}
-			{...otherProps}
-		/>
+		<LazyLoadedElement onVisible={onImageVisible}>
+			<Image
+				onLoad={onImageLoad}
+				loaded={loaded}
+				{...otherProps}
+			/>
+		</LazyLoadedElement>
 	)
 }
 
