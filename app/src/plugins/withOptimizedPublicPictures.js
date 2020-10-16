@@ -2,6 +2,8 @@ const fs = require("fs")
 const path = require("path")
 const sharp = require("sharp")
 
+let isOptimizing = false
+
 const log = (message) => {
 	console.log(`> [OptimizedPublicPictures] ${message}`)
 }
@@ -63,12 +65,13 @@ const optimizePicture = async (picturePath) => {
 const withOptimizedPublicPictures = async (nextConfig = {}) => {
 	const config = nextConfig.optimizedPublicPictures
 
-	if (config.disable) {
+	if (config.disable || isOptimizing) {
 		log("Public pictures optimization is disabled")
 		return nextConfig
 	}
 
 	log("Optimizing public pictures...")
+	isOptimizing = true
 
 	const publicDirectory = path.join(process.cwd(), "public")
 
