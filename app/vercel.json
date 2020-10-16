@@ -17,7 +17,7 @@
 	],
 	"functions": {
 		"pages/api/*.ts": {
-			"excludeFiles": "*(plugins/**|layouts/**|components/**|styles/**)"
+			"includeFiles": "lib/**"
 		}
 	}
 }
