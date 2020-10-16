@@ -31,7 +31,8 @@ module.exports = {
 		"@typescript-eslint/quotes": ["error", "double"],
 		"@typescript-eslint/explicit-function-return-type": "off",
 		"@typescript-eslint/no-extraneous-class": "off",
-		"react/prop-types": "off"
+		"react/prop-types": "off",
+		"@typescript-eslint/no-var-requires": "off"
 	},
 	settings: {
 		"import/resolver": {
