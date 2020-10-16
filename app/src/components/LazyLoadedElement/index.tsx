@@ -5,6 +5,7 @@ import {
 } from "@/components/LazyLoadedElement/styles"
 
 import useDidMount from "@/hooks/useDidMount"
+// import useRafPool from "@/hooks/useRafPool"
 
 type LazyLoadedElementProps = HTMLAttributes<HTMLDivElement> & {
 	onVisible?: (elementRef: Element) => void
@@ -20,6 +21,8 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 	} = props
 
 	const childrenRef = useRef(null)
+
+	// const { addToRafPool } = useRafPool()
 
 	useDidMount(() => {
 		const element = childrenRef.current as Element

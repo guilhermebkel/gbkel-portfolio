@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import { Section } from "@/components"
 
-import { LazyLoadedImage, LazyLoadedElement } from "@/components" 
+import { LazyLoadedImage } from "@/components" 
 
 export const IntroductionSectionContainer = styled(Section.Container)`
 	align-items: flex-end;
