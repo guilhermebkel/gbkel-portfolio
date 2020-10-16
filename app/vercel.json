@@ -16,7 +16,7 @@
 		}
 	],
 	"functions": {
-		"api/**": {
+		"pages/api/*.ts": {
 			"excludeFiles": "plugins/**"
 		}
 	}
