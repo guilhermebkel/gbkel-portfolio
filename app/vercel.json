@@ -17,7 +17,7 @@
 	],
 	"functions": {
 		"pages/api/rss.ts": {
-			"includeFiles": "lib/**"
+			"includeFiles": "config/**"
 		}
 	}
 }
