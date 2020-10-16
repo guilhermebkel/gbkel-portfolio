@@ -6,7 +6,7 @@ import {
 	getAllPostPreviews,
 	getDetailedPostBySlug,
 	DetailedPost
-} from "@/_lib/posts"
+} from "@/lib/posts"
 
 type PostProps = {
 	post: DetailedPost

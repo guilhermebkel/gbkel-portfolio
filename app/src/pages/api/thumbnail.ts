@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
-import { getDetailedPostBySlug } from "@/_lib/posts"
-import { getScreenshot } from "@/_lib/browser"
+import { getDetailedPostBySlug } from "@/lib/posts"
+import { getScreenshot } from "@/lib/browser"
 
 import { getThumbnailHTML } from "@/templates/thumbnail"
 

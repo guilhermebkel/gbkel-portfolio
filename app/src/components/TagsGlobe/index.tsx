@@ -7,7 +7,7 @@ import {
 	TagListItemLink
 } from "@/components/TagsGlobe/styles"
 
-import { setupTagCanvas } from "@/_lib/external"
+import { setupTagCanvas } from "@/lib/external"
 
 import useDidMount from "@/hooks/useDidMount"
 

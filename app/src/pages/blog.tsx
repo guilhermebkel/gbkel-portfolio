@@ -3,7 +3,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { GetStaticProps, NextPage } from "next"
 
-import { getAllPostPreviews, PostPreview } from "@/_lib/posts"
+import { getAllPostPreviews, PostPreview } from "@/lib/posts"
 
 type BlogProps = {
 	posts: PostPreview[]

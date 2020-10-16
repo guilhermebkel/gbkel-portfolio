@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 import path from "path"
 import fs from "fs"
 
-import { getSiteBaseURL } from "@/_lib/url"
+import { getSiteBaseURL } from "@/lib/url"
 
 import { getSitemapXML } from "@/templates/sitemap"
 
