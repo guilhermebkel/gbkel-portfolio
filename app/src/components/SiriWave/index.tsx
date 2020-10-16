@@ -4,7 +4,7 @@ import {
 	Wave
 } from "@/components/SiriWave/styles"
 
-import { setupSiriWave } from "@/lib/external"
+import { setupSiriWave } from "@/_lib/external"
 
 import useDidMount from "@/hooks/useDidMount"
 

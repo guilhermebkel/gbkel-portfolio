@@ -1,7 +1,7 @@
 import React from "react"
 import { NextPage } from "next"
 
-import HomeLayout from "@/layouts/Home"
+import HomeLayout from "@/_layouts/Home"
 
 import {
 	Summary,

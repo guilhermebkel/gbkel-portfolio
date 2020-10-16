@@ -3,7 +3,7 @@ import Head from "next/head"
 
 import {
 	HomeContainer
-} from "@/layouts/Home/styles"
+} from "@/_layouts/Home/styles"
 
 import { SiriWave } from "@/components"
 

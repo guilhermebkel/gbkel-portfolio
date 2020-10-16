@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
-import { getAllPostPreviews, getDetailedPostBySlug } from "@/lib/posts"
-import { getLatestDate } from "@/lib/date"
-import { getSiteBaseURL } from "@/lib/url"
+import { getAllPostPreviews, getDetailedPostBySlug } from "@/_lib/posts"
+import { getLatestDate } from "@/_lib/date"
+import { getSiteBaseURL } from "@/_lib/url"
 
 import { getRssXML, GetRssXMLProps } from "@/templates/rss"
 

@@ -2,7 +2,7 @@ import React from "react"
 import { AppProps } from "next/app"
 import { NextPage } from "next"
 
-import DefaultLayout from "@/layouts/Default"
+import DefaultLayout from "@/_layouts/Default"
 
 import GlobalStyles from "@/styles/Global"
 

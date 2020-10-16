@@ -14,10 +14,5 @@
 			"source": "/rss.xml",
 			"destination": "/api/rss"
 		}
-	],
-	"functions": {
-		"pages/api/rss.ts": {
-			"includeFiles": "config/**"
-		}
-	}
+	]
 }
