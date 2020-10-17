@@ -143,7 +143,7 @@ const Home: NextPage<HomeProps> = (props) => {
 
 Home.getInitialProps = (ctx) => {
 	const isMobile = isMobileRequest(ctx)
-	console.log(isMobile)
+
 	return {
 		isMobile: !!isMobile
 	}
