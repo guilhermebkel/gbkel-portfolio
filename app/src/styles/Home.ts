@@ -1,8 +1,10 @@
 import styled from "styled-components"
 
-import { Section } from "@/components"
-
-import { LazyLoadedImage } from "@/components" 
+import {
+	LazyLoadedImage,
+	LazyLoadedElement,
+	Section
+} from "@/components" 
 
 export const IntroductionSectionContainer = styled(Section.Container)`
 	align-items: flex-end;
@@ -102,7 +104,7 @@ export const SkillsSectionContainer = styled(Section.Container)`
 export const SkillsSectionContent = styled(Section.Content)`
 `
 
-export const SkillsGlobeContainer = styled.div`
+export const SkillsGlobeContainer = styled(LazyLoadedElement)`
 	width: 100%;
 	height: 100%;
 

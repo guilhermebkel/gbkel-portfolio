@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useRef } from "react"
+import React, { HTMLAttributes, useRef, useState } from "react"
 
 import {
 	Container
@@ -8,8 +8,9 @@ import useDidMount from "@/hooks/useDidMount"
 import useCallbackPool from "@/hooks/useCallbackPool"
 
 type LazyLoadedElementProps = HTMLAttributes<HTMLDivElement> & {
-	onVisible?: (elementRef: Element) => void
+	onVisible?: (elementRef: Element, childrenRef: Element) => void
 	threshold?: number
+	initInvisible?: boolean
 }
 
 const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
@@ -17,48 +18,44 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 		onVisible,
 		threshold,
 		children,
+		initInvisible,
 		...otherProps
 	} = props
 
 	const childrenRef = useRef(null)
+	const containerRef = useRef(null)
+
+	const [visible, setVisible] = useState(!initInvisible)
 
 	const { addToCallbackPool } = useCallbackPool()
 
 	useDidMount(() => {
-		const element = childrenRef.current as Element
+		const containerElement = containerRef.current as Element
+		const childrenElement = childrenRef.current as Element
 
 		const observer = new IntersectionObserver(callback => {
 			const isImageVisible = callback?.[0]?.isIntersecting
 
 			if (isImageVisible) {
 				addToCallbackPool(() => {
-					onVisible?.(element)
+					onVisible?.(containerElement, childrenElement)
 
-					observer.unobserve(element)
+					setVisible(true)
+
+					observer.unobserve(containerElement)
 				})
 			}
 		}, {
 			threshold
 		})
 	
-		observer.observe(element)
+		observer.observe(containerElement)
 	})
-
-	const totalChildren = React.Children.count(children)
-
-	if (totalChildren > 1) {
-		return (
-			<Container
-				ref={childrenRef}
-				{...otherProps}
-			>
-				{children}
-			</Container>
-		)
-	}
 
 	return (
 		<Container
+			ref={containerRef}
+			visible={visible}
 			{...otherProps}
 		>
 			{
@@ -67,7 +64,6 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 				})
 			}
 		</Container>
-		
 	)
 }
 

@@ -96,7 +96,10 @@ const Home: NextPage = () => (
 					description="A list of skills I have developed by practical and theoretical experiences."
 				/>
 
-				<SkillsGlobeContainer>
+				<SkillsGlobeContainer
+					initInvisible
+					threshold={0.3}
+				>
 					<TagsGlobe
 						width={700}
 						height={700}
