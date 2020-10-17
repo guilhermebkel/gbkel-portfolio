@@ -30,28 +30,28 @@ const useCallbackPool = (): UseCallbackPoolResponse => {
 	}
 
 	const removeFromCallbackPool = (indexToRemove: string) => {
-		let globalPool = retrieveCallbackPool()
+		let callbackPool = retrieveCallbackPool()
 
-		delete globalPool[indexToRemove]
+		delete callbackPool[indexToRemove]
 
-		globalPool = globalPool.filter(callback => callback)
+		callbackPool = callbackPool.filter(callback => callback)
 
-		setCallbackPool(globalPool)
+		setCallbackPool(callbackPool)
 	}
 
 	const addToCallbackPool = (callback: Callback) => {
-		const globalPool = retrieveCallbackPool()
+		const callbackPool = retrieveCallbackPool()
 
-		globalPool.push(callback)
+		callbackPool.push(callback)
 
-		setCallbackPool(globalPool)
+		setCallbackPool(callbackPool)
 	}
 
 	const runQueue = async () => {
-		const globalPool = retrieveCallbackPool()
+		const callbackPool = retrieveCallbackPool()
 
-		for (const callbackIndex in globalPool) {
-			const callback = globalPool[callbackIndex]
+		for (const callbackIndex in callbackPool) {
+			const callback = callbackPool[callbackIndex]
 
 			const timeoutBeforeCallback = +callbackIndex * 100
 
