@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 	const { href, target, onClick, children } = props
 
 	const content = (
-		<PureButton>
+		<PureButton onClick={onClick}>
 			{children}
 		</PureButton>
 	)

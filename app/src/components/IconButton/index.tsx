@@ -18,7 +18,7 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
 	const { src, href, target, alt, onClick } = props
 
 	const content = (
-		<Button>
+		<Button onClick={onClick}>
 			<Icon
 				src={src}
 				alt={alt || "icon"}
