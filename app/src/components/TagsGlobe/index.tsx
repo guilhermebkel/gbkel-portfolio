@@ -14,11 +14,12 @@ import useDidMount from "@/hooks/useDidMount"
 type TagsGlobeProps = {
 	width: number
 	height: number
+	fontSize: number
 	tags: string[]
 }
 
 const TagsGlobe: React.FC<TagsGlobeProps> = (props) => {
-	const { width, height, tags } = props
+	const { width, height, fontSize, tags } = props
 
 	useDidMount(() => {
 		window.addEventListener("load", () => {
@@ -27,7 +28,7 @@ const TagsGlobe: React.FC<TagsGlobeProps> = (props) => {
 				dragControl: true,
 				noMouse: true,
 				textColour: "#FFFFFF",
-				textHeight: 16,
+				textHeight: fontSize,
 				initial: [0.2, -0.2]
 			})
 		})

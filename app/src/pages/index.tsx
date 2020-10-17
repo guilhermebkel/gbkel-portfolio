@@ -30,91 +30,105 @@ const SKILLS = [
 	"Solution Modelling"
 ]
 
-const Home: NextPage = () => (
-	<HomeLayout>
-		<IntroductionSectionContainer>
-			<IntroductionSectionContent>
-				<Summary
-					spotlightWidth="170px"
-					type="Introduction"
-					title="Guilherme Mota."
-					description="A problem solver who knows that knows nothing, passionate about cloud computing and complex systems."
-				/>
+import useResponsiveBreakpoints from "@/hooks/useResponsiveBreakpoints"
 
-				<Spotlight
-					width="338px"
-					height="85px"
-					left="100px"
-					bottom="60px"
-				>
-					<CodingSymbol>
-						{"</>"}
-					</CodingSymbol>
-				</Spotlight>
-				
-				<Avatar
-					src="/images/avatar.jpg"
-					alt="avatar"
-				/>
-			</IntroductionSectionContent>
+const Home: NextPage = () => {
+	const { currentResult } = useResponsiveBreakpoints<{ globeSize: number, globeFontSize: number }>({
+		breakpoints: {
+			sm: { globeSize: 300, globeFontSize: 5 },
+			md: { globeSize: 500, globeFontSize: 17 },
+			xl: { globeSize: 700, globeFontSize: 17 }
+		},
+		initialValue: { globeSize: 700, globeFontSize: 17 }
+	})
 
-			<AuxBarContainer>
-				<AuxBarContent>
-					<IconButton
-						src="/icons/whatsapp.svg"
-						href="https://api.whatsapp.com/send?phone=5527996334936"
-						alt="whatsapp"
+	return (
+		<HomeLayout>
+			<IntroductionSectionContainer>
+				<IntroductionSectionContent>
+					<Summary
+						spotlightWidth="170px"
+						type="Introduction"
+						title="Guilherme Mota."
+						description="A problem solver who knows that knows nothing, passionate about cloud computing and complex systems."
 					/>
-
-					<IconButton
-						src="/icons/linkedin.svg"
-						href="https://www.linkedin.com/in/guilhermebkel"
-						alt="linkedin"
+	
+					<Spotlight
+						width="338px"
+						height="85px"
+						left="100px"
+						bottom="60px"
+					>
+						<CodingSymbol>
+							{"</>"}
+						</CodingSymbol>
+					</Spotlight>
+					
+					<Avatar
+						src="/images/avatar.jpg"
+						alt="avatar"
 					/>
-
-					<IconButton
-						src="/icons/mail.svg"
-						href="mailto:guilhermebromonschenkel@gmail.com"
-						alt="mail"
+				</IntroductionSectionContent>
+	
+				<AuxBarContainer>
+					<AuxBarContent>
+						<IconButton
+							src="/icons/whatsapp.svg"
+							href="https://api.whatsapp.com/send?phone=5527996334936"
+							alt="whatsapp"
+						/>
+	
+						<IconButton
+							src="/icons/linkedin.svg"
+							href="https://www.linkedin.com/in/guilhermebkel"
+							alt="linkedin"
+						/>
+	
+						<IconButton
+							src="/icons/mail.svg"
+							href="mailto:guilhermebromonschenkel@gmail.com"
+							alt="mail"
+						/>
+	
+						<IconButton
+							src="/icons/github.svg"
+							href="https://github.com/guilhermebkel"
+							alt="github"
+						/>
+					</AuxBarContent>
+				</AuxBarContainer>
+			</IntroductionSectionContainer>
+	
+			<SkillsSectionContainer>
+				<SkillsSectionContent>
+					<Summary
+						spotlightWidth="170px"
+						type="About"
+						title="Skills."
+						description="A list of skills I have developed by practical and theoretical experiences."
 					/>
-
-					<IconButton
-						src="/icons/github.svg"
-						href="https://github.com/guilhermebkel"
-						alt="github"
-					/>
-				</AuxBarContent>
-			</AuxBarContainer>
-		</IntroductionSectionContainer>
-
-		<SkillsSectionContainer>
-			<SkillsSectionContent>
-				<Summary
-					spotlightWidth="170px"
-					type="About"
-					title="Skills."
-					description="A list of skills I have developed by practical and theoretical experiences."
-				/>
-
-				<SkillsGlobeContainer
-					initInvisible
-					threshold={0.3}
-				>
-					<TagsGlobe
-						width={700}
-						height={700}
-						tags={SKILLS}
-					/>
-				</SkillsGlobeContainer>
-
-				<SeeMoreContainer>
-					<Button href="https://about.guilherr.me/skills">
-						CLICK HERE TO SEE MORE
-					</Button>
-				</SeeMoreContainer>
-			</SkillsSectionContent>
-		</SkillsSectionContainer>
-	</HomeLayout>
-)
+	
+					<SkillsGlobeContainer
+						initInvisible
+						threshold={0.3}
+					>
+						<TagsGlobe
+							width={currentResult.globeSize}
+							height={currentResult.globeSize}
+							fontSize={currentResult.globeFontSize}
+							tags={SKILLS}
+						/>
+					</SkillsGlobeContainer>
+	
+					<SeeMoreContainer>
+						<Button href="https://about.guilherr.me/skills">
+							CLICK HERE TO SEE MORE
+						</Button>
+					</SeeMoreContainer>
+				</SkillsSectionContent>
+			</SkillsSectionContainer>
+		</HomeLayout>
+	)
+}
 
 export default Home
