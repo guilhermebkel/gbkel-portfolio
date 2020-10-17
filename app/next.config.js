@@ -8,17 +8,17 @@ const { cdnConfig } = require("./src/config/cdn")
 module.exports = withPlugins([
 	[withPWA, {
 		pwa: {
-			disable: environmentConfig.isServerDev,
+			disable: environmentConfig.isDev,
 			dest: "public"
 		}
 	}],
 	[withOptimizedPublicPictures, {
 		optimizedPublicPictures: {
-			disable: environmentConfig.isServerDev
+			disable: environmentConfig.isDev
 		}
 	}],
 	[{
 		target: "serverless",
-		assetPrefix: cdnConfig.baseURL
+		assetPrefix: environmentConfig.isDev ? "" : cdnConfig.baseURL
 	}]
 ])

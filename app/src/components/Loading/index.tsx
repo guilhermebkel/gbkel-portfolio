@@ -10,7 +10,7 @@ import useDidMount from "@/hooks/useDidMount"
 import { environmentConfig } from "@/config/environment"
 
 const Loading: React.FC = () => {
-	const [isLoaded, setIsLoaded] = useState(environmentConfig.isServerDev)
+	const [isLoaded, setIsLoaded] = useState(environmentConfig.isDev)
 
 	useDidMount(() => {
 		const stateCheckInterval = setInterval(() => {
