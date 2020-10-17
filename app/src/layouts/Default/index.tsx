@@ -2,8 +2,7 @@ import React from "react"
 import Head from "next/head"
 
 import {
-	Navbar,
-	Loading
+	Navbar
 } from "@/components"
 
 import { buildCDNUrl } from "@/lib/cdn"
@@ -13,8 +12,6 @@ const DefaultLayout: React.FC = (props) => {
 
 	return (
 		<>
-			<Loading />
-
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 				<link rel="icon" href={buildCDNUrl("/favicon.png")} />
