@@ -8,6 +8,8 @@ import {
 	LazyLoadedElement
 } from "@/components"
 
+import { buildCDNUrl } from "@/lib/cdn"
+
 type LazyLoadedImageProps = ImgHTMLAttributes<Element>
 
 const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
@@ -20,7 +22,7 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 	}
 
 	const onImageVisible = (_: Element, imageRef: Element) => {
-		imageRef["src"] = src
+		imageRef["src"] = buildCDNUrl(src)
 		imageRef["alt"] = alt
 	}
 

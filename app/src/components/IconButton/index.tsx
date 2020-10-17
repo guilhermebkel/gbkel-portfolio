@@ -6,6 +6,8 @@ import {
 	Button
 } from "@/components/IconButton/styles"
 
+import { buildCDNUrl } from "@/lib/cdn"
+
 type IconButtonProps = {
 	src: string
 	target?: string
@@ -17,10 +19,12 @@ type IconButtonProps = {
 const IconButton: React.FC<IconButtonProps> = (props) => {
 	const { src, href, target, alt, onClick } = props
 
+	const iconSrc = buildCDNUrl(src)
+
 	if (onClick) {
 		return (
 			<Button onClick={onClick}>
-				<Icon src={src} alt={alt || "icon"} />
+				<Icon src={iconSrc} alt={alt || "icon"} />
 			</Button>
 		)
 	}
@@ -32,7 +36,7 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
 			rel="noopener"
 		>
 			<Button>
-				<Icon src={src} alt={alt || "icon"} />
+				<Icon src={iconSrc} alt={alt || "icon"} />
 			</Button>
 		</Link>
 	)

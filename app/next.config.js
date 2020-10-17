@@ -3,6 +3,7 @@ const withPlugins = require("next-compose-plugins")
 const withOptimizedPublicPictures = require("./src/plugins/withOptimizedPublicPictures")
 
 const isDev = process.env.NODE_ENV === "development"
+const cdnBaseURL = process.env.CDN_URL
 
 module.exports = withPlugins([
 	[withPWA, {
@@ -18,6 +19,6 @@ module.exports = withPlugins([
 	}],
 	[{
 		target: "serverless",
-		assetPrefix: !isDev ? "https://cdn.guilherr.me" : ""
+		assetPrefix: cdnBaseURL || ""
 	}]
 ])
