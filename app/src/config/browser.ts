@@ -19,7 +19,7 @@ interface Options {
 export const getChromeOptions = async (): Promise<Options> => {
 	let options: Options
 
-	if (environmentConfig.isDev) {
+	if (environmentConfig.isServerDev) {
 		options = {
 			args: [],
 			executablePath: exePath,

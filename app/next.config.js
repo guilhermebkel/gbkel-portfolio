@@ -8,13 +8,13 @@ const { cdnConfig } = require("./src/config/cdn")
 module.exports = withPlugins([
 	[withPWA, {
 		pwa: {
-			disable: environmentConfig.isDev,
+			disable: environmentConfig.isServerDev,
 			dest: "public"
 		}
 	}],
 	[withOptimizedPublicPictures, {
 		optimizedPublicPictures: {
-			disable: environmentConfig.isDev
+			disable: environmentConfig.isServerDev
 		}
 	}],
 	[{
