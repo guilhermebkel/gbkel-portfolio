@@ -1,5 +1,12 @@
 import React from "react"
-import NextDocument, { DocumentInitialProps, DocumentContext } from "next/document"
+import NextDocument, {
+	DocumentInitialProps,
+	DocumentContext,
+	Html,
+	Head,
+	Main,
+	NextScript
+} from "next/document"
 import { ServerStyleSheet } from "styled-components"
 
 class CustomDocument extends NextDocument {
@@ -10,7 +17,7 @@ class CustomDocument extends NextDocument {
 		try {
 			ctx.renderPage = () => {
 				return originalRenderPage({
-					enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />)
+					enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
 				})
 			}
 
@@ -23,13 +30,25 @@ class CustomDocument extends NextDocument {
 						{initialProps?.styles}
 						{sheet.getStyleElement()}
 					</>
-				)
+				),
 			} as DocumentInitialProps
 
 			return props
 		} finally {
 			sheet.seal()
 		}
+	}
+
+	render(): JSX.Element {
+		return (
+			<Html lang="en">
+				<Head />
+				<body>
+					<Main />
+					<NextScript />
+				</body>
+			</Html>
+		)
 	}
 }
 
