@@ -14,6 +14,7 @@ const Loading: React.FC = () => {
 
 	useDidMount(() => {
 		const stateCheckInterval = setInterval(() => {
+			console.log(document.readyState)
 			if (document.readyState === "complete") { 
 				clearInterval(stateCheckInterval);
 				

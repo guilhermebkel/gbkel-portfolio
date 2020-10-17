@@ -3,7 +3,7 @@ import Head from "next/head"
 
 import {
 	Navbar,
-	// Loading
+	Loading
 } from "@/components"
 
 import { buildCDNUrl } from "@/lib/cdn"
@@ -13,7 +13,7 @@ const DefaultLayout: React.FC = (props) => {
 
 	return (
 		<>
-			{/* <Loading /> */}
+			<Loading />
 
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
