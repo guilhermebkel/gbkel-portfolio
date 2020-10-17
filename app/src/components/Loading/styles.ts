@@ -1,7 +1,5 @@
 import styled from "styled-components"
 
-import LazyLoadedImage from "@/components/LazyLoadedImage"
-
 export const LoadingContainer = styled.div<{ isLoaded: boolean }>`
 	width: 100vw;
 	height: 100vh;
@@ -22,7 +20,7 @@ export const LoadingContainer = styled.div<{ isLoaded: boolean }>`
 	transition: all 0.1s;
 `
 
-export const Logo = styled(LazyLoadedImage)`
+export const Logo = styled.img`
 	width: auto;
 	height: 10rem;
 
