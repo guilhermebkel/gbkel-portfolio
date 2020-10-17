@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import {
 	Globe,
@@ -8,8 +8,6 @@ import {
 } from "@/components/TagsGlobe/styles"
 
 import { setupTagCanvas } from "@/lib/external"
-
-import useDidMount from "@/hooks/useDidMount"
 
 type TagsGlobeProps = {
 	width: number
@@ -21,18 +19,18 @@ type TagsGlobeProps = {
 const TagsGlobe: React.FC<TagsGlobeProps> = (props) => {
 	const { width, height, fontSize, tags } = props
 
-	useDidMount(() => {
-		window.addEventListener("load", () => {
-			setupTagCanvas({
-				elementId: "tags-globe",
-				dragControl: true,
-				noMouse: true,
-				textColour: "#FFFFFF",
-				textHeight: fontSize,
-				initial: [0.2, -0.2]
-			})
-		})
-	})
+	const options = {
+		elementId: "tags-globe",
+		dragControl: true,
+		noMouse: true,
+		textColour: "#FFFFFF",
+		textHeight: fontSize,
+		initial: [0.2, -0.2]
+	}
+
+	useEffect(() => {
+		setupTagCanvas(options)
+	}, [fontSize, width, height])
 
 	return (
 		<>

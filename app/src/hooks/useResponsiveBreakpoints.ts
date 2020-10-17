@@ -22,6 +22,9 @@ const MAPPED_BREAKPOINT_WIDTH = {
 	xl: 1920
 }
 
+// eslint-disable-next-line
+let lastResultCache: any = {}
+
 function useResponsiveBreakpoints<Result>(
 	data: UseResponsiveBreakpointsInput<Result>
 ): useResponsiveBreakpointsResponse<Result> {
@@ -44,7 +47,13 @@ function useResponsiveBreakpoints<Result>(
 				}
 			})
 
-		setCurrentResult(currentResultCache)
+		const isCurrentResultEqualLastResult = Object.is(currentResultCache, lastResultCache)
+
+		if (!isCurrentResultEqualLastResult) {
+			setCurrentResult(currentResultCache)
+
+			lastResultCache = { ...currentResultCache }
+		}
 	}
 
 	useDidMount(() => {

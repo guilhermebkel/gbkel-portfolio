@@ -35,7 +35,7 @@ import useResponsiveBreakpoints from "@/hooks/useResponsiveBreakpoints"
 const Home: NextPage = () => {
 	const { currentResult } = useResponsiveBreakpoints<{ globeSize: number, globeFontSize: number }>({
 		breakpoints: {
-			sm: { globeSize: 300, globeFontSize: 5 },
+			sm: { globeSize: 300, globeFontSize: 10 },
 			md: { globeSize: 500, globeFontSize: 17 },
 			xl: { globeSize: 700, globeFontSize: 17 }
 		},
