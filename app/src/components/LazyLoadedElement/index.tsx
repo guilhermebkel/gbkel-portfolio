@@ -34,9 +34,9 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 		const childrenElement = childrenRef.current as Element
 
 		const observer = new IntersectionObserver(callback => {
-			const isImageVisible = callback?.[0]?.isIntersecting
+			const isContainerVisible = callback?.[0]?.isIntersecting
 
-			if (isImageVisible) {
+			if (isContainerVisible) {
 				addToCallbackPool(() => {
 					onVisible?.(containerElement, childrenElement)
 
