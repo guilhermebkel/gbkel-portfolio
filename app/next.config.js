@@ -2,23 +2,23 @@ const withPWA = require("next-pwa")
 const withPlugins = require("next-compose-plugins")
 const withOptimizedPublicPictures = require("./src/plugins/withOptimizedPublicPictures")
 
-const isDev = process.env.NODE_ENV === "development"
-const cdnBaseURL = process.env.CDN_URL
+const { environmentConfig } = require("./src/config/environment")
+const { cdnConfig } = require("./src/config/cdn")
 
 module.exports = withPlugins([
 	[withPWA, {
 		pwa: {
-			disable: isDev,
+			disable: environmentConfig.isDev,
 			dest: "public"
 		}
 	}],
 	[withOptimizedPublicPictures, {
 		optimizedPublicPictures: {
-			disable: isDev
+			disable: environmentConfig.isDev
 		}
 	}],
 	[{
 		target: "serverless",
-		assetPrefix: cdnBaseURL || ""
+		assetPrefix: cdnConfig.baseURL
 	}]
 ])
