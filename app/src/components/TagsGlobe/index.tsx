@@ -7,6 +7,10 @@ import {
 	TagListItemLink
 } from "@/components/TagsGlobe/styles"
 
+import {
+	Script
+} from "@/components"
+
 import { setupTagCanvas } from "@/lib/external"
 
 type TagsGlobeProps = {
@@ -46,7 +50,7 @@ const TagsGlobe: React.FC<TagsGlobeProps> = (props) => {
 				</TagList>
 			</Globe>
 
-			<script src="/js/tagcanvas.min.js"></script>
+			<Script src="/js/tagcanvas.min.js" />
 		</>
 	)
 }

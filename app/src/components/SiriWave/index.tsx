@@ -4,6 +4,10 @@ import {
 	Wave
 } from "@/components/SiriWave/styles"
 
+import {
+	Script
+} from "@/components"
+
 import { setupSiriWave } from "@/lib/external"
 
 import useDidMount from "@/hooks/useDidMount"
@@ -26,7 +30,7 @@ const SiriWave: React.FC = () => {
 		<>
 			<Wave id="wave" />
 
-			<script src="/js/siriwave.js"></script>
+			<Script src="/js/siriwave.js" />
 		</>
 	)
 }
