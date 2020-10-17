@@ -19,6 +19,7 @@ const DefaultLayout: React.FC = (props) => {
 				<link id="app-manifest" rel="manifest" href="/manifest.json"></link>
 				<link href="/css/font.css" rel="stylesheet"></link>
 				<meta property="og:image" content="/favicon.png" />
+				<meta name="description" content="All info about a problem solver called Guilherme Mota."/>
 			</Head>
 
 			<Navbar />
