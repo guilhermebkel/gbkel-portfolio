@@ -5,7 +5,7 @@ import {
 } from "@/components/LazyLoadedElement/styles"
 
 import useDidMount from "@/hooks/useDidMount"
-// import useRafPool from "@/hooks/useRafPool"
+import useCallbackPool from "@/hooks/useCallbackPool"
 
 type LazyLoadedElementProps = HTMLAttributes<HTMLDivElement> & {
 	onVisible?: (elementRef: Element) => void
@@ -22,7 +22,7 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 
 	const childrenRef = useRef(null)
 
-	// const { addToRafPool } = useRafPool()
+	const { addToCallbackPool } = useCallbackPool()
 
 	useDidMount(() => {
 		const element = childrenRef.current as Element
@@ -31,9 +31,11 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 			const isImageVisible = callback?.[0]?.isIntersecting
 
 			if (isImageVisible) {
-				onVisible?.(element)
+				addToCallbackPool(() => {
+					onVisible?.(element)
 
-				observer.unobserve(element)
+					observer.unobserve(element)
+				})
 			}
 		}, {
 			threshold
