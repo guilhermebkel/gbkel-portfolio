@@ -6,7 +6,6 @@ const isDev = process.env.NODE_ENV === "development"
 
 module.exports = withPlugins([
 	[withPWA, {
-		target: "serverless",
 		pwa: {
 			disable: isDev,
 			dest: "public"
@@ -16,5 +15,9 @@ module.exports = withPlugins([
 		optimizedPublicPictures: {
 			disable: isDev
 		}
+	}],
+	[{
+		target: "serverless",
+		assetPrefix: !isDev ? "https://cdn.guilherr.me" : ""
 	}]
 ])
