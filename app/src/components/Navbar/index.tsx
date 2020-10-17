@@ -41,6 +41,8 @@ const Navbar: React.FC = () => {
 				<Logo
 					src="/images/logo-white-transparent.png"
 					alt="logo"
+					width="312px"
+					height="470px"
 				/>
 				
 				<Menu

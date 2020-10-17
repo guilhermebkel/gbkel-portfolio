@@ -14,12 +14,14 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = (props) => {
 	const { href, target, onClick, children } = props
 
+	const content = (
+		<PureButton>
+			{children}
+		</PureButton>
+	)
+
 	if (onClick) {
-		return (
-			<PureButton onClick={onClick}>
-				{children}
-			</PureButton>
-		)
+		return content
 	}
 
 	return (
@@ -28,9 +30,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 			target={target || "_blank"}
 			rel="noopener"
 		>
-			<PureButton>
-				{children}
-			</PureButton>
+			{content}
 		</PureLink>
 	)
 }

@@ -21,12 +21,19 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
 
 	const iconSrc = buildCDNUrl(src)
 
+	const content = (
+		<Button>
+			<Icon
+				src={iconSrc}
+				alt={alt || "icon"}
+				width="24px"
+				height="24px"
+			/>
+		</Button>
+	)
+
 	if (onClick) {
-		return (
-			<Button onClick={onClick}>
-				<Icon src={iconSrc} alt={alt || "icon"} />
-			</Button>
-		)
+		return content
 	}
 
 	return (
@@ -35,9 +42,7 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
 			target={target || "_blank"}
 			rel="noopener"
 		>
-			<Button>
-				<Icon src={iconSrc} alt={alt || "icon"} />
-			</Button>
+			{content}
 		</Link>
 	)
 }

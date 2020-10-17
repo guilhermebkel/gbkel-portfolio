@@ -67,6 +67,8 @@ const Home: NextPage = () => {
 					<Avatar
 						src="/images/avatar.jpg"
 						alt="avatar"
+						width="1080px"
+						height="1080px"
 					/>
 				</IntroductionSectionContent>
 	
