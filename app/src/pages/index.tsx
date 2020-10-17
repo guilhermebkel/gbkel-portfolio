@@ -3,6 +3,8 @@ import { NextPage } from "next"
 
 import HomeLayout from "@/layouts/Home"
 
+import { isMobileRequest } from "@/lib/validation"
+
 import {
 	Summary,
 	Spotlight,
@@ -32,7 +34,13 @@ const SKILLS = [
 
 import useResponsiveBreakpoints from "@/hooks/useResponsiveBreakpoints"
 
-const Home: NextPage = () => {
+type HomeProps = {
+	isMobile: boolean
+}
+
+const Home: NextPage<HomeProps> = (props) => {
+	const { isMobile } = props
+
 	const { currentResult } = useResponsiveBreakpoints<{ globeSize: number, globeFontSize: number }>({
 		breakpoints: {
 			sm: { globeSize: 300, globeFontSize: 10 },
@@ -43,7 +51,7 @@ const Home: NextPage = () => {
 	})
 
 	return (
-		<HomeLayout>
+		<HomeLayout isMobile={isMobile}>
 			<IntroductionSectionContainer>
 				<IntroductionSectionContent>
 					<Summary
@@ -131,6 +139,14 @@ const Home: NextPage = () => {
 			</SkillsSectionContainer>
 		</HomeLayout>
 	)
+}
+
+Home.getInitialProps = (ctx) => {
+	const isMobile = isMobileRequest(ctx)
+
+	return {
+		isMobile: !!isMobile
+	}
 }
 
 export default Home

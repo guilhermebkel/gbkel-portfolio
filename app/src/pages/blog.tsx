@@ -42,8 +42,6 @@ const Blog: NextPage<BlogProps> = (props) => {
 	)
 }
 
-export default Blog
-
 export const getStaticProps: GetStaticProps = async () => {
 	const posts = await getAllPostPreviews()
 
@@ -53,3 +51,5 @@ export const getStaticProps: GetStaticProps = async () => {
 		}
 	}
 }
+
+export default Blog

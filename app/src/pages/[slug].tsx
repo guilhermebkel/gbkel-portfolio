@@ -50,8 +50,6 @@ const Post: NextPage<PostProps> = (props) => {
 	)
 }
 
-export default Post
-
 export const getStaticPaths: GetStaticPaths = async () => {
 	const posts = await getAllPostPreviews()
 
@@ -72,3 +70,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		}
 	}
 }
+
+export default Post

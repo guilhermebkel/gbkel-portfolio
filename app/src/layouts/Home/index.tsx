@@ -7,8 +7,12 @@ import {
 
 import { SiriWave } from "@/components"
 
-const HomeLayout: React.FC = (props) => {
-	const { children } = props
+type HomeLayoutProps = {
+	isMobile?: boolean
+}
+
+const HomeLayout: React.FC<HomeLayoutProps> = (props) => {
+	const { children, isMobile } = props
 
 	return (
 		<HomeContainer>
@@ -18,7 +22,9 @@ const HomeLayout: React.FC = (props) => {
 
 			{children}
 
-			<SiriWave />
+			{!isMobile && (
+				<SiriWave />
+			)}
 		</HomeContainer>
 	)
 }
