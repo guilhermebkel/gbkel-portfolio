@@ -26,7 +26,11 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
 	}
 
 	return (
-		<Link href={href} target={target || "_blank"}>
+		<Link
+			href={href}
+			target={target || "_blank"}
+			rel="noopener"
+		>
 			<Button>
 				<Icon src={src} alt={alt || "icon"} />
 			</Button>

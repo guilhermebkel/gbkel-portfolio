@@ -23,7 +23,11 @@ const Button: React.FC<ButtonProps> = (props) => {
 	}
 
 	return (
-		<PureLink href={href} target={target || "_blank"}>
+		<PureLink
+			href={href}
+			target={target || "_blank"}
+			rel="noopener"
+		>
 			<PureButton>
 				{children}
 			</PureButton>
