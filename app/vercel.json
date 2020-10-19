@@ -16,7 +16,7 @@
 		}
 	],
 	"functions": {
-		"pages/api/rss.ts": {
+		"pages/api/*.ts": {
 			"excludeFiles": ".next/static/development/**"
 		}
 	}
