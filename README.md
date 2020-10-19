@@ -23,4 +23,4 @@ Click [here](https://guilherr.me) to see my portfolio on live!
 
 ## V3 (app)
 
-Coming soon...
+[Coming soon...](https://portfolio.guilherr.me)
