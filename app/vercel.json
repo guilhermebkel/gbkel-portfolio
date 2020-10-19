@@ -14,10 +14,5 @@
 			"source": "/rss.xml",
 			"destination": "/api/rss"
 		}
-	],
-	"functions": {
-		"pages/api/*.ts": {
-			"excludeFiles": ".next/static/development/**"
-		}
-	}
+	]
 }
