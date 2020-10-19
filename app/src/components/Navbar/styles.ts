@@ -34,7 +34,7 @@ export const Logo = styled(LazyLoadedImage)`
 	height: 5rem;
 
 	&:hover {
-		animation: shake 0.5s ease-in-out; 
+		animation: shake 0.7s ease-in-out; 
 
 		@keyframes shake {
 			0% { transform: rotate(0deg); }

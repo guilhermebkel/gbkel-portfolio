@@ -27,7 +27,10 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 	}
 
 	return (
-		<LazyLoadedElement onVisible={onImageVisible}>
+		<LazyLoadedElement
+			onVisible={onImageVisible}
+			{...otherProps}
+		>
 			<Image
 				onLoad={onImageLoad}
 				loaded={loaded}
