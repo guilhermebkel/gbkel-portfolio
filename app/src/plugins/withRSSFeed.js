@@ -105,7 +105,7 @@ const getRssXML = ({
 )
 
 const withRSSFeed = async (nextConfig = {}) => {
-	const config = nextConfig.RSSFeed
+	const config = nextConfig.rssFeed
 
 	if (config.disable || isGenerating) {
 		log("RSSFeed Generator is disabled")

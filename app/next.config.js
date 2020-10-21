@@ -27,7 +27,7 @@ module.exports = withPlugins([
 		}
 	}],
 	[withRSSFeed, {
-		RSSFeed: {
+		rssFeed: {
 			disable: environmentConfig.isDev,
 			baseURL: urlConfig.baseURL
 		}
