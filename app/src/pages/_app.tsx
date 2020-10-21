@@ -1,5 +1,5 @@
 import React from "react"
-import { AppProps } from "next/app"
+import { AppProps, NextWebVitalsMetric } from "next/app"
 import { NextPage } from "next"
 
 import DefaultLayout from "@/layouts/Default"
@@ -14,6 +14,13 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 			<Component {...pageProps} />
 		</DefaultLayout>
 	)
+}
+
+export const reportWebVitals = (metric: NextWebVitalsMetric): void  => {
+	window["metrics"] = [
+		...(window["metrics"] || []),
+		metric
+	] as NextWebVitalsMetric[]
 }
 
 export default App
