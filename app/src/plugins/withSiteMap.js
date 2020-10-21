@@ -1,7 +1,7 @@
 const fs = require("fs")
 const path = require("path")
 
-let isGenerating = false
+let isGeneratingSiteMap = false
 
 const log = (message) => {
 	console.log(`> [SiteMap] ${message}`)
@@ -22,13 +22,13 @@ const getSitemapXML = (urls) => (
 const withSiteMap = async (nextConfig = {}) => {
 	const config = nextConfig.siteMap
 
-	if (config.disable || isGenerating) {
+	if (config.disable || isGeneratingSiteMap) {
 		log("SiteMap Generator is disabled")
 		return nextConfig
 	}
 
 	log("Generating SiteMap...")
-	isGenerating = true
+	isGeneratingSiteMap = true
 
 	const publicDirectory = path.join(process.cwd(), "public")
 	const siteMapPath = path.join(publicDirectory, "sitemap.xml")

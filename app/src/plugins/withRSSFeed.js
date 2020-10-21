@@ -6,7 +6,7 @@ const readingTime = require("reading-time")
 
 const POST_FOLDER_PATH = path.join(process.cwd(), "src", "posts")
 
-let isGenerating = false
+let isGeneratingRSSFeed = false
 
 const log = (message) => {
 	console.log(`> [RSSFeed] ${message}`)
@@ -107,13 +107,13 @@ const getRssXML = ({
 const withRSSFeed = async (nextConfig = {}) => {
 	const config = nextConfig.rssFeed
 
-	if (config.disable || isGenerating) {
+	if (config.disable || isGeneratingRSSFeed) {
 		log("RSSFeed Generator is disabled")
 		return nextConfig
 	}
 
 	log("Generating RSSFeed...")
-	isGenerating = true
+	isGeneratingRSSFeed = true
 
 	const publicDirectory = path.join(process.cwd(), "public")
 	const RSSFeedPath = path.join(publicDirectory, "rss.xml")
