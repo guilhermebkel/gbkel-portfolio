@@ -4,15 +4,5 @@
 			"source": "/thumbnail/(.*).png",
 			"destination": "/api/thumbnail?slug=$1"
 		}
-	],
-	"rewrites": [
-		{
-			"source": "/sitemap.xml",
-			"destination": "/api/sitemap"
-		},
-		{
-			"source": "/rss.xml",
-			"destination": "/api/rss"
-		}
 	]
 }
