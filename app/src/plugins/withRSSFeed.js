@@ -154,7 +154,7 @@ const withRSSFeed = async (nextConfig = {}) => {
 		encoding: "utf8"
 	})
 
-	log("SiteMap generated with success!")
+	log("RSSFeed generated with success!")
 
 	return nextConfig
 }
