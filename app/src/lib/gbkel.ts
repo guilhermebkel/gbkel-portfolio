@@ -1,5 +1,3 @@
-import axios from "axios"
-
 import { handleError } from "@/lib/error"
 
 type SubdomainAlias = {
@@ -13,9 +11,13 @@ export const getSubdomainAliases = async (): Promise<SubdomainAlias[]> => {
 	const subdomainAliasesFileUrl = "https://raw.githubusercontent.com/guilhermebkel/gbkel-redirects/main/_redirects"
 
 	try {
-		const { data } = await axios.get(subdomainAliasesFileUrl)
+		let subdomainAliasesText = await fetch(subdomainAliasesFileUrl)
+			.then(result => result.text())
+			.catch(error => handleError(error))
 
-		const lines = data.split("\n") as string[]
+		subdomainAliasesText = subdomainAliasesText || ""
+
+		const lines = subdomainAliasesText.split("\n") as string[]
 
 		const tempSubdomainAliases = lines
 			.filter(line => line.includes("http"))

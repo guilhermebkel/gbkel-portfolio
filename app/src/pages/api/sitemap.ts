@@ -18,7 +18,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 			fs.promises.readdir(pagesPath),
 			fs.promises.readdir(postsPath)
 		])
-		
+
 		const pageSlugs = []
 
 		rawPages.forEach(rawPage => {
