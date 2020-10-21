@@ -3,6 +3,7 @@ import path from "path"
 import fs from "fs"
 
 import { getSiteBaseURL } from "@/lib/url"
+import { handleError } from "@/lib/error"
 
 import { getSitemapXML } from "@/templates/sitemap"
 
@@ -56,6 +57,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 
 		res.status(200).end(sitemapXML)
 	} catch (error) {
+		handleError(error)
 		res.status(500).json({ error: "ServerInternalError", details: error.message })
 	}
 }

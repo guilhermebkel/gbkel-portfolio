@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 
 import { getDetailedPostBySlug } from "@/lib/posts"
 import { getScreenshot } from "@/lib/browser"
+import { handleError } from "@/lib/error"
 
 import { getThumbnailHTML } from "@/templates/thumbnail"
 
@@ -30,6 +31,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 
 		res.status(200).end(thumbnailPicture)
 	} catch (error) {
+		handleError(error)
 		res.status(500).json({ error: "ServerInternalError", details: error.message })
 	}
 }
