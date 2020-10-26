@@ -174,6 +174,7 @@ const Home: NextPage<HomeProps> = (props) => {
 								src={contactMap.whatsapp.iconSrc}
 								alt={contactMap.whatsapp.alt}
 							/>
+
 							<ContactInfoLink
 								href={contactMap.whatsapp.url}
 								target="_blank"
