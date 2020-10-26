@@ -4,7 +4,7 @@ import { NextPage } from "next"
 import HomeLayout from "@/layouts/Home"
 
 import { isMobileRequest } from "@/lib/validation"
-import { contactMap } from "@/lib/contact"
+import { contactMap, timeline } from "@/lib/personal"
 
 import {
 	Summary,
@@ -12,7 +12,8 @@ import {
 	IconButton,
 	Button,
 	TagsGlobe,
-	Icon
+	Icon,
+	Timeline
 } from "@/components"
 
 import {
@@ -30,7 +31,9 @@ import {
 	ContactSectionContent,
 	ContactInfoContainer,
 	ContactInfoContent,
-	ContactInfoLink
+	ContactInfoLink,
+	TimelineContainer,
+	TimelineContent
 } from "@/styles/Home"
 
 const SKILLS = [
@@ -115,6 +118,21 @@ const Home: NextPage<HomeProps> = (props) => {
 					</AuxBarContent>
 				</AuxBarContainer>
 			</IntroductionSectionContainer>
+
+			<TimelineContainer>
+				<TimelineContent>
+					<Summary
+						spotlightWidth="260px"
+						type="About"
+						title="Timeline."
+						description="A summarized timeline about my journey on the incredible ecosystem of technology and development."
+					/>
+
+					<Timeline
+						timeline={timeline}
+					/>
+				</TimelineContent>
+			</TimelineContainer>
 	
 			<SkillsSectionContainer>
 				<SkillsSectionContent>

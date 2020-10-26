@@ -102,6 +102,10 @@ export const AuxBarContent = styled.div`
 	}
 `
 
+export const TimelineContainer = styled(Section.Container)``
+
+export const TimelineContent = styled(Section.Content)``
+
 export const SkillsSectionContainer = styled(Section.Container)`
 `
 
