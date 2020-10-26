@@ -1,10 +1,13 @@
 import React from "react"
 
 import {
-	Icon,
 	Link,
 	Button
 } from "@/components/IconButton/styles"
+
+import {
+	Icon
+} from "@/components"
 
 type IconButtonProps = {
 	src: string
@@ -22,8 +25,6 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
 			<Icon
 				src={src}
 				alt={alt || "icon"}
-				width="24px"
-				height="24px"
 			/>
 		</Button>
 	)

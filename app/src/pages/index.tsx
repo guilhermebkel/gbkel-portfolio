@@ -4,13 +4,15 @@ import { NextPage } from "next"
 import HomeLayout from "@/layouts/Home"
 
 import { isMobileRequest } from "@/lib/validation"
+import { contactMap } from "@/lib/contact"
 
 import {
 	Summary,
 	Spotlight,
 	IconButton,
 	Button,
-	TagsGlobe
+	TagsGlobe,
+	Icon
 } from "@/components"
 
 import {
@@ -23,7 +25,12 @@ import {
 	SkillsSectionContainer,
 	SkillsSectionContent,
 	SkillsGlobeContainer,
-	SeeMoreContainer
+	SeeMoreContainer,
+	ContactSectionContainer,
+	ContactSectionContent,
+	ContactInfoContainer,
+	ContactInfoContent,
+	ContactInfoLink
 } from "@/styles/Home"
 
 const SKILLS = [
@@ -83,27 +90,27 @@ const Home: NextPage<HomeProps> = (props) => {
 				<AuxBarContainer>
 					<AuxBarContent>
 						<IconButton
-							src="/icons/whatsapp.svg"
-							href="https://api.whatsapp.com/send?phone=5527996334936"
-							alt="whatsapp"
+							src={contactMap.whatsapp.iconSrc}
+							href={contactMap.whatsapp.url}
+							alt={contactMap.whatsapp.alt}
 						/>
 	
 						<IconButton
-							src="/icons/linkedin.svg"
-							href="https://www.linkedin.com/in/guilhermebkel"
-							alt="linkedin"
+							src={contactMap.linkedin.iconSrc}
+							href={contactMap.linkedin.url}
+							alt={contactMap.linkedin.alt}
 						/>
 	
 						<IconButton
-							src="/icons/mail.svg"
-							href="mailto:guilhermebromonschenkel@gmail.com"
-							alt="mail"
+							src={contactMap.mail.iconSrc}
+							href={contactMap.mail.url}
+							alt={contactMap.mail.alt}
 						/>
 	
 						<IconButton
-							src="/icons/github.svg"
-							href="https://github.com/guilhermebkel"
-							alt="github"
+							src={contactMap.github.iconSrc}
+							href={contactMap.github.url}
+							alt={contactMap.github.alt}
 						/>
 					</AuxBarContent>
 				</AuxBarContainer>
@@ -137,6 +144,46 @@ const Home: NextPage<HomeProps> = (props) => {
 					</SeeMoreContainer>
 				</SkillsSectionContent>
 			</SkillsSectionContainer>
+
+			<ContactSectionContainer>
+				<ContactSectionContent>
+					<Summary
+						spotlightWidth="190px"
+						type="Contact"
+						title="Get in touch."
+						description="Feel free to reach out if you're looking for a developer, have a question, or just want to connect."
+					/>
+
+					<ContactInfoContainer>
+						<ContactInfoContent>
+							<Icon
+								src={contactMap.mail.iconSrc}
+								alt={contactMap.mail.alt}
+							/>
+
+							<ContactInfoLink
+								href={contactMap.mail.url}
+								target="_blank"
+							>
+								{contactMap.mail.rawValue}
+							</ContactInfoLink>
+						</ContactInfoContent>
+						
+						<ContactInfoContent>
+							<Icon
+								src={contactMap.whatsapp.iconSrc}
+								alt={contactMap.whatsapp.alt}
+							/>
+							<ContactInfoLink
+								href={contactMap.whatsapp.url}
+								target="_blank"
+							>
+								{contactMap.whatsapp.rawValue}
+							</ContactInfoLink>
+						</ContactInfoContent>
+					</ContactInfoContainer>
+				</ContactSectionContent>
+			</ContactSectionContainer>
 		</HomeLayout>
 	)
 }

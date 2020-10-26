@@ -103,9 +103,6 @@ export const AuxBarContent = styled.div`
 `
 
 export const SkillsSectionContainer = styled(Section.Container)`
-	padding-bottom: var(--section-container-margin-bottom);
-
-	margin-bottom: 0 !important;
 `
 
 export const SkillsSectionContent = styled(Section.Content)`
@@ -115,7 +112,7 @@ export const SkillsGlobeContainer = styled(LazyLoadedElement)`
 	width: 100%;
 	height: 100%;
 
-	margin: 5rem 0;
+	margin: var(--section-content-items-margin);
 
 	display: flex;
 	align-items: center;
@@ -132,4 +129,35 @@ export const SeeMoreContainer = styled.div`
 	@media (max-width: 768px) {
 		justify-content: center;
 	}
+`
+
+export const ContactSectionContainer = styled(Section.Container)`
+	padding-bottom: var(--section-container-margin-bottom);
+
+	margin-bottom: 0 !important;
+`
+
+export const ContactSectionContent = styled(Section.Content)``
+
+export const ContactInfoContainer = styled.div`
+	margin: var(--section-content-items-margin);
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+`
+
+export const ContactInfoContent = styled.div`
+	display: flex;
+	align-items: center;
+
+	a {
+		margin-left: 1rem;
+	}
+
+	margin-bottom: 1rem;
+`
+
+export const ContactInfoLink = styled.a`
+	font-weight: bolder;
 `
