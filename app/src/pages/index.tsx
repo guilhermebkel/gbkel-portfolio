@@ -249,9 +249,9 @@ const Home: NextPage<HomeProps> = (props) => {
 			<ContactSectionContainer>
 				<ContactSectionContent>
 					<Summary
-						spotlightWidth="190px"
+						spotlightWidth="230px"
 						type="Contact"
-						title="Get in touch."
+						title="Contact."
 						description="Feel free to reach out if you're looking for a developer, have a question, or just want to connect."
 					/>
 
