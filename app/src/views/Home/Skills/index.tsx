@@ -42,7 +42,6 @@ const SkillsSection: React.FC = () => {
 				/>
 	
 				<SkillsGlobeContainer
-					initInvisible
 					threshold={0.3}
 				>
 					<TagsGlobe

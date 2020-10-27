@@ -12,7 +12,6 @@ type LazyLoadedElementProps = HTMLAttributes<HTMLDivElement> & {
 	threshold?: number
 	initInvisible?: boolean
 	mountPureOnVisible?: boolean
-	highPriority?: boolean
 }
 
 const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
@@ -22,7 +21,6 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 		children,
 		initInvisible,
 		mountPureOnVisible,
-		highPriority,
 		...otherProps
 	} = props
 
@@ -41,19 +39,13 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 			const isContainerVisible = callback?.[0]?.isIntersecting
 
 			if (isContainerVisible) {
-				const worker = () => {
+				addToCallbackPool(() => {
 					onVisible?.(containerElement, childrenElement)
 
 					setVisible(true)
 
 					observer.unobserve(containerElement)
-				}
-
-				if (highPriority) {
-					worker()
-				} else {
-					addToCallbackPool(worker)
-				}
+				})
 			}
 		}, {
 			threshold

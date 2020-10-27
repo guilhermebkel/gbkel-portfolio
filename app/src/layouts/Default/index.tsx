@@ -7,8 +7,22 @@ import {
 
 import { buildCDNUrl } from "@/lib/cdn"
 
+import useDidMount from "@/hooks/useDidMount"
+
 const DefaultLayout: React.FC = (props) => {
 	const { children } = props
+
+	useDidMount(() => {
+		window.addEventListener("load", () => {
+			const href = buildCDNUrl("/css/font.css")
+
+			const font = document.createElement("link") 
+			font.setAttribute("rel", "stylesheet")
+			font.setAttribute("href", href)
+
+			document.head.appendChild(font)
+		})
+	})
 
 	return (
 		<>
@@ -23,8 +37,6 @@ const DefaultLayout: React.FC = (props) => {
 			<Navbar />
 
 			{children}
-
-			<link href={buildCDNUrl("/css/font.css")} rel="stylesheet"></link>
 		</>
 	)
 }
