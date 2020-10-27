@@ -4,16 +4,12 @@ import {
 	Image
 } from "@/components/LazyLoadedImage/styles"
 
-import {
-	LazyLoadedElement
-} from "@/components"
-
 import { buildCDNUrl } from "@/lib/cdn"
 
 type LazyLoadedImageProps = ImgHTMLAttributes<Element>
 
 const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
-	const { src, alt, ...otherProps } = props
+	const { src, ...otherProps } = props
 
 	const [loaded, setLoaded] = useState(false)
 
@@ -21,25 +17,13 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 		setLoaded(true)
 	}
 
-	const onImageVisible = (_: Element, imageRef: Element) => {
-		if (!imageRef["src"]) {
-			imageRef["src"] = buildCDNUrl(src)
-		}
-
-		imageRef["alt"] = alt
-	}
-
 	return (
-		<LazyLoadedElement
-			onVisible={onImageVisible}
+		<Image
+			src={buildCDNUrl(src)}
+			onLoad={onImageLoad}
+			loaded={loaded}
 			{...otherProps}
-		>
-			<Image
-				onLoad={onImageLoad}
-				loaded={loaded}
-				{...otherProps}
-			/>
-		</LazyLoadedElement>
+		/>
 	)
 }
 

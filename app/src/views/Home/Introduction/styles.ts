@@ -29,7 +29,7 @@ export const IntroductionSectionContent = styled(Section.Content)`
 	justify-content: space-between;
 `;
 
-export const Avatar = styled(LazyLoadedImage)`
+export const AvatarContainer = styled.div`
 	position: absolute;
 
 	top: 0;
@@ -42,18 +42,25 @@ export const Avatar = styled(LazyLoadedImage)`
 
 	z-index: 0;
 
-	img {
-		position: relative;
+	div {
+		width: 100% !important;
+		height: 100% !important;
 
-		opacity: 0.7 !important;
-
-		height: 100%;
-		width: auto;
-
-		max-width: 100%;
-
-		object-fit: cover;
+		padding-bottom: 0px !important;
 	}
+`
+
+export const Avatar = styled(LazyLoadedImage)`
+	position: relative !important;
+
+	opacity: 0.7 !important;
+
+	height: 100% !important;
+	width: auto !important;
+
+	max-width: 100%;
+
+	object-fit: cover;
 `;
 
 export const CodingSymbol = styled.h1`

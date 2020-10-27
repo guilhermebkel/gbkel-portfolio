@@ -16,8 +16,8 @@ const Icon: React.FC<IconProps> = (props) => {
 		<PureIcon
 			src={src}
 			alt={alt || "icon"}
-			width="24px"
-			height="24px"
+			width={24}
+			height={24}
 		/>
 	)
 }
