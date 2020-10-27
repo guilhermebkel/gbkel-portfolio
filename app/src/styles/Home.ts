@@ -181,7 +181,6 @@ export const TimelineContainer = styled(LazyLoadedElement)`
 	width: 100%;
 
 	margin: var(--section-content-items-margin);
-
 	margin-bottom: 0;
 
 	@media (max-width: 768px) {
@@ -209,6 +208,8 @@ export const TimelineContent = styled(Timeline.Content)`
 	flex-direction: column;
 	justify-content: flex-start;
 
+	box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.25);
+
 	@media (max-width: 768px) {
 		max-width: 100%;
 	}
@@ -226,9 +227,7 @@ export const TimelineTitleContainer = styled.div`
 	margin-bottom: 2rem;
 `
 
-export const TimelineIcon = styled(Icon)`
-	
-`
+export const TimelineIcon = styled(Icon)``
 
 export const TimelineTitle = styled.h1`
 	color: var(--gray-color-15);
