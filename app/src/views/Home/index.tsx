@@ -4,7 +4,7 @@ import dynamic from "next/dynamic"
 
 import HomeLayout from "@/layouts/Home"
 
-import IntroductionSection from "@/pages/home/_sections/Introduction"
+import IntroductionSection from "@/views/Home/Introduction"
 
 import { LazyLoadedElement } from "@/components"
 
@@ -18,7 +18,7 @@ const Home: NextPage<HomeProps> = (props) => {
 	const { isMobile } = props
 
 	const lazyLoadSection = (sectionFileName: string) => {
-		const Section = dynamic(() => import(`@/pages/home/_sections/${sectionFileName}`))
+		const Section = dynamic(() => import(`@/views/Home/${sectionFileName}`))
 
 		return (
 			<Section />
