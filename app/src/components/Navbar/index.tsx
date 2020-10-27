@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
 				<Logo
 					src="/images/logo-white-transparent.png"
 					alt="logo"
-					width="27px"
+					width="26px"
 					height="40px"
 				/>
 				

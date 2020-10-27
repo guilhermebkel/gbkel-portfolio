@@ -10,7 +10,6 @@ import {
 	IntroductionSectionContainer,
 	IntroductionSectionContent,
 	CodingSymbol,
-	AvatarContainer,
 	Avatar,
 	AuxBarContainer,
 	AuxBarContent
@@ -39,14 +38,12 @@ const IntroductionSection: React.FC = () => (
 				</CodingSymbol>
 			</Spotlight>
 			
-			<AvatarContainer>
-				<Avatar
-					src="/images/avatar.jpg"
-					alt="avatar"
-					width={1080}
-					height={1080}
-				/>
-			</AvatarContainer>
+			<Avatar
+				src="/images/avatar.jpg"
+				alt="avatar"
+				width="1080px"
+				height="1080px"
+			/>
 		</IntroductionSectionContent>
 
 		<AuxBarContainer>

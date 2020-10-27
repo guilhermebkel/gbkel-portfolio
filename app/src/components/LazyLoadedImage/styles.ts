@@ -1,7 +1,6 @@
 import styled from "styled-components"
-import NextImage from "next/image"
 
-export const Image = styled(NextImage)<{ loaded: boolean }>`
+export const Image = styled.img<{ loaded: boolean }>`
 	filter: ${(props) => `${props.loaded ? "none" : "blur(10px)"}`};
 
 	opacity: ${(props) => `${props.loaded ? 1 : 0}`};
