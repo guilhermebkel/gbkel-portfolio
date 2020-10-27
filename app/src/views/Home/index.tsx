@@ -5,8 +5,9 @@ import dynamic from "next/dynamic"
 import HomeLayout from "@/layouts/Home"
 
 import IntroductionSection from "@/views/Home/Introduction"
-
-import { LazyLoadedElement } from "@/components"
+const TimelineSection =  dynamic(() => import("@/views/Home/Timeline"))
+const SkillsSection =  dynamic(() => import("@/views/Home/Skills"))
+const ContactSection =  dynamic(() => import("@/views/Home/Contact"))
 
 import { isMobileRequest } from "@/lib/validation"
 
@@ -17,45 +18,15 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = (props) => {
 	const { isMobile } = props
 
-	const lazyLoadSection = (sectionFileName: string) => {
-		const Section = dynamic(() => import(`@/views/Home/${sectionFileName}`))
-
-		return (
-			<Section />
-		)
-	}
-
 	return (
 		<HomeLayout isMobile={isMobile}>
 			<IntroductionSection />
 
-			<LazyLoadedElement
-				mountPureOnVisible
-				initInvisible
-				highPriority
-				threshold={0}
-			>
-				{lazyLoadSection("Timeline")}
-			</LazyLoadedElement>
+			<TimelineSection />
 			
-	
-			<LazyLoadedElement
-				mountPureOnVisible
-				initInvisible
-				highPriority
-				threshold={0}
-			>
-				{lazyLoadSection("Skills")}
-			</LazyLoadedElement>
+			<SkillsSection />
 
-			<LazyLoadedElement
-				mountPureOnVisible
-				initInvisible
-				highPriority
-				threshold={0}
-			>
-				{lazyLoadSection("Contact")}
-			</LazyLoadedElement>
+			<ContactSection />
 		</HomeLayout>
 	)
 }
