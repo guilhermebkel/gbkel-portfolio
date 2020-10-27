@@ -4,5 +4,11 @@
 			"source": "/thumbnail/(.*).png",
 			"destination": "/api/thumbnail?slug=$1"
 		}
+	],
+	"rewrites": [
+		{
+			"source": "/",
+			"destination": "/home"
+		}
 	]
 }
