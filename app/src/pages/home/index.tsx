@@ -1,12 +1,12 @@
 import React from "react"
 import { NextPage } from "next"
+import dynamic from "next/dynamic"
 
 import HomeLayout from "@/layouts/Home"
 
 import IntroductionSection from "@/pages/home/_sections/Introduction"
-import TimelineSection from "@/pages/home/_sections/Timeline"
-import SkillsSection from "@/pages/home/_sections/Skills"
-import ContactSection from "@/pages/home/_sections/Contact"
+
+import { LazyLoadedElement } from "@/components"
 
 import { isMobileRequest } from "@/lib/validation"
 
@@ -17,15 +17,45 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = (props) => {
 	const { isMobile } = props
 
+	const lazyLoadSection = (sectionFileName: string) => {
+		const Section = dynamic(() => import(`@/pages/home/_sections/${sectionFileName}`))
+
+		return (
+			<Section />
+		)
+	}
+
 	return (
 		<HomeLayout isMobile={isMobile}>
 			<IntroductionSection />
 
-			<TimelineSection />
+			<LazyLoadedElement
+				mountPureOnVisible
+				initInvisible
+				highPriority
+				threshold={0}
+			>
+				{lazyLoadSection("Timeline")}
+			</LazyLoadedElement>
+			
 	
-			<SkillsSection />
+			<LazyLoadedElement
+				mountPureOnVisible
+				initInvisible
+				highPriority
+				threshold={0}
+			>
+				{lazyLoadSection("Skills")}
+			</LazyLoadedElement>
 
-			<ContactSection />
+			<LazyLoadedElement
+				mountPureOnVisible
+				initInvisible
+				highPriority
+				threshold={0}
+			>
+				{lazyLoadSection("Contact")}
+			</LazyLoadedElement>
 		</HomeLayout>
 	)
 }
