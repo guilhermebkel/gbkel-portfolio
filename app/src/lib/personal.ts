@@ -47,18 +47,21 @@ export const timeline: Timeline[] = [
 		title: "UFES",
 		subtitle: "Introduction to Computing Course",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		date: "06/2014 - 12/2014"
+		date: "06/2014 - 12/2014",
+		iconSrc: "/icons/ufes.png"
 	},
 	{
 		title: "UFMG",
 		subtitle: "Electrical Engineering",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		date: "03/2019 - In course"
+		date: "03/2019 - In course",
+		iconSrc: "/icons/ufmg.png"
 	},
 	{
 		title: "PICSIZE",
 		subtitle: "Full-stack Development Intern",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		date: "06/2019 - 12-2019"
+		date: "06/2019 - 12/2019",
+		iconSrc: "/icons/picsize.png"
 	}
 ]

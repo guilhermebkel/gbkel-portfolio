@@ -32,8 +32,19 @@ import {
 	ContactInfoContainer,
 	ContactInfoContent,
 	ContactInfoLink,
+	TimelineSectionContainer,
+	TimelineSectionContent,
+	TimelineMobileContainer,
+	TimelineMobileContent,
 	TimelineContainer,
-	TimelineContent
+	TimelineContent,
+	TimelineOppositeContent,
+	TimelineTitleContainer,
+	TimelineTitle,
+	TimelineDescription,
+	TimelineSubTitle,
+	TimelineDate,
+	TimelineIcon
 } from "@/styles/Home"
 
 const SKILLS = [
@@ -119,8 +130,8 @@ const Home: NextPage<HomeProps> = (props) => {
 				</AuxBarContainer>
 			</IntroductionSectionContainer>
 
-			<TimelineContainer>
-				<TimelineContent>
+			<TimelineSectionContainer>
+				<TimelineSectionContent>
 					<Summary
 						spotlightWidth="260px"
 						type="About"
@@ -128,11 +139,83 @@ const Home: NextPage<HomeProps> = (props) => {
 						description="A summarized timeline about my journey on the incredible ecosystem of technology and development."
 					/>
 
-					<Timeline
-						timeline={timeline}
-					/>
-				</TimelineContent>
-			</TimelineContainer>
+					<TimelineMobileContainer>
+						<TimelineMobileContent>
+							{timeline.map((timelineItem) => (
+								<Timeline.Item key={timelineItem.title}>
+									<TimelineContent>
+										<TimelineTitleContainer>
+											<TimelineIcon
+												src={timelineItem.iconSrc}
+												alt={timelineItem.title}
+											/>
+											<TimelineTitle>
+												{timelineItem.title}
+											</TimelineTitle>
+											<TimelineDate>
+												({timelineItem.date})
+											</TimelineDate>
+										</TimelineTitleContainer>
+
+										<TimelineDescription>
+											{timelineItem.description}
+										</TimelineDescription>
+
+										<TimelineSubTitle>
+											{timelineItem.subtitle}
+										</TimelineSubTitle>
+									</TimelineContent>
+								</Timeline.Item>
+							))}
+						</TimelineMobileContent>
+					</TimelineMobileContainer>
+
+					<TimelineContainer>
+						<Timeline>
+							{timeline.map((timelineItem, index) => (
+								<Timeline.Item key={timelineItem.title}>
+									<TimelineContent
+										style={{
+											order: index % 2 === 0 ? 0 : 2
+										}}
+									>
+										<TimelineTitleContainer>
+											<TimelineIcon
+												src={timelineItem.iconSrc}
+												alt={timelineItem.title}
+											/>
+											<TimelineTitle>
+												{timelineItem.title}
+											</TimelineTitle>
+										</TimelineTitleContainer>
+
+										<TimelineDescription>
+											{timelineItem.description}
+										</TimelineDescription>
+
+										<TimelineSubTitle>
+											{timelineItem.subtitle}
+										</TimelineSubTitle>
+									</TimelineContent>
+
+									<Timeline.Separator />
+
+									<TimelineOppositeContent
+										style={{
+											order: index % 2 === 0 ? 2 : 0,
+											justifyContent: index % 2 !== 0 && "flex-end"
+										}}
+									>
+										<TimelineDate>
+											{timelineItem.date}
+										</TimelineDate>
+									</TimelineOppositeContent>
+								</Timeline.Item>
+							))}
+						</Timeline>
+					</TimelineContainer>
+				</TimelineSectionContent>
+			</TimelineSectionContainer>
 	
 			<SkillsSectionContainer>
 				<SkillsSectionContent>
