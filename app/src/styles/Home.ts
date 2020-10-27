@@ -182,6 +182,8 @@ export const TimelineContainer = styled(LazyLoadedElement)`
 
 	margin: var(--section-content-items-margin);
 
+	margin-bottom: 0;
+
 	@media (max-width: 768px) {
 		display: none;
 	}

@@ -144,4 +144,10 @@ export default createGlobalStyle`
 			}
 		}
 	}
+
+	@media (max-width: 768px) {
+		:root {
+			--section-container-margin-bottom: 10rem;
+		}
+	}
 `;
