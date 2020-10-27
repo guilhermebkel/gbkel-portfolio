@@ -22,7 +22,10 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 	}
 
 	const onImageVisible = (_: Element, imageRef: Element) => {
-		imageRef["src"] = buildCDNUrl(src)
+		if (!imageRef["src"]) {
+			imageRef["src"] = buildCDNUrl(src)
+		}
+
 		imageRef["alt"] = alt
 	}
 
