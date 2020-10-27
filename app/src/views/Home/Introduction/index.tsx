@@ -38,12 +38,12 @@ const IntroductionSection: React.FC = () => (
 				</CodingSymbol>
 			</Spotlight>
 			
-			<Avatar
+			{/* <Avatar
 				src="/images/avatar.jpg"
 				alt="avatar"
 				width="1080px"
 				height="1080px"
-			/>
+			/> */}
 		</IntroductionSectionContent>
 
 		<AuxBarContainer>
