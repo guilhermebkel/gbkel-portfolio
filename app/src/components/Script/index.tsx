@@ -12,7 +12,7 @@ const Script: React.FC<ScriptProps> = (props) => {
 	const scriptSrc = buildCDNUrl(src)
 
 	return (
-		<script src={scriptSrc}></script>
+		<script src={scriptSrc} async></script>
 	)
 }
 
