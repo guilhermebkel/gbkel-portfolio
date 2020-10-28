@@ -11,10 +11,12 @@ import {
 import { buildCDNUrl } from "@/lib/cdn"
 import { buildSrcSet } from "@/lib/image"
 
-type LazyLoadedImageProps = ImgHTMLAttributes<Element>
+type LazyLoadedImageProps = ImgHTMLAttributes<Element> & {
+	highPriority?: boolean
+}
 
 const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
-	const { src, alt, ...otherProps } = props
+	const { src, alt, highPriority, ...otherProps } = props
 
 	const [loaded, setLoaded] = useState(false)
 
@@ -35,6 +37,7 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 	return (
 		<LazyLoadedElement
 			onVisible={onImageVisible}
+			highPriority={highPriority}
 			{...otherProps}
 		>
 			<Image

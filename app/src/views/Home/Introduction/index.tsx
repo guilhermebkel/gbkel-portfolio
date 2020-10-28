@@ -43,6 +43,7 @@ const IntroductionSection: React.FC = () => (
 				alt="avatar"
 				width="1080px"
 				height="1080px"
+				highPriority
 			/>
 		</IntroductionSectionContent>
 
