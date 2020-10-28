@@ -11,7 +11,7 @@ const log = (message) => {
 }
 
 const hasValidPictureExtension = (value) => {
-	const validPictureExtensions = [".jpg", ".png", ".webp", ".jpeg"]
+	const { validPictureExtensions } = imageConfig
 
 	const isValid = validPictureExtensions.some(extension => value.includes(extension))
 

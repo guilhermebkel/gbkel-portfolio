@@ -8,6 +8,13 @@ export const buildSrcSet = (path: string): string => {
 
 	const [fullPath, extension] = path.split(".")
 
+	const isOptimizedPicture = imageConfig.validPictureExtensions
+		.some(validExtension => validExtension.includes(extension))
+
+	if (!isOptimizedPicture) {
+		return ""
+	}
+
 	const srcList = imageConfig.responsiveSizes.map(size => (
 		`${imageConfig.buildResponsiveSrc(fullPath, size, extension)} ${size}w`
 	))
