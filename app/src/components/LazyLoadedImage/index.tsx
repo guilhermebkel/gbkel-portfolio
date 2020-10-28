@@ -26,6 +26,7 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 		if (!imageRef["src"]) {
 			imageRef["src"] = buildCDNUrl(src)
 			imageRef["srcset"] = buildSrcSet(src)
+			imageRef["sizes"] = "100vw"
 		}
 
 		imageRef["alt"] = alt
