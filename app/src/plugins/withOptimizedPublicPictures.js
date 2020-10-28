@@ -75,7 +75,9 @@ const optimizePicture = async (picturePath) => {
 					.resize(size, null, {
 						withoutEnlargement: true
 					})
-					.webp(webpOptions)
+					.jpeg({ quality: 70, progressive: true, force: false })
+					.webp({ quality: 70, lossless: true, force: false })
+					.png({ quality: 70, compressionLevel: 8, force: false })
 					.toFile(finalPath)
 			})
 		)
