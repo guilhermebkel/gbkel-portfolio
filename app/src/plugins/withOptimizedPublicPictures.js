@@ -73,7 +73,9 @@ const optimizePicture = async (picturePath) => {
 
 				await sharp(picturePath)
 					.webp(webpOptions)
-					.resize(size)
+					.resize(size, null, {
+						withoutEnlargement: true
+					})
 					.toFile(finalPath)
 			})
 		)
