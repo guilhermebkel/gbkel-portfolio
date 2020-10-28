@@ -2,6 +2,8 @@ const fs = require("fs")
 const path = require("path")
 const sharp = require("sharp")
 
+const { imageConfig } = require("../config/image")
+
 let isOptimizingPublicPictures = false
 
 const log = (message) => {
@@ -48,15 +50,34 @@ const getAllFilesPathsFromDirectory = async (directory) => {
 
 const optimizePicture = async (picturePath) => {
 	try {
-		const optimizedPicture = await sharp(picturePath)
-			.webp({
-				lossless: true,
-				reductionEffort: 6,
-				force: true
-			})
+		const { responsiveSizes } = imageConfig
+
+		const picture = await sharp(picturePath).toBuffer()
+
+		const webpOptions = {
+			lossless: true,
+			reductionEffort: 6,
+			force: true
+		}
+
+		const optimizedPicture = await sharp(picture)
+			.webp(webpOptions)
 			.toBuffer()
 
 		await sharp(optimizedPicture).toFile(picturePath)
+
+		await Promise.all(
+			responsiveSizes.map(async size => {
+				const [path, extension] = picturePath.split(".")
+
+				const finalPath = imageConfig.buildResponsiveSrc(path, size, extension)
+
+				await sharp(picture)
+					.resize(size)
+					.webp(webpOptions)
+					.toFile(finalPath)
+			})
+		)
 	} catch (error) {
 		log(error.message)
 	}

@@ -9,6 +9,7 @@ import {
 } from "@/components"
 
 import { buildCDNUrl } from "@/lib/cdn"
+import { buildSrcSet } from "@/lib/image"
 
 type LazyLoadedImageProps = ImgHTMLAttributes<Element>
 
@@ -24,6 +25,7 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 	const onImageVisible = (_: Element, imageRef: Element) => {
 		if (!imageRef["src"]) {
 			imageRef["src"] = buildCDNUrl(src)
+			imageRef["srcset"] = buildSrcSet(src)
 		}
 
 		imageRef["alt"] = alt
