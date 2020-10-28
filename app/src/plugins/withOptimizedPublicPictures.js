@@ -52,15 +52,14 @@ const optimizePicture = async (picturePath) => {
 	try {
 		const { responsiveSizes } = imageConfig
 
-		const webpOptions = {
-			lossless: true,
-			reductionEffort: 6,
-			quality: 75,
-			force: true
-		}
+		const jpegOptions = { quality: 70, progressive: true, force: false }
+		const webpOptions = { quality: 70, lossless: true, force: false }
+		const pngOptions = { quality: 70, compressionLevel: 8, force: false }
 
 		const optimizedPicture = await sharp(picturePath)
+			.jpeg(jpegOptions)
 			.webp(webpOptions)
+			.png(pngOptions)
 			.toBuffer()
 
 		await sharp(optimizedPicture).toFile(picturePath)
@@ -73,9 +72,9 @@ const optimizePicture = async (picturePath) => {
 
 				await sharp(picturePath)
 					.resize(size, null, { withoutEnlargement: true })
-					.jpeg({ quality: 70, progressive: true, force: false })
-					.webp({ quality: 70, lossless: true, force: false })
-					.png({ quality: 70, compressionLevel: 8, force: false })
+					.jpeg(jpegOptions)
+					.webp(webpOptions)
+					.png(pngOptions)
 					.toFile(finalPath)
 			})
 		)
