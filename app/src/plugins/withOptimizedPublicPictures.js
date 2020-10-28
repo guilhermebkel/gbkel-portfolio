@@ -72,10 +72,10 @@ const optimizePicture = async (picturePath) => {
 				const finalPath = imageConfig.buildResponsiveSrc(path, size, extension)
 
 				await sharp(picturePath)
-					.webp(webpOptions)
 					.resize(size, null, {
 						withoutEnlargement: true
 					})
+					.webp(webpOptions)
 					.toFile(finalPath)
 			})
 		)
