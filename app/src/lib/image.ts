@@ -19,7 +19,7 @@ export const buildSrcSet = (path: string): string => {
 		`${imageConfig.buildResponsiveSrc(fullPath, size, extension)} ${size}w`
 	))
 
-	srcList.push(`${path} 2048w`)
+	srcList.push(`${path} 2000w`)
 
 	const srcSet = srcList.join(", ")
 
