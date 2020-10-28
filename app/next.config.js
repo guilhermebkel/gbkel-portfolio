@@ -17,7 +17,7 @@ module.exports = withPlugins([
 	}],
 	[withOptimizedPublicPictures, {
 		optimizedPublicPictures: {
-			disable: environmentConfig.isDev
+			disable: !environmentConfig.isDev
 		}
 	}],
 	[withSiteMap, {
