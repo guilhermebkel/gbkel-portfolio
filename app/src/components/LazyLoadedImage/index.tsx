@@ -16,7 +16,7 @@ type LazyLoadedImageProps = ImgHTMLAttributes<Element> & {
 }
 
 const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
-	const { src, alt, highPriority, ...otherProps } = props
+	const { src, highPriority, ...otherProps } = props
 
 	const [loaded, setLoaded] = useState(false)
 
@@ -30,8 +30,6 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 			imageRef["sizes"] = "(max-width: 768px) 50vw, 100vw"
 			imageRef["src"] = buildCDNUrl(src)
 		}
-
-		imageRef["alt"] = alt
 	}
 
 	return (
