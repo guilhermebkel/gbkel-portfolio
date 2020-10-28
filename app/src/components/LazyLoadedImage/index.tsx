@@ -25,7 +25,7 @@ const LazyLoadedImage: React.FC<LazyLoadedImageProps> = (props) => {
 	const onImageVisible = (_: Element, imageRef: Element) => {
 		if (!imageRef["src"]) {
 			imageRef["srcset"] = buildSrcSet(src)
-			imageRef["sizes"] = "100vw"
+			imageRef["sizes"] = "(max-width: 768px) 50vw, 100vw"
 			imageRef["src"] = buildCDNUrl(src)
 		}
 
