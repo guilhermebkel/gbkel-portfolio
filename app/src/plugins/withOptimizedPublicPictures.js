@@ -57,6 +57,7 @@ const optimizePicture = async (picturePath) => {
 		const webpOptions = {
 			lossless: true,
 			reductionEffort: 6,
+			quality: 75,
 			force: true
 		}
 
@@ -73,8 +74,8 @@ const optimizePicture = async (picturePath) => {
 				const finalPath = imageConfig.buildResponsiveSrc(path, size, extension)
 
 				await sharp(picture)
-					.resize(size)
 					.webp(webpOptions)
+					.resize(size)
 					.toFile(finalPath)
 			})
 		)
