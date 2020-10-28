@@ -37,30 +37,29 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 		const containerElement = containerRef.current as Element
 		const childrenElement = childrenRef.current as Element
 
-		const worker = () => {
-			onVisible?.(containerElement, childrenElement)
+		const observer = new IntersectionObserver(callback => {
+			const isContainerVisible = callback?.[0]?.isIntersecting
 
-			setVisible(true)
-		}
+			if (isContainerVisible) {
+				const worker = () => {
+					onVisible?.(containerElement, childrenElement)
 
-		if (highPriority) {
-			worker()
-		} else {
-			const observer = new IntersectionObserver(callback => {
-				const isContainerVisible = callback?.[0]?.isIntersecting
-	
-				if (isContainerVisible) {
-					addToCallbackPool(() => {
-						worker()
-						observer.unobserve(containerElement)
-					})
+					setVisible(true)
+
+					observer.unobserve(containerElement)
 				}
-			}, {
-				threshold
-			})
-		
-			observer.observe(containerElement)
-		}
+
+				if (highPriority) {
+					worker()
+				} else {
+					addToCallbackPool(worker)
+				}
+			}
+		}, {
+			threshold
+		})
+	
+		observer.observe(containerElement)
 	})
 
 	return (
