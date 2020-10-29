@@ -73,6 +73,10 @@ export const Menu = styled.ul<{ isMobileMenuOpened: boolean }>`
 			margin-bottom: ${(props) => props.isMobileMenuOpened && "2rem"};
 		}
 
+		#menu-icon-item {
+			display: flex;
+		}
+
 		a {
 			color: ${(props) => props.isMobileMenuOpened && "var(--gray-color-1)"};
 		}
@@ -97,6 +101,9 @@ export const MenuItem = styled.li`
 	&:last-child {
 		margin-right: 0;
 	}
+`
+
+export const MenuIconItem = styled.li`
 `
 
 export const MenuItemLink = styled(Link)``

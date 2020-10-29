@@ -7,7 +7,8 @@ import {
 	Menu,
 	MenuItem,
 	MenuItemLink,
-	NavbarBackground
+	NavbarBackground,
+	MenuIconItem
 } from "@/components/Navbar/styles"
 
 import {
@@ -48,10 +49,12 @@ const Navbar: React.FC = () => {
 				<Menu
 					isMobileMenuOpened={isMobileMenuOpened}
 				>
-					<IconButton
-						onClick={toggleMobileMenu}
-						src="/icons/menu.svg"
-					/>
+					<MenuIconItem id="menu-icon-item">
+						<IconButton
+							onClick={toggleMobileMenu}
+							src="/icons/menu.svg"
+						/>
+					</MenuIconItem>
 
 					<MenuItem>
 						<MenuItemLink href="/">
