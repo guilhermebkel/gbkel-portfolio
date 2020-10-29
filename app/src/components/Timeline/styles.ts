@@ -70,7 +70,7 @@ export const TimelineDot = styled.div`
 	z-index: 3;
 `
 
-export const TimelineConnectorContainer = styled.div`
+export const TimelineConnectorContainer = styled.li`
 	position: absolute;
 	
 	top: 0;
@@ -82,6 +82,8 @@ export const TimelineConnectorContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	list-style: none;
 `
 
 export const TimelineConnector = styled.div`
