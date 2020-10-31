@@ -16,7 +16,7 @@ const DefaultLayout: React.FC = (props) => {
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 				<link rel="icon" href={buildCDNUrl("/favicon.png")} />
 				<link id="app-manifest" rel="manifest" href="/manifest.json"></link>
-				<link rel="preload" href={buildCDNUrl("/css/font.css")} as="style"></link>
+				<link rel="preload" href={buildCDNUrl("/css/font.css")} as="font" crossorigin="anonymous"></link>
 				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
 				<meta name="description" content="All info about a problem solver called Guilherme Mota."/>
 			</Head>
