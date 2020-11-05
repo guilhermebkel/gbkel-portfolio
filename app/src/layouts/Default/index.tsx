@@ -21,12 +21,13 @@ const DefaultLayout: React.FC = (props) => {
 				<meta name="description" content="All info about a problem solver called Guilherme Mota."/>
 
 				<script src="https://widgets.picsize.com.br/JS/widgetChat.js" defer />
-				<div className="widget-picsize-app" id="picsize-0f7841df-b5c0-46a4-a038-fcfc1813b38f-widget" />
 			</Head>
 
 			<Navbar />
 
 			{children}
+
+			<div className="widget-picsize-app" id="picsize-0f7841df-b5c0-46a4-a038-fcfc1813b38f-widget" />
 		</>
 	)
 }
