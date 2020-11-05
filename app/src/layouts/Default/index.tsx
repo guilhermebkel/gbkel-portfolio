@@ -19,6 +19,9 @@ const DefaultLayout: React.FC = (props) => {
 				<link rel="preload" href={buildCDNUrl("/css/font.css")} as="style"></link>
 				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
 				<meta name="description" content="All info about a problem solver called Guilherme Mota."/>
+
+				<script src="https://widgets.picsize.com.br/JS/widgetChat.js" defer></script>
+				<div className="widget-picsize-app" id="picsize-0f7841df-b5c0-46a4-a038-fcfc1813b38f-widget"></div>
 			</Head>
 
 			<Navbar />
