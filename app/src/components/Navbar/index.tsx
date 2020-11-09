@@ -62,19 +62,13 @@ const Navbar: React.FC = () => {
 						</MenuItemLink>
 					</MenuItem>
 					<MenuItem>
-						<MenuItemLink href="#about">
+						<a
+							href="https://about.guilherr.me"
+							target="_blank"
+							rel="noreferrer"
+						>
 							About
-						</MenuItemLink>
-					</MenuItem>
-					<MenuItem>
-						<MenuItemLink href="#timeline">
-							Timeline
-						</MenuItemLink>
-					</MenuItem>
-					<MenuItem>
-						<MenuItemLink href="#contact">
-							Contact
-						</MenuItemLink>
+						</a>
 					</MenuItem>
 					<MenuItem>
 						<MenuItemLink href="/blog">
