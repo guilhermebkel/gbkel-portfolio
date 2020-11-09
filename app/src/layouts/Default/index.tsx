@@ -1,5 +1,6 @@
 import React from "react"
 import Head from "next/head"
+import GoogleFonts from "next-google-fonts"
 
 import {
 	Navbar
@@ -12,11 +13,12 @@ const DefaultLayout: React.FC = (props) => {
 
 	return (
 		<>
+			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" />
+
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 				<link rel="icon" href={buildCDNUrl("/favicon.png")} />
 				<link id="app-manifest" rel="manifest" href="/manifest.json"></link>
-				<link rel="stylesheet" href={buildCDNUrl("/css/font.css")}></link>
 				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
 				<meta name="description" content="All info about a problem solver called Guilherme Mota."/>
 			</Head>
