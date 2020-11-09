@@ -21,7 +21,6 @@ export const QuoteItemContainer = styled.div`
 
 export const QuoteItemContent = styled.div`
 	flex-wrap: wrap;
-	max-width: 1000px;
 
 	display: flex;
 
