@@ -33,7 +33,7 @@ const QuotesSection: React.FC = () => (
 							alt="quote icon"
 						/>
 						<QuoteItemText>
-							Does not matter what your
+							Does not matter what you are
 							doing,
 							<Spotlight
 								bottom="-0.1rem"
