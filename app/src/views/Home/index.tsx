@@ -8,6 +8,7 @@ import IntroductionSection from "@/views/Home/Introduction"
 const TimelineSection =  dynamic(() => import("@/views/Home/Timeline"))
 const SkillsSection =  dynamic(() => import("@/views/Home/Skills"))
 const ContactSection =  dynamic(() => import("@/views/Home/Contact"))
+const QuotesSection =  dynamic(() => import("@/views/Home/Quotes"))
 
 import { isMobileRequest } from "@/lib/validation"
 
@@ -25,6 +26,8 @@ const Home: NextPage<HomeProps> = (props) => {
 			<TimelineSection />
 			
 			<SkillsSection />
+
+			<QuotesSection />
 
 			<ContactSection />
 		</HomeLayout>
