@@ -70,11 +70,11 @@ const Navbar: React.FC = () => {
 							About
 						</a>
 					</MenuItem>
-					<MenuItem>
+					{/* <MenuItem>
 						<MenuItemLink href="/blog">
 							Blog
 						</MenuItemLink>
-					</MenuItem>
+					</MenuItem> */}
 				</Menu>
 			</NavbarContent>
 
