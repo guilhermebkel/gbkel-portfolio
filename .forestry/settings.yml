@@ -4,10 +4,10 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections: 
-upload_dir: app/src/posts
-public_path: app/src/posts
-front_matter_path: ''
-use_front_matter_path: false
+upload_dir: app/public
+public_path: app/public
+front_matter_path: app/src/posts
+use_front_matter_path: true
 file_template: ":filename:"
 build:
   install_dependencies_command: npm install
