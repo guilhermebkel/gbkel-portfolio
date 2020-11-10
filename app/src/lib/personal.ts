@@ -12,23 +12,23 @@ type ContactMap = {
 export const contactMap: ContactMap = {
 	github: {
 		iconSrc: "/icons/github.svg",
-		url: "https://github.com/guilhermebkel",
+		url: "https://github.guilherr.me",
 		alt: "github"
 	},
 	linkedin: {
 		iconSrc: "/icons/linkedin.svg",
-		url: "https://www.linkedin.com/in/guilhermebkel",
+		url: "https://linkedin.guilherr.me",
 		alt: "linkedin"
 	},
 	mail: {
 		iconSrc: "/icons/mail.svg",
-		url: "mailto:guilhermebromonschenkel@gmail.com",
+		url: "https://mail.guilherr.me",
 		rawValue: "guilhermebromonschenkel@gmail.com",
 		alt: "mail"
 	},
 	whatsapp: {
 		iconSrc: "/icons/whatsapp.svg",
-		url: "https://api.whatsapp.com/send?phone=5527996334936",
+		url: "https://whatsapp.guilherr.me",
 		rawValue: "+55 (27) 99633-4936",
 		alt: "whatsapp"
 	}
