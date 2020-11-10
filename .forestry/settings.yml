@@ -5,7 +5,7 @@ admin_path: ''
 webhook_url: 
 sections: 
 upload_dir: app/public
-public_path: app/public
+public_path: ''
 front_matter_path: app/src/posts
 use_front_matter_path: true
 file_template: ":filename:"
