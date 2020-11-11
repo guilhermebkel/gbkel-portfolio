@@ -1,3 +1,5 @@
+import React from "react"
+
 type ContactType = "github" | "linkedin" | "mail" | "whatsapp"
 
 type ContactMap = {
@@ -37,7 +39,7 @@ export const contactMap: ContactMap = {
 type Timeline = {
 	title: string
 	subtitle: string
-	description: string
+	description: JSX.Element | string
 	iconSrc?: string
 	date: string
 }
@@ -46,7 +48,18 @@ export const timeline: Timeline[] = [
 	{
 		title: "UFES",
 		subtitle: "Introduction to Computing Course",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		description: (
+			<>
+				It was the first time I have been in touch with programming.
+				<br />
+				<br />
+				In this course I have learned the basics about <u>C Language</u> and got mad multiple times
+				since I was creating a lot of bugs because of bad code writing. 😂
+				<br />
+				<br />
+				In the end I have made a <u>2048 Game</u> with lot of bugs, but feeling awesome for creating something new. 🤩
+			</>
+		),
 		date: "06/2014 - 12/2014",
 		iconSrc: "/icons/ufes.png"
 	},
