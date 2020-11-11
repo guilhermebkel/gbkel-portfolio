@@ -64,6 +64,13 @@ export const timeline: Timeline[] = [
 		iconSrc: "/icons/ufes.png"
 	},
 	{
+		title: "IBESVA",
+		subtitle: "Front-end Developer",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		date: "03/2019 - 10/2019",
+		iconSrc: "/icons/ibesva.png"
+	},
+	{
 		title: "UFMG",
 		subtitle: "Electrical Engineering",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
