@@ -19,7 +19,7 @@ const QuotesSection: React.FC = () => (
 	<QuotesSectionContainer>
 		<QuotesSectionContent>
 			<Summary
-				spotlightWidth="220px"
+				spotlightWidth="210px"
 				type="About"
 				title="Quotes."
 				description="Some quotes I find to be the base of everything I do and try to walk on the talk on my life."
