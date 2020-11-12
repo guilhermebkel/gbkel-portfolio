@@ -36,8 +36,11 @@ export const QuoteItem = styled.div`
 
 	margin: 7rem;
 
+	max-width: 51.25rem;
+
 	@media (max-width: 768px) {
 		margin: 4rem 0;
+		max-width: 100%;
 		width: 100%;
 
 		&:last-child {
