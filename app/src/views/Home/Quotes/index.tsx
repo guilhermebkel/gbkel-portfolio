@@ -95,7 +95,7 @@ const QuotesSection: React.FC = () => (
 							alt="quote icon"
 						/>
 						<QuoteItemText>
-							Most of the time, good software is
+							Most of the time, the best software is
 							<Spotlight
 								bottom="-0.1rem"
 								left="0"
