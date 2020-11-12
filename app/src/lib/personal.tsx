@@ -57,7 +57,7 @@ export const timeline: Timeline[] = [
 				since I was creating a lot of bugs because of bad code writing. 😂
 				<br />
 				<br />
-				In the end I have made a <u>2048 Game</u> with lot of bugs, but feeling awesome for creating something new. 🤩
+				In the end I have made a <u>2048 Game</u> with lot of bugs, but feeling awesome for creating something. 🤩
 			</>
 		),
 		date: "06/2014 - 12/2014",
