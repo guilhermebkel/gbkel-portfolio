@@ -71,7 +71,7 @@ export const timeline: Timeline[] = [
 				Since my brother/cousin are in the tech world (and they are kind of an inspiration to me), I have chosen this course since they have done it too. 🤘
 				<br />
 				<br />
-				I am currently at college and almost every month I am able to learn with awesome students. 🤯
+				I am currently at college and happy for studying with awesome students. 🤯
 			</>
 		),
 		date: "03/2019 - In course",
