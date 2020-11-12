@@ -74,18 +74,38 @@ const QuotesSection: React.FC = () => (
 							alt="quote icon"
 						/>
 						<QuoteItemText>
-							Try not to focus on learning new technologies, but
+							Try not to focus on learning new technologies,
 							<Spotlight
 								bottom="-0.1rem"
 								left="0"
 								height="1.7rem"
-								width="46rem"
+								width="52rem"
 							>
 								<b>
-									improving your learning process
+									but improving your learning process
 								</b>
 							</Spotlight>
 							for every single new technology you study.
+						</QuoteItemText>
+					</QuoteItem>
+
+					<QuoteItem>
+						<QuoteItemIcon
+							src="/icons/quote.svg"
+							alt="quote icon"
+						/>
+						<QuoteItemText>
+							Most of the time, good software is
+							<Spotlight
+								bottom="-0.1rem"
+								left="0"
+								height="1.7rem"
+								width="24rem"
+							>
+								<b>
+									the flexible one.
+								</b>
+							</Spotlight>
 						</QuoteItemText>
 					</QuoteItem>
 				</QuoteItemContent>
