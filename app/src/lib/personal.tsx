@@ -47,7 +47,7 @@ type Timeline = {
 export const timeline: Timeline[] = [
 	{
 		title: "UFES",
-		subtitle: "Introduction to Computing Course",
+		subtitle: "Introduction to Computing [Course]",
 		description: (
 			<>
 				It was the first time I have been in touch with programming.
@@ -64,24 +64,55 @@ export const timeline: Timeline[] = [
 		iconSrc: "/icons/ufes.png"
 	},
 	{
-		title: "IBESVA",
-		subtitle: "Front-end Developer",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		date: "03/2019 - 10/2019",
-		iconSrc: "/icons/ibesva.png"
-	},
-	{
 		title: "UFMG",
-		subtitle: "Electrical Engineering",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		subtitle: "Electrical Engineering [College]",
+		description: (
+			<>
+				Since my brother/cousin are in the tech world (and they are kind of an inspiration to me), I have chosen this course since they have done it too. 🤘
+				<br />
+				<br />
+				I am currently at college and almost every month I am able to learn with awesome students. 🤯
+			</>
+		),
 		date: "03/2019 - In course",
 		iconSrc: "/icons/ufmg.png"
 	},
 	{
+		title: "IBESVA",
+		subtitle: "Front-end Developer [Volunteer]",
+		description: (
+			<>
+				That is a non-governmental organization that helps the education cause and was my first time creating something with programming to someone. 👨‍🎓 
+				<br />
+				<br />
+				I have learned too much about <u>HTML/CSS</u> and <u>Dealing with stakeholders</u>.
+				<br />
+				<br />
+				All the project made me really happy since I was helping a cause and getting people happy using programming. 😁
+			</>
+		),
+		date: "03/2019 - 10/2019",
+		iconSrc: "/icons/ibesva.png"
+	},
+	{
 		title: "PICSIZE",
-		subtitle: "Full-stack Development Intern",
+		subtitle: "Full-stack Developer [Intern]",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		date: "06/2019 - 12/2019",
+		iconSrc: "/icons/picsize.png"
+	},
+	{
+		title: "PICSIZE",
+		subtitle: "Full-stack Developer [Job]",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		date: "12/2019 - 08/2020",
+		iconSrc: "/icons/picsize.png"
+	},
+	{
+		title: "PICSIZE",
+		subtitle: "Tech Lead [Job]",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		date: "08/2020 - In course",
 		iconSrc: "/icons/picsize.png"
 	}
 ]
