@@ -36,7 +36,7 @@ export const QuoteItem = styled.div`
 
 	margin: 7rem;
 
-	max-width: 51.25rem;
+	max-width: 52.25rem;
 
 	@media (max-width: 768px) {
 		margin: 4rem 0;
