@@ -119,7 +119,7 @@ export const timeline: Timeline[] = [
 				After 6 months of internship I have got invited to get a position as a Full-time Full-stack developer. 🥳
 				<br />
 				<br />
-				At this new position, I helped the organization decreasing costs on Cloud and worked on a project called <u>Site Pro</u>.
+				At this new position, I helped the organization decreasing costs on cloud and worked on a project called <u>Site Pro</u>.
 				<br />
 				<br />
 				In the end, I did improve a lot more personally/technically when comparing to the <u>old 6 months (fresh new full-time job) me</u>. 🤩
