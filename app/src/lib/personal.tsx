@@ -97,21 +97,48 @@ export const timeline: Timeline[] = [
 	{
 		title: "PICSIZE",
 		subtitle: "Full-stack Developer [Intern]",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		description: (
+			<>
+				That is an organization with sass software that started at the photography ecosystem but whenever possible tries to get into another contexts. 
+				<br />
+				<br />
+				I had the pleasure of being in touch with senior developers and <u>learned a lot technically/personally with them</u>. 🤯
+				<br />
+				<br />
+				In the end, I was able to finish a project called <u>Gallery Pro</u> and it helped me pushing almost all boundaries as an intern. 🥳
+			</>
+		),
 		date: "06/2019 - 12/2019",
 		iconSrc: "/icons/picsize.png"
 	},
 	{
 		title: "PICSIZE",
 		subtitle: "Full-stack Developer [Job]",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		description: (
+			<>
+				After 6 months of internship I have got invited to get a position as a Full-time Full-stack developer. 🥳
+				<br />
+				<br />
+				At this new position, I helped the organization decreasing costs on Cloud and worked on a project called <u>Site Pro</u>.
+				<br />
+				<br />
+				In the end, I did improve a lot more personally/technically when comparing to the <u>old 6 months (fresh new full-time job) me</u>. 🤩
+			</>
+		),
 		date: "12/2019 - 08/2020",
 		iconSrc: "/icons/picsize.png"
 	},
 	{
 		title: "PICSIZE",
 		subtitle: "Tech Lead [Job]",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		description: (
+			<>
+				So, after being mainly a software developer, I have got invited to be a Tech Lead. 🥳
+				<br />
+				<br />
+				Now I am at this position and mainly push boundaries <u>creating solid/scalable/flexible software foundations, helping other developers improving themselves and bringing new technologies to company</u>. 💪
+			</>
+		),
 		date: "08/2020 - In course",
 		iconSrc: "/icons/picsize.png"
 	}
