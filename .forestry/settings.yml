@@ -3,7 +3,9 @@ new_page_extension: md
 auto_deploy: false
 admin_path: ''
 webhook_url: 
-sections: 
+sections:
+- type: heading
+  label: Heading
 upload_dir: app/public
 public_path: ''
 front_matter_path: app/src/posts
