@@ -2,6 +2,20 @@
 label: Post Template
 hide_body: false
 fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
 - name: date
   type: datetime
   label: Date
@@ -11,3 +25,15 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+- name: cover
+  type: file
+  config:
+    maxSize: 64
+  label: Cover
+- name: published
+  type: boolean
+  label: Published
