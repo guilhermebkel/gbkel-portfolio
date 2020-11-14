@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: document
+  path: app/src/posts
+  label: Posts
+  match: "**/*"
 - type: heading
   label: Heading
 upload_dir: app/public
