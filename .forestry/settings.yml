@@ -5,14 +5,13 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: directory
-  path: app
-  label: directory
+  path: app/src/posts
+  label: Directory
   create: none
   match: "'**/*"
 - type: document
   path: app/src/posts
   label: Posts
-  match: "**/*"
 - type: heading
   label: Heading
 upload_dir: app/public
