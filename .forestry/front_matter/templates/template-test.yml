@@ -1,4 +1,13 @@
 ---
-label: Template Test
-hide_body: true
-fields: []
+label: Post Template
+hide_body: false
+fields:
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
