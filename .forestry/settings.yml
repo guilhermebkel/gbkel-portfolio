@@ -6,9 +6,9 @@ webhook_url:
 sections:
 - type: directory
   path: app/src/posts
-  label: Directory
-  create: none
-  match: "'**/*"
+  label: Posts Directory
+  create: all
+  match: "**/*"
 - type: document
   path: app/src/posts
   label: Posts
