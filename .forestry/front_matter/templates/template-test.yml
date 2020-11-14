@@ -37,5 +37,3 @@ fields:
 - name: published
   type: boolean
   label: Published
-pages:
-- app/src/posts/a-random-template-test.md
