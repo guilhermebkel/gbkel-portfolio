@@ -12,7 +12,7 @@ sections:
   create: all
   match: "**/*"
 upload_dir: app/public/posts
-public_path: ''
+public_path: "/posts"
 front_matter_path: app/src/posts
 use_front_matter_path: true
 file_template: ":filename:"
