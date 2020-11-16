@@ -15,6 +15,7 @@ export type DetailedPost = {
 	tags: string[]
 	readingTime: string
 	date: string
+	dateInMilliseconds: number
 	content: string
 	published: boolean
 }
@@ -26,7 +27,9 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 	const meta = matter(postFileContent)
 	const content = marked(meta.content)
 
-	const date = formatPostDate(new Date(meta.data.date))
+	const rawDate = meta.data.date
+
+	const date = formatPostDate(new Date(rawDate))
 
 	const readingTimeTextInfo = readingTime(content)
 
@@ -34,6 +37,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 		title: meta.data.title || "",
 		description: meta.data.description || "",
 		date,
+		dateInMilliseconds: +new Date(rawDate),
 		tags: meta.data.tags || [],
 		readingTime: readingTimeTextInfo.text || "",
 		published: meta.data.published || false,
@@ -60,6 +64,7 @@ export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
 				title: post.title,
 				description: post.description || "",
 				date: post.date,
+				dateInMilliseconds: post.dateInMilliseconds,
 				tags: post.tags,
 				readingTime: post.readingTime,
 				coverSrc: post.coverSrc,

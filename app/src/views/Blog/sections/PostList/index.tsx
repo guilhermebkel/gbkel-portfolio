@@ -2,6 +2,7 @@ import React from "react"
 import Link from "next/link"
 
 import { PostPreview } from "@/lib/posts"
+import { chunk, orderBy } from "@/lib/array"
 
 import {
 	Summary
@@ -20,7 +21,9 @@ import {
 	PostsContent,
 	PostTagContainer,
 	PostTag,
-	PostTitle
+	PostTitle,
+	PostDivider,
+	PostInfoContainer
 } from "@/views/Blog/sections/PostList/styles"
 
 type PostListProps = {
@@ -41,53 +44,74 @@ const PostList: React.FC<PostListProps> = (props) => {
 				/>
 
 				<PostsContainer>
-					<PostsContent>
-						{posts
-							.filter(post => post.published)
-							.map((post) => (
-								<PostItemContainer
-									key={post.url}
+					{posts
+						.sort(orderBy<PostPreview>("dateInMilliseconds", "ASC"))
+						.reverse()
+						.reduce(chunk<PostPreview[][], PostPreview>(3), [])
+						.reverse()
+						.map((postChunk, index) => (
+							<React.Fragment
+								key={index}
+							>
+								<PostsContent
+									postsCount={postChunk.length}
 								>
-									<Link
-										key={post.url}
-										href={post.url}
-										passHref
-									>
-										<PostItemContent>
-											<PostCover
-												src={post.coverSrc}
-												alt={post.title}
-											/>
+									{
+										postChunk
+											.filter(post => post.published)
+											.map((post) => (
+												<PostItemContainer
+													key={post.url}
+												>
+													<Link
+														key={post.url}
+														href={post.url}
+														passHref
+													>
+														<PostItemContent
+															postsCount={postChunk.length}
+														>
+															<PostCover
+																src={post.coverSrc}
+																alt={post.title}
+															/>
+				
+															<PostInfoContainer>
+																{post.tags.length > 0 && (
+																	<PostTagContainer>
+																		{post.tags.map(tag => (
+																			<PostTag key={tag}>
+																				{tag.toUpperCase()}
+																			</PostTag>
+																		))}
+																	</PostTagContainer>
+																)}
+					
+																<PostTitle>
+																	{post.title}
+																</PostTitle>
+					
+																<PostDescription>
+																	{post.description}
+																</PostDescription>
+					
+																<Author
+																	avatarSrc="/images/mini-avatar.png"
+																	name="Guilherme Mota"
+																	postDate={post.date}
+																	readingTime={post.readingTime}
+																/>
+															</PostInfoContainer>
+														</PostItemContent>
+													</Link>
+												</PostItemContainer>
+											))
+									}
+								</PostsContent>
 
-											{post.tags.length > 0 && (
-												<PostTagContainer>
-													{post.tags.map(tag => (
-														<PostTag key={tag}>
-															{tag.toUpperCase()}
-														</PostTag>
-													))}
-												</PostTagContainer>
-											)}
-
-											<PostTitle>
-												{post.title}
-											</PostTitle>
-
-											<PostDescription>
-												{post.description}
-											</PostDescription>
-
-											<Author
-												avatarSrc="/images/mini-avatar.png"
-												name="Guilherme Mota"
-												postDate={post.date}
-												readingTime={post.readingTime}
-											/>
-										</PostItemContent>
-									</Link>
-								</PostItemContainer>
-							))}
-					</PostsContent>
+								<PostDivider />
+							</React.Fragment>
+						))}
 				</PostsContainer>
 			</PostListSectionContent>
 		</PostListSectionContainer>
