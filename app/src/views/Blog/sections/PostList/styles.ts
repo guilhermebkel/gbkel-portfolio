@@ -52,6 +52,7 @@ export const PostCover = styled(LazyLoadedImage)`
 	height: 290px;
 	background-color: var(--gray-color-2);
 	border-radius: 1rem;
+	overflow: hidden;
 
 	img {
 		width: 100%;
@@ -61,6 +62,8 @@ export const PostCover = styled(LazyLoadedImage)`
 
 		object-fit: cover;
 		object-position: center;
+
+		transform: scale(1.2);
 	}
 `
 
