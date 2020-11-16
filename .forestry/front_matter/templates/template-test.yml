@@ -37,3 +37,5 @@ fields:
 - name: published
   type: boolean
   label: Published
+pages:
+- app/src/posts/how-to-create-a-simple-game-in-javascript-using-socket.io-to-controll-communication.md
