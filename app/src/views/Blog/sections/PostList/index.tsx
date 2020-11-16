@@ -56,7 +56,7 @@ const PostList: React.FC<PostListProps> = (props) => {
 										<PostTagContainer>
 											{post.tags.map(tag => (
 												<PostTag key={tag}>
-													{tag}
+													{tag.toUpperCase()}
 												</PostTag>
 											))}
 										</PostTagContainer>
