@@ -41,44 +41,46 @@ const PostList: React.FC<PostListProps> = (props) => {
 
 				<PostsContainer>
 					<PostsContent>
-						{posts.map((post) => (
-							<Link
-								key={post.url}
-								href={post.url}
-							>
-								<PostItem>
-									<PostCover
-										src={post.coverSrc}
-										alt="Avatar"
-									/>
+						{posts
+							.filter(post => post.published)
+							.map((post) => (
+								<Link
+									key={post.url}
+									href={post.url}
+								>
+									<PostItem>
+										<PostCover
+											src={post.coverSrc}
+											alt="Avatar"
+										/>
 
-									{post.tags.length > 0 && (
-										<PostTagContainer>
-											{post.tags.map(tag => (
-												<PostTag key={tag}>
-													{tag.toUpperCase()}
-												</PostTag>
-											))}
-										</PostTagContainer>
-									)}
+										{post.tags.length > 0 && (
+											<PostTagContainer>
+												{post.tags.map(tag => (
+													<PostTag key={tag}>
+														{tag.toUpperCase()}
+													</PostTag>
+												))}
+											</PostTagContainer>
+										)}
 
-									<PostTitle>
-										{post.title}
-									</PostTitle>
+										<PostTitle>
+											{post.title}
+										</PostTitle>
 
-									<PostDescription>
-										{post.description}
-									</PostDescription>
+										<PostDescription>
+											{post.description}
+										</PostDescription>
 
-									<Author
-										avatarSrc="/images/mini-avatar.png"
-										name="Guilherme Mota"
-										postDate={post.date}
-										readingTime={post.readingTime}
-									/>
-								</PostItem>
-							</Link>
-						))}
+										<Author
+											avatarSrc="/images/mini-avatar.png"
+											name="Guilherme Mota"
+											postDate={post.date}
+											readingTime={post.readingTime}
+										/>
+									</PostItem>
+								</Link>
+							))}
 					</PostsContent>
 				</PostsContainer>
 			</PostListSectionContent>

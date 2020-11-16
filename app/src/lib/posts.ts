@@ -14,6 +14,7 @@ export type DetailedPost = {
 	readingTime: string
 	date: string
 	content: string
+	published: boolean
 }
 
 export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost> => {
@@ -34,6 +35,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 		date: meta.data.date,
 		tags: meta.data.tags || [],
 		readingTime: readingTimeTextInfo.text,
+		published: meta.data.published,
 		coverSrc,
 		content
 	}
@@ -41,6 +43,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 
 export type PostPreview = Omit<DetailedPost, "content"> & {
 	url: string
+	published: boolean
 }
 
 export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
@@ -59,6 +62,7 @@ export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
 				tags: post.tags,
 				readingTime: post.readingTime,
 				coverSrc: post.coverSrc,
+				published: post.published,
 				url: slug
 			}
 		})
