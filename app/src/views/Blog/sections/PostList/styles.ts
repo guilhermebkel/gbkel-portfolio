@@ -31,11 +31,13 @@ export const PostsContent = styled.div`
 	}
 `
 
-export const PostItem = styled.div`
+export const PostItem = styled.a`
 	display: flex;
 	flex-direction: column;
 
-	cursor: pointer;
+	&::before {
+		content: none;
+	}
 
 	& > * {
 		margin-bottom: 2rem;
@@ -44,15 +46,19 @@ export const PostItem = styled.div`
 
 export const PostCover = styled(LazyLoadedImage)`
 	width: 100%;
-
-	box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.25);
-
+	height: 290px;
+	background-color: var(--gray-color-2);
 	border-radius: 1rem;
 
-	object-fit: none;
-	object-position: center;
+	img {
+		width: 100%;
+		height: 100%;
 
-	height: 290px;
+		box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.25);
+
+		object-fit: cover;
+		object-position: center;
+	}
 `
 
 export const PostTagContainer = styled.div`

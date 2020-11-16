@@ -47,11 +47,12 @@ const PostList: React.FC<PostListProps> = (props) => {
 								<Link
 									key={post.url}
 									href={post.url}
+									passHref
 								>
 									<PostItem>
 										<PostCover
 											src={post.coverSrc}
-											alt="Avatar"
+											alt={post.title}
 										/>
 
 										{post.tags.length > 0 && (
