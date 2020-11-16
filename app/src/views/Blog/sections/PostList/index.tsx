@@ -14,7 +14,8 @@ import {
 	PostListSectionContent,
 	PostCover,
 	PostDescription,
-	PostItem,
+	PostItemContainer,
+	PostItemContent,
 	PostsContainer,
 	PostsContent,
 	PostTagContainer,
@@ -44,43 +45,47 @@ const PostList: React.FC<PostListProps> = (props) => {
 						{posts
 							.filter(post => post.published)
 							.map((post) => (
-								<Link
+								<PostItemContainer
 									key={post.url}
-									href={post.url}
-									passHref
 								>
-									<PostItem>
-										<PostCover
-											src={post.coverSrc}
-											alt={post.title}
-										/>
+									<Link
+										key={post.url}
+										href={post.url}
+										passHref
+									>
+										<PostItemContent>
+											<PostCover
+												src={post.coverSrc}
+												alt={post.title}
+											/>
 
-										{post.tags.length > 0 && (
-											<PostTagContainer>
-												{post.tags.map(tag => (
-													<PostTag key={tag}>
-														{tag.toUpperCase()}
-													</PostTag>
-												))}
-											</PostTagContainer>
-										)}
+											{post.tags.length > 0 && (
+												<PostTagContainer>
+													{post.tags.map(tag => (
+														<PostTag key={tag}>
+															{tag.toUpperCase()}
+														</PostTag>
+													))}
+												</PostTagContainer>
+											)}
 
-										<PostTitle>
-											{post.title}
-										</PostTitle>
+											<PostTitle>
+												{post.title}
+											</PostTitle>
 
-										<PostDescription>
-											{post.description}
-										</PostDescription>
+											<PostDescription>
+												{post.description}
+											</PostDescription>
 
-										<Author
-											avatarSrc="/images/mini-avatar.png"
-											name="Guilherme Mota"
-											postDate={post.date}
-											readingTime={post.readingTime}
-										/>
-									</PostItem>
-								</Link>
+											<Author
+												avatarSrc="/images/mini-avatar.png"
+												name="Guilherme Mota"
+												postDate={post.date}
+												readingTime={post.readingTime}
+											/>
+										</PostItemContent>
+									</Link>
+								</PostItemContainer>
 							))}
 					</PostsContent>
 				</PostsContainer>

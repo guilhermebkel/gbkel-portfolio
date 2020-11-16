@@ -31,7 +31,10 @@ export const PostsContent = styled.div`
 	}
 `
 
-export const PostItem = styled.a`
+export const PostItemContainer = styled.article`
+`
+
+export const PostItemContent = styled.a`
 	display: flex;
 	flex-direction: column;
 
