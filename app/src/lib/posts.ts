@@ -26,9 +26,6 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 	const meta = matter(postFileContent)
 	const content = marked(meta.content)
 
-	const coverFile = meta.data.cover?.split("/")?.pop()
-	const coverSrc = `/${coverFile}`
-
 	const date = formatPostDate(new Date(meta.data.date))
 
 	const readingTimeTextInfo = readingTime(content)
@@ -40,7 +37,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 		tags: meta.data.tags || [],
 		readingTime: readingTimeTextInfo.text || "",
 		published: meta.data.published || false,
-		coverSrc,
+		coverSrc: meta.data.cover,
 		content
 	}
 }
