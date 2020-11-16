@@ -11,8 +11,8 @@ export const AuthorContainer = styled.div`
 `
 
 export const Avatar = styled(LazyLoadedImage)`
-	width: 48;
-	height: 48;
+	width: 48px;
+	height: 48px;
 
 	border-radius: 100%;
 
