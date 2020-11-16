@@ -26,7 +26,7 @@ export default createGlobalStyle`
 		--purple-color: #5328FE;
 		
 		--section-content-boxed-max-width: 1366px;
-		--section-context-fluid-max-width: 90%;
+		--section-content-fluid-max-width: 90%;
 		--section-content-mobile-margin: 2rem;
 		--section-container-margin-bottom: 20rem;
 		--section-content-items-margin: 5rem 0;

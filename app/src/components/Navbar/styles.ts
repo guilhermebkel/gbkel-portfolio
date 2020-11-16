@@ -19,7 +19,7 @@ export const NavbarContainer = styled.div`
 `
 
 export const NavbarContent = styled.div`
-	width: var(--section-context-fluid-max-width);
+	width: var(--section-content-fluid-max-width);
 	height: 100%;
 
 	display: flex;

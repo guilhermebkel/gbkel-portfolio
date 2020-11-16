@@ -85,7 +85,7 @@ export const AuxBarContainer = styled.div`
 `
 
 export const AuxBarContent = styled.div`
-	width: var(--section-context-fluid-max-width);
+	width: var(--section-content-fluid-max-width);
 	height: 100%;
 
 	display: flex;
