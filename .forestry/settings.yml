@@ -11,7 +11,7 @@ sections:
   label: Posts
   create: all
   match: "**/*"
-upload_dir: app/public
+upload_dir: app/public/posts
 public_path: ''
 front_matter_path: app/src/posts
 use_front_matter_path: true
