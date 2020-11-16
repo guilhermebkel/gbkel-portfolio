@@ -4,6 +4,8 @@ import fs from "fs"
 import path from "path"
 import readingTime from "reading-time"
 
+import { formatPostDate } from "@/lib/date"
+
 const POST_FOLDER_PATH = path.join(process.cwd(), "src", "posts")
 
 export type DetailedPost = {
@@ -27,15 +29,17 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 	const coverFile = meta.data.cover?.split("/")?.pop()
 	const coverSrc = `/${coverFile}`
 
+	const date = formatPostDate(new Date(meta.data.date))
+
 	const readingTimeTextInfo = readingTime(content)
 
 	return {
-		title: meta.data.title,
+		title: meta.data.title || "",
 		description: meta.data.description || "",
-		date: meta.data.date,
+		date,
 		tags: meta.data.tags || [],
-		readingTime: readingTimeTextInfo.text,
-		published: meta.data.published,
+		readingTime: readingTimeTextInfo.text || "",
+		published: meta.data.published || false,
 		coverSrc,
 		content
 	}

@@ -15,3 +15,24 @@ export const getLatestDate = (dates: Date[]): Date => {
 
 	return latestDate
 }
+
+export const formatPostDate = (date: Date): string => {
+	if (!date) {
+		return ""
+	}
+
+	const parsedDate = new Intl.DateTimeFormat("en-US", {
+		day: "numeric",
+		month: "short",
+		year: "numeric"
+	}).format(date)
+
+	const [month, day, year] = parsedDate
+		.toLowerCase()
+		.replace(/,/g, "")
+		.split(" ")
+
+	const formattedDate = `${day} ${month} ${year}`
+
+	return formattedDate
+}
