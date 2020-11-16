@@ -37,7 +37,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 		tags: meta.data.tags || [],
 		readingTime: readingTimeTextInfo.text || "",
 		published: meta.data.published || false,
-		coverSrc: meta.data.cover,
+		coverSrc: meta.data.cover || "",
 		content
 	}
 }

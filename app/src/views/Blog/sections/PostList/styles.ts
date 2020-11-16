@@ -49,7 +49,7 @@ export const PostCover = styled(LazyLoadedImage)`
 
 	border-radius: 1rem;
 
-	object-fit: cover;
+	object-fit: none;
 	object-position: center;
 
 	height: 290px;
