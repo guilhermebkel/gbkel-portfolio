@@ -27,7 +27,7 @@ const Post: NextPage<PostProps> = (props) => {
 				<meta property="og:title" content={post.title} />
 				<meta property="og:description" content={post.description} />
 
-				<meta property="og:image" content={post.thumbnailUrl} />
+				<meta property="og:image" content={post.coverSrc} />
 				<meta property="og:image:type" content="image/png" />
 
 				<meta property="og:image:width" content="1200" />
@@ -36,11 +36,11 @@ const Post: NextPage<PostProps> = (props) => {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:title" content={post.title} />
 				<meta name="twitter:description" content={post.description} />
-				<meta name="twitter:image" content={post.thumbnailUrl} />
+				<meta name="twitter:image" content={post.coverSrc} />
 			</Head>
 			<article>
 				<h1>{post.title}</h1>
-				<img src={post.thumbnailUrl} alt={post.title} />
+				<img src={post.coverSrc} alt={post.title} />
 				<div>
 					{post.date}
 				</div>
@@ -53,7 +53,7 @@ const Post: NextPage<PostProps> = (props) => {
 export const getStaticPaths: GetStaticPaths = async () => {
 	const posts = await getAllPostPreviews()
 
-	const paths = posts.map(post => ({ params: { slug: post.slug } }))
+	const paths = posts.map(post => ({ params: { slug: post.url } }))
 
 	return {
 		paths: paths,
