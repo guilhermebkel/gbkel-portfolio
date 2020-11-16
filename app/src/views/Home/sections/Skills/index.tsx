@@ -11,7 +11,7 @@ import {
 	SkillsSectionContent,
 	SkillsGlobeContainer,
 	SeeMoreContainer
-} from "@/views/Home/Skills/styles"
+} from "@/views/Home/sections/Skills/styles"
 
 import useResponsiveBreakpoints from "@/hooks/useResponsiveBreakpoints"
 

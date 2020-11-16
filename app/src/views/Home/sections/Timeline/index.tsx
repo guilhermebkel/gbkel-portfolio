@@ -19,7 +19,7 @@ import {
 	TimelineSubTitle,
 	TimelineTitle,
 	TimelineTitleContainer
-} from "@/views/Home/Timeline/styles"
+} from "@/views/Home/sections/Timeline/styles"
 
 import { timeline } from "@/lib/personal"
 

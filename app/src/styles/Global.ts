@@ -44,6 +44,8 @@ export default createGlobalStyle`
 		height: 100%;
 		
 		font-size: 8px;
+
+		background-color: var(--gray-color-1);
   }
 
   *, button, input {

@@ -13,7 +13,7 @@ import {
 	Avatar,
 	AuxBarContainer,
 	AuxBarContent
-} from "@/views/Home/Introduction/styles"
+} from "@/views/Home/sections/Introduction/styles"
 
 import { contactMap } from "@/lib/personal"
 

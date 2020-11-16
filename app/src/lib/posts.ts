@@ -9,10 +9,11 @@ const POST_FOLDER_PATH = path.join(process.cwd(), "src", "posts")
 export type DetailedPost = {
 	title: string
 	description: string
-	thumbnailUrl: string
-	content: string
+	coverSrc: string
+	tags: string[]
 	readingTime: string
 	date: string
+	content: string
 }
 
 export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost> => {
@@ -22,7 +23,8 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 	const meta = matter(postFileContent)
 	const content = marked(meta.content)
 
-	const thumbnailUrl = `/thumbnail/${slug}.png`
+	const coverFile = meta.data.cover?.split("/")?.pop()
+	const coverSrc = `/${coverFile}`
 
 	const readingTimeTextInfo = readingTime(content)
 
@@ -30,16 +32,14 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 		title: meta.data.title,
 		description: meta.data.description || "",
 		date: meta.data.date,
+		tags: meta.data.tags || [],
 		readingTime: readingTimeTextInfo.text,
-		thumbnailUrl,
+		coverSrc,
 		content
 	}
 }
 
-export type PostPreview = {
-	slug: string
-	title: string
-	date: string
+export type PostPreview = Omit<DetailedPost, "content"> & {
 	url: string
 }
 
@@ -54,9 +54,12 @@ export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
 	
 			return {
 				title: post.title,
+				description: post.description || "",
 				date: post.date,
-				url: slug,
-				slug
+				tags: post.tags,
+				readingTime: post.readingTime,
+				coverSrc: post.coverSrc,
+				url: slug
 			}
 		})
 	)
