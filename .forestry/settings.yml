@@ -14,7 +14,7 @@ sections:
 upload_dir: app/public/posts
 public_path: "/posts"
 front_matter_path: app/src/posts
-use_front_matter_path: true
+use_front_matter_path: false
 file_template: ":filename:"
 build:
   preview_output_directory: public
