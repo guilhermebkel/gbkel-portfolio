@@ -53,7 +53,7 @@ const Post: NextPage<PostProps> = (props) => {
 export const getStaticPaths: GetStaticPaths = async () => {
 	const posts = await getAllPostPreviews()
 
-	const paths = posts.map(post => ({ params: { slug: post.url } }))
+	const paths = posts.map(post => ({ params: { slug: post.slug } }))
 
 	return {
 		paths: paths,

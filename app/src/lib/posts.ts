@@ -44,7 +44,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 
 export type PostPreview = Omit<DetailedPost, "content"> & {
 	url: string
-	published: boolean
+	slug: string
 }
 
 export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
@@ -64,7 +64,8 @@ export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
 				readingTime: post.readingTime,
 				coverSrc: post.coverSrc,
 				published: post.published,
-				url: slug
+				url: slug,
+				slug
 			}
 		})
 	)
