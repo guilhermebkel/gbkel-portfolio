@@ -7,7 +7,8 @@ import {
 	Menu,
 	MenuItem,
 	NavbarBackground,
-	MenuIconItem
+	MenuIconItem,
+	MenuItemLink
 } from "@/components/Navbar/styles"
 
 import {
@@ -61,31 +62,31 @@ const Navbar: React.FC = () => {
 					</MenuIconItem>
 
 					<MenuItem>
-						<a
+						<MenuItemLink
 							href="https://guilherr.me"
 							target="_self"
 							rel="noreferrer"
 						>
 							Home
-						</a>
+						</MenuItemLink>
 					</MenuItem>
 					<MenuItem>
-						<a
+						<MenuItemLink
 							href="https://about.guilherr.me"
 							target="_blank"
 							rel="noreferrer"
 						>
 							About
-						</a>
+						</MenuItemLink>
 					</MenuItem>
 					<MenuItem>
-						<a
+						<MenuItemLink
 							href="https://blog.guilherr.me"
 							target="_self"
 							rel="noreferrer"
 						>
 							Blog
-						</a>
+						</MenuItemLink>
 					</MenuItem>
 				</Menu>
 			</NavbarContent>

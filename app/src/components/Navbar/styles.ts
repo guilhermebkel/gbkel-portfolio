@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import Link from "next/link"
 
 import LazyLoadedImage from "@/components/LazyLoadedImage"
 
@@ -106,7 +105,7 @@ export const MenuItem = styled.li`
 export const MenuIconItem = styled.li`
 `
 
-export const MenuItemLink = styled(Link)``
+export const MenuItemLink = styled.a``
 
 export const NavbarBackground = styled.div<{ isScrolling: boolean }>`
 	position: absolute;
