@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
 
 					<MenuItem>
 						<a
-							href="/"
+							href="https://guilherr.me"
 							target="_self"
 							rel="noreferrer"
 						>
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
 					</MenuItem>
 					<MenuItem>
 						<MenuItemLink
-							href="/blog"
+							href="https://blog.guilherr.me"
 						>
 							Blog
 						</MenuItemLink>
