@@ -1,5 +1,5 @@
 const urlConfig = {
-	baseURL: process.env.BASE_URL
+	baseURL: "https://guilherr.me"
 }
 
 module.exports = {
