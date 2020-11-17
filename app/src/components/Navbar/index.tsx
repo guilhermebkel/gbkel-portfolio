@@ -57,9 +57,13 @@ const Navbar: React.FC = () => {
 					</MenuIconItem>
 
 					<MenuItem>
-						<MenuItemLink href="/">
+						<a
+							href="/"
+							target="_self"
+							rel="noreferrer"
+						>
 							Home
-						</MenuItemLink>
+						</a>
 					</MenuItem>
 					<MenuItem>
 						<a
@@ -70,11 +74,13 @@ const Navbar: React.FC = () => {
 							About
 						</a>
 					</MenuItem>
-					{/* <MenuItem>
-						<MenuItemLink href="/blog">
+					<MenuItem>
+						<MenuItemLink
+							href="/blog"
+						>
 							Blog
 						</MenuItemLink>
-					</MenuItem> */}
+					</MenuItem>
 				</Menu>
 			</NavbarContent>
 

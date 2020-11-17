@@ -44,9 +44,18 @@ export default createGlobalStyle`
 		height: 100%;
 		
 		font-size: 8px;
-
-		background-color: var(--gray-color-1);
   }
+
+	body {
+		background-color: var(--gray-color-1);
+
+		background-image: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) calc(50% - 0.1rem), rgba(255,255,255,0.05) 50%, rgba(0,0,0,0) calc(50% + 0.1rem), rgba(0,0,0,0) 100%);
+		background-size: 37.5rem;
+
+		@media (max-width: 768px) {
+			background-size: 11.2rem;
+		}
+	}
 
   *, button, input {
     border: 0;

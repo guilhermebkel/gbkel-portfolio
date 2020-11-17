@@ -8,22 +8,17 @@ import {
 	Summary
 } from "@/components"
 
-import Author from "@/views/Blog/components/Author"
+import PostInfo from "@/views/Blog/components/PostInfo"
 
 import {
 	PostListSectionContainer,
 	PostListSectionContent,
 	PostCover,
-	PostDescription,
 	PostItemContainer,
 	PostItemContent,
 	PostsContainer,
 	PostsContent,
-	PostTagContainer,
-	PostTag,
-	PostTitle,
-	PostDivider,
-	PostInfoContainer
+	PostDivider
 } from "@/views/Blog/sections/PostList/styles"
 
 type PostListProps = {
@@ -76,32 +71,13 @@ const PostList: React.FC<PostListProps> = (props) => {
 																alt={post.title}
 															/>
 				
-															<PostInfoContainer>
-																{post.tags.length > 0 && (
-																	<PostTagContainer>
-																		{post.tags.map(tag => (
-																			<PostTag key={tag}>
-																				{tag.toUpperCase()}
-																			</PostTag>
-																		))}
-																	</PostTagContainer>
-																)}
-					
-																<PostTitle>
-																	{post.title}
-																</PostTitle>
-					
-																<PostDescription>
-																	{post.description}
-																</PostDescription>
-					
-																<Author
-																	avatarSrc="/images/mini-avatar.png"
-																	name="Guilherme Mota"
-																	postDate={post.date}
-																	readingTime={post.readingTime}
-																/>
-															</PostInfoContainer>
+															<PostInfo
+																date={post.date}
+																description={post.description}
+																readingTime={post.readingTime}
+																tags={post.tags}
+																title={post.title}
+															/>
 														</PostItemContent>
 													</Link>
 												</PostItemContainer>

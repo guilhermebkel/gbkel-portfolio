@@ -90,58 +90,6 @@ export const PostCover = styled(LazyLoadedImage)`
 	}
 `
 
-export const PostTagContainer = styled.div`
-	display: flex;
-
-	align-items: center;
-
-	width: 100%;
-
-	flex-wrap: wrap;
-`
-
-export const PostTag = styled.h4`
-	color: var(--black-color-4);
-
-	padding: 0.5rem 1.5rem;
-
-	background-color: var(--purple-color);
-
-	border-radius: 1rem;
-
-	margin-right: 1rem;
-	margin-bottom: 1rem;
-
-	@media (max-width: 768px) {
-		font-size: 1.75rem;
-		padding: 0rem 1rem;
-	}
-`
-
-export const PostTitle = styled.h3`
-	font-weight: bold;
-
-	color: var(--gray-color-15);
-
-	line-height: 4rem;
-
-	@media (max-width: 768px) {
-		font-size: 3rem;
-	}
-`
-
-export const PostDescription = styled.h4`
-	color: var(--gray-color-15);
-
-	font-weight: normal;
-
-	line-height: 3rem;
-
-	@media (max-width: 768px) {
-		font-size: 1.75rem;
-	}
-`
-
 export const PostDivider = styled.div`
 	background-color: var(--gray-color-5);
 
@@ -154,24 +102,5 @@ export const PostDivider = styled.div`
 		height: 6rem;
 		margin: 0;
 		background-color: transparent;
-	}
-`
-
-export const PostInfoContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-
-	& > * {
-		margin-bottom: 2rem;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-
-	@media (max-width: 768px) {
-		& > * {
-			margin-bottom: 1rem;
-		}
 	}
 `

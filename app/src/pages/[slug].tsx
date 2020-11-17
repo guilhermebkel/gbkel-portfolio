@@ -8,6 +8,8 @@ import {
 	DetailedPost
 } from "@/lib/posts"
 
+import PostSingleSection from "@/views/Blog/sections/PostSingle"
+
 type PostProps = {
 	post: DetailedPost
 }
@@ -22,7 +24,7 @@ const Post: NextPage<PostProps> = (props) => {
 
 				<meta name="description" content={post.description} />
 
-				<meta property="og:site_name" content="Blog do Diego" />
+				<meta property="og:site_name" content="Blog do Mota" />
 
 				<meta property="og:title" content={post.title} />
 				<meta property="og:description" content={post.description} />
@@ -38,14 +40,8 @@ const Post: NextPage<PostProps> = (props) => {
 				<meta name="twitter:description" content={post.description} />
 				<meta name="twitter:image" content={post.coverSrc} />
 			</Head>
-			<article>
-				<h1>{post.title}</h1>
-				<img src={post.coverSrc} alt={post.title} />
-				<div>
-					{post.date}
-				</div>
-				<div dangerouslySetInnerHTML={{ __html: post.content }} />
-			</article>
+
+			<PostSingleSection post={post} />
 		</>
 	)
 }
