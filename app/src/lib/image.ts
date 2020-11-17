@@ -26,22 +26,20 @@ export const buildSrcSet = (path: string): string => {
 	return srcSet
 }
 
-export const buildImageShareSrc = (path: string): string => {
+export const buildImageSharePath = (path: string): string => {
 	if (environmentConfig.isDev) {
 		return path
 	}
 
-	const sharingSize = imageConfig.responsiveSizes.find(size => size > 500)
+	const sharingSize = imageConfig.responsiveSizes.find(size => size > 300)
 
 	const [fullPath, extension] = path.split(".")
 
-	const sharingPath = sharingSize ? (
+	const sharePath = sharingSize ? (
 		imageConfig.buildResponsiveSrc(fullPath, sharingSize, extension)
 	) : (
 		path
 	)
 
-	const imageShareSrc = `https://guilherr.me${sharingPath}`
-
-	return imageShareSrc
+	return sharePath
 }
