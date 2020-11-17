@@ -43,13 +43,19 @@ const Navbar: React.FC = () => {
 	return (
 		<NavbarContainer>
 			<NavbarContent>
-				<Logo
-					src="/images/logo-white-transparent.png"
-					alt="logo"
-					width="26px"
-					height="40px"
-				/>
-				
+				<MenuItemLink
+					href="https://guilherr.me"
+					target="_self"
+					rel="noreferrer"
+				>
+					<Logo
+						src="/images/logo-white-transparent.png"
+						alt="logo"
+						width="26px"
+						height="40px"
+					/>
+				</MenuItemLink>
+
 				<Menu
 					isMobileMenuOpened={isMobileMenuOpened}
 					onClick={isMobileMenuOpened && handleCloseMobileMenu}
