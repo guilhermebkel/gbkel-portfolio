@@ -19,7 +19,6 @@ const DefaultLayout: React.FC = (props) => {
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 				<link rel="icon" href={buildCDNUrl("/favicon.png")} />
 				<link id="app-manifest" rel="manifest" href="/manifest.json"></link>
-				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
 			</Head>
 
 			<Navbar />

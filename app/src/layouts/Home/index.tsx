@@ -5,6 +5,8 @@ import {
 	HomeContainer
 } from "@/layouts/Home/styles"
 
+import { buildCDNUrl } from "@/lib/cdn"
+
 import { SiriWave } from "@/components"
 
 type HomeLayoutProps = {
@@ -19,6 +21,7 @@ const HomeLayout: React.FC<HomeLayoutProps> = (props) => {
 			<Head>
 				<title>Guilherme Mota</title>
 				<meta name="description" content="All info about Mota."/>
+				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
 			</Head>
 
 			{children}
