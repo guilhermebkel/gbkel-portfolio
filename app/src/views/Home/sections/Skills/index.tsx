@@ -13,6 +13,8 @@ import {
 	SeeMoreContainer
 } from "@/views/Home/sections/Skills/styles"
 
+import { appUrls } from "@/lib/personal"
+
 import useResponsiveBreakpoints from "@/hooks/useResponsiveBreakpoints"
 
 const SKILLS = [
@@ -54,7 +56,7 @@ const SkillsSection: React.FC = () => {
 				</SkillsGlobeContainer>
 	
 				<SeeMoreContainer>
-					<Button href="https://about.guilherr.me/skills">
+					<Button href={appUrls.skills}>
 						CLICK HERE TO SEE MORE
 					</Button>
 				</SeeMoreContainer>
