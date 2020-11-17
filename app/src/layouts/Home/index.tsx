@@ -18,6 +18,7 @@ const HomeLayout: React.FC<HomeLayoutProps> = (props) => {
 		<HomeContainer>
 			<Head>
 				<title>Guilherme Mota</title>
+				<meta name="description" content="All info about Mota."/>
 			</Head>
 
 			{children}

@@ -12,6 +12,7 @@ const BlogLayout: React.FC = (props) => {
 		<BlogContainer>
 			<Head>
 				<title>Blog | Guilherme Mota</title>
+				<meta name="description" content="All content shared by Guilherme Mota."/>
 			</Head>
 
 			{children}

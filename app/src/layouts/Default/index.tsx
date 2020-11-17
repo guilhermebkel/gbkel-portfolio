@@ -20,7 +20,6 @@ const DefaultLayout: React.FC = (props) => {
 				<link rel="icon" href={buildCDNUrl("/favicon.png")} />
 				<link id="app-manifest" rel="manifest" href="/manifest.json"></link>
 				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
-				<meta name="description" content="All info about a problem solver called Guilherme Mota."/>
 			</Head>
 
 			<Navbar />
