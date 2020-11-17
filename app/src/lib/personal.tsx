@@ -143,3 +143,9 @@ export const timeline: Timeline[] = [
 		iconSrc: "/icons/picsize.png"
 	}
 ]
+
+export const appUrls = {
+	home: "https://guilherr.me",
+	blog: "https://blog.guilherr.me",
+	about: "https://about.guilherr.me"
+}

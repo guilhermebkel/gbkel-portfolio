@@ -16,6 +16,8 @@ import {
 	IconButton
 } from "@/components"
 
+import { appUrls } from "@/lib/personal"
+
 import useDidMount from "@/hooks/useDidMount"
 
 const Navbar: React.FC = () => {
@@ -45,7 +47,7 @@ const Navbar: React.FC = () => {
 		<NavbarContainer>
 			<NavbarContent>
 				<LogoLink
-					href="https://guilherr.me"
+					href={appUrls.home}
 					target="_self"
 					rel="noreferrer"
 				>
@@ -70,7 +72,7 @@ const Navbar: React.FC = () => {
 
 					<MenuItem>
 						<MenuItemLink
-							href="https://guilherr.me"
+							href={appUrls.home}
 							target="_self"
 							rel="noreferrer"
 						>
@@ -79,7 +81,7 @@ const Navbar: React.FC = () => {
 					</MenuItem>
 					<MenuItem>
 						<MenuItemLink
-							href="https://about.guilherr.me"
+							href={appUrls.about}
 							target="_blank"
 							rel="noreferrer"
 						>
@@ -88,7 +90,7 @@ const Navbar: React.FC = () => {
 					</MenuItem>
 					<MenuItem>
 						<MenuItemLink
-							href="https://blog.guilherr.me"
+							href={appUrls.blog}
 							target="_self"
 							rel="noreferrer"
 						>
