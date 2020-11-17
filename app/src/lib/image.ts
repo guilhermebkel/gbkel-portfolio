@@ -1,6 +1,5 @@
 import { imageConfig } from "@/config/image"
 import { environmentConfig } from "@/config/environment"
-import { urlConfig } from "@/config/url"
 
 export const buildSrcSet = (path: string): string => {
 	if (environmentConfig.isDev) {
@@ -32,8 +31,6 @@ export const buildImageShareSrc = (path: string): string => {
 		return path
 	}
 
-	const { baseUrl } = urlConfig
-
 	const sharingSize = imageConfig.responsiveSizes.find(size => size > 500)
 
 	const [fullPath, extension] = path.split(".")
@@ -44,7 +41,7 @@ export const buildImageShareSrc = (path: string): string => {
 		path
 	)
 
-	const imageShareSrc = `${baseUrl}${sharingPath}`
+	const imageShareSrc = `https://guilherr.me${sharingPath}`
 
 	return imageShareSrc
 }
