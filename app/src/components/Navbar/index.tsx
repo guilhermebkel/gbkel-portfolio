@@ -8,7 +8,8 @@ import {
 	MenuItem,
 	NavbarBackground,
 	MenuIconItem,
-	MenuItemLink
+	MenuItemLink,
+	LogoLink
 } from "@/components/Navbar/styles"
 
 import {
@@ -43,7 +44,7 @@ const Navbar: React.FC = () => {
 	return (
 		<NavbarContainer>
 			<NavbarContent>
-				<MenuItemLink
+				<LogoLink
 					href="https://guilherr.me"
 					target="_self"
 					rel="noreferrer"
@@ -54,7 +55,7 @@ const Navbar: React.FC = () => {
 						width="26px"
 						height="40px"
 					/>
-				</MenuItemLink>
+				</LogoLink>
 
 				<Menu
 					isMobileMenuOpened={isMobileMenuOpened}

@@ -107,6 +107,12 @@ export const MenuIconItem = styled.li`
 
 export const MenuItemLink = styled.a``
 
+export const LogoLink = styled.a`
+	&::before {
+		content: none;
+	}
+`
+
 export const NavbarBackground = styled.div<{ isScrolling: boolean }>`
 	position: absolute;
 
