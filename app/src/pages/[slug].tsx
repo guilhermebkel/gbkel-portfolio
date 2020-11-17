@@ -8,6 +8,8 @@ import {
 	DetailedPost
 } from "@/lib/posts"
 
+import { buildImageShareSrc } from "@/lib/image"
+
 import PostSingleSection from "@/views/Blog/sections/PostSingle"
 
 type PostProps = {
@@ -16,6 +18,8 @@ type PostProps = {
 
 const Post: NextPage<PostProps> = (props) => {
 	const { post } = props
+
+	const imageShareSrc = buildImageShareSrc(post.coverSrc)
 
 	return (
 		<>
@@ -29,7 +33,7 @@ const Post: NextPage<PostProps> = (props) => {
 				<meta property="og:title" content={post.title} />
 				<meta property="og:description" content={post.description} />
 
-				<meta property="og:image" content={post.coverSrc} />
+				<meta property="og:image" content={imageShareSrc} />
 				<meta property="og:image:type" content="image/png" />
 
 				<meta property="og:image:width" content="1200" />
@@ -38,7 +42,7 @@ const Post: NextPage<PostProps> = (props) => {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:title" content={post.title} />
 				<meta name="twitter:description" content={post.description} />
-				<meta name="twitter:image" content={post.coverSrc} />
+				<meta name="twitter:image" content={imageShareSrc} />
 			</Head>
 
 			<PostSingleSection post={post} />

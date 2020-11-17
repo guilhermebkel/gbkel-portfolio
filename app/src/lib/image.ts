@@ -1,5 +1,6 @@
 import { imageConfig } from "@/config/image"
 import { environmentConfig } from "@/config/environment"
+import { urlConfig } from "@/config/url"
 
 export const buildSrcSet = (path: string): string => {
 	if (environmentConfig.isDev) {
@@ -24,4 +25,26 @@ export const buildSrcSet = (path: string): string => {
 	const srcSet = srcList.join(", ")
 
 	return srcSet
+}
+
+export const buildImageShareSrc = (path: string): string => {
+	if (environmentConfig.isDev) {
+		return path
+	}
+
+	const { baseUrl } = urlConfig
+
+	const sharingSize = imageConfig.responsiveSizes.find(size => size > 500)
+
+	const [fullPath, extension] = path.split(".")
+
+	const sharingPath = sharingSize ? (
+		imageConfig.buildResponsiveSrc(fullPath, sharingSize, extension)
+	) : (
+		path
+	)
+
+	const imageShareSrc = `${baseUrl}${sharingPath}`
+
+	return imageShareSrc
 }
