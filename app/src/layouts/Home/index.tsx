@@ -20,7 +20,7 @@ const HomeLayout: React.FC<HomeLayoutProps> = (props) => {
 		<HomeContainer>
 			<Head>
 				<title>Guilherme Mota</title>
-				<meta name="description" content="All info about Mota."/>
+				<meta name="description" content="All info about Guilherme Mota."/>
 				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
 			</Head>
 
