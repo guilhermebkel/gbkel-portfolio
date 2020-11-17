@@ -26,6 +26,10 @@ const Navbar: React.FC = () => {
 		setIsMobileMenuOpened(lastState => !lastState)
 	}
 
+	const handleCloseMobileMenu = () => {
+		setIsMobileMenuOpened(false)
+	}
+
 	useDidMount(() => {
 		window.addEventListener("scroll", () => {
 			if (window.pageYOffset === 0) {
@@ -48,6 +52,7 @@ const Navbar: React.FC = () => {
 				
 				<Menu
 					isMobileMenuOpened={isMobileMenuOpened}
+					onClick={isMobileMenuOpened && handleCloseMobileMenu}
 				>
 					<MenuIconItem id="menu-icon-item">
 						<IconButton
