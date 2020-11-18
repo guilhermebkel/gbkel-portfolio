@@ -17,7 +17,7 @@
 
 <p align="center">
 	<img src="./mockup.png" alt="mockup" />
-	<a href="https://guilherr.me">Website (guilherr.me)</a>
+	<a href="https://guilherr.me">Open Website</a>
 </p>
 
 ## 📌 Overview
