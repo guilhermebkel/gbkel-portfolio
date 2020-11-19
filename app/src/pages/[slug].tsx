@@ -24,7 +24,7 @@ const Post: NextPage<PostProps> = (props) => {
 			description={post.description}
 			coverSrc={post.coverSrc}
 			slug={post.slug}
-			date={post.date}
+			date={post.shortDate}
 			readingTime={post.readingTime}
 		>
 			<PostSingleSection post={post} />
