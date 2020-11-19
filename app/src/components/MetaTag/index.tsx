@@ -55,7 +55,6 @@ const MetaTag: React.FC<MetaTagProps> = (props) => {
 			<meta property="twitter:image:src" content={share?.imageSrc} />
 			<meta name="twitter:label1" {...({ value: "Reading time" })} />
 			<meta name="twitter:data1" {...({ value: share?.readingTime })} />
-			
 
 			{/* Other */}
 			<meta property="article:published_time" content={share?.publishDate} />
