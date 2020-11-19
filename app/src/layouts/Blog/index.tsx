@@ -13,14 +13,24 @@ import { appUrls } from "@/lib/personal"
 const BlogLayout: React.FC = (props) => {
 	const { children } = props
 
+	const title = "Blog | Guilherme Mota"
+	const description = "All content shared by Guilherme Mota."
+
 	return (
 		<BlogContainer>
 			<Head>
 				<MetaTag
-					description="All content shared by Guilherme Mota."
-					imageSrc={buildCDNUrl("/favicon.png")}
-					title="Blog | Guilherme Mota"
-					url={appUrls.blog}
+					page={{
+						title,
+						description
+					}}
+					share={{
+						title,
+						description,
+						imageSrc: buildCDNUrl("/favicon.png"),
+						url: appUrls.blog,
+						type: "website"
+					}}
 				/>
 			</Head>
 

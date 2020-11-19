@@ -16,7 +16,7 @@ export const getLatestDate = (dates: Date[]): Date => {
 	return latestDate
 }
 
-export const formatPostDate = (date: Date): string => {
+export const getShortDate = (date: Date): string => {
 	if (!date) {
 		return ""
 	}

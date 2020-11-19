@@ -56,11 +56,11 @@ const PostList: React.FC<PostListProps> = (props) => {
 											.filter(post => post.published)
 											.map((post) => (
 												<PostItemContainer
-													key={post.url}
+													key={post.slug}
 												>
 													<Link
-														key={post.url}
-														href={post.url}
+														key={post.slug}
+														href={post.slug}
 														passHref
 													>
 														<PostItemContent
@@ -72,7 +72,7 @@ const PostList: React.FC<PostListProps> = (props) => {
 															/>
 				
 															<PostInfo
-																date={post.date}
+																date={post.shortDate}
 																description={post.description}
 																readingTime={post.readingTime}
 																tags={post.tags}

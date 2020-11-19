@@ -4,7 +4,7 @@ import fs from "fs"
 import path from "path"
 import readingTime from "reading-time"
 
-import { formatPostDate } from "@/lib/date"
+import { getShortDate } from "@/lib/date"
 
 const POST_FOLDER_PATH = path.join(process.cwd(), "src", "posts")
 
@@ -15,6 +15,7 @@ export type DetailedPost = {
 	tags: string[]
 	readingTime: string
 	date: string
+	shortDate: string
 	dateInMilliseconds: number
 	content: string
 	published: boolean
@@ -28,9 +29,10 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 	const meta = matter(postFileContent)
 	const content = marked(meta.content)
 
-	const rawDate = meta.data.date
+	const { date } = meta.data
 
-	const date = formatPostDate(new Date(rawDate))
+	const shortDate = getShortDate(new Date(date))
+	const dateInMilliseconds = +new Date(date)
 
 	const readingTimeTextInfo = readingTime(content)
 
@@ -38,7 +40,8 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 		title: meta.data.title || "",
 		description: meta.data.description || "",
 		date,
-		dateInMilliseconds: +new Date(rawDate),
+		shortDate,
+		dateInMilliseconds,
 		tags: meta.data.tags || [],
 		readingTime: readingTimeTextInfo.text || "",
 		published: meta.data.published || false,
@@ -48,10 +51,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 	}
 }
 
-export type PostPreview = Omit<DetailedPost, "content"> & {
-	url: string
-	slug: string
-}
+export type PostPreview = Partial<DetailedPost>
 
 export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
 	const postFileNames = await fs.promises.readdir(POST_FOLDER_PATH)
@@ -65,13 +65,12 @@ export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
 			return {
 				title: post.title,
 				description: post.description || "",
-				date: post.date,
+				shortDate: post.shortDate,
 				dateInMilliseconds: post.dateInMilliseconds,
 				tags: post.tags,
 				readingTime: post.readingTime,
 				coverSrc: post.coverSrc,
 				published: post.published,
-				url: slug,
 				slug
 			}
 		})

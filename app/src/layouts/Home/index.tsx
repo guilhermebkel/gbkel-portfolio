@@ -20,14 +20,24 @@ type HomeLayoutProps = {
 const HomeLayout: React.FC<HomeLayoutProps> = (props) => {
 	const { children, isMobile } = props
 
+	const title = "Guilherme Mota"
+	const description = "All info about Guilherme Mota."
+
 	return (
 		<HomeContainer>
 			<Head>
 				<MetaTag
-					description="All info about Guilherme Mota."
-					imageSrc={buildCDNUrl("/favicon.png")}
-					title="Guilherme Mota"
-					url={appUrls.home}
+					page={{
+						title,
+						description
+					}}
+					share={{
+						title,
+						description,
+						imageSrc: buildCDNUrl("/favicon.png"),
+						url: appUrls.home,
+						type: "website"
+					}}
 				/>
 			</Head>
 
