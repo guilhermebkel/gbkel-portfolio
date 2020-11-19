@@ -33,13 +33,14 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 
 	const shortDate = getShortDate(new Date(date))
 	const dateInMilliseconds = +new Date(date)
+	const dateInString = date?.toString()
 
 	const readingTimeTextInfo = readingTime(content)
 
 	return {
 		title: meta.data.title || "",
 		description: meta.data.description || "",
-		date,
+		date: dateInString || "",
 		shortDate,
 		dateInMilliseconds,
 		tags: meta.data.tags || [],
