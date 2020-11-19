@@ -7,21 +7,26 @@ import {
 
 import { MetaTag } from "@/components"
 
+import { buildImageSharePath } from "@/lib/image"
+import { appUrls } from "@/lib/personal"
+
 type BlogPostLayoutProps = {
-	url: string
+	slug: string
 	title: string
 	description: string
-	imageSrc: string
+	coverSrc: string
 }
 
 const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 	const {
 		children,
 		description,
-		imageSrc,
+		coverSrc,
 		title,
-		url
+		slug
 	} = props
+
+	const imageSrc = buildImageSharePath(coverSrc)
 
 	return (
 		<BlogPostContainer>
@@ -29,8 +34,8 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 				<MetaTag
 					description={description}
 					imageSrc={imageSrc}
-					title={title}
-					url={url}
+					title={`${title} | Guilherme Mota`}
+					url={`${appUrls.blog}/${slug}`}
 				/>
 			</Head>
 

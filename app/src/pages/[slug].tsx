@@ -9,9 +9,6 @@ import {
 
 import BlogPostLayout from "@/layouts/BlogPost"
 
-import { buildImageSharePath } from "@/lib/image"
-import { appUrls } from "@/lib/personal"
-
 import PostSingleSection from "@/views/Blog/sections/PostSingle"
 
 type PostProps = {
@@ -21,14 +18,12 @@ type PostProps = {
 const Post: NextPage<PostProps> = (props) => {
 	const { post } = props
 
-	const imageSharePath = buildImageSharePath(post.coverSrc)
-
 	return (
 		<BlogPostLayout
-			title={`${post.title} | Guilherme Mota`}
+			title={post.title}
 			description={post.description}
-			imageSrc={imageSharePath}
-			url={`${appUrls.blog}/${post.slug}`}
+			coverSrc={post.coverSrc}
+			slug={post.slug}
 		>
 			<PostSingleSection post={post} />
 		</BlogPostLayout>
