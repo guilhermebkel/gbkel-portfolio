@@ -16,7 +16,7 @@ type MetaTagProps = {
 		authorName?: string
 		readingTime?: string
 	}
-	mobile?: {
+	app?: {
 		ios?: {
 			url?: string
 			appStoreId?: string
@@ -25,12 +25,12 @@ type MetaTagProps = {
 			url?: string
 			package?: string
 		}
-		appName?: string
+		name?: string
 	}
 }
 
 const MetaTag: React.FC<MetaTagProps> = (props) => {
-	const { page, share, mobile } = props
+	const { page, share, app } = props
 
 	return (
 		<>
@@ -64,12 +64,12 @@ const MetaTag: React.FC<MetaTagProps> = (props) => {
 			<link rel="canonical" href={share?.url} />
 
 			{/* Mobile Apps */}
-			<meta property="al:ios:url" content={mobile?.ios?.url} />
-			<meta property="al:ios:app_store_id" content={mobile?.ios?.appStoreId} />
-			<meta property="al:ios:app_name" content={mobile?.appName} />
-			<meta property="al:android:url" content={mobile?.android?.url} />
-			<meta property="al:android:app_name" content={mobile?.appName} />
-			<meta property="al:android:package" content={mobile?.android?.package} />
+			<meta property="al:ios:url" content={app?.ios?.url} />
+			<meta property="al:ios:app_store_id" content={app?.ios?.appStoreId} />
+			<meta property="al:ios:app_name" content={app?.name} />
+			<meta property="al:android:url" content={app?.android?.url} />
+			<meta property="al:android:app_name" content={app?.name} />
+			<meta property="al:android:package" content={app?.android?.package} />
 			<meta property="al:web:url" content={share.url} />
 		</>
 	)
