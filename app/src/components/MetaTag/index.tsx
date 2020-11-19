@@ -82,7 +82,7 @@ const MetaTag: React.FC<MetaTagProps> = (props) => {
 			{share?.authorUrl && (
 				<>
 					<link rel="author" href={share.authorUrl} />
-					<meta property="article:author" content={share?.authorUrl} />
+					<meta property="article:author" content={share.authorUrl} />
 				</>
 			)}
 		</>
