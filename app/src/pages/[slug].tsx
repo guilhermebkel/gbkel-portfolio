@@ -1,6 +1,5 @@
 import React from "react"
 import { GetStaticProps, GetStaticPaths, NextPage } from "next"
-import Head from "next/head"
 
 import {
 	getAllPostPreviews,
@@ -8,7 +7,10 @@ import {
 	DetailedPost
 } from "@/lib/posts"
 
+import BlogPostLayout from "@/layouts/BlogPost"
+
 import { buildImageSharePath } from "@/lib/image"
+import { appUrls } from "@/lib/personal"
 
 import PostSingleSection from "@/views/Blog/sections/PostSingle"
 
@@ -22,31 +24,14 @@ const Post: NextPage<PostProps> = (props) => {
 	const imageSharePath = buildImageSharePath(post.coverSrc)
 
 	return (
-		<>
-			<Head>
-				<title>{post.title} | Guilherme Mota</title>
-
-				<meta name="description" content={post.description} />
-
-				<meta property="og:site_name" content="Blog do Mota" />
-
-				<meta property="og:title" content={post.title} />
-				<meta property="og:description" content={post.description} />
-
-				<meta property="og:image" content={imageSharePath} />
-				<meta property="og:image:type" content="image/png" />
-
-				<meta property="og:image:width" content="1200" />
-				<meta property="og:image:height" content="630" />
-
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:title" content={post.title} />
-				<meta name="twitter:description" content={post.description} />
-				<meta name="twitter:image" content={imageSharePath} />
-			</Head>
-
+		<BlogPostLayout
+			title={`${post.title} | Guilherme Mota`}
+			description={post.description}
+			imageSrc={imageSharePath}
+			url={`${appUrls.blog}/${post.slug}`}
+		>
 			<PostSingleSection post={post} />
-		</>
+		</BlogPostLayout>
 	)
 }
 

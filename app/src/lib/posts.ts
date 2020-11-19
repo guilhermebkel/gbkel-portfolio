@@ -18,6 +18,7 @@ export type DetailedPost = {
 	dateInMilliseconds: number
 	content: string
 	published: boolean
+	slug: string
 }
 
 export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost> => {
@@ -42,7 +43,8 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 		readingTime: readingTimeTextInfo.text || "",
 		published: meta.data.published || false,
 		coverSrc: meta.data.cover || "",
-		content
+		content,
+		slug
 	}
 }
 

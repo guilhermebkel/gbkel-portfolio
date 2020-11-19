@@ -6,8 +6,12 @@ import {
 } from "@/layouts/Home/styles"
 
 import { buildCDNUrl } from "@/lib/cdn"
+import { appUrls } from "@/lib/personal"
 
-import { SiriWave } from "@/components"
+import {
+	SiriWave,
+	MetaTag
+} from "@/components"
 
 type HomeLayoutProps = {
 	isMobile?: boolean
@@ -19,9 +23,12 @@ const HomeLayout: React.FC<HomeLayoutProps> = (props) => {
 	return (
 		<HomeContainer>
 			<Head>
-				<title>Guilherme Mota</title>
-				<meta name="description" content="All info about Guilherme Mota."/>
-				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
+				<MetaTag
+					description="All info about Guilherme Mota."
+					imageSrc={buildCDNUrl("/favicon.png")}
+					title="Guilherme Mota"
+					url={appUrls.home}
+				/>
 			</Head>
 
 			{children}

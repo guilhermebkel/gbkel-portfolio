@@ -5,7 +5,10 @@ import {
 	BlogContainer
 } from "@/layouts/Blog/styles"
 
+import { MetaTag } from "@/components"
+
 import { buildCDNUrl } from "@/lib/cdn"
+import { appUrls } from "@/lib/personal"
 
 const BlogLayout: React.FC = (props) => {
 	const { children } = props
@@ -13,9 +16,12 @@ const BlogLayout: React.FC = (props) => {
 	return (
 		<BlogContainer>
 			<Head>
-				<title>Blog | Guilherme Mota</title>
-				<meta name="description" content="All content shared by Guilherme Mota."/>
-				<meta property="og:image" content={buildCDNUrl("/favicon.png")} />
+				<MetaTag
+					description="All content shared by Guilherme Mota."
+					imageSrc={buildCDNUrl("/favicon.png")}
+					title="Blog | Guilherme Mota"
+					url={appUrls.blog}
+				/>
 			</Head>
 
 			{children}
