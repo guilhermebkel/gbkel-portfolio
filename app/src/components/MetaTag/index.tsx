@@ -72,7 +72,6 @@ const MetaTag: React.FC<MetaTagProps> = (props) => {
 			<meta property="al:android:app_name" content={mobile?.appName} />
 			<meta property="al:android:package" content={mobile?.android?.package} />
 			<meta property="al:web:url" content={share.url} />
-			
 		</>
 	)
 }
