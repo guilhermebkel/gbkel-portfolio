@@ -11,7 +11,7 @@ import {
 	ExtraInfo,
 	PostAuthorContainer,
 	PostAuthorName
-} from "@/views/Blog/components/PostInfo/styles"
+} from "@/components/PostInfo/styles"
 
 type PostInfoProps = {
 	tags: string[]
