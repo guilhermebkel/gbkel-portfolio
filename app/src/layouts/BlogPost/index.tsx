@@ -1,5 +1,4 @@
 import React from "react"
-import Head from "next/head"
 
 import {
 	BlogPostContainer
@@ -34,25 +33,23 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 
 	return (
 		<BlogPostContainer>
-			<Head>
-				<MetaTag
-					page={{
-						title: `${title} | Guilherme Mota`,
-						description,
-					}}
-					share={{
-						title,
-						description,
-						imageSrc,
-						url: `${appUrls.blog}/${slug}`,
-						authorName: "Guilherme Mota",
-						authorUrl: contactMap.github.url,
-						type: "article",
-						publishDate: date,
-						readingTime
-					}}
-				/>
-			</Head>
+			<MetaTag
+				page={{
+					title: `${title} | Guilherme Mota`,
+					description,
+				}}
+				share={{
+					title,
+					description,
+					imageSrc,
+					url: `${appUrls.blog}/${slug}`,
+					authorName: "Guilherme Mota",
+					authorUrl: contactMap.github.url,
+					type: "article",
+					publishDate: date,
+					readingTime
+				}}
+			/>
 
 			{children}
 		</BlogPostContainer>
