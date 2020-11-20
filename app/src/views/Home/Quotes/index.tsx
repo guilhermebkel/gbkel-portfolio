@@ -13,7 +13,7 @@ import {
 	QuoteItemContent,
 	QuotesSectionContainer,
 	QuotesSectionContent,
-} from "@/views/Home/sections/Quotes/styles"
+} from "@/views/Home/Quotes/styles"
 
 const QuotesSection: React.FC = () => (
 	<QuotesSectionContainer>

@@ -1,5 +1,4 @@
 import React from "react"
-import Head from "next/head"
 
 import {
 	HomeContainer
@@ -25,21 +24,19 @@ const HomeLayout: React.FC<HomeLayoutProps> = (props) => {
 
 	return (
 		<HomeContainer>
-			<Head>
-				<MetaTag
-					page={{
-						title,
-						description
-					}}
-					share={{
-						title,
-						description,
-						imageSrc: buildCDNUrl("/favicon.png"),
-						url: appUrls.home,
-						type: "website"
-					}}
-				/>
-			</Head>
+			<MetaTag
+				page={{
+					title,
+					description
+				}}
+				share={{
+					title,
+					description,
+					imageSrc: buildCDNUrl("/favicon.png"),
+					url: appUrls.home,
+					type: "website"
+				}}
+			/>
 
 			{children}
 

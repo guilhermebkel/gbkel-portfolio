@@ -5,10 +5,9 @@ import { PostPreview } from "@/lib/posts"
 import { chunk, orderBy } from "@/lib/array"
 
 import {
-	Summary
+	Summary,
+	PostInfo
 } from "@/components"
-
-import PostInfo from "@/views/Blog/components/PostInfo"
 
 import {
 	PostListSectionContainer,
@@ -19,7 +18,7 @@ import {
 	PostsContainer,
 	PostsContent,
 	PostDivider
-} from "@/views/Blog/sections/PostList/styles"
+} from "@/views/Blog/PostList/styles"
 
 type PostListProps = {
 	posts: PostPreview[]

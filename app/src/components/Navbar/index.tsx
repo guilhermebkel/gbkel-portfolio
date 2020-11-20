@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
 
 				<Menu
 					isMobileMenuOpened={isMobileMenuOpened}
-					onClick={isMobileMenuOpened && handleCloseMobileMenu}
+					onClick={isMobileMenuOpened ? handleCloseMobileMenu : undefined}
 				>
 					<MenuIconItem id="menu-icon-item">
 						<IconButton

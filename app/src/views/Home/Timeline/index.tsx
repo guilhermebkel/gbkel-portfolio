@@ -19,7 +19,7 @@ import {
 	TimelineSubTitle,
 	TimelineTitle,
 	TimelineTitleContainer
-} from "@/views/Home/sections/Timeline/styles"
+} from "@/views/Home/Timeline/styles"
 
 import { timeline } from "@/lib/personal"
 
@@ -35,8 +35,8 @@ const TimelineSection: React.FC = () => (
 
 			<TimelineMobileContainer>
 				<TimelineMobileContent>
-					{timeline.map((timelineItem) => (
-						<Timeline.Item key={timelineItem.title}>
+					{timeline.map((timelineItem, index) => (
+						<Timeline.Item key={index}>
 							<TimelineContent>
 								<TimelineTitleContainer>
 									<TimelineIcon
@@ -67,7 +67,7 @@ const TimelineSection: React.FC = () => (
 			<TimelineContainer>
 				<Timeline>
 					{timeline.map((timelineItem, index) => (
-						<Timeline.Item key={timelineItem.title}>
+						<Timeline.Item key={index}>
 							<TimelineContent
 								style={{
 									order: index % 2 === 0 ? 0 : 2

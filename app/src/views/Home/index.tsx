@@ -4,11 +4,11 @@ import dynamic from "next/dynamic"
 
 import HomeLayout from "@/layouts/Home"
 
-import IntroductionSection from "@/views/Home/sections/Introduction"
-const TimelineSection =  dynamic(() => import("@/views/Home/sections/Timeline"))
-const SkillsSection =  dynamic(() => import("@/views/Home/sections/Skills"))
-const ContactSection =  dynamic(() => import("@/views/Home/sections/Contact"))
-const QuotesSection =  dynamic(() => import("@/views/Home/sections/Quotes"))
+import IntroductionSection from "@/views/Home/Introduction"
+const TimelineSection =  dynamic(() => import("@/views/Home/Timeline"))
+const SkillsSection =  dynamic(() => import("@/views/Home/Skills"))
+const ContactSection =  dynamic(() => import("@/views/Home/Contact"))
+const QuotesSection =  dynamic(() => import("@/views/Home/Quotes"))
 
 import { isMobileRequest } from "@/lib/validation"
 

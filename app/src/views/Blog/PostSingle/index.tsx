@@ -8,7 +8,7 @@ import {
 	PostInfo,
 	PostCover,
 	PostContent
-} from "@/views/Blog/sections/PostSingle/styles"
+} from "@/views/Blog/PostSingle/styles"
 
 type PostSingleProps = {
 	post: DetailedPost

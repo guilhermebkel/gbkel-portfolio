@@ -11,7 +11,7 @@ import {
 	ContactInfoContainer,
 	ContactInfoContent,
 	ContactInfoLink
-} from "@/views/Home/sections/Contact/styles"
+} from "@/views/Home/Contact/styles"
 
 import { contactMap } from "@/lib/personal"
 

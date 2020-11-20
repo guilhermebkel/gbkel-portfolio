@@ -1,10 +1,9 @@
 import styled from "styled-components"
 
-import PostInfoComponent from "@/views/Blog/components/PostInfo"
-
 import {
 	Section,
-	LazyLoadedImage
+	LazyLoadedImage,
+	PostInfo as PostInfoComponent
 } from "@/components" 
 
 export const PostSingleSectionContainer = styled(Section.Container)`

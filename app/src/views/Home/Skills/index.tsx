@@ -11,7 +11,7 @@ import {
 	SkillsSectionContent,
 	SkillsGlobeContainer,
 	SeeMoreContainer
-} from "@/views/Home/sections/Skills/styles"
+} from "@/views/Home/Skills/styles"
 
 import { appUrls } from "@/lib/personal"
 

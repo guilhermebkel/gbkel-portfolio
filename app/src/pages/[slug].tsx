@@ -9,7 +9,7 @@ import {
 
 import BlogPostLayout from "@/layouts/BlogPost"
 
-import PostSingleSection from "@/views/Blog/sections/PostSingle"
+import PostSingleSection from "@/views/Blog/PostSingle"
 
 type PostProps = {
 	post: DetailedPost

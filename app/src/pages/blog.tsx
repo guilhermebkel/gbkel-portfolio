@@ -5,7 +5,7 @@ import { getAllPostPreviews, PostPreview } from "@/lib/posts"
 
 import BlogLayout from "@/layouts/Blog"
 
-import PostListSection from "@/views/Blog/sections/PostList"
+import PostListSection from "@/views/Blog/PostList"
 
 type BlogProps = {
 	posts: PostPreview[]
