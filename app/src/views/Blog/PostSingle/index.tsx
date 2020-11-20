@@ -21,7 +21,7 @@ const PostSingle: React.FC<PostSingleProps> = (props) => {
 		<PostSingleSectionContainer>
 			<PostSingleSectionContent>
 				<PostInfo 
-					date={post.date}
+					date={post.shortDate}
 					description={post.description}
 					readingTime={post.readingTime}
 					tags={post.tags}
