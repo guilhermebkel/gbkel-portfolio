@@ -7,7 +7,7 @@ import {
 import { MetaTag } from "@/components"
 
 import { buildImageSharePath } from "@/lib/image"
-import { appUrls, contactMap } from "@/lib/personal"
+import { appUrls } from "@/lib/personal"
 
 type BlogPostLayoutProps = {
 	slug: string
@@ -16,6 +16,8 @@ type BlogPostLayoutProps = {
 	coverSrc: string
 	date: string
 	readingTime: string
+	authorName: string
+	authorUrl: string
 }
 
 const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
@@ -26,7 +28,9 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 		title,
 		slug,
 		date,
-		readingTime
+		readingTime,
+		authorName,
+		authorUrl
 	} = props
 
 	const imageSrc = buildImageSharePath(coverSrc)
@@ -43,8 +47,8 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 					description,
 					imageSrc,
 					url: `${appUrls.blog}/${slug}`,
-					authorName: "Guilherme Mota",
-					authorUrl: contactMap.github.url,
+					authorName,
+					authorUrl,
 					type: "article",
 					publishDate: date,
 					readingTime

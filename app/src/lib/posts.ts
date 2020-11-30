@@ -4,9 +4,45 @@ import fs from "fs"
 import path from "path"
 import readingTime from "reading-time"
 
+import { getFixedEncodeURIComponent } from "@/lib/url"
 import { getShortDate } from "@/lib/date"
+import { appUrls, authors } from "@/lib/personal"
 
 const POST_FOLDER_PATH = path.join(process.cwd(), "src", "posts")
+
+type GetPostShareUrls = {
+	Props: {
+		slug: string
+		title: string
+	}
+	Response: {
+		[key in "linkedin" | "facebook" | "whatsapp" | "twitter" | "telegram"]: string
+	}
+}
+
+export const getPostShareUrls = (
+	props: GetPostShareUrls["Props"]
+): GetPostShareUrls["Response"] => {
+	const blogUrl = appUrls.blog
+	const postUrl = `${blogUrl}/${props.slug}`
+	const defaultDescription = `Give a look at '${props.title}', written by Guilherme Mota`
+
+	const url = getFixedEncodeURIComponent(postUrl)
+	const title = getFixedEncodeURIComponent(props.title)
+	const source = getFixedEncodeURIComponent(blogUrl)
+	const smallDescription = getFixedEncodeURIComponent(`${defaultDescription}!`)
+	const fullDescription = getFixedEncodeURIComponent(`${defaultDescription} at ${url}!`)
+
+	const shareUrls: GetPostShareUrls["Response"] = {
+		linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${smallDescription}&source=${source}`,
+		facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${smallDescription}`,
+		telegram: `https://telegram.me/share/url?url=${url}&text=${smallDescription}`,
+		twitter: `https://twitter.com/intent/tweet?text=${fullDescription}&related=_staticvoid`,
+		whatsapp: `https://api.whatsapp.com/send?text=${fullDescription}`
+	}
+
+	return shareUrls
+}
 
 export type DetailedPost = {
 	title: string
@@ -20,6 +56,10 @@ export type DetailedPost = {
 	content: string
 	published: boolean
 	slug: string
+	authorName: string
+	authorAvatarSrc: string
+	authorUrl: string
+	shareUrls: GetPostShareUrls["Response"]
 }
 
 export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost> => {
@@ -37,8 +77,15 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 
 	const readingTimeTextInfo = readingTime(content)
 
+	const postTitle = meta.data.title || ""
+
+	const postShareUrls = getPostShareUrls({
+		title: postTitle,
+		slug
+	})
+
 	return {
-		title: meta.data.title || "",
+		title: postTitle,
 		description: meta.data.description || "",
 		date: dateInString || "",
 		shortDate,
@@ -48,32 +95,24 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 		published: meta.data.published || false,
 		coverSrc: meta.data.cover || "",
 		content,
-		slug
+		slug,
+		authorAvatarSrc: authors.Owner.avatarSrc,
+		authorName: authors.Owner.name,
+		authorUrl: authors.Owner.url,
+		shareUrls: postShareUrls
 	}
 }
 
-export type PostPreview = Partial<DetailedPost>
-
-export const getAllPostPreviews = async (): Promise<PostPreview[]> => {
+export const getAllPostPreviews = async (): Promise<DetailedPost[]> => {
 	const postFileNames = await fs.promises.readdir(POST_FOLDER_PATH)
 	
-	const postPreviews: PostPreview[] = await Promise.all(
+	const postPreviews: DetailedPost[] = await Promise.all(
 		postFileNames.map(async postFileName => {
 			const slug = postFileName.replace(".md", "")
 
 			const post = await getDetailedPostBySlug(slug)
 	
-			return {
-				title: post.title,
-				description: post.description || "",
-				shortDate: post.shortDate,
-				dateInMilliseconds: post.dateInMilliseconds,
-				tags: post.tags,
-				readingTime: post.readingTime,
-				coverSrc: post.coverSrc,
-				published: post.published,
-				slug
-			}
+			return post
 		})
 	)
 

@@ -150,3 +150,11 @@ export const appUrls = {
 	about: "https://about.guilherr.me",
 	skills: "https://about.guilherr.me/skills"
 }
+
+export const authors = {
+	Owner: {
+		name: "Guilherme Mota",
+		avatarSrc: "/images/mini-avatar.png",
+		url: contactMap.github.url
+	}
+}

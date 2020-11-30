@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 
-import { PostPreview } from "@/lib/posts"
+import { DetailedPost } from "@/lib/posts"
 import { chunk, orderBy } from "@/lib/array"
 
 import {
@@ -21,7 +21,7 @@ import {
 } from "@/views/Blog/PostList/styles"
 
 type PostListProps = {
-	posts: PostPreview[]
+	posts: DetailedPost[]
 }
 
 const PostList: React.FC<PostListProps> = (props) => {
@@ -39,9 +39,9 @@ const PostList: React.FC<PostListProps> = (props) => {
 
 				<PostsContainer>
 					{posts
-						.sort(orderBy<PostPreview>("dateInMilliseconds", "ASC"))
+						.sort(orderBy<DetailedPost>("dateInMilliseconds", "ASC"))
 						.reverse()
-						.reduce(chunk<PostPreview[][], PostPreview>(3), [])
+						.reduce(chunk<DetailedPost[][], DetailedPost>(3), [])
 						.reverse()
 						.map((postChunk, index) => (
 							<React.Fragment
@@ -76,6 +76,8 @@ const PostList: React.FC<PostListProps> = (props) => {
 																readingTime={post.readingTime}
 																tags={post.tags}
 																title={post.title}
+																authorName={post.authorName}
+																authorAvatarSrc={post.authorAvatarSrc}
 															/>
 														</PostItemContent>
 													</Link>

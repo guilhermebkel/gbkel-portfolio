@@ -8,3 +8,9 @@ export const getSiteBaseURL = (req: NextApiRequest): string => {
 
 	return baseURL
 }
+
+export const getFixedEncodeURIComponent = (value: string): string => {
+	return encodeURIComponent(value).replace(/[!'()*]/g, function(c) {
+		return "%" + c.charCodeAt(0).toString(16)
+	})
+}

@@ -19,6 +19,8 @@ type PostInfoProps = {
 	description: string
 	date: string
 	readingTime: string
+	authorName: string
+	authorAvatarSrc: string
 }
 
 const PostInfo: React.FC<PostInfoProps> = (props) => {
@@ -28,6 +30,8 @@ const PostInfo: React.FC<PostInfoProps> = (props) => {
 		readingTime,
 		description,
 		date,
+		authorName,
+		authorAvatarSrc,
 		...otherProps
 	} = props
 
@@ -53,13 +57,13 @@ const PostInfo: React.FC<PostInfoProps> = (props) => {
 
 			<PostAuthorContainer>
 				<Avatar
-					src="/images/mini-avatar.png"
-					alt="avatar"
+					src={authorAvatarSrc}
+					alt="author avatar"
 				/>
 
 				<DetailsContainer>
 					<PostAuthorName>
-						Guilherme Mota
+						{authorName}
 					</PostAuthorName>
 
 					<ExtraInfo>

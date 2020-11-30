@@ -26,6 +26,8 @@ const PostSingle: React.FC<PostSingleProps> = (props) => {
 					readingTime={post.readingTime}
 					tags={post.tags}
 					title={post.title}
+					authorName={post.authorName}
+					authorAvatarSrc={post.authorAvatarSrc}
 				/>
 
 				<PostCover

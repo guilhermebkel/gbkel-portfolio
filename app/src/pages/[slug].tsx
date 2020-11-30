@@ -26,8 +26,12 @@ const Post: NextPage<PostProps> = (props) => {
 			slug={post.slug}
 			date={post.date}
 			readingTime={post.readingTime}
+			authorName={post.authorName}
+			authorUrl={post.authorUrl}
 		>
-			<PostSingleSection post={post} />
+			<PostSingleSection
+				post={post}
+			/>
 		</BlogPostLayout>
 	)
 }
