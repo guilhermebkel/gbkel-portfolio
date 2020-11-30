@@ -106,7 +106,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 export const getAllDetailedPosts = async (): Promise<DetailedPost[]> => {
 	const postFileNames = await fs.promises.readdir(POST_FOLDER_PATH)
 	
-	const postPreviews: DetailedPost[] = await Promise.all(
+	const detailedPosts: DetailedPost[] = await Promise.all(
 		postFileNames.map(async postFileName => {
 			const slug = postFileName.replace(".md", "")
 
@@ -116,5 +116,5 @@ export const getAllDetailedPosts = async (): Promise<DetailedPost[]> => {
 		})
 	)
 
-	return postPreviews
+	return detailedPosts
 }
