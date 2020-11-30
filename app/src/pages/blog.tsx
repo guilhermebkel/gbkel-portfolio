@@ -1,14 +1,14 @@
 import React from "react"
 import { GetStaticProps, NextPage } from "next"
 
-import { getAllPostPreviews, PostPreview } from "@/lib/posts"
+import { getAllDetailedPosts, DetailedPost } from "@/lib/posts"
 
 import BlogLayout from "@/layouts/Blog"
 
 import PostListSection from "@/views/Blog/PostList"
 
 type BlogProps = {
-	posts: PostPreview[]
+	posts: DetailedPost[]
 }
 
 const Blog: NextPage<BlogProps> = (props) => {
@@ -22,7 +22,7 @@ const Blog: NextPage<BlogProps> = (props) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = await getAllPostPreviews()
+	const posts = await getAllDetailedPosts()
 
 	return {
 		props: {
