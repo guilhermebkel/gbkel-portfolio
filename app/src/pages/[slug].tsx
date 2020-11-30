@@ -2,7 +2,7 @@ import React from "react"
 import { GetStaticProps, GetStaticPaths, NextPage } from "next"
 
 import {
-	getAllPostPreviews,
+	getAllDetailedPosts,
 	getDetailedPostBySlug,
 	DetailedPost
 } from "@/lib/posts"
@@ -37,7 +37,7 @@ const Post: NextPage<PostProps> = (props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const posts = await getAllPostPreviews()
+	const posts = await getAllDetailedPosts()
 
 	const paths = posts.map(post => ({ params: { slug: post.slug } }))
 

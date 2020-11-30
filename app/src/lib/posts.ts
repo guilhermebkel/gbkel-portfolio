@@ -103,7 +103,7 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 	}
 }
 
-export const getAllPostPreviews = async (): Promise<DetailedPost[]> => {
+export const getAllDetailedPosts = async (): Promise<DetailedPost[]> => {
 	const postFileNames = await fs.promises.readdir(POST_FOLDER_PATH)
 	
 	const postPreviews: DetailedPost[] = await Promise.all(
