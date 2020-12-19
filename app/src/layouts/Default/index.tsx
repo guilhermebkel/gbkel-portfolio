@@ -19,6 +19,7 @@ const DefaultLayout: React.FC = (props) => {
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 				<link rel="icon" href={buildCDNUrl("/favicon.png")} />
 				<link id="app-manifest" rel="manifest" href="/manifest.json"></link>
+				<script defer type="text/javascript" src="https://static.guilherr.me/gtm.js"></script>
 			</Head>
 
 			<Navbar />
