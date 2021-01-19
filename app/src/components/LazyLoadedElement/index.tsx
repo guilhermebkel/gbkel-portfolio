@@ -36,6 +36,9 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 	const { addToCallbackPool } = useCallbackPool()
 
 	useDidMount(() => {
+		const containerElement = containerRef.current as Element
+		const childrenElement = childrenRef.current as Element
+
 		const { isIOS } = getClientDeviceInfo()
 
 		/**
@@ -43,11 +46,10 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 		 * IntersectionObserver, since it causes a bug of no render.
 		 */
 		if (isIOS) {
+			onVisible?.(containerElement, childrenElement)
+
 			setVisible(true)
 		} else {
-			const containerElement = containerRef.current as Element
-			const childrenElement = childrenRef.current as Element
-	
 			const observer = new IntersectionObserver(callback => {
 				const isContainerVisible = callback?.[0]?.isIntersecting
 	
