@@ -12,7 +12,7 @@ type DeviceInfo = {
 export const getClientDeviceInfo = (): DeviceInfo => {
 	return {
 		isMobile: reactDeviceDetect.isMobile,
-		isDesktop: !reactDeviceDetect.isMobile,
+		isDesktop: reactDeviceDetect.isBrowser,
 		isAndroid: reactDeviceDetect.isAndroid,
 		isIOS: reactDeviceDetect.isIOS
 	}
