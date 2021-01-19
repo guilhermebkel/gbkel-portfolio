@@ -39,13 +39,13 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 		const containerElement = containerRef.current as Element
 		const childrenElement = childrenRef.current as Element
 
-		const { isIOS } = await getClientDeviceInfo()
-
 		const visibilityWorker = () => {
 			onVisible?.(containerElement, childrenElement)
 
 			setVisible(true)
 		}
+
+		const { isIOS } = await getClientDeviceInfo()
 
 		/**
 		 * In case it is an iOS device, we avoid using lazy loading with

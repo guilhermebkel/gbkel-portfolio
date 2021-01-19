@@ -15,8 +15,6 @@ export const getClientDeviceInfo = async (): Promise<DeviceInfo> => {
 		isIOS
 	} = await import("react-device-detect")
 
-	console.log(isMobile, isBrowser, isAndroid, isIOS)
-
 	return {
 		isMobile,
 		isDesktop: isBrowser,
