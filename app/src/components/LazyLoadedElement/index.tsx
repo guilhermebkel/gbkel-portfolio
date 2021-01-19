@@ -7,7 +7,7 @@ import {
 import useDidMount from "@/hooks/useDidMount"
 import useCallbackPool from "@/hooks/useCallbackPool"
 
-import { getDeviceInfo, getWindowUserAgent } from "@/lib/validation"
+import { getClientDeviceInfo } from "@/lib/device"
 
 type LazyLoadedElementProps = HTMLAttributes<HTMLDivElement> & {
 	onVisible?: (elementRef: Element, childrenRef: Element) => void
@@ -36,15 +36,13 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 	const { addToCallbackPool } = useCallbackPool()
 
 	useDidMount(() => {
-		const userAgent = getWindowUserAgent(window)
-
-		const { isIos } = getDeviceInfo(userAgent)
+		const { isIOS } = getClientDeviceInfo()
 
 		/**
 		 * In case it is an iOS device, we avoid using lazy loading with
 		 * IntersectionObserver, since it causes a bug of no render.
 		 */
-		if (isIos) {
+		if (isIOS) {
 			setVisible(true)
 		} else {
 			const containerElement = containerRef.current as Element

@@ -10,7 +10,7 @@ const SkillsSection =  dynamic(() => import("@/views/Home/Skills"))
 const ContactSection =  dynamic(() => import("@/views/Home/Contact"))
 const QuotesSection =  dynamic(() => import("@/views/Home/Quotes"))
 
-import { getDeviceInfo, getRequestUserAgent } from "@/lib/validation"
+import { getServerDeviceInfo } from "@/lib/device"
 
 type HomeProps = {
 	isMobile: boolean
@@ -35,9 +35,7 @@ const Home: NextPage<HomeProps> = (props) => {
 }
 
 Home.getInitialProps = (ctx) => {
-	const userAgent = getRequestUserAgent(ctx)
-
-	const { isMobile } = getDeviceInfo(userAgent)
+	const { isMobile } = getServerDeviceInfo(ctx)
 
 	return {
 		isMobile
