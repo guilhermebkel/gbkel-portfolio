@@ -35,11 +35,11 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 
 	const { addToCallbackPool } = useCallbackPool()
 
-	useDidMount(() => {
+	useDidMount(async () => {
 		const containerElement = containerRef.current as Element
 		const childrenElement = childrenRef.current as Element
 
-		const { isIOS } = getClientDeviceInfo()
+		const { isIOS } = await getClientDeviceInfo()
 
 		const visibilityWorker = () => {
 			onVisible?.(containerElement, childrenElement)

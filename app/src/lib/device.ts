@@ -1,7 +1,5 @@
 import { NextPageContext } from "next"
 
-import reactDeviceDetect from "react-device-detect"
-
 type DeviceInfo = {
 	isMobile: boolean
 	isDesktop: boolean
@@ -9,12 +7,21 @@ type DeviceInfo = {
 	isIOS: boolean
 }
 
-export const getClientDeviceInfo = (): DeviceInfo => {
+export const getClientDeviceInfo = async (): Promise<DeviceInfo> => {
+	const {
+		isMobile,
+		isBrowser,
+		isAndroid,
+		isIOS
+	} = await import("react-device-detect")
+
+	console.log(isMobile, isBrowser, isAndroid, isIOS)
+
 	return {
-		isMobile: reactDeviceDetect?.isMobile,
-		isDesktop: reactDeviceDetect?.isBrowser,
-		isAndroid: reactDeviceDetect?.isAndroid,
-		isIOS: reactDeviceDetect?.isIOS
+		isMobile,
+		isDesktop: isBrowser,
+		isAndroid,
+		isIOS
 	}
 }
 
