@@ -7,6 +7,8 @@ import {
 import useDidMount from "@/hooks/useDidMount"
 import useCallbackPool from "@/hooks/useCallbackPool"
 
+import { getDeviceInfo, getWindowUserAgent } from "@/lib/validation"
+
 type LazyLoadedElementProps = HTMLAttributes<HTMLDivElement> & {
 	onVisible?: (elementRef: Element, childrenRef: Element) => void
 	threshold?: number
@@ -34,32 +36,44 @@ const LazyLoadedElement: React.FC<LazyLoadedElementProps> = (props) => {
 	const { addToCallbackPool } = useCallbackPool()
 
 	useDidMount(() => {
-		const containerElement = containerRef.current as Element
-		const childrenElement = childrenRef.current as Element
+		const userAgent = getWindowUserAgent(window)
 
-		const observer = new IntersectionObserver(callback => {
-			const isContainerVisible = callback?.[0]?.isIntersecting
+		const { isIos } = getDeviceInfo(userAgent)
 
-			if (isContainerVisible) {
-				const worker = () => {
-					onVisible?.(containerElement, childrenElement)
-
-					setVisible(true)
-
-					observer.unobserve(containerElement)
-				}
-
-				if (highPriority) {
-					worker()
-				} else {
-					addToCallbackPool(worker)
-				}
-			}
-		}, {
-			threshold
-		})
+		/**
+		 * In case it is an iOS device, we avoid using lazy loading with
+		 * IntersectionObserver, since it causes a bug of no render.
+		 */
+		if (isIos) {
+			setVisible(true)
+		} else {
+			const containerElement = containerRef.current as Element
+			const childrenElement = childrenRef.current as Element
 	
-		observer.observe(containerElement)
+			const observer = new IntersectionObserver(callback => {
+				const isContainerVisible = callback?.[0]?.isIntersecting
+	
+				if (isContainerVisible) {
+					const worker = () => {
+						onVisible?.(containerElement, childrenElement)
+	
+						setVisible(true)
+	
+						observer.unobserve(containerElement)
+					}
+	
+					if (highPriority) {
+						worker()
+					} else {
+						addToCallbackPool(worker)
+					}
+				}
+			}, {
+				threshold
+			})
+		
+			observer.observe(containerElement)
+		}
 	})
 
 	return (
