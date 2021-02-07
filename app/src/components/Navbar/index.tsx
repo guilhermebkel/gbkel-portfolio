@@ -88,15 +88,17 @@ const Navbar: React.FC = () => {
 							About
 						</MenuItemLink>
 					</MenuItem>
-					<MenuItem>
-						<MenuItemLink
-							href={appUrls.blog}
-							target="_self"
-							rel="noreferrer"
-						>
-							Blog
-						</MenuItemLink>
-					</MenuItem>
+					{/*
+						<MenuItem>
+							<MenuItemLink
+								href={appUrls.blog}
+								target="_self"
+								rel="noreferrer"
+							>
+								Blog
+							</MenuItemLink>
+						</MenuItem>
+					*/}
 				</Menu>
 			</NavbarContent>
 
