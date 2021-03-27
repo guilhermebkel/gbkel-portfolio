@@ -39,3 +39,4 @@ fields:
   label: Published
 pages:
 - app/src/posts/how-to-create-a-simple-game-in-javascript-using-socket.io-to-controll-communication.md
+- app/src/posts/how-to-install-rancher-inside-aws-eks.md
