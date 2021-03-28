@@ -45,7 +45,7 @@ export const PostCover = styled(LazyLoadedImage)`
 `
 
 export const PostContent = styled.div`
-	margin-top: 10rem;
+	margin-top: 5rem;
 
 	max-width: 90rem;
 	width: 100%;
