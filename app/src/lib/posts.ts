@@ -7,6 +7,7 @@ import readingTime from "reading-time"
 import { getFixedEncodeURIComponent } from "@/lib/url"
 import { getShortDate } from "@/lib/date"
 import { appUrls, authors } from "@/lib/personal"
+import { CustomRenderer } from "@/lib/markdown"
 
 const POST_FOLDER_PATH = path.join(process.cwd(), "src", "posts")
 
@@ -67,7 +68,9 @@ export const getDetailedPostBySlug = async (slug: string): Promise<DetailedPost>
 	const postFileContent = await fs.promises.readFile(postFilePath, "utf8")
 
 	const meta = matter(postFileContent)
-	const content = marked(meta.content)
+	const content = marked(meta.content, {
+		renderer: new CustomRenderer()
+	})
 
 	const { date } = meta.data
 

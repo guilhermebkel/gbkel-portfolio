@@ -4,7 +4,7 @@ import {
 	BlogPostContainer
 } from "@/layouts/BlogPost/styles"
 
-import { MetaTag } from "@/components"
+import { MetaTag, Script } from "@/components"
 
 import { buildImageSharePath } from "@/lib/image"
 import { appUrls } from "@/lib/personal"
@@ -56,6 +56,9 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 			/>
 
 			{children}
+
+			<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.min.css" />
+			<Script src="/js/jquery.fancybox.min.js" />
 		</BlogPostContainer>
 	)
 }
