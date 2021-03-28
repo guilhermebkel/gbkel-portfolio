@@ -8,7 +8,7 @@ tags:
 title: How to install Rancher inside AWS EKS
 description: Learn how to install Rancher inside AWS EKS while getting important concepts
   about Kubernetes.
-date: 2021-03-21T03:00:00Z
+date: 2021-03-21T03:00:00.000+00:00
 cover: "/posts/amazon-containers-01.png"
 published: false
 
@@ -23,7 +23,7 @@ One of the ways of installing Rancher is by creating a node master and installin
 
 Being minded about that, there is a better way to that, that is by installing Rancher inside the own cluster, it means that Rancher node master will be available inside every VM of the cluster. So today, we will learn about how to install it inside a running AWS EKS cluster.
 
-### Creating the IAM Roles
+# Creating the IAM Roles
 
 Since our cluster and its resources need permission to do some actions inside AWS, we must create some roles on AWS IAM in order to be able to handle it.
 
@@ -37,7 +37,7 @@ After selecting the service above, we need to go into the **roles** item of the 
 
 Now that we are on the creation page, will need to create two roles in order to help our cluster working later.
 
-#### Creating the Cluster Service Role
+## Creating the Cluster Service Role
 
 At first we need to create a role to give some permissions to the cluster itself, so we need to select **EKS** from the list that will be shown and, select **EKS Cluster** on the sub-item list in the bottom of the page and so, click on **Next** button.
 
@@ -47,7 +47,7 @@ We will name this role as **cluster-service-role** and click on the **Create Rol
 
 ![Cluster Service Role Finish](/posts/iam-roles-eks-role-finish.png "Cluster Service Role Finish")
 
-#### Creating the Node Group Role
+## Creating the Node Group Role
 
 Click on the **Create Role** button on the **Role Page** again in order to create a new role for the node groups. Now we need to select **EC2** on the top list and **EC2** on the bottom list.
 
@@ -57,7 +57,7 @@ For this role, we need to select manually the following polices: **AmazonEKSWork
 
 ![Node Group Role Finish](/posts/iam-roles-node-group-role-finish.png "Node Group Role Finish")
 
-### Creating an EC2 Key Pair
+# Creating an EC2 Key Pair
 
 In order to get access for the cluster nodes by EKS, it is needed to create a key pair to make that authentication when needed. In order to do that, go to the EC2 page by searching it on the console.
 
@@ -71,7 +71,7 @@ Name it the way you prefer (in my case I chose **test-node**), select **pem form
 
 ![Key Pair Finish](/posts/key-pair-finish.png "Key Pair Finish")
 
-### Creating the Cluster
+# Creating the Cluster
 
 Go to the EKS page by searching it on the console.
 
@@ -97,7 +97,7 @@ After making all the creation steps, you will get into a final step that you can
 
 The cluster will be available after some minutes, so take the opportunity to make some coffee in order to get into the next steps.
 
-#### Creating the Node Group
+## Creating the Node Group
 
 After the cluster is deployed successfully, we need now to create a node group that is basically a group of EC2 instances that we can scale the way we prefer to run our cluster inside.
 
@@ -121,7 +121,7 @@ Now we will get into the last step which you can use to review all the configs y
 
 The node group takes some minutes in order to get up since you will be creating EC2 instances, but we can get into the next steps anyway.
 
-### Configuring AWS CLI
+# Configuring AWS CLI
 
 In order to make the cluster accessible via terminal to finish all the needed configs, we will need to use the AWS CLI in order to do that. So, you can run the commands below in order to install it.
 
@@ -129,7 +129,7 @@ In order to make the cluster accessible via terminal to finish all the needed co
     unzip awscliv2.zip
     sudo ./aws/install
 
-#### Creating credentials to access root AWS user
+## Creating credentials to access root AWS user
 
 After installing the AWS CLI on your computer, you need to authenticate in order to get access to AWS resources. Being minded about that, we will generate the root user credentials.
 
@@ -149,7 +149,7 @@ Now that you have your credentials in hand, you need to run the command below an
 
     aws configure
 
-#### Linking AWS EKS CLI with Kubectl
+## Linking AWS EKS CLI with Kubectl
 
 In order to run kubectl commands inside the aws cluster we have created above, we need to make a simple config.
 
@@ -168,11 +168,11 @@ Now, in order to link AWS EKS CLI with Kubectl, you just need to run the command
 
     aws eks --region us-east-1 update-kubeconfig --name test-cluster
 
-### Installing Rancher inside AWS EKS
+# Installing Rancher inside AWS EKS
 
 Now it is time to starting the rancher setup. The first step and most important to get it to work is to install an Ingress Controller to handle all the cluster requests into a one single place.
 
-#### Setting up the main Ingress Controller
+## Setting up the main Ingress Controller
 
 You can install the correct Ingress Controller with the following command (keep in mind that if you install the wrong ingress controller, the Rancher installation can be missed up, so, usually we use the open source version of nginx).
 
@@ -192,7 +192,7 @@ Now you just need to point your domain to the DNS in order to access Rancher Con
 
 > CNAME rancher.guilherr.me  -> Load Balancer DNS
 
-#### Installing Rancher
+## Installing Rancher
 
 Now we need to install helm in order to proceed to the other steps (in case you already have it installed you do not need to do it again). You can do it with the following commands:
 
@@ -233,7 +233,7 @@ Now you need to wait some minutes until the Rancher finishes installing on the c
 
 Congratulations! Now you have Rancher installed inside your AWS EKS! You need to select the configs you prefer on the page above and I suggest you to start testing stuffs on the Rancher Dashboard (there is a lot of good sttufs to do).
 
-### Bibliographic References
+# Bibliographic References
 
 * Installing AWS CLI: [https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2-linux.html](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2-linux.html "https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2-linux.html")
 * Creating root credentials for AWS user: [https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2-linux.html](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2-linux.html "https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2-linux.html")
