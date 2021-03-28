@@ -58,7 +58,6 @@ export const PostContent = styled.div`
 
 	& > * {
 		color: var(--gray-color-15);
-		text-align: justify;
 	}
 
 	figure {
@@ -103,7 +102,6 @@ export const PostContent = styled.div`
 
 	h1 {
 		margin-top: 6rem;
-		text-align: left;
 		font-weight: bolder;
 
 		@media (max-width: 768px) {
@@ -114,7 +112,6 @@ export const PostContent = styled.div`
 
 	h2 {
 		margin-top: 4rem;
-		text-align: left;
 		font-size: 3rem;
 		font-weight: bolder;
 
