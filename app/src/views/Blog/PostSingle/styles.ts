@@ -17,6 +17,10 @@ export const PostSingleSectionContainer = styled(Section.Container)`
 export const PostSingleSectionContent = styled(Section.Content)`
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: 768px) {
+		padding: 0 var(--section-content-mobile-margin);
+	}
 `
 
 export const PostInfo = styled(PostInfoComponent)`
@@ -99,15 +103,25 @@ export const PostContent = styled.div`
 
 	h1 {
 		margin-top: 6rem;
-
+		text-align: left;
 		font-weight: bolder;
+
+		@media (max-width: 768px) {
+			font-size: 5rem;
+			margin-top: 3rem;
+		}
 	}
 
 	h2 {
 		margin-top: 4rem;
-
+		text-align: left;
 		font-size: 3rem;
 		font-weight: bolder;
+
+		@media (max-width: 768px) {
+			font-size: 3rem;
+			margin-top: 3rem;
+		}
 	}
 
 	blockquote {
@@ -142,6 +156,7 @@ export const PostContent = styled.div`
 
 	a {
 		color: #9479FF;
+		max-width: 100%;
 		
 		&:before {
 			content: none;
