@@ -5,18 +5,21 @@ export class CustomRenderer extends Renderer {
 	image (href: string | null, title: string | null, alt: string): string {
 		const imageSlug = getSlugFromUrl(href)
 
+		const formattedTitle = title || ""
+		const formattedAlt = alt || ""
+
 		return (`
 			<figure>
 				<a
 					data-fancybox="${imageSlug}"
 					data-hash="${imageSlug}"
 					href="${href}"
-					data-caption="${title}"
+					data-caption="${formattedTitle}"
 				>
-						<img src="${href}" alt="${alt}">
+						<img src="${href}" alt="${formattedAlt}">
 				</a>
 
-				<figcaption>${title}</figcaption>
+				<figcaption>${formattedTitle}</figcaption>
 			</figure>
 		`)
 	}
