@@ -154,6 +154,7 @@ export const PostContent = styled.div`
 	a {
 		color: #9479FF;
 		max-width: 100%;
+		word-break: break-word;
 		
 		&:before {
 			content: none;
