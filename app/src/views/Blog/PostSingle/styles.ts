@@ -178,6 +178,19 @@ export const PostContent = styled.div`
 			font-size: 1.8rem;
 			line-height: 2.2rem;
 			color: var(--gray-color-13);
+
+			&::-webkit-scrollbar {
+				width: 6px !important;
+				height: 6px !important;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+
+			&::-webkit-scrollbar-track {
+				background: transparent;
+			}
 		}
 	}
 `
