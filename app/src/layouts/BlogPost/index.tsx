@@ -37,6 +37,10 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 
 	return (
 		<BlogPostContainer>
+			<Script src="/js/jquery-3.3.1.min.js" />
+			<Script src="/js/jquery.fancybox.min.js" />
+			<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.min.css" />
+
 			<MetaTag
 				page={{
 					title: `${title} | Guilherme Mota`,
@@ -55,10 +59,9 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 				}}
 			/>
 
-			{children}
+			
 
-			<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.min.css" />
-			<Script src="/js/jquery.fancybox.min.js" />
+			{children}
 		</BlogPostContainer>
 	)
 }
