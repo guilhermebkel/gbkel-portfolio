@@ -10,7 +10,7 @@ description: Learn how to install Rancher inside AWS EKS while getting important
   about Kubernetes.
 date: 2021-03-21T03:00:00.000+00:00
 cover: "/posts/amazon-containers-01.png"
-published: false
+published: true
 
 ---
 Rancher is an abstraction made on top of Kubernetes in order to help dealing with a lot of clusters in different services and regions with an useful dashboard.
