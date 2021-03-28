@@ -104,3 +104,9 @@ export const PostDivider = styled.div`
 		background-color: transparent;
 	}
 `
+
+export const PostLink = styled.a`
+	&:before {
+		content: none;
+	}
+`

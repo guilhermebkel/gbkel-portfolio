@@ -57,17 +57,6 @@ export const PostContent = styled.div`
 		text-align: justify;
 	}
 
-	img {
-		width: 100%;
-		height: 100%;
-
-		max-width: 80rem;
-		max-height: 60rem;
-
-		object-fit: cover;
-		object-position: center;
-	}
-
 	figure {
 		width: 100%;
 
@@ -78,6 +67,17 @@ export const PostContent = styled.div`
 		justify-content: center;
 
 		padding: 3rem 0%;
+
+		img {
+			width: 100%;
+			height: 100%;
+
+			max-width: 80rem;
+			max-height: 60rem;
+
+			object-fit: cover;
+			object-position: center;
+		}
 
 		figcaption {
 			color: #ADADAD;

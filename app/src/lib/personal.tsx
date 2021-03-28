@@ -1,5 +1,7 @@
 import React from "react"
 
+import { environmentConfig } from "@/config/environment"
+
 type ContactType = "github" | "linkedin" | "mail" | "whatsapp"
 
 type ContactMap = {
@@ -146,7 +148,7 @@ export const timeline: Timeline[] = [
 
 export const appUrls = {
 	home: "https://guilherr.me",
-	blog: "https://blog.guilherr.me",
+	blog: environmentConfig.isDev ? "/blog" :"https://blog.guilherr.me",
 	about: "https://about.guilherr.me",
 	skills: "https://about.guilherr.me/skills"
 }

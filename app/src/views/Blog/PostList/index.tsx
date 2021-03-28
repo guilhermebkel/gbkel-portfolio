@@ -1,5 +1,4 @@
 import React from "react"
-import Link from "next/link"
 
 import { DetailedPost } from "@/lib/posts"
 import { chunk, orderBy } from "@/lib/array"
@@ -17,7 +16,8 @@ import {
 	PostItemContent,
 	PostsContainer,
 	PostsContent,
-	PostDivider
+	PostDivider,
+	PostLink
 } from "@/views/Blog/PostList/styles"
 
 type PostListProps = {
@@ -39,6 +39,7 @@ const PostList: React.FC<PostListProps> = (props) => {
 
 				<PostsContainer>
 					{posts
+						.filter(post => post.published)
 						.sort(orderBy<DetailedPost>("dateInMilliseconds", "ASC"))
 						.reverse()
 						.reduce(chunk<DetailedPost[][], DetailedPost>(3), [])
@@ -52,15 +53,12 @@ const PostList: React.FC<PostListProps> = (props) => {
 								>
 									{
 										postChunk
-											.filter(post => post.published)
 											.map((post) => (
 												<PostItemContainer
 													key={post.slug}
 												>
-													<Link
-														key={post.slug}
+													<PostLink
 														href={post.slug}
-														passHref
 													>
 														<PostItemContent
 															postsCount={postChunk.length}
@@ -80,7 +78,7 @@ const PostList: React.FC<PostListProps> = (props) => {
 																authorAvatarSrc={post.authorAvatarSrc}
 															/>
 														</PostItemContent>
-													</Link>
+													</PostLink>
 												</PostItemContainer>
 											))
 									}
