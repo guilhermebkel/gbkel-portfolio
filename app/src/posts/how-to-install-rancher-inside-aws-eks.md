@@ -83,7 +83,7 @@ Go to the **EKS Clusters page** by selecting it on the left site menu and click 
 
 At first, choose the name you prefer for the cluster (in my case I used **test-cluster**), add the **Cluster Service Role** you created before and click on the **Next** button.
 
-![](/posts/eks-cluster-config.png)
+![EKS Config](/posts/eks-cluster-config.png "EKS Config")
 
 Now, select the networking config for your cluster, usually on that part you just need to click on the Next button since EKS already selects the default configs for you (but you can change it in case you need).
 
