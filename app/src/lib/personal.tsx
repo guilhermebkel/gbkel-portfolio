@@ -138,11 +138,22 @@ export const timeline: Timeline[] = [
 				So, after being mainly a software developer, I have got invited to be a Tech Lead. 🥳
 				<br />
 				<br />
-				Now I am at this position and mainly push boundaries <u>creating solid/scalable/flexible software foundations, helping other developers improving themselves and bringing new technologies to company</u>. 💪
+				At this position I helped <u>creating solid/scalable/flexible software foundations, helping other developers improving themselves and bringing new technologies to company</u>. 💪
 			</>
 		),
-		date: "08/2020 - In course",
+		date: "08/2020 - 03/2021",
 		iconSrc: "/icons/picsize.png"
+	},
+	{
+		title: "Bume",
+		subtitle: "Tech Lead [Job]",
+		description: (
+			<>
+				After a company merge, I've become a Tech Lead on that new company. 🎉
+			</>
+		),
+		date: "03/2021 - In course",
+		iconSrc: "/icons/bume.png"
 	}
 ]
 
