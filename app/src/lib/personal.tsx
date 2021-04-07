@@ -149,7 +149,7 @@ export const timeline: Timeline[] = [
 		subtitle: "Tech Lead [Job]",
 		description: (
 			<>
-				After a company merge, I've become a Tech Lead on that new company. 🎉
+				After a company merge, I've become a Tech Lead on that company. 🎉
 			</>
 		),
 		date: "03/2021 - In course",
