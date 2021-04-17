@@ -1,6 +1,8 @@
 import { imageConfig } from "@/config/image"
 import { environmentConfig } from "@/config/environment"
 
+import { buildCDNUrl } from "@/lib/cdn"
+
 export const buildSrcSet = (path: string): string => {
 	if (environmentConfig.isDev) {
 		return ""
@@ -14,12 +16,16 @@ export const buildSrcSet = (path: string): string => {
 	if (!isOptimizedPicture) {
 		return ""
 	}
+	
+	const srcList = imageConfig.responsiveSizes.map(size => {
+		const cdnUrl = buildCDNUrl(fullPath)
 
-	const srcList = imageConfig.responsiveSizes.map(size => (
-		`${imageConfig.buildResponsiveSrc(fullPath, size, extension)} ${size}w`
-	))
+		return `${imageConfig.buildResponsiveSrc(cdnUrl, size, extension)} ${size}w`
+	})
+	
+	const cdnUrl = buildCDNUrl(fullPath)
 
-	srcList.push(`${path} 1000w`)
+	srcList.push(`${cdnUrl} 1000w`)
 
 	const srcSet = srcList.join(", ")
 
