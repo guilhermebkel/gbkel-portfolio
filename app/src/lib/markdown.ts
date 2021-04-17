@@ -1,5 +1,7 @@
 import { Renderer } from "marked"
+
 import { getSlugFromUrl } from "@/lib/url"
+import { buildCDNUrl } from "@/lib/cdn"
 
 export class CustomRenderer extends Renderer {
 	image (href: string | null, title: string | null, alt: string): string {
@@ -7,6 +9,7 @@ export class CustomRenderer extends Renderer {
 
 		const formattedTitle = title || ""
 		const formattedAlt = alt || ""
+		const cdnUrl = buildCDNUrl(href)
 
 		return (`
 			<figure>
@@ -16,7 +19,7 @@ export class CustomRenderer extends Renderer {
 					href="${href}"
 					data-caption="${formattedTitle}"
 				>
-						<img src="${href}" alt="${formattedAlt}">
+						<img src="${cdnUrl}" alt="${formattedAlt}">
 				</a>
 
 				<figcaption>${formattedTitle}</figcaption>
