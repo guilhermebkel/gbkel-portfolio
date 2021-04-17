@@ -1,5 +1,5 @@
 const cdnConfig = {
-	baseURL: ""
+	baseURL: "https://guilherr.me"
 }
 
 module.exports = {
