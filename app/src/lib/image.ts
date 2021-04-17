@@ -23,7 +23,7 @@ export const buildSrcSet = (path: string): string => {
 		return `${imageConfig.buildResponsiveSrc(cdnUrl, size, extension)} ${size}w`
 	})
 	
-	const cdnUrl = buildCDNUrl(fullPath)
+	const cdnUrl = buildCDNUrl(path)
 
 	srcList.push(`${cdnUrl} 1000w`)
 
