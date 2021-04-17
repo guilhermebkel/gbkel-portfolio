@@ -19,7 +19,7 @@ export class CustomRenderer extends Renderer {
 					href="${href}"
 					data-caption="${formattedTitle}"
 				>
-						<img src="${cdnUrl}" alt="${formattedAlt}">
+						<img src="${cdnUrl}" alt="${formattedAlt}" loading="lazy" />
 				</a>
 
 				<figcaption>${formattedTitle}</figcaption>
