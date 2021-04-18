@@ -17,13 +17,12 @@ export const buildSrcSet = (path: string): string => {
 		return ""
 	}
 	
-	const srcList = imageConfig.responsiveSizes.map(size => {
-		const cdnUrl = buildCDNUrl(fullPath)
-
-		return `${imageConfig.buildResponsiveSrc(cdnUrl, size, extension)} ${size}w`
-	})
-	
+	const cdnUrlWithoutExtension = buildCDNUrl(fullPath)
 	const cdnUrl = buildCDNUrl(path)
+	
+	const srcList = imageConfig.responsiveSizes.map(size => (
+		`${imageConfig.buildResponsiveSrc(cdnUrlWithoutExtension, size, extension)} ${size}w`
+	))
 
 	srcList.push(`${cdnUrl} 1000w`)
 
@@ -41,12 +40,13 @@ export const buildImageSharePath = (path: string): string => {
 
 	const [fullPath, extension] = path.split(".")
 	
-	const cdnUrl = buildCDNUrl(fullPath)
+	const cdnUrlWithoutExtension = buildCDNUrl(fullPath)
+	const cdnUrl = buildCDNUrl(path)
 
 	const sharePath = sharingSize ? (
-		imageConfig.buildResponsiveSrc(cdnUrl, sharingSize, extension)
+		imageConfig.buildResponsiveSrc(cdnUrlWithoutExtension, sharingSize, extension)
 	) : (
-		path
+		cdnUrl
 	)
 
 	return sharePath
