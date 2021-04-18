@@ -40,9 +40,11 @@ export const buildImageSharePath = (path: string): string => {
 	const sharingSize = imageConfig.responsiveSizes.find(size => size > 300)
 
 	const [fullPath, extension] = path.split(".")
+	
+	const cdnUrl = buildCDNUrl(fullPath)
 
 	const sharePath = sharingSize ? (
-		imageConfig.buildResponsiveSrc(fullPath, sharingSize, extension)
+		imageConfig.buildResponsiveSrc(cdnUrl, sharingSize, extension)
 	) : (
 		path
 	)
