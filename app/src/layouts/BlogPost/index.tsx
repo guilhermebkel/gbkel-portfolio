@@ -35,6 +35,8 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 
 	const imageSrc = buildImageSharePath(coverSrc)
 
+	const postUrl = `${appUrls.blog}/${slug}`
+
 	return (
 		<BlogPostContainer>
 			<Script src="/js/jquery-3.3.1.min.js" />
@@ -50,7 +52,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 					title,
 					description,
 					imageSrc,
-					url: `${appUrls.blog}/${slug}`,
+					url: postUrl,
 					authorName,
 					authorUrl,
 					type: "article",
@@ -58,8 +60,6 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = (props) => {
 					readingTime
 				}}
 			/>
-
-			
 
 			{children}
 		</BlogPostContainer>

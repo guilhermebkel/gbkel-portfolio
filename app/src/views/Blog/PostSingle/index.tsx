@@ -1,13 +1,15 @@
 import React from "react"
 
 import { DetailedPost } from "@/lib/posts"
+import { appUrls } from "@/lib/personal"
 
 import {
 	PostSingleSectionContainer,
 	PostSingleSectionContent,
 	PostInfo,
 	PostCover,
-	PostContent
+	PostContent,
+	PostComments
 } from "@/views/Blog/PostSingle/styles"
 
 type PostSingleProps = {
@@ -16,6 +18,8 @@ type PostSingleProps = {
 
 const PostSingle: React.FC<PostSingleProps> = (props) => {
 	const { post } = props
+
+	const postUrl = `${appUrls.blog}/${post.slug}`
 
 	return (
 		<PostSingleSectionContainer>
@@ -37,6 +41,11 @@ const PostSingle: React.FC<PostSingleProps> = (props) => {
 
 				<PostContent
 					dangerouslySetInnerHTML={{ __html: post.content }}
+				/>
+
+				<PostComments
+					pageUrl={postUrl}
+					pageId={post.slug}
 				/>
 			</PostSingleSectionContent>
 		</PostSingleSectionContainer>

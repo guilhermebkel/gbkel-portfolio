@@ -3,7 +3,8 @@ import styled from "styled-components"
 import {
 	Section,
 	LazyLoadedImage,
-	PostInfo as PostInfoComponent
+	PostInfo as PostInfoComponent,
+	Disqus
 } from "@/components" 
 
 export const PostSingleSectionContainer = styled(Section.Container)`
@@ -194,4 +195,8 @@ export const PostContent = styled.div`
 			}
 		}
 	}
+`
+
+export const PostComments = styled(Disqus)`
+	margin-top: var(--section-container-margin-bottom);
 `
