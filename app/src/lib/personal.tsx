@@ -150,10 +150,24 @@ export const timeline: Timeline[] = [
 		description: (
 			<>
 				After a company merge, I've become a Tech Lead on that company. 🎉
+				<br />
+				<br />
+				At this position I had the opportunity to <u>learn a lot about microservices and messaging systems</u> while <u>giving feedbacks to improve other developers</u>.
 			</>
 		),
-		date: "03/2021 - In course",
+		date: "03/2021 - 07/2021",
 		iconSrc: "/icons/bume.png"
+	},
+	{
+		title: "Letalk",
+		subtitle: "Tech Lead [Job]",
+		description: (
+			<>
+				After a company creation, I had the opportunity to join this new challenge. 🚀
+			</>
+		),
+		date: "07/2021 - In course",
+		iconSrc: "/icons/letalk.svg"
 	}
 ]
 
