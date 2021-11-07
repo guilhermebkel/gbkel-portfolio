@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="./logo.png" width="100" alt="logo" />
+	<img src="https://static.guilherr.me/image/logo/logo-1-black.png" width="100" alt="logo" />
 </p>	
 
 <h3 align="center">
