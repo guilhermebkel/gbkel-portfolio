@@ -175,7 +175,8 @@ export const timeline: Timeline[] = [
 		description: (
 			<>
 				One of my passions is mentoring. 👨🏽‍🏫
-				
+				<br />
+				<br />
 				So I had the pleasure of taking part of that education company as a freelance mentor and project reviewer for one of its courses.
 			</>
 		),
