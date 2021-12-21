@@ -76,7 +76,7 @@ export const timeline: Timeline[] = [
 				I am currently at college and happy for studying with awesome students. 🤯
 			</>
 		),
-		date: "03/2019 - In course",
+		date: "03/2019 - 10/2021",
 		iconSrc: "/icons/ufmg.png"
 	},
 	{
@@ -168,6 +168,30 @@ export const timeline: Timeline[] = [
 		),
 		date: "07/2021 - In course",
 		iconSrc: "/icons/letalk.svg"
+	},
+	{
+		title: "ITuring",
+		subtitle: "Mentor and Project Reviewer [Freelancer]",
+		description: (
+			<>
+				One of my passions is mentoring. 👨🏽‍🏫
+				
+				So I had the pleasure of taking part of that education company as a freelance mentor and project reviewer for one of its courses.
+			</>
+		),
+		date: "08/2021 - In course",
+		iconSrc: "/icons/ituring.jpg"
+	},
+	{
+		title: "UFMG",
+		subtitle: "Information System [College]",
+		description: (
+			<>
+				Since I've felt in love with software after I've got into the Electrical Engineering course, I changed it to Information System since it focuses on what I love to do. 💓
+			</>
+		),
+		date: "10/2021 - In course",
+		iconSrc: "/icons/ufmg.png"
 	}
 ]
 
