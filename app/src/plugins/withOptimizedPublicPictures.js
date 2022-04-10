@@ -86,6 +86,12 @@ const optimizePicture = async (picturePath) => {
 const withOptimizedPublicPictures = async (nextConfig = {}) => {
 	const config = nextConfig.optimizedPublicPictures
 
+	console.log(process.env, globalThis.origin ? (
+		Boolean(globalThis.origin.includes("localhost"))
+	) : (
+		!process.env.AWS_REGION || process.env.NODE_ENV === "development"
+	))
+
 	if (config.disable || isOptimizingPublicPictures) {
 		log("Public pictures optimization is disabled")
 		return nextConfig
