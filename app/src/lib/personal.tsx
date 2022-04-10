@@ -197,7 +197,7 @@ export const timeline: Timeline[] = [
 ]
 
 export const appUrls = {
-	home: "https://guilherr.me",
+	home: environmentConfig.isDev ? "/" : "https://guilherr.me",
 	blog: environmentConfig.isDev ? "/blog" :"https://blog.guilherr.me",
 	about: "https://about.guilherr.me",
 	skills: "https://about.guilherr.me/skills"
