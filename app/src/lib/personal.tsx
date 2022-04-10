@@ -197,13 +197,11 @@ export const timeline: Timeline[] = [
 ]
 
 export const appUrls = {
-	home: environmentConfig.isDev ? "/" : "https://guilherr.me",
-	blog: environmentConfig.isDev ? "/blog" : "https://blog.guilherr.me",
+	home: "https://guilherr.me",
+	blog: "https://blog.guilherr.me",
 	about: "https://about.guilherr.me",
 	skills: "https://about.guilherr.me/skills"
 }
-
-console.log(appUrls)
 
 export const authors = {
 	Owner: {
