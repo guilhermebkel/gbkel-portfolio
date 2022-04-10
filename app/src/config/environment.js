@@ -1,3 +1,5 @@
+console.log(process.env, globalThis.origin)
+
 const environmentConfig = {
 	isDev: globalThis.origin ? (
 		globalThis.origin && globalThis.origin.includes("localhost")
