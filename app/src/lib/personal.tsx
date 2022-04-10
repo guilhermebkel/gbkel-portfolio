@@ -203,6 +203,8 @@ export const appUrls = {
 	skills: "https://about.guilherr.me/skills"
 }
 
+console.log(appUrls)
+
 export const authors = {
 	Owner: {
 		name: "Guilherme Mota",
