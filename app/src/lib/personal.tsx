@@ -171,13 +171,13 @@ export const timeline: Timeline[] = [
 	},
 	{
 		title: "ITuring",
-		subtitle: "Mentor and Project Reviewer [Job]",
+		subtitle: "Mentor and Instructor [Job]",
 		description: (
 			<>
 				One of my passions is mentoring. 👨🏽‍🏫
 				<br />
 				<br />
-				So I had the pleasure of taking part of that education company as a freelance mentor and project reviewer for one of its courses.
+				So I had the pleasure of taking part of that education company as a freelance mentor and instructor.
 			</>
 		),
 		date: "08/2021 - In course",
