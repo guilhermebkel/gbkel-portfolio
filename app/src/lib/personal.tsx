@@ -180,7 +180,7 @@ export const timeline: Timeline[] = [
 				So I had the pleasure of taking part of that education company as a freelance mentor and instructor.
 			</>
 		),
-		date: "08/2021 - In course",
+		date: "08/2021 - 11/2022",
 		iconSrc: "/icons/ituring.jpg"
 	},
 	{
