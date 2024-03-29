@@ -17,6 +17,7 @@ const DefaultLayout: React.FC = (props) => {
 
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+				<meta name="google-adsense-account" content="ca-pub-9129758921225541" />
 				<link rel="icon" href={buildCDNUrl("/favicon.png")} />
 				<link id="app-manifest" rel="manifest" href="/manifest.json"></link>
 				<script defer type="text/javascript" src="https://static.guilherr.me/js/gtm.js"></script>
